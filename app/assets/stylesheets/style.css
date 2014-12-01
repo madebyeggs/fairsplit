@@ -1,0 +1,79 @@
+html {background-color:#000000;}
+
+body {
+	overflow: hidden;
+}
+
+a {
+  color:#ffffff!important;
+  text-decoration:none!important;
+}
+
+#options, #container {background-color:#000000;}
+
+/* Preloader */
+
+#preloader {
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background-color:#000000; /* change if the mask should have another color then white */
+    z-index:99; /* makes sure it stays on top */
+}
+
+#status {
+    width:200px;
+    height:200px;
+    position:absolute;
+    left:50%; /* centers the loading animation horizontally one the screen */
+    top:50%; /* centers the loading animation vertically one the screen */
+    background-image:url(../assets/status2.gif); /* path to your loading animation */
+    background-repeat:no-repeat;
+    background-position:center;
+    margin:-100px 0 0 -100px; /* is width and height divided by two */
+}
+
+/* ISOTOPE */
+
+.isotope-item {
+  z-index: 2;
+}
+  
+.isotope-hidden.isotope-item {
+  pointer-events: none;
+  z-index: 1;
+}
+  
+.isotope,
+.isotope .isotope-item {
+  /* change duration value to whatever you like */
+  -webkit-transition-duration: 0.8s;
+     -moz-transition-duration: 0.8s;
+          transition-duration: 0.8s;
+}
+  
+.isotope {
+  -webkit-transition-property: height, width;
+     -moz-transition-property: height, width;
+          transition-property: height, width;
+}
+  
+.isotope .isotope-item {
+  -webkit-transition-property: -webkit-transform, opacity;
+     -moz-transition-property:    -moz-transform, opacity;
+          transition-property:         transform, opacity;
+}
+
+
+/* MAIN */
+
+.background {background-color:#fff000;}
+.logo {margin:240px 0 20px 35%;}
+ul.navigation {list-style-type: none;}
+.navigation {margin:30px 0 0 30.5%;}
+.navigation a {text-transform:uppercase;font-size:1.1em;}
+li.navButton {margin:8px 0px 8px 0px!important;}
+
+.rightSide {margin:240px 0 0 0px;font-size:1.1em;color:#ffffff;}
