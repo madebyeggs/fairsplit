@@ -11,10 +11,10 @@ tester.jpg: tester-9f8e861d18f6485f7812cec280474383.jpg
 tester/index.jpg: tester-9f8e861d18f6485f7812cec280474383.jpg
 tester2.jpg: tester2-8bea31e09d355a25ca194874e6ff8e1f.jpg
 tester2/index.jpg: tester2-8bea31e09d355a25ca194874e6ff8e1f.jpg
-application.js: application-fa505b70602ebdfd50e4fa6747896c6b.js
-application/index.js: application-fa505b70602ebdfd50e4fa6747896c6b.js
-application.css: application-f495e98c9c0b6ccb20048a1c9bffa383.css
-application/index.css: application-f495e98c9c0b6ccb20048a1c9bffa383.css
+application.js: application-46566a77f90954e02680b3144207fd17.js
+application/index.js: application-46566a77f90954e02680b3144207fd17.js
+application.css: application-81491f7ead3033c05c8977326ee30779.css
+application/index.css: application-81491f7ead3033c05c8977326ee30779.css
 fontawesome-webfont.eot: fontawesome-webfont-748acb824ec6cf781401beccead3cfb2.eot
 fontawesome-webfont/index.eot: fontawesome-webfont-748acb824ec6cf781401beccead3cfb2.eot
 fontawesome-webfont.svg: fontawesome-webfont-f8154a88507639e8ba69247dcd399af8.svg

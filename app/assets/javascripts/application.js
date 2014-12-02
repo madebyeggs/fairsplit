@@ -14,7 +14,6 @@
 //= require jquery-easing-1.3
 //= require modernizr
 //= require retina
-//= require jquery.gomap-1.3.2.min
 //= require jquery.isotope.min
 //= require jquery.ba-bbq.min
 //= require jquery.isotope.load_home
@@ -25,7 +24,6 @@
 //= require jquery.fancybox.pack
 //= require image-hover
 //= require scrollup
-//= require preloader
 //= require jquery.fitvids
 //= require twitter/bootstrap
 //= require_tree .
