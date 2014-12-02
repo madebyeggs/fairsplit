@@ -10,10 +10,24 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require jquery
-//= require jquery_ujs
+//= require jquery-1.9.1.min
+//= require jquery-easing-1.3
+//= require modernizr
+//= require retina
+//= require jquery.gomap-1.3.2.min
+//= require jquery.isotope.min
+//= require jquery.ba-bbq.min
+//= require jquery.isotope.load_home
+//= require jquery.form
+//= require input.fields
+//= require responsive-nav
+//= require jquery.flexslider-min
+//= require jquery.fancybox.pack
+//= require image-hover
+//= require scrollup
+//= require preloader
+//= require jquery.fitvids
 //= require twitter/bootstrap
-//= require isotope.min 
 //= require_tree .
 
 $(window).load(function() { // makes sure the whole site is loaded
@@ -34,9 +48,8 @@ $(document).ready(function() {
 	},  
 	function(){  
 	    $(this).stop().fadeTo('medium', 1);  
-	});  
+	});
 	
-	
-	//Navgation isotoping
+	$(".fitvids").fitVids();
 	
 });
