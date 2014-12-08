@@ -11,6 +11,7 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery-1.9.1.min
+//= require jquery-migrate-1.2.1.min
 //= require jquery-easing-1.3
 //= require modernizr
 //= require retina
