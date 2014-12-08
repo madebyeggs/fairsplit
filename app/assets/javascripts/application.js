@@ -36,6 +36,11 @@ $(window).load(function() { // makes sure the whole site is loaded
 	$('body').delay(550).css({'overflow':'visible'});
 })
 
+// Cache selectors outside callback for performance. 
+   var $window = $(window),
+       $stickyEl = $('#the-sticky-div'),
+       elTop = $stickyEl.offset().top;
+
 $(document).ready(function() {  
   
 	//navigation links hover opcaity animation
@@ -54,6 +59,10 @@ $(document).ready(function() {
 	//mobileNavMenu
 	$(function(){
 		$('#menu').slicknav();
+	});
+	
+	$window.scroll(function() {
+		$stickyEl.toggleClass('sticky', $window.scrollTop() > elTop);
 	});
 	
 });

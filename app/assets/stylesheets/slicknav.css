@@ -23,6 +23,11 @@
 /* IE6/7 support */
 .slicknav_menu { *zoom: 1 }
 
+#the-sticky-div.sticky {
+     position: fixed;
+     top: 0;
+  }
+
 /* 
     User Default Style
     Change the following styles to modify the appearance of the menu.

@@ -82,6 +82,7 @@ li.navButton {margin:8px 0px 8px 0px!important;}
 	.js .slicknav_menu {
 		display:block;
 	}
-	.leftSide {padding-top:40px;}
+	.leftSide {padding-top:20px;}
 	.divider {display:none;}
+	.social, .client {display:none;}
 }
