@@ -13,6 +13,7 @@
  *= require retina-responsive
  *= require jquery.fancybox
  *= require isotope
- *= require style
+ *= require slicknav
  *= require_tree .
+ *= require style
  */

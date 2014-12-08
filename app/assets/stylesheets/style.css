@@ -1,7 +1,8 @@
-html {background-color:#000000;}
+html {background-color:#000000!important;}
 
 body {
 	overflow: hidden;
+	background-color:#000000!important;
 }
 
 a {
@@ -35,13 +36,52 @@ a {
 
 /* MAIN */
 
+
+.slicknav_menu {
+	display:none;
+}
+
+.col-md-6 {height:96%;margin:2% 0%;}
+.leftSide, .rightSide {background-color:#000000;}
 .background {background-color:#fff000;}
 .background2 {background-color:#ff0000;}
-.leftSide {width:100%;margin-top:240px;}
-.logo {margin:0 auto;}
+.leftSide {width:100%;padding-top:200px;}
+.logo {width:250px;margin:0 auto;}
 .logo img {margin:0 auto;}
 ul.navigation {list-style-type: none;}
-.navigationWrapper {margin:0px 0 0 0!important;}
-.navigation a {text-transform:uppercase;font-size:1.1em!important;}
+.navigationWrapper {width:250px;margin:40px auto!important;}
+.navigation a, .client {text-transform:uppercase;font-size:1.1em!important;color:#ffffff;}
 li.navButton {margin:8px 0px 8px 0px!important;}
-.rightSide {margin:240px auto 0 auto;font-size:4em;color:#ffffff;}
+.social {position:absolute;margin:0px 0px 0px 0px;padding:239px 0px 0px 34px;}
+.socialbuttons {
+	display:inline;
+	margin:0px 2px;
+}
+.mail img{
+	margin-left:2px;
+}
+.client {position:absolute;margin:240px 0px 0px 80%;}
+
+.divider{
+    position:absolute;
+    left:50%;
+    top:5%;
+    bottom:5%;
+    border-left:1px solid #3e3e3e;
+}
+
+.rightSide {width:100%;padding-top:240px;margin:0 auto 0 auto;font-size:4em;color:#ffffff;}
+.container {width:100%;}
+
+@media screen and (max-width: 992px) {
+	/* #menu is the original menu */
+	.js #menu {
+		display:none;
+	}
+	
+	.js .slicknav_menu {
+		display:block;
+	}
+	.leftSide {padding-top:40px;}
+	.divider {display:none;}
+}

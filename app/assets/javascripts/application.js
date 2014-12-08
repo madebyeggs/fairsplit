@@ -27,20 +27,19 @@
 //= require scrollup
 //= require jquery.fitvids
 //= require twitter/bootstrap
+//= require jquery.slicknav 
 //= require_tree .
 
 $(window).load(function() { // makes sure the whole site is loaded
 	$('#status').fadeOut(); // will first fade out the loading animation
 	$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-	$('body').delay(350).css({'overflow':'visible'});
+	$('body').delay(550).css({'overflow':'visible'});
 })
 
 $(document).ready(function() {  
   
 	//navigation links hover opcaity animation
-  
 	$('.navButton a').css('opacity', 1);  
-  
 	// when hover over the selected item change the opacity to 1  
 	$('.navButton a').hover(function(){  
 		$(this).stop().fadeTo('medium', 0.4);  
@@ -49,6 +48,12 @@ $(document).ready(function() {
 	    $(this).stop().fadeTo('medium', 1);  
 	});
 	
+	
 	$(".fitvids").fitVids();
+	
+	//mobileNavMenu
+	$(function(){
+		$('#menu').slicknav();
+	});
 	
 });
