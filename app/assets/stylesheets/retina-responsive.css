@@ -5,35 +5,35 @@
 only screen and (-moz-min-device-pixel-ratio: 1.5),
 only screen and (-o-min-device-pixel-ratio: 3/2),
 only screen and (min-device-pixel-ratio: 1.5) {
-h1#logo a { background:url(../images/bg-logo@2x.png) no-repeat; background-size:225px 59px; }
-h1#logo.left a { background:url(../images/bg-logo2@2x.png) no-repeat; background-size:225px 59px; }
+h1#logo a { background:url(../assets/bg-logo@2x.png) no-repeat; background-size:225px 59px; }
+h1#logo.left a { background:url(../assets/bg-logo2@2x.png) no-repeat; background-size:225px 59px; }
 
-.linkedin {background:url(../images/bg-linkedin@2x.png) center no-repeat; background-size:50px 50px; }
-.dribbble {background:url(../images/bg-dribbble@2x.png) center no-repeat; background-size:50px 51px; }
-.googleplus {background:url(../images/bg-googleplus@2x.png) center no-repeat; background-size:50px 50px; }
-.twitter {background:url(../images/bg-twitter@2x.png) center no-repeat; background-size:50px 51px; } 
-.facebook {background:url(../images/bg-facebook@2x.png) center no-repeat; background-size:50px 51px; }
-.behance {background:url(../images/bg-behance@2x.png) center no-repeat; background-size:50px 50px; }
-.skype {background:url(../images/bg-skype@2x.png) center no-repeat; background-size:50px 51px; }
-.link {background:url(../images/bg-link@2x.png) center no-repeat; background-size:48px 48px; }
-.video {background:url(../images/bg-video@2x.png) center no-repeat; background-size:48px 48px; }
-.zoom {background:url(../images/bg-zoom@2x.png) center no-repeat; background-size:48px 48px; }
-.quote {background:url(../images/bg-quote@2x.png) center no-repeat; background-size:48px 48px; }
-.profile {background:url(../images/bg-profile@2x.png) center no-repeat; background-size:48px 48px; }
-.tags {background:url(../images/bg-tags@2x.png) center no-repeat; background-size:48px 48px; }
-.more {background:url(../images/bg-more@2x.png) center no-repeat; background-size:48px 48px; }
-.detail {background:url(../images/bg-detail@2x.png) center no-repeat; background-size:48px 48px; }
-.email {background:url(../images/bg-email@2x.png) center no-repeat; background-size:48px 48px; }
-.website {background:url(../images/bg-website@2x.png) center no-repeat; background-size:48px 48px; }
+.linkedin {background:url(../assets/bg-linkedin@2x.png) center no-repeat; background-size:50px 50px; }
+.dribbble {background:url(../assets/bg-dribbble@2x.png) center no-repeat; background-size:50px 51px; }
+.googleplus {background:url(../assets/bg-googleplus@2x.png) center no-repeat; background-size:50px 50px; }
+.twitter {background:url(../assets/bg-twitter@2x.png) center no-repeat; background-size:50px 51px; } 
+.facebook {background:url(../assets/bg-facebook@2x.png) center no-repeat; background-size:50px 51px; }
+.behance {background:url(../assets/bg-behance@2x.png) center no-repeat; background-size:50px 50px; }
+.skype {background:url(../assets/bg-skype@2x.png) center no-repeat; background-size:50px 51px; }
+.link {background:url(../assets/bg-link@2x.png) center no-repeat; background-size:48px 48px; }
+.video {background:url(../assets/bg-video@2x.png) center no-repeat; background-size:48px 48px; }
+.zoom {background:url(../assets/bg-zoom@2x.png) center no-repeat; background-size:48px 48px; }
+.quote {background:url(../assets/bg-quote@2x.png) center no-repeat; background-size:48px 48px; }
+.profile {background:url(../assets/bg-profile@2x.png) center no-repeat; background-size:48px 48px; }
+.tags {background:url(../assets/bg-tags@2x.png) center no-repeat; background-size:48px 48px; }
+.more {background:url(../assets/bg-more@2x.png) center no-repeat; background-size:48px 48px; }
+.detail {background:url(../assets/bg-detail@2x.png) center no-repeat; background-size:48px 48px; }
+.email {background:url(../assets/bg-email@2x.png) center no-repeat; background-size:48px 48px; }
+.website {background:url(../assets/bg-website@2x.png) center no-repeat; background-size:48px 48px; }
 
-#backtotop ul li a { background:url(../images/bg-up@2x.png) center top no-repeat; background-size:48px 48px; }
+#backtotop ul li a { background:url(../assets/bg-up@2x.png) center top no-repeat; background-size:48px 48px; }
 
-.flex-direction-nav .flex-next {background:url(../images/bg-next@2x.png) center no-repeat; background-size:48px 48px; }
-.flex-direction-nav .flex-prev {background:url(../images/bg-prev@2x.png) center no-repeat; background-size:48px 48px; }
+.flex-direction-nav .flex-next {background:url(../assets/bg-next@2x.png) center no-repeat; background-size:48px 48px; }
+.flex-direction-nav .flex-prev {background:url(../assets/bg-prev@2x.png) center no-repeat; background-size:48px 48px; }
 
-.fancybox-close {background: url(../images/bg-close@2x.png) center no-repeat; background-size:48px 48px;}
-.fancybox-prev span {background: url(../images/bg-prev@2x.png) center no-repeat; background-size:48px 48px;}
-.fancybox-next span {background: url(../images/bg-next@2x.png) center no-repeat; background-size:48px 48px;}
+.fancybox-close {background: url(../assets/bg-close@2x.png) center no-repeat; background-size:48px 48px;}
+.fancybox-prev span {background: url(../assets/bg-prev@2x.png) center no-repeat; background-size:48px 48px;}
+.fancybox-next span {background: url(../assets/bg-next@2x.png) center no-repeat; background-size:48px 48px;}
 }
 
 

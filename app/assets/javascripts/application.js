@@ -27,7 +27,8 @@
 //= require scrollup
 //= require jquery.fitvids
 //= require twitter/bootstrap
-//= require jquery.slicknav 
+//= require jquery.slicknav
+//= require jquery.fittext 
 //= require_tree .
 
 $(window).load(function() { // makes sure the whole site is loaded
@@ -48,12 +49,13 @@ $(document).ready(function() {
 	    $(this).stop().fadeTo('medium', 1);  
 	});
 	
-	
 	$(".fitvids").fitVids();
 	
 	//mobileNavMenu
 	$(function(){
 		$('#menu').slicknav();
 	});
+	
+	$(".subTitle").fitText(1.0, { minFontSize: '16px', maxFontSize: '36px' });
 	
 });

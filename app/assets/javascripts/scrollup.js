@@ -1,5 +1,5 @@
 jQuery(function() {
-	jQuery(window).scroll(function() {
+	jQuery('.canScroll').scroll(function() {
 		if(jQuery(this).scrollTop() != 0) {
 			jQuery('#toTop, #backtotop').fadeIn();	
 		} else {
@@ -7,10 +7,20 @@ jQuery(function() {
 		}
 	});
 	jQuery('#toTop').click(function() {
-		jQuery('body,html').animate({scrollTop:0},800);
+		jQuery('.canScroll').animate({scrollTop:0},800);
 	});	
 });
 
-jQuery('.works').click(function(){
-	alert('Work page coming soon!')
+jQuery(function() {
+	jQuery('.canScroll2').scroll(function() {
+		if(jQuery(this).scrollTop() != 0) {
+			jQuery('#toTop2, #backtotop2').fadeIn();	
+		} else {
+			jQuery('#toTop2, #backtotop2').fadeOut();
+		}
+	});
+	jQuery('#toTop2').click(function() {
+		jQuery('.canScroll2').animate({scrollTop:0},800);
+	});	
 });
+
