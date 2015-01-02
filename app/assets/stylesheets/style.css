@@ -38,7 +38,7 @@ a {
 
 .slicknav_menu {display:none;}
 .container {width:100%;}
-.element {width:100%!important;}
+.elementContainer {width:100%!important;}
 
 /* LEFT SIDE */
 
@@ -51,7 +51,7 @@ ul.navigation {list-style-type: none;}
 .navigationWrapper {width:250px;margin:40px auto!important;}
 .navigation a, .client {text-transform:uppercase;font-size:1.1em!important;color:#ffffff;font-family:'Raleway'}
 li.navButton {margin:8px 0px 8px 0px!important;}
-.social {position:absolute;margin:0px 0px 0px 0px;padding:239px 0px 0px 34px;}
+.social {width:258px;margin:100px auto 0px auto;}
 .socialbuttons {
 	display:inline;
 	margin:0px 2px;
@@ -88,7 +88,7 @@ td {line-height:30px;}
 .subTitleSocial {margin:10px 0px 0px 25px;}
 .socialPic {margin-top:15px;}
 .afterSubtitle {margin-top:20px;}
-.canScroll {height:800px;overflow-y: auto;}
+.canScroll {height:778px;overflow-y: auto;}
 .canScroll2 {height:100vh;overflow-y: auto;}
 .clear {clear:both;}
 
@@ -99,7 +99,7 @@ td {line-height:30px;}
 .newsStory p {font-size:15px;line-height:20px;}
 .more {float:right;font-size:17px;color:#ffffff;}
 
-#backtotop, #backtotop2 {display:none; z-index:30; margin-top:-100px; }
+#backtotop, #backtotop2 {display:none; z-index:2000; margin-top:40px; }
 #backtotop ul, #backtotop2 ul { padding:0px 0px; }
 #backtotop ul li a, #backtotop2 ul li a { background:url(../assets/bg-up.png) center top no-repeat; background-size:48px 48px; display:block; width:48px; height:48px; float:right; right:10px; text-indent:-9000px; }
 #backtotop ul li a:hover, #backtotop ul li a:hover { height:58px; }

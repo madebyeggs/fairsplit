@@ -16,7 +16,7 @@ var $container = $('#container'),
           };
 //$container.imagesLoaded( function(){
       $container.isotope({
-        itemSelector : '.element',
+        itemSelector : '.elementContainer',
         masonry: { columnWidth: $container.width() / 12 }
       
     		  });
@@ -112,7 +112,7 @@ var $container = $('#container'),
           };
 //$container.imagesLoaded( function(){
       $container.isotope({
-        itemSelector : '.element',
+        itemSelector : '.elementContainer',
         masonry: { columnWidth: $container.width() / 12 }
       
     		  });
