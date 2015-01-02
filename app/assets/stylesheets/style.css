@@ -46,7 +46,7 @@ a {
 .leftSide, .rightSide {background-color:#000000;}
 .leftSide {width:100%;padding-top:200px;}
 .logo {width:250px;margin:0 auto;}
-.logo img {margin:0 auto;}
+.logo img, {margin:0 auto;}
 ul.navigation {list-style-type: none;}
 .navigationWrapper {width:250px;margin:40px auto!important;}
 .navigation a, .client {text-transform:uppercase;font-size:1.1em!important;color:#ffffff;font-family:'Raleway'}
