@@ -10,7 +10,7 @@ class="video-popup" title="">
 		          		<div class="overlay"></div>
 						<div class="icons video"></div>
 						<div class="overlay"></div>
-						<div class="icons2"><a href="#inline2" class="info popup"><%= image_tag('infor.png') %></a></div>	        					
+						<div class="icons2"><a href=".inline<%= w.id %>" class="info popup"><%= image_tag('infor.png') %></a></div>	        					
 					</section>
 		        	<div class="vidTitle">
 		        		<div class="title-wrap">
@@ -24,7 +24,7 @@ class="video-popup" title="">
 		        	</div>
 		    	</div>
 			</div>
-			<div id="inline2">
+			<div id="inline2" class="inline<%= w.id %>">
 				<div class="inlineContent">
 					<h1 class="projectName"><%= w.client %> "<%= w.title %>"</h1><br/>
 					<h3 class="projectSubtitle"><%= w.type_of_work %></h3>
