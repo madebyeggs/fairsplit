@@ -36,7 +36,7 @@
 .title-wrap h3 {font-size:14px; letter-spacing:1px; text-transform:uppercase; }
 .subtitle-wrap p {font-size:15px; font-weight:400;font-family:'Raleway';font-style:italic;margin-top:12px;}
 
-#inline2 {background-color:#000000;color:#ffffff;display:none;width:60%;margin:0 auto;}
+.inline2 {background-color:#000000;color:#ffffff;display:none;width:60%;margin:0 auto;}
 .inlineContent {font-family:'Raleway';font-size:25px;margin:15px;}
 .projectName {text-align:center;font-size:22px;margin:20px 0px;}
 .projectSubtitle {font-size:18px;margin:0;}
