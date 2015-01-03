@@ -5,5 +5,6 @@ V1::Application.routes.draw do
   
   resources :cms
   resources :works
+  resources :announcements
   
 end

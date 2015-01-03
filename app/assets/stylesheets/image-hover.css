@@ -2,11 +2,13 @@
 --------------------------------------------------------------------------------------------------------*/
 .element {position:relative; /*background:#e9e9e9*/ }
 .overflow, .element {overflow:hidden; }
-.images img {width:100%; display: block; position:relative; max-width: 100% !important; z-index:0 }
-.images {overflow:hidden }
+.images img, .images2 img {width:100%; display: block; position:relative; max-width: 100% !important; z-index:0 }
+.images, .images2 {overflow:hidden }
+.images2:hover {opacity: 0.9;}
 
 .icons { position:absolute; bottom:30px; right:40px; height:48px; width:48px; z-index:100;  pointer-events: none; -webkit-transition: all 0s ease 0s; -moz-transition: all 0s ease 0s; -o-transition: all 0s ease 0s; transition: all 0s ease 0s; }
 .icons2 { position:absolute; bottom:40px; left:40px; height:30px; width:30px; -webkit-transition: all 0s ease 0s; -moz-transition: all 0s ease 0s; -o-transition: all 0s ease 0s; transition: all 0s ease 0s; }
+.icons3 { position:absolute; bottom:70px; left:40px; height:48px; width:48px; z-index:100;  pointer-events: none; -webkit-transition: all 0s ease 0s; -moz-transition: all 0s ease 0s; -o-transition: all 0s ease 0s; transition: all 0s ease 0s; }
 .info {width:30px!important;height:30px!important;}
 .info img {width:100%!important;}
 .border .icons, .complete-border .icons { opacity:1 !important }

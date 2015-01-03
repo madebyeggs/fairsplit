@@ -2,13 +2,18 @@
 	<div class="logo2"><a href="../"><%= image_tag('logo.png') %></a></div>
 </div>
 
-<div class="col-md-12">
+<div class="col-md-12 fixerScroll">
 	<div class="col-md-10 col-sm-offset-1 topper">
 
 	<h1 class="formHeader">Edit your content below</h1>
 	<hr class="projectSeparator" />
 	
-	<%= render partial: 'works' %>
+	<div class="fixerScroll">
+	
+		<%= render partial: 'works' %>
+		<%= render partial: 'announcements' %>
+		
+	</div>
 	
 </div>
 

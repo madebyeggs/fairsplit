@@ -1,0 +1,33 @@
+<div class="col-md-12">
+	<div class="logo2"><a href="../"><%= image_tag('logo.png') %></a></div>
+</div>
+
+<div class="col-md-12">
+	<div class="col-md-8 col-sm-offset-2 topper">
+
+		<h1 class="formHeader">Add/edit your news item's content below</h1>
+		<hr class="projectSeparator" />
+	
+		<div class="formWrapper">	
+			<%= form_for(@announcement) do |f| %>
+				<div class="col-md-5">
+					<%= f.label :title, class: "formLabel" %>
+	    			<%= f.text_field :title, class: 'formField' %>
+					<%= f.label :vimeo_identifier_eg_86412013, class: "formLabel" %>
+	    			<%= f.text_field :video, class: 'formField' %>
+					<%= f.label :soundcloud_identifier_eg_59219255, class: "formLabel" %>
+	    			<%= f.text_field :soundcloud, class: 'formField' %>
+				</div>
+				<div class="col-md-1">&nbsp;</div>
+				<div class="col-md-6">
+					<%= f.label :description, class: "formLabel" %>
+	    			<%= f.text_area :description, class: 'formArea' %>
+					<%= f.label :project_image_crop_to_467X263_before_uploading, class: "formLabel" %><br />
+					<%= f.file_field :image %>
+				</div>
+	    		<%= f.submit :class => "btn" %>
+			<% end %>
+		</div>
+	
+	</div>
+</div>

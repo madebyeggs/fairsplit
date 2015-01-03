@@ -2,38 +2,38 @@
 	<div class="canScroll2">
 		<% @works.each do |w| %>
 			<div class="element">
-			<div class="images"><%= image_tag(w.image) %>
-		    	<section class="hidden-infos"> 
-					<a href="https://player.vimeo.com/video/<%= w.url %>?badge=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" 
+				<div class="images"><%= image_tag(w.image) %>
+		    		<section class="hidden-infos"> 
+						<a href="https://player.vimeo.com/video/<%= w.url %>?badge=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" 
 class="video-popup" title="">
-					</a>
-		          	<div class="overlay"></div>
-					<div class="icons video"></div>
-					<div class="overlay"></div>
-					<div class="icons2"><a href="#inline2" class="info popup"><%= image_tag('infor.png') %></a></div>	        					
-				</section>
-		        <div class="vidTitle">
-		        	<div class="title-wrap">
-		            	<h3><%= w.title %></h3>
-		          	</div>
-		        </div>
-		        <div class="vidSubtitle">
-		        	<div class="subtitle-wrap">
-		            	<p><%= w.client %></p>
-		          	</div>
-		        </div>
-		    </div>
-		</div>
-			<div id="inline2">
-			<div class="inlineContent">
-				<h1 class="projectName"><%= w.client %> "<%= w.title %>"</h1><br/>
-				<h3 class="projectSubtitle"><%= w.type_of_work %></h3>
-				<h3 class="projectSubtitle">Music: <%= w.music %></h3>
-				<h3 class="projectSubtitle">Client: <%= w.client %></h3>
-				<hr class="projectSeparator" />
-				<p class="projectDetail"><%= simple_format w.description, :class => "projectDetail" %></p>
+						</a>
+		          		<div class="overlay"></div>
+						<div class="icons video"></div>
+						<div class="overlay"></div>
+						<div class="icons2"><a href="#inline2" class="info popup"><%= image_tag('infor.png') %></a></div>	        					
+					</section>
+		        	<div class="vidTitle">
+		        		<div class="title-wrap">
+		            		<h3><%= w.title %></h3>
+		          		</div>
+		        	</div>
+		        	<div class="vidSubtitle">
+		        		<div class="subtitle-wrap">
+		            		<p><%= w.client %></p>
+		          		</div>
+		        	</div>
+		    	</div>
 			</div>
-		</div>
+			<div id="inline2">
+				<div class="inlineContent">
+					<h1 class="projectName"><%= w.client %> "<%= w.title %>"</h1><br/>
+					<h3 class="projectSubtitle"><%= w.type_of_work %></h3>
+					<h3 class="projectSubtitle">Music: <%= w.music %></h3>
+					<h3 class="projectSubtitle">Client: <%= w.client %></h3>
+					<hr class="projectSeparator" />
+					<p class="projectDetail"><%= simple_format w.description, :class => "projectDetail" %></p>
+				</div>
+			</div>
 		<% end %>
 		<div id="backtotop2">
 		  <ul>

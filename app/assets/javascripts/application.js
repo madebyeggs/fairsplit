@@ -28,7 +28,8 @@
 //= require jquery.fitvids
 //= require twitter/bootstrap
 //= require jquery.slicknav
-//= require jquery.fittext 
+//= require jquery.fittext
+//= require jquery.collapser 
 //= require_tree .
 
 $(window).load(function() { // makes sure the whole site is loaded
@@ -57,5 +58,12 @@ $(document).ready(function() {
 	});
 	
 	$(".subTitle").fitText(1.0, { minFontSize: '16px', maxFontSize: '36px' });
+	
+	//news page collapsing
+	
+	$('.shrinkable').collapser({
+		mode: 'chars',
+		truncate: 135
+	});
 	
 });
