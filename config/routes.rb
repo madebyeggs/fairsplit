@@ -4,4 +4,6 @@ V1::Application.routes.draw do
   root :to => 'home#index'
   
   resources :cms
+  resources :works
+  
 end

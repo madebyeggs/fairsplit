@@ -1,0 +1,27 @@
+<div class="col-md-12">
+	<div class="logo2"><a href="../"><%= image_tag('logo.png') %></a></div>
+</div>
+
+<div class="col-md-12">
+	<div class="col-md-4 col-sm-offset-4 topper">
+
+	<h1 class="formHeader">Add/edit your work's content below</h1>
+	<hr class="projectSeparator" />
+	
+	<div class="formWrapper">	
+		<%= form_for(@work) do |f| %>
+			<%= f.label :title, class: "formLabel" %>
+    		<%= f.text_field :title, class: 'formField' %>
+			<%= f.label :client, class: "formLabel" %>
+    		<%= f.text_field :client, class: 'formField' %>
+			<%= f.label :description, class: "formLabel" %>
+    		<%= f.text_area :description, class: 'formArea' %>
+			<%= f.label :vimeo_identifier_eg_86412013, class: "formLabel" %>
+    		<%= f.text_field :url, class: 'formField' %>
+			<%= f.label :project_image, class: "formLabel" %><br />
+			<%= f.file_field :image %>
+    		<%= f.submit :class => "btn" %>
+		<% end %>
+	</div>
+	
+</div>

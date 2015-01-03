@@ -1,9 +1,10 @@
 <div class="rightHandSection2">
 	<div class="canScroll2">
-		<div class="element">
-			<div class="images"><%= image_tag('work/1.jpg') %>
+		<% @works.each do |w| %>
+			<div class="element">
+			<div class="images"><%= image_tag(w.image) %>
 		    	<section class="hidden-infos"> 
-					<a href="https://player.vimeo.com/video/86412013?badge=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" 
+					<a href="https://player.vimeo.com/video/<%= w.url %>?badge=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" 
 class="video-popup" title="">
 					</a>
 		          	<div class="overlay"></div>
@@ -13,39 +14,31 @@ class="video-popup" title="">
 				</section>
 		        <div class="vidTitle">
 		        	<div class="title-wrap">
-		            	<h3>Paper</h3>
+		            	<h3><%= w.title %></h3>
 		          	</div>
 		        </div>
 		        <div class="vidSubtitle">
 		        	<div class="subtitle-wrap">
-		            	<p>Audi</p>
+		            	<p><%= w.client %></p>
 		          	</div>
 		        </div>
 		    </div>
 		</div>
+			<div id="inline2">
+			<div class="inlineContent">
+				<h1 class="projectName"><%= w.client %> "<%= w.title %>"</h1><br/>
+				<h3 class="projectSubtitle"><%= w.type_of_work %></h3>
+				<h3 class="projectSubtitle">Music: <%= w.music %></h3>
+				<h3 class="projectSubtitle">Client: <%= w.client %></h3>
+				<hr class="projectSeparator" />
+				<p class="projectDetail"><%= simple_format w.description, :class => "projectDetail" %></p>
+			</div>
+		</div>
+		<% end %>
 		<div id="backtotop2">
 		  <ul>
 		    <li><a id="toTop2" class="bounce" href="#" onClick="return false">Back to Top</a></li>
 		  </ul>
-		</div>
-		<div id="inline2">
-			<div class="inlineContent">
-				<h1 class="projectName">AUDI "PAPER"</h1><br/>
-				<h3 class="projectSubtitle">US TV Commercial</h3>
-				<h3 class="projectSubtitle">Music: St Berg - Minimal Maths</h3>
-				<h3 class="projectSubtitle">Client: Ogilvy &amp; Mather NYC</h3>
-				<hr class="projectSeparator" />
-				<p class="projectDetail">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.<br/><br/>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.<br/><br/>
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-				labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud</p>
-			</div>
 		</div>
 	</div>
 </div>
