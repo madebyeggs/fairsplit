@@ -1,38 +1,17 @@
-<div class="element video">
-	<div class="images"> <img src="../assets/work/1.jpg" alt="" />
-    	<section class="hidden-infos"> 
-			<a href="http://player.vimeo.com/video/86412013?badge=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" class="video-popup" title=""></a>
-          	<div class="overlay"></div>
-          	<div class="icons video"></div>
-        </section>
-        <div class="vidTitle">
-        	<div class="title-wrap">
-            	<h3>The Boy With The Steel Heart</h3>
-          	</div>
-        </div>
-        <div class="vidSubtitle">
-        	<div class="subtitle-wrap">
-            	<p>Demo</p>
-          	</div>
-        </div>
-    </div>
-</div>
-<div class="element video">
-	<div class="images"> <img src="../assets/work/1.jpg" alt="" />
-    	<section class="hidden-infos"> 
-			<a href="http://player.vimeo.com/video/86412013?badge=0&amp;title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" class="video-popup" title=""></a>
-          	<div class="overlay"></div>
-          	<div class="icons video"></div>
-        </section>
-        <div class="vidTitle">
-        	<div class="title-wrap">
-            	<h3>The Boy With The Steel Heart</h3>
-          	</div>
-        </div>
-        <div class="vidSubtitle">
-        	<div class="subtitle-wrap">
-            	<p>Demo</p>
-          	</div>
-        </div>
-    </div>
-</div>
+<% @artists.each do |a| %>
+	<div class="element video artists">
+		<div class="images"> <img src="<%= a.image %>" alt="" />
+	    	<section class="hidden-infos">
+		 		<input type="hidden" value=<%= a.id %> class="modal-object-id">
+				<a href="#filter=.artist_information" class="artistClick" title="" data-src="<%= a.id %>"></a>
+	          	<div class="overlay3"></div>
+	          	<div class="icons profile"></div>
+	        </section>
+	        <div class="vidTitle">
+	        	<div class="title-wrap">
+	            	<h3><%= a.name %></h3>
+	          	</div>
+	        </div>
+	    </div>
+	</div>
+<% end %>

@@ -34,13 +34,24 @@ jQuery(document).ready(function(){
 	  
 	  jQuery('.element').hover(function() {
 			 jQuery(this).find('.caption, .overlay2').stop().animate({
-    "opacity": "1"
+    			"opacity": "1"
   }, 150 );
 			 }, function() {
 			jQuery(this).find('.caption, .overlay2').stop().animate({
     "opacity": "0"
   }, 150 );
 			 
+	   });
+	
+	jQuery('.element').hover(function() {
+			 jQuery(this).find('.caption, .overlay3').stop().animate({
+    			"opacity": "1"
+  }, 150 );
+			 }, function() {
+			jQuery(this).find('.caption, .overlay3').stop().animate({
+    "opacity": "0"
+  }, 150 );
+
 	   });
 	  
 	  

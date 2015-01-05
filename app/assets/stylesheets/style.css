@@ -143,3 +143,4 @@ td {line-height:30px;}
 }
 
 .fixerScroll {height:10000px;overflow:scroll!important;}
+.widget, #widget {background-color:#000000;}

@@ -50,29 +50,41 @@ jQuery(document).ready(function() {
 	jQuery("a.popup, a[rel=group]").fancybox({
 	//		'transitionIn'	: 'elastic',
 	//		'transitionOut'	: 'none'
-				closeClick : true,
-				 helpers : {
+			closeClick : true,
+			helpers : {
             overlay : {
-                locked : false
-            }
-        }     
-		});
+            locked : false
+           }
+		}     
+	});
+		
+	// initiate fancybox for text
+	jQuery(".text-popup").fancybox({
+	//		'transitionIn'	: 'elastic',
+	//		'transitionOut'	: 'none'
+			closeClick : true,
+			helpers : {
+            overlay : {
+            locked : false
+           }
+		}     
+	});
 	
 	
 	// initiate fancybox for videos
 	jQuery(".video-popup").fancybox({
-				'width'				: '70%',
-				'height'			: '80%',
-				'autoScale'			: false,
-	//			'transitionIn'		: 'elastic',
-	//			'transitionOut'		: 'none',
-				'type'				: 'iframe',
-				closeClick : true,
-				 helpers : {
+			'width'				: '70%',
+			'height'			: '80%',
+			'autoScale'			: false,
+			//'transitionIn'	: 'elastic',
+			//'transitionOut'	: 'none',
+			'type'				: 'iframe',
+			closeClick : true,
+			helpers : {
             overlay : {
-                locked : false
+            locked : false
             }
         }     
-			});
+	});
 
 });

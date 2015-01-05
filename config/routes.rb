@@ -3,8 +3,11 @@ V1::Application.routes.draw do
 
   root :to => 'home#index'
   
+  match 'artists/artist_show_via_ajax_call' => 'artists#artist_show_via_ajax_call'
+  
   resources :cms
   resources :works
   resources :announcements
+  resources :artists
   
 end

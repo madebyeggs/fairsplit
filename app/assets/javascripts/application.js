@@ -29,7 +29,7 @@
 //= require twitter/bootstrap
 //= require jquery.slicknav
 //= require jquery.fittext
-//= require jquery.collapser 
+//= require jquery.collapser
 //= require_tree .
 
 $(window).load(function() { // makes sure the whole site is loaded
@@ -50,6 +50,7 @@ $(document).ready(function() {
 	    $(this).stop().fadeTo('medium', 1);  
 	});
 	
+	//auto scalling video
 	$(".fitvids").fitVids();
 	
 	//mobileNavMenu
@@ -57,13 +58,14 @@ $(document).ready(function() {
 		$('#menu').slicknav();
 	});
 	
+	//autoscaling text on titles
 	$(".subTitle").fitText(1.0, { minFontSize: '16px', maxFontSize: '36px' });
 	
 	//news page collapsing
-	
 	$('.shrinkable').collapser({
 		mode: 'chars',
 		truncate: 135
 	});
 	
 });
+

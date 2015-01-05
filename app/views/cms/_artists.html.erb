@@ -1,0 +1,39 @@
+<div class="cmsWrapper">
+	<div class="releases">
+		<div class="divHeader">Artists</div>
+		<div class="tableWrapper">
+			<div class="tableContent">
+				<% if @artists.count > 0 %>
+					<table width="100%">
+						<tr class="tableHeader">
+							<th>NAME</th>
+							<th>S'CLOUD</th>
+							<th>INFO</th>
+						</tr>
+						<tr><hr class="ruler"/></tr>
+						<% @artists.each do |a| %>
+							<tr class="tableRow">
+								<td width="25%"><%= a.name %></td>
+								<td width="10%"><%= a.soundcloud %></td>
+								<td width="55%"><%= truncate(a.description, :length => 70) %></td>
+								<td width="3%"><%= link_to image_tag('edit2.png'), edit_artist_path(a) %></td>
+								<td width="3%"><%= link_to image_tag('delete2.png'), a, :confirm => 'Are you sure you want to delete this artist?', :method => :delete %></td>
+							</tr>
+						<% end %>
+					</table>
+				<% else %>
+					<table width="100%">
+						<tr class="tableRow empty">
+							<td>
+								<em>YOU HAVE NO ARTIST YET... ADD SOME BELOW ?!</em>
+							</td>
+						</tr>
+					</table>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<h6>
+	<input type="hidden" value="works" class="modal-model-type">
+	<h6><%= link_to 'Add artist', new_artist_path, :class => "darkButton2" %></h6>
+</div>
