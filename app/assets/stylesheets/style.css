@@ -144,3 +144,6 @@ td {line-height:30px;}
 
 .fixerScroll {height:10000px;overflow:scroll!important;}
 .widget, #widget {background-color:#000000;}
+.artistText {color:#ffffff;display:inline;width:100%;height:100%;}
+.artistText2 {color:#ffffff;width:100%;height:100%;font-size:15px;line-height:15px;}
+

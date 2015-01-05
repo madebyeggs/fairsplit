@@ -30,6 +30,8 @@
 //= require jquery.slicknav
 //= require jquery.fittext
 //= require jquery.collapser
+//= require mustache
+//= require_tree ../../templates
 //= require_tree .
 
 $(window).load(function() { // makes sure the whole site is loaded
@@ -67,5 +69,23 @@ $(document).ready(function() {
 		truncate: 135
 	});
 	
+	//// Detect click from releases view and generate correct release display
+	jQuery(".artistClick").click(function() {
+		
+		var id = jQuery(this).prev('.modal-object-id').val();
+		console.log(id);
+		
+		jQuery.ajax({
+			dataType: "json",
+			url: "./artists/artist_show_via_ajax_call",
+			data: {id: id},
+			success: function(data) {
+				console.log(data);
+				var artist_content = SMT['artistShow'](data);
+				jQuery('#artistShowWrapper').fadeIn(750);
+				jQuery('#artistShowContent').empty().hide().append(artist_content).fadeIn(750);
+			}
+		});
+	});
+	
 });
-

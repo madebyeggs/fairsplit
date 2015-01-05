@@ -13,6 +13,7 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'smt_rails', :git => 'git://github.com/railsware/smt_rails.git'
 
 # Gems used only for assets and not required
 # in production environments by default.

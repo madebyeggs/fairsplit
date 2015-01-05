@@ -13,9 +13,7 @@ class ArtistsController < ApplicationController
     end
 
     def show
-      respond_to do |format|
-        format.html { redirect_to cms_path }
-      end
+      @artist = Artist.find(params[:id])
     end
 
     def index
