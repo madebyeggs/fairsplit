@@ -82,8 +82,7 @@ $(document).ready(function() {
 			success: function(data) {
 				console.log(data);
 				var artist_content = SMT['artistShow'](data);
-				jQuery('#artistShowWrapper').fadeIn(750);
-				jQuery('#artistShowContent').empty().hide().append(artist_content).fadeIn(750);
+				jQuery('#artistShowContent').empty().append(artist_content);
 			}
 		});
 	});
