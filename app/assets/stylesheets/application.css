@@ -16,5 +16,6 @@
  *= require slicknav
  *= require deviseAndCMS
  *= require_tree .
+ *= require font-awesome
  *= require style
  */
