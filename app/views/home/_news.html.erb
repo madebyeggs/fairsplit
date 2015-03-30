@@ -12,15 +12,15 @@
 						<tr>
 							<td width="94%">
 								<div class="subTitle"><%= a.title %></div>
-							</td>	
-							<td width="5%">
-								<img class="socialPic" src="../assets/twitter.png" alt="Twitter">
 							</td>
-							<td width="5%">
-								<img class="socialPic" src="../assets/facebook.png" alt="Facebook">
+							<td width="3%">
+								<div class="socials"><i class="fa fa-twitter fa-lg"></i></div>
+							</td>
+							<td width="3%">
+								<div class="socials"><i class="fa fa-facebook fa-lg"></i></div>
 							</td>
 						</tr>
-					</table>
+					</table>		
 				</div>
 				<hr class="afterSubtitle" />
 				<div class="mainContent">
@@ -38,7 +38,7 @@
 						<% else %>
 							<div class="newsStoryImage"><%= image_tag(a.image) %></div>
 						<% end %>
-				
+
 						<div class="shrinkable">
 							<span><%= simple_format a.description %></span><br/>
 							<% if a.soundcloud? %>
@@ -51,11 +51,11 @@
 				</div>
 			</div>
 		<% end %>
-		<div id="backtotop">
+		<!--<div id="backtotop">
 		  <ul>
 		    <li><a id="toTop" class="bounce" href="#" onClick="return false">Back to Top</a></li>
 		  </ul>
 		</div>
-		<br class="clear" />
+		<br class="clear" />-->
 	</div>
 </div>

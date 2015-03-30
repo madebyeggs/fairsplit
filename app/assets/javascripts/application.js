@@ -30,7 +30,9 @@
 //= require jquery.slicknav
 //= require jquery.fittext
 //= require jquery.collapser
+//= require jquery.readmore
 //= require mustache
+//= require jquery.jscroll
 //= require_tree ../../templates
 //= require_tree .
 
@@ -61,13 +63,29 @@ $(document).ready(function() {
 	});
 	
 	//autoscaling text on titles
-	$(".subTitle").fitText(1.0, { minFontSize: '16px', maxFontSize: '36px' });
+	$(".subTitle").fitText(1.0, { minFontSize: '16px', maxFontSize: '26px' });
 	
 	//news page collapsing
-	$('.shrinkable').collapser({
-		mode: 'chars',
-		truncate: 135
+	//$('.shrinkable').collapser({
+		//mode: 'chars',
+		//truncate: 135
+	//});
+	
+	//news page collapsing2
+	$('.project').readmore({
+		speed: 505,
+		moreLink: '<a href="#" class="more">More</a>',
+	  	lessLink: '<a href="#" class="more">Less</a>',
+		collapsedHeight: 600,
+	  	afterToggle: function(trigger, element, expanded) {
+	    	if(! expanded) { // The "Close" link was clicked
+	      		$('html, body').animate( { scrollTop: element.offset().top }, {duration: 100 } );
+	    	}
+	  	}
 	});
+	
+	// infiniteScroll
+	$('.infiniteScroll').jscroll();
 	
 	//// Detect click from releases view and generate correct release display
 	jQuery(".artistClick").click(function() {

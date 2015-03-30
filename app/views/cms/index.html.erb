@@ -1,16 +1,16 @@
-<div class="col-md-12 fixerScroll">
-	<div class="logo2"><a href="../"><%= image_tag('logo.png') %></a></div>
-	<div class="col-md-10 col-sm-offset-1 topper">
-
-		<h1 class="formHeader">Edit your content below</h1>
-		<hr class="projectSeparator" />
-		
+<div class="col-md-12">
+	<div class="static">
+		<div class="logo2"><a href="../"><%= image_tag('logo.png') %></a></div>
+		<div class="col-md-10 col-sm-offset-1 topper">
+			<h1 class="formHeader">Edit your content below</h1>
+			<hr class="projectSeparator" />
+		</div>
+	</div>
+	<div class="col-md-10 col-sm-offset-1 topper">	
 		<div class="fixerScroll">
-	
-			<%= render partial: 'works' %>
 			<%= render partial: 'announcements' %>
+			<%= render partial: 'works' %>
 			<%= render partial: 'artists' %>
-		
 		</div>
 	</div>
 </div>
