@@ -32,7 +32,6 @@
 //= require jquery.collapser
 //= require jquery.readmore
 //= require mustache
-//= require jquery.jscroll
 //= require_tree ../../templates
 //= require_tree .
 
@@ -62,14 +61,23 @@ $(document).ready(function() {
 		$('#menu').slicknav();
 	});
 	
-	//autoscaling text on titles
-	$(".subTitle").fitText(1.0, { minFontSize: '16px', maxFontSize: '26px' });
-	
 	//news page collapsing
 	//$('.shrinkable').collapser({
 		//mode: 'chars',
 		//truncate: 135
 	//});
+	
+	// infiniteScroll
+	if ($('.pagination').length) {
+		$(window).scroll(function() {
+	    	var url = $('.pagination .next_page').attr('href');
+	      	if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+	        	$('.pagination').prepend('<img id="loader" src="../assets/ajax-loader2.gif" />');
+				return $.getScript(url);
+	      	}
+	    });
+	    return $(window).scroll();
+	}
 	
 	//news page collapsing2
 	$('.project').readmore({
@@ -84,8 +92,30 @@ $(document).ready(function() {
 	  	}
 	});
 	
-	// infiniteScroll
-	$('.infiniteScroll').jscroll();
+	//works VIDEO dynamics
+	//open
+	$(".launchVideo").click(function(){
+		var id = jQuery(this).prev('.object-id').val();
+		var div_id = '#' + 'video' + id;
+		var scroll = 241 * id;
+		console.log(div_id);
+		$(div_id).slideDown(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("slow", 0.2);
+		$(".muteEffects").addClass("displayNone");
+		$('.canScroll2').animate({ scrollTop: scroll }, 650);
+	});
+	//close
+	$(".videoCloseIcon").click(function(){
+		var id = jQuery(this).prev('.object-id').val();
+		var div_id = '#' + 'video' + id;
+		console.log(div_id);
+		$(div_id).slideUp(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
+		$(".muteEffects").removeClass("displayNone");
+	});
+	
+	//autoscaling text on titles
+	$(".subTitle").fitText(1.0, { minFontSize: '16px', maxFontSize: '26px' });
 	
 	//// Detect click from releases view and generate correct release display
 	jQuery(".artistClick").click(function() {

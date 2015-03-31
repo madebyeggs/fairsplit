@@ -17,6 +17,7 @@ h1#logo.left a { background:url(../assets/bg-logo2@2x.png) no-repeat; background
 .skype {background:url(../assets/bg-skype@2x.png) center no-repeat; background-size:50px 51px; }
 .link {background:url(../assets/bg-link@2x.png) center no-repeat; background-size:48px 48px; }
 .video {background:url(../assets/bg-video@2x.png) center no-repeat; background-size:48px 48px; }
+.play {background:url(../assets/bg-play@2x.png) center no-repeat; background-size:48px 48px; }
 .zoom {background:url(../assets/bg-zoom@2x.png) center no-repeat; background-size:48px 48px; }
 .quote {background:url(../assets/bg-quote@2x.png) center no-repeat; background-size:48px 48px; }
 .profile {background:url(../assets/bg-profile@2x.png) center no-repeat; background-size:48px 48px; }
@@ -32,6 +33,7 @@ h1#logo.left a { background:url(../assets/bg-logo2@2x.png) no-repeat; background
 .flex-direction-nav .flex-prev {background:url(../assets/bg-prev@2x.png) center no-repeat; background-size:48px 48px; }
 
 .fancybox-close {background: url(../assets/bg-close@2x.png) center no-repeat; background-size:48px 48px;}
+.projectCloseIcon, .videoCloseIcon {background: url(../assets/bg-close@2x.png) center no-repeat; background-size:48px 48px;}
 .fancybox-prev span {background: url(../assets/bg-prev@2x.png) center no-repeat; background-size:48px 48px;}
 .fancybox-next span {background: url(../assets/bg-next@2x.png) center no-repeat; background-size:48px 48px;}
 }

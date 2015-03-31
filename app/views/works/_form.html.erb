@@ -17,8 +17,10 @@
 	    			<%= f.text_field :client, class: 'formField' %>
 					<%= f.label :type_of_work, class: "formLabel" %>
 	    			<%= f.text_field :type_of_work, class: 'formField' %>
-					<%= f.label :music_used, class: "formLabel" %>
-	    			<%= f.text_field :music, class: 'formField' %>
+					<%= f.label :artist_name, class: "formLabel" %>
+	    			<%= f.text_field :artist_name, class: 'formField' %>
+					<%= f.label :track_name, class: "formLabel" %>
+	    			<%= f.text_field :track_name, class: 'formField' %>
 				</div>
 				<div class="col-md-1">&nbsp;</div>
 				<div class="col-md-6">
@@ -28,8 +30,8 @@
 	    			<%= f.text_field :url, class: 'formField' %>
 					<%= f.label :project_image_crop_to_710X210_before_uploading, class: "formLabel" %><br />
 					<%= f.file_field :image %>
+					<br /><%= f.submit :class => "btn" %>>
 				</div>
-	    		<%= f.submit :class => "btn" %>
 			<% end %>
 		</div>
 	

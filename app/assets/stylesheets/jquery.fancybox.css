@@ -111,6 +111,18 @@
 	z-index: 8040;
 }
 
+.projectCloseIcon, .videoCloseIcon {
+	display:inline;
+	float:right;
+	margin-top:15px;
+	width: 48px;
+	height: 48px;
+	background: url(../assets/bg-close.png) center no-repeat;
+	background-size:48px 48px;
+	cursor: pointer;
+	z-index: 8040;
+}
+
 
 .fancybox-nav {
 	position: absolute;

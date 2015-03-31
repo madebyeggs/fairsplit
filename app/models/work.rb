@@ -1,5 +1,5 @@
 class Work < ActiveRecord::Base
-  attr_accessible :title, :client, :description, :url, :image, :type_of_work, :music
+  attr_accessible :title, :client, :description, :url, :image, :type_of_work, :artist_name, :track_name
   
   # This method associates the attribute ":avatar" with a file attachment
     has_attached_file :image, styles: {

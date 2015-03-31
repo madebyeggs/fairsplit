@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150105105606) do
+ActiveRecord::Schema.define(:version => 20150331130450) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -63,12 +63,13 @@ ActiveRecord::Schema.define(:version => 20150105105606) do
     t.string   "url"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
-    t.string   "music"
+    t.string   "artist_name"
     t.string   "type_of_work"
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "track_name"
   end
 
 end

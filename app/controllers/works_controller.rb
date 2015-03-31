@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: [:work_show_via_ajax_call]
   
     def new
       @work = Work.new
@@ -46,6 +46,11 @@ class WorksController < ApplicationController
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
+    end
+    
+    def work_show_via_ajax_call
+      @work = Work.find(params[:id])
+      render :json => @work
     end
 
 end

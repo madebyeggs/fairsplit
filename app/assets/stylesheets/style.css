@@ -117,12 +117,14 @@ td {line-height:30px;}
 .work, .workImage {width:100%;}
 .work {margin:0px 0px 0px 0px;}
 .workImage img {width:100%;}
+.trackName {font-size:12px!important;}
 
 /*CMSFixes */
 
 .static {position:fixed;width:97.6%;top:0px;z-index:100;background-color:#000000;}
 .fixerScroll {overflow:scroll!important;margin-top:150px;z-index:0;}
-
+.emptyMe {display:none;}
+.displayNone {display:none;}
 
 @media screen and (max-width: 992px) {
 	/* #menu is the original menu */
