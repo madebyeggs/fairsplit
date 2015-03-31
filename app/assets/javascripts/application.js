@@ -32,6 +32,7 @@
 //= require jquery.collapser
 //= require jquery.readmore
 //= require mustache
+//= require scrollTo
 //= require_tree ../../templates
 //= require_tree .
 
@@ -102,7 +103,9 @@ $(document).ready(function() {
 		$(div_id).slideDown(500);
 		$(".element").children(':not(.projectInfo)').fadeTo("slow", 0.2);
 		$(".muteEffects").addClass("displayNone");
-		$('.canScroll2').animate({ scrollTop: scroll }, 650);
+		//$('.canScroll2').animate({ scrollTop: scroll }, 650);
+		$('.canScroll2').animate({scrollTop:$('#scrollHere' + id).position().top}, 'slow');
+		//$('.canScroll2').animate( { scrollTop: $("#scrollHere").offset().top }, {duration: 100 } );
 	});
 	//close
 	$(".videoCloseIcon").click(function(){

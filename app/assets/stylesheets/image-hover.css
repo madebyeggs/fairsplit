@@ -41,7 +41,7 @@
 
 .inline2 {background-color:#000000;color:#ffffff;display:none;width:60%;margin:0 auto;}
 .inlineContent {font-family:'Raleway';font-size:25px;margin:15px;}
-.projectInfo {width:80%;margin:10px 10%;}
+.projectInfo {width:80%;margin:10px 10%;padding:2px 0px 40px 0px;}
 .projectName {text-align:left;font-size:22px;margin:30px 0px 22px 0px;}
 .projectSubtitle {font-size:18px;margin:0;}
 .projectSeparator {color:#ffffff; margin:30px 0px 15px 0px;}
