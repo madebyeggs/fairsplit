@@ -2,7 +2,14 @@
 	<div class="canScroll2">
 		<% @works.each do |w| %>
 			<div class="element">
-				<div class="images"><%= image_tag(w.image) %>
+				<div class="images">
+					<div class="picture<%= w.id %>">
+					<% if w.latest?  %>
+						<%= image_tag(w.large_image) %>
+					<% else %>
+						<%= image_tag(w.image) %>
+					<% end %>
+					</div>
 					<div class="muteEffects">
 		    			<section class="hidden-infos">
 							<input type="hidden" value=<%= w.id %> class="object-id"> 

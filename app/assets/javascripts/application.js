@@ -98,23 +98,21 @@ $(document).ready(function() {
 	$(".launchVideo").click(function(){
 		var id = jQuery(this).prev('.object-id').val();
 		var div_id = '#' + 'video' + id;
-		var scroll = 241 * id;
-		console.log(div_id);
+		scroll_calc = $('.canScroll2').scrollTop();
 		$(div_id).slideDown(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("slow", 0.2);
+		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 		$(".muteEffects").addClass("displayNone");
-		//$('.canScroll2').animate({ scrollTop: scroll }, 650);
-		$('.canScroll2').animate({scrollTop:$('#scrollHere' + id).position().top}, 'slow');
-		//$('.canScroll2').animate( { scrollTop: $("#scrollHere").offset().top }, {duration: 100 } );
+		$('.canScroll2').animate({scrollTop:$('#scrollHere' + id).position().top + scroll_calc}, 'slow');
 	});
 	//close
 	$(".videoCloseIcon").click(function(){
 		var id = jQuery(this).prev('.object-id').val();
 		var div_id = '#' + 'video' + id;
-		console.log(div_id);
+		scroll_calc = $('.canScroll2').scrollTop();
 		$(div_id).slideUp(500);
 		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
 		$(".muteEffects").removeClass("displayNone");
+		$('.canScroll2').animate({scrollTop:scroll_calc}, 250);
 	});
 	
 	//autoscaling text on titles

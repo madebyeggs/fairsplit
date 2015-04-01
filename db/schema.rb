@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150331130450) do
+ActiveRecord::Schema.define(:version => 20150401085851) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -61,8 +61,8 @@ ActiveRecord::Schema.define(:version => 20150331130450) do
     t.string   "client"
     t.text     "description"
     t.string   "url"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
     t.string   "artist_name"
     t.string   "type_of_work"
     t.string   "image_file_name"
@@ -70,6 +70,11 @@ ActiveRecord::Schema.define(:version => 20150331130450) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.string   "track_name"
+    t.string   "large_image_file_name"
+    t.string   "large_image_content_type"
+    t.integer  "large_image_file_size"
+    t.datetime "large_image_updated_at"
+    t.boolean  "latest"
   end
 
 end

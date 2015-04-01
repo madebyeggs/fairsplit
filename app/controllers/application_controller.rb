@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   
   def bring_in_models
     @works = Work.order("id DESC")
+    @newest = Work.last
     @artists = Artist.order("id DESC")
     @artist = Artist.find(1)
   end
