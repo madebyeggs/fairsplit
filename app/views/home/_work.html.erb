@@ -37,7 +37,9 @@
 					<h3 class="projectSubtitle"><em>MUSIC - </em><%= w.artist_name %>: <%= w.track_name %></h3>
 					<hr class="projectSeparator" />
 					<div class="fitvids">
+						<% if w.url? %>
 			        	<iframe src="//player.vimeo.com/video/<%= w.url %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+						<% end %>
 					</div>
 					<hr class="projectSeparator" />
 					<p class="projectDetail"><%= simple_format w.description, :class => "projectDetail" %></p>
