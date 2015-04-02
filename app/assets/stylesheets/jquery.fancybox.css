@@ -111,7 +111,7 @@
 	z-index: 8040;
 }
 
-.projectCloseIcon, .videoCloseIcon, .pictureCloseIcon {
+.projectCloseIcon, .videoCloseIcon, .soundCloseIcon {
 	display:inline;
 	float:right;
 	margin-top:15px;

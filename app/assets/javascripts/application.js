@@ -119,27 +119,26 @@ $(document).ready(function() {
 		$('.canScroll2').animate({scrollTop:scroll_calc}, 250);
 	});
 	
-	//sounds VIDEO dynamics
+	//listen PLAYLIST dynamics
 	//open
-	$(".launchPicture").click(function(){
-		var id = jQuery(this).prev('.object-id').val();
-		var div_id = '#' + 'picture' + id;
-		scroll_calc = $('.canScroll2').scrollTop();
-		console.log(scroll_calc);
+	$(".launchSound").click(function(){
+		var id = jQuery(this).prev('.sound-object-id').val();
+		var div_id = '#' + 'sound' + id;
+		scroll_calc = $('.canScroll3').scrollTop();
 		$(div_id).slideDown(500);
 		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 		$(".muteEffects").addClass("displayNone");
-		$('.canScroll2').animate({scrollTop:$('#scrollHere' + id).position().top + scroll_calc}, 'slow');
+		$('.canScroll3').animate({scrollTop:$('#scrollHereSound' + id).position().top + scroll_calc}, 'slow');
 	});
 	//close
-	$(".pictureCloseIcon").click(function(){
-		var id = jQuery(this).prev('.object-id').val();
-		var div_id = '#' + 'picture' + id;
-		scroll_calc = $('.canScroll2').scrollTop();
+	$(".soundCloseIcon").click(function(){
+		var id = jQuery(this).prev('.sound-object-id').val();
+		var div_id = '#' + 'sound' + id;
+		scroll_calc = $('.canScroll3').scrollTop();
 		$(div_id).slideUp(500);
 		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
 		$(".muteEffects").removeClass("displayNone");
-		$('.canScroll2').animate({scrollTop:scroll_calc}, 250);
+		$('.canScroll3').animate({scrollTop:scroll_calc}, 250);
 	});
 	
 	//autoscaling text on titles

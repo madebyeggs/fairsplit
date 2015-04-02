@@ -85,7 +85,7 @@ td {line-height:30px;}
 .socialPic {margin-top:15px;}
 .afterSubtitle {margin-top:8px;}
 .canScroll {height:670px;overflow-y: auto;}
-.canScroll2 {height:100vh;overflow-y: auto;}
+.canScroll2, .canScroll3 {height:100vh;overflow-y: auto;}
 .clear {clear:both;}
 .socials {display:inline;font-size:18px;}
 
@@ -145,7 +145,7 @@ td {line-height:30px;}
 }
 @media screen and (max-width: 992px) {
 	.canScroll {height:550px;overflow-y: auto;}
-	.canScroll2 {height:680px;overflow-y: auto;}
+	.canScroll2, .canScroll3 {height:680px;overflow-y: auto;}
 }
 
 .widget, #widget {background-color:#000000;}
