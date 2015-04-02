@@ -125,6 +125,7 @@ $(document).ready(function() {
 		var id = jQuery(this).prev('.object-id').val();
 		var div_id = '#' + 'picture' + id;
 		scroll_calc = $('.canScroll2').scrollTop();
+		console.log(scroll_calc);
 		$(div_id).slideDown(500);
 		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 		$(".muteEffects").addClass("displayNone");
