@@ -31,11 +31,9 @@
 //= require jquery.fittext
 //= require jquery.collapser
 //= require jquery.readmore
-//= require mustache
 //= require scrollTo
 //= require gmap3
-//= require mapSettings 
-//= require_tree ../../templates
+//= require mapSettings
 
 $(window).load(function() { // makes sure the whole site is loaded
 	$('#status').fadeOut(); // will first fade out the loading animation

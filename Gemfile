@@ -13,7 +13,6 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'paperclip'
 gem 'aws-sdk'
-gem 'smt_rails', :git => 'git://github.com/railsware/smt_rails.git'
 gem 'will_paginate', '~> 3.0.7'
 gem 'jquery-gmap3-rails'
 
