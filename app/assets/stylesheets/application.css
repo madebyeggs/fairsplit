@@ -18,4 +18,5 @@
  *= require_tree .
  *= require font-awesome
  *= require style
+ *= require bootstrapOverrides
  */

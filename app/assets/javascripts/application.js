@@ -33,6 +33,8 @@
 //= require jquery.readmore
 //= require mustache
 //= require scrollTo
+//= require gmap3
+//= require mapSettings 
 //= require_tree ../../templates
 //= require_tree .
 
@@ -40,9 +42,11 @@ $(window).load(function() { // makes sure the whole site is loaded
 	$('#status').fadeOut(); // will first fade out the loading animation
 	$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
 	$('body').delay(550).css({'overflow':'visible'});
+	//homePage title show
+	$('.homeTitle').show();
 })
 
-$(document).ready(function() {  
+$(document).ready(function() {
   
 	//navigation links hover opcaity animation
 	$('.navButton a').css('opacity', 1);  
@@ -115,25 +119,29 @@ $(document).ready(function() {
 		$('.canScroll2').animate({scrollTop:scroll_calc}, 250);
 	});
 	
+	//sounds VIDEO dynamics
+	//open
+	$(".launchPicture").click(function(){
+		var id = jQuery(this).prev('.object-id').val();
+		var div_id = '#' + 'picture' + id;
+		scroll_calc = $('.canScroll2').scrollTop();
+		$(div_id).slideDown(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
+		$(".muteEffects").addClass("displayNone");
+		$('.canScroll2').animate({scrollTop:$('#scrollHere' + id).position().top + scroll_calc}, 'slow');
+	});
+	//close
+	$(".pictureCloseIcon").click(function(){
+		var id = jQuery(this).prev('.object-id').val();
+		var div_id = '#' + 'picture' + id;
+		scroll_calc = $('.canScroll2').scrollTop();
+		$(div_id).slideUp(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
+		$(".muteEffects").removeClass("displayNone");
+		$('.canScroll2').animate({scrollTop:scroll_calc}, 250);
+	});
+	
 	//autoscaling text on titles
 	$(".subTitle").fitText(1.0, { minFontSize: '16px', maxFontSize: '26px' });
-	
-	//// Detect click from releases view and generate correct release display
-	jQuery(".artistClick").click(function() {
-		
-		var id = jQuery(this).prev('.modal-object-id').val();
-		console.log(id);
-		
-		jQuery.ajax({
-			dataType: "json",
-			url: "./artists/artist_show_via_ajax_call",
-			data: {id: id},
-			success: function(data) {
-				console.log(data);
-				var artist_content = SMT['artistShow'](data);
-				jQuery('#artistShowContent').empty().append(artist_content);
-			}
-		});
-	});
 	
 });

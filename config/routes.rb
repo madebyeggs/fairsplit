@@ -10,5 +10,7 @@ V1::Application.routes.draw do
   resources :works
   resources :announcements
   resources :artists
+  resources :homes
+  resources :sounds
   
 end

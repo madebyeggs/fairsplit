@@ -6,6 +6,9 @@ class ApplicationController < ActionController::Base
     @newest = Work.last
     @artists = Artist.order("id DESC")
     @artist = Artist.find(1)
+    @home = Home.first
+    @homes = Home.all
+    @sounds = Sound.order("id DESC")
   end
   
   def bring_in_paginated_announcements
