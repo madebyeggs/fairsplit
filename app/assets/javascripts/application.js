@@ -36,7 +36,6 @@
 //= require gmap3
 //= require mapSettings 
 //= require_tree ../../templates
-//= require_tree .
 
 $(window).load(function() { // makes sure the whole site is loaded
 	$('#status').fadeOut(); // will first fade out the loading animation
