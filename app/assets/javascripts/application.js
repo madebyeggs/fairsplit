@@ -140,6 +140,12 @@ $(document).ready(function() {
 		$('.canScroll3').animate({scrollTop:scroll_calc}, 250);
 	});
 	
+	//bug fix on navigtaion buttons
+	$(".fixMute").click(function(){
+		$(".muteEffects").removeClass("displayNone");
+		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
+	});
+	
 	//autoscaling text on titles
 	$(".subTitle").fitText(1.0, { minFontSize: '16px', maxFontSize: '26px' });
 	
