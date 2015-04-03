@@ -38,7 +38,25 @@
 						<% end %>
 					</div>
 					<div class="artist-right">
-						This is where the vimeo link's will go
+						<% if a.works.count > 0 %>
+							<div class="artistVideoContainer">
+								<% a.works.each do |aw| %>
+									<div class="fitvids">
+										<iframe src="//player.vimeo.com/video/<%= aw.url %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+									</div>
+									<div class="videoTitling">
+										<%= aw.client %> &nbsp; | &nbsp; <i><%= aw.title %></i>
+									</div>
+									<hr class="projectSeparator" />
+								<% end %>
+							</div>
+						<% elsif a.small_image %>
+							<div class="artistSquareContainer">
+								<div class="squareImage">
+									<%= image_tag(a.small_image, :class => "squareImage") %>
+								</div>
+							</div>
+						<% end %>
 					</div>
 				</div>
 			</div>

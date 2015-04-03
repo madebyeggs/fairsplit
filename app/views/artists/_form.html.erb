@@ -15,12 +15,17 @@
 	    			<%= f.text_field :name, class: 'formField' %>
 					<%= f.label :info, class: "formLabel" %>
 	    			<%= f.text_area :description, class: 'formArea' %>
+				</div>
+				<div class="col-md-1">&nbsp;</div>
+				<div class="col-md-6">
 					<%= f.label :soundcloud_identifier_eg_59219255, class: "formLabel" %>
 	    			<%= f.text_field :soundcloud, class: 'formField' %>
 					<%= f.label :artist_image_crop_to_710X210_before_uploading, class: "formLabel" %><br />
-					<%= f.file_field :image %>
+					<%= f.file_field :image %><br/>
+					<%= f.label :artist_square_image_crop_to_300X300_before_uploading, class: "formLabel" %><br />
+					<%= f.file_field :small_image %></br>
+	    			<%= f.submit :class => "btn" %>
 				</div>
-	    		<%= f.submit :class => "btn" %>
 			<% end %>
 		</div>
 	

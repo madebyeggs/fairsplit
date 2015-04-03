@@ -129,8 +129,14 @@ td {line-height:30px;}
 #mapsContent {color:#202326;font-family:'Raleway'}
 .bottom {margin-bottom:30px;}
 .clearBothSides {clear:both;}
-.artist-left {width:60%;float:left;}
-.artist-right {width:30%;margin-left:10%;float:right;}
+.artist-left {width:55%;float:left;}
+.artist-right {width:40%;margin-left:5%;float:right;}
+.artistVideoContainer {margin-top:25px;}
+.videoTitling {font-size:18px;margin:3px 0px -16px 0px;}
+.artistSquareContainer {margin-top:44px;}
+.squareImage {width:100%;}
+.squareImage img {max-width:100%;}
+
 
 @media screen and (max-width: 992px) {
 	/* #menu is the original menu */

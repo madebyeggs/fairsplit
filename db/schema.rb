@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150402161547) do
+ActiveRecord::Schema.define(:version => 20150403132205) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
@@ -30,12 +30,16 @@ ActiveRecord::Schema.define(:version => 20150402161547) do
     t.string   "name"
     t.text     "description"
     t.string   "soundcloud"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "small_image_file_name"
+    t.string   "small_image_content_type"
+    t.integer  "small_image_file_size"
+    t.datetime "small_image_updated_at"
   end
 
   create_table "homes", :force => true do |t|
@@ -96,6 +100,7 @@ ActiveRecord::Schema.define(:version => 20150402161547) do
     t.integer  "large_image_file_size"
     t.datetime "large_image_updated_at"
     t.boolean  "latest"
+    t.integer  "artist_id"
   end
 
 end

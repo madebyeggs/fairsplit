@@ -13,6 +13,8 @@
 				<div class="col-md-5">
 					<%= f.label :click_if_this_is_the_latest_work, class: "formLabel" %>
 					<%= f.check_box :latest, {}, true, false %> <br /><br/>
+					<%= f.label :Belongs_to_which_artist_?, class: "formLabel" %><br/>
+					<%= f.collection_select :artist_id, Artist.all, :id, :name, :include_blank => true %><br/><br/>
 					<%= f.label :title, class: "formLabel" %>
 	    			<%= f.text_field :title, class: 'formField' %>
 					<%= f.label :client, class: "formLabel" %>
