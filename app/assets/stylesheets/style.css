@@ -85,7 +85,7 @@ td {line-height:30px;}
 .socialPic {margin-top:15px;}
 .afterSubtitle {margin-top:8px;}
 .canScroll {height:670px;overflow-y: auto;}
-.canScroll2, .canScroll3 {height:100vh;overflow-y: auto;}
+.canScroll2, .canScroll3, .canScroll4 {height:100vh;overflow-y: auto;}
 .clear {clear:both;}
 .socials {display:inline;font-size:18px;}
 
@@ -128,6 +128,9 @@ td {line-height:30px;}
 #map_canvas {width:100%;height:300px;margin:0;padding:0;}
 #mapsContent {color:#202326;font-family:'Raleway'}
 .bottom {margin-bottom:30px;}
+.clearBothSides {clear:both;}
+.artist-left {width:60%;float:left;}
+.artist-right {width:30%;margin-left:10%;float:right;}
 
 @media screen and (max-width: 992px) {
 	/* #menu is the original menu */
@@ -145,7 +148,11 @@ td {line-height:30px;}
 }
 @media screen and (max-width: 992px) {
 	.canScroll {height:550px;overflow-y: auto;}
-	.canScroll2, .canScroll3 {height:680px;overflow-y: auto;}
+	.canScroll2, .canScroll3, .canScroll4 {height:680px;overflow-y: auto;}
+}
+
+@media screen and (max-width: 479px) {
+	.artist-left, .artist-right {width:100%;clear:both;margin-right:10%:}
 }
 
 .widget, #widget {background-color:#000000;}

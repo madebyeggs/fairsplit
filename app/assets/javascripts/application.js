@@ -138,6 +138,28 @@ $(document).ready(function() {
 		$('.canScroll3').animate({scrollTop:scroll_calc}, 250);
 	});
 	
+	//artist detail dynamics
+	//open
+	$(".launchArtist").click(function(){
+		var id = jQuery(this).prev('.artist-object-id').val();
+		var div_id = '#' + 'artist' + id;
+		scroll_calc = $('.canScroll4').scrollTop();
+		$(div_id).slideDown(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
+		$(".muteEffects").addClass("displayNone");
+		$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + id).position().top + scroll_calc}, 'slow');
+	});
+	//close
+	$(".artistCloseIcon").click(function(){
+		var id = jQuery(this).prev('.artist-object-id').val();
+		var div_id = '#' + 'artist' + id;
+		scroll_calc = $('.canScroll4').scrollTop();
+		$(div_id).slideUp(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
+		$(".muteEffects").removeClass("displayNone");
+		$('.canScroll4').animate({scrollTop:scroll_calc}, 250);
+	});
+	
 	//bug fix on navigtaion buttons
 	$(".fixMute").click(function(){
 		$(".muteEffects").removeClass("displayNone");
