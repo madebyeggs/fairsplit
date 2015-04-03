@@ -10,7 +10,6 @@
 // WARNING: THE FIRST BLANK LINE MARKS THE END OF WHAT'S TO BE PROCESSED, ANY BLANK LINE SHOULD
 // GO AFTER THE REQUIRES BELOW.
 //
-//= require gmap3
 //= require jquery-1.9.1.min
 //= require jquery-migrate-1.2.1.min
 //= require jquery-easing-1.3
@@ -33,6 +32,7 @@
 //= require jquery.collapser
 //= require jquery.readmore
 //= require scrollTo
+//= require gmap3
 //= require mapSettings
 
 $(window).load(function() { // makes sure the whole site is loaded
