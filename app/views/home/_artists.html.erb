@@ -32,10 +32,6 @@
 					<hr class="projectSeparator" />
 					<div class="artist-left">
 						<p class="projectDetail"><%= simple_format a.description, :class => "projectDetail" %></p>
-						<% if a.soundcloud? %>
-							<iframe width="100%" height="381" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/<%= a.soundcloud %>&amp;color=bdbdbd&amp;background_color=000000&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_artwork=false">
-							</iframe>
-						<% end %>
 					</div>
 					<div class="artist-right">
 						<% if a.works.count > 0 %>
@@ -56,6 +52,12 @@
 									<%= image_tag(a.small_image, :class => "squareImage") %>
 								</div>
 							</div>
+						<% end %>
+					</div>
+					<div class="artist-bottom">
+						<% if a.soundcloud? %>
+							<iframe width="100%" height="381" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/<%= a.soundcloud %>&amp;color=bdbdbd&amp;background_color=000000&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_artwork=false">
+							</iframe>
 						<% end %>
 					</div>
 				</div>
