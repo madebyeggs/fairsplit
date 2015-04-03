@@ -152,7 +152,7 @@ td {line-height:30px;}
 }
 
 @media screen and (max-width: 479px) {
-	.artist-left, .artist-right {width:100%;clear:both;margin-right:10%:}
+	.artist-left, .artist-right {width:100%;clear:both;margin-right:10%;}
 }
 
 .widget, #widget {background-color:#000000;}
