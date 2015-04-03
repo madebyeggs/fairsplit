@@ -3,7 +3,7 @@
 		<% @artists.each do |a| %>
 			<div class="element">
 				<div class="images" id="artistPicture<%= a.id %>">
-					<div class="artist<%= a.id %>" id="scrollHereArtist<%= a.id %>">
+					<div class="artist<%= a.id %>">
 						<%= image_tag(a.image) %>
 					</div>
 					<div class="muteEffects">
@@ -25,7 +25,7 @@
 		    	</div>
 			</div>
 			<div id="artist<%= a.id %>" style="display:none;">
-				<div class="projectInfo">
+				<div class="projectInfo" id="scrollHereArtist<%= a.id %>">
 					<input type="hidden" value=<%= a.id %> class="artist-object-id">
 					<a class="artistCloseIcon"></a>
 					<h1 class="projectName"><%= a.name %></h1>

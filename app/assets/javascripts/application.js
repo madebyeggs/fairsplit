@@ -143,15 +143,11 @@ $(document).ready(function() {
 	$(".launchArtist").click(function(){
 		var id = jQuery(this).prev('.artist-object-id').val();
 		var div_id = '#' + 'artist' + id;
-		var picture_id = '#' + 'artistPicture' + id;
-		var loader = '.' + 'loader' + id;
 		scroll_calc = $('.canScroll4').scrollTop();
-		$(".images").not(picture_id).slideUp();
-		$(".element").children(':not(.projectInfo)').fadeTo("slow", 0.7);
+		$(div_id).slideDown(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 		$(".muteEffects").addClass("displayNone");
-		$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + id).position().top}, 'slow', function(){
-			$(div_id).fadeIn(500);
-		});
+		$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + id).position().top + scroll_calc}, 'slow');
 	});
 	//close
 	$(".artistCloseIcon").click(function(){
@@ -161,7 +157,7 @@ $(document).ready(function() {
 		$(div_id).slideUp(500);
 		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
 		$(".muteEffects").removeClass("displayNone");
-		$('.canScroll4').animate({scrollTop:scroll_calc}, 5000);
+		$('.canScroll4').animate({scrollTop:scroll_calc}, 250);
 	});
 	
 	//bug fix on navigtaion buttons
