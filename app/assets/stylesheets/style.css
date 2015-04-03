@@ -137,6 +137,7 @@ td {line-height:30px;}
 .artistSquareContainer {margin-top:44px;}
 .squareImage {width:100%;}
 .squareImage img {max-width:100%;}
+.loader {background: url(../assets/ajax-loader2.gif) center center no-repeat;width:50px;height:59px;margin:10% auto;display:none;}
 
 
 @media screen and (max-width: 992px) {
