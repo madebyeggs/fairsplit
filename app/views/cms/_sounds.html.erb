@@ -8,12 +8,12 @@
 						<tr class="tableHeader">
 							<th>TITLE</th>
 							<th>INFO</th>
-							<th>SOUNDCLOUD URL</th>
+							<th>S'CLOUD</th>
 						</tr>
 						<tr><hr class="ruler"/></tr>
 						<% @sounds.each do |s| %>
 							<tr class="tableRow">
-								<td width="25%"><%= s.title %></td>
+								<td width="25%"><%= truncate(s.title, :length => 28) %></td>
 								<td width="50%"><%= truncate(s.description, :length => 65) %></td>
 								<td width="19%"><%= s.url %></td>
 								<td width="3%"><%= link_to image_tag('edit2.png'), edit_sound_path(s) %></td>

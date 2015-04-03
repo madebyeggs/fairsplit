@@ -14,7 +14,7 @@
 						<tr><hr class="ruler"/></tr>
 						<% @homes.each do |h| %>
 							<tr class="tableRow">
-								<td width="25%"><%= h.image_file_name %></td>
+								<td width="25%"><%= truncate(h.image_file_name, :length => 28) %></td>
 								<td width="15%"><%= h.image_content_type %></td>
 								<td width="20%"><%= h.image_file_size/1000.0 %> mb</td>
 								<td width="30%"><%= h.image_updated_at %></td>

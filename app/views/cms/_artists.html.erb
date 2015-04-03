@@ -13,7 +13,7 @@
 						<tr><hr class="ruler"/></tr>
 						<% @artists.each do |a| %>
 							<tr class="tableRow">
-								<td width="25%"><%= a.name %></td>
+								<td width="25%"><%= truncate(a.name, :length => 28) %></td>
 								<td width="10%"><%= a.soundcloud %></td>
 								<td width="55%"><%= truncate(a.description, :length => 70) %></td>
 								<td width="3%"><%= link_to image_tag('edit2.png'), edit_artist_path(a) %></td>

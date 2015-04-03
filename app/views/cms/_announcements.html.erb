@@ -14,7 +14,7 @@
 						<tr><hr class="ruler"/></tr>
 						<% @announcements.each do |a| %>
 							<tr class="tableRow">
-								<td width="25%"><%= a.title %></td>
+								<td width="25%"><%= truncate(a.title, :length => 30) %></td>
 								<td width="10%"><%= a.video %></td>
 								<td width="45%"><%= truncate(a.description, :length => 60) %></td>
 								<td width="10%"><%= a.soundcloud %></td>
