@@ -1,0 +1,73 @@
+<div class="rightHandSection2">
+	<div class="canScroll5">
+		<% @announcements.each do |a| %>
+			<div class="element">
+				<div class="images" id="announcementPicture<%= a.id %>">
+					<div class="announcement<%= a.id %>">
+						<% if a.latest?  %>
+							<%= image_tag(a.large_image) %>
+						<% else %>
+							<%= image_tag(a.image) %>
+						<% end %>
+					</div>
+					
+					<div class="muteEffects">
+		    			<section class="hidden-infos">
+							<input type="hidden" value=<%= a.id %> class="announcement-object-id"> 
+							<a class="launchAnnouncement"></a>
+			          		<div class="overlay3"></div>
+							<div class="icons4 play"></div>	        					
+						</section>
+			        	<div class="vidTitle">
+			        		<div class="title-wrap">
+			            		<h3><%= a.title %></h3>
+			          		</div>
+							<div class="subtitle-wrap">
+		            			<p><%= truncate(a.description, :length => 80) %></p>
+							</div>
+			        	</div>
+					</div>
+		    	</div>
+			</div>
+			<div id="announcement<%= a.id %>" style="display:none;">
+				<div class="projectInfo" id="scrollHereAnnouncement<%= a.id %>">
+					<input type="hidden" value=<%= a.id %> class="announcement-object-id">
+					<a class="announcementCloseIcon"></a>
+					<h1 class="projectName"><%= a.title %></h1>
+					<hr class="projectSeparator" />
+					<div class="artist-left">
+						<p class="projectDetail"><%= simple_format a.description, :class => "projectDetail" %></p>
+					</div>
+					<div class="artist-right">
+						<% if a.video? %>
+							<div class="artistVideoContainer">
+								<div class="fitvids">
+									<iframe src="//player.vimeo.com/video/<%= a.video %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+								</div>
+								<hr class="projectSeparator" />
+							</div>
+						<% else %>
+							<div class="artistSquareContainer">
+								<div class="squareImage">
+									<%= image_tag(a.square_image, :class => "squareImage") %>
+								</div>
+								<hr class="projectSeparator" />
+							</div>
+						<% end %>
+					</div>
+					<div class="artist-bottom">
+						<% if a.soundcloud? %>
+							<iframe width="100%" height="281" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/<%= a.soundcloud %>&amp;color=bdbdbd&amp;background_color=000000&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_artwork=false">
+							</iframe>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		<% end %>
+		<!--<div id="backtotop2">
+		  <ul>
+		    <li><a id="toTop2" class="bounce" href="#" onClick="return false">Back to Top</a></li>
+		  </ul>
+		</div>-->
+	</div>
+</div>

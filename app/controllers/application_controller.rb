@@ -4,11 +4,11 @@ class ApplicationController < ActionController::Base
   def bring_in_models
     @works = Work.order("id DESC")
     @newest = Work.last
-    @artists = Artist.order("id DESC")
+    @artists = Artist.order("latest DESC, name ASC")
     @artist = Artist.find(1)
     @home = Home.first
     @homes = Home.all
-    @sounds = Sound.order("id DESC")
+    @sounds = Sound.order("latest DESC")
   end
   
   def bring_in_paginated_announcements

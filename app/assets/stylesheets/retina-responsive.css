@@ -33,7 +33,7 @@ h1#logo.left a { background:url(../assets/bg-logo2@2x.png) no-repeat; background
 .flex-direction-nav .flex-prev {background:url(../assets/bg-prev@2x.png) center no-repeat; background-size:48px 48px; }
 
 .fancybox-close {background: url(../assets/bg-close@2x.png) center no-repeat; background-size:48px 48px;}
-.projectCloseIcon, .videoCloseIcon, .soundCloseIcon, .artistCloseIcon {background: url(../assets/bg-close@2x.png) center no-repeat; background-size:48px 48px;}
+.projectCloseIcon, .videoCloseIcon, .playlistCloseIcon, .artistCloseIcon, .announcementCloseIcon {background: url(../assets/bg-close@2x.png) center no-repeat; background-size:48px 48px;}
 .fancybox-prev span {background: url(../assets/bg-prev@2x.png) center no-repeat; background-size:48px 48px;}
 .fancybox-next span {background: url(../assets/bg-next@2x.png) center no-repeat; background-size:48px 48px;}
 }

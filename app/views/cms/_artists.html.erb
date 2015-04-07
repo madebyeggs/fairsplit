@@ -7,6 +7,7 @@
 					<table width="100%">
 						<tr class="tableHeader">
 							<th>NAME</th>
+							<th>LATEST</th>
 							<th>S'CLOUD</th>
 							<th>INFO</th>
 							<th>POSTING URL</th>
@@ -14,7 +15,8 @@
 						<tr><hr class="ruler"/></tr>
 						<% @artists.each do |a| %>
 							<tr class="tableRow">
-								<td width="25%"><%= truncate(a.name, :length => 28) %></td>
+								<td width="18%"><%= truncate(a.name, :length => 28) %></td>
+								<td width="7%"><%= a.latest %></td>
 								<td width="10%"><%= a.soundcloud %></td>
 								<td width="30%"><%= truncate(a.description, :length => 50) %></td>
 								<td width="25%">

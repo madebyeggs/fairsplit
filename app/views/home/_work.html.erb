@@ -4,11 +4,11 @@
 			<div class="element">
 				<div class="images">
 					<div class="picture<%= w.id %>">
-					<% if w.latest?  %>
-						<%= image_tag(w.large_image) %>
-					<% else %>
-						<%= image_tag(w.image) %>
-					<% end %>
+						<% if w.latest?  %>
+							<%= image_tag(w.large_image) %>
+						<% else %>
+							<%= image_tag(w.image) %>
+						<% end %>
 					</div>
 					<div class="muteEffects">
 		    			<section class="hidden-infos">
@@ -29,7 +29,7 @@
 		    	</div>
 			</div>
 			<div id="video<%= w.id %>" style="display:none;">
-				<div class="projectInfo" id="scrollHere<%= w.id %>">
+				<div class="projectInfo" id="scrollHereVideo<%= w.id %>">
 					<input type="hidden" value=<%= w.id %> class="object-id">
 					<a class="videoCloseIcon"></a>
 					<h1 class="projectName"><%= w.client %> "<%= w.title %>"</h1>

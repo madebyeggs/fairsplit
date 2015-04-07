@@ -10,6 +10,8 @@ a {
   text-decoration:none!important;
 }
 
+.pipe {font-weight:700;margin:0px 8px 0px 4px;color:#ffffff;}
+
 
 /* Preloader */
 
@@ -47,14 +49,14 @@ a {
 
 .col-md-6 {height:100%;margin:0% 0%;}
 .leftSide, .rightSide {background-color:#000000;}
-.leftSide {width:100%;padding-top:200px;}
+.leftSide {width:100%;padding-top:170px;}
 .logo {width:250px;margin:0 auto;}
 .logo img, {margin:0 auto;}
 ul.navigation {list-style-type: none;}
 .navigationWrapper {width:250px;margin:40px auto!important;}
 .navigation a, .client {text-transform:uppercase;font-size:1.1em!important;color:#ffffff;font-family:'Raleway'}
 li.navButton {margin:8px 0px 8px 0px!important;}
-.social {width:258px;margin:90px auto 0px auto;}
+.social {width:258px;margin:120px auto 0px auto;}
 .client {position:absolute;margin:240px 0px 0px 80%;font-family:'Raleway'}
 
 /* DIVIDER */
@@ -85,7 +87,7 @@ td {line-height:30px;}
 .socialPic {margin-top:15px;}
 .afterSubtitle {margin-top:8px;}
 .canScroll {height:670px;overflow-y: auto;}
-.canScroll2, .canScroll3, .canScroll4 {height:100vh;overflow-y: auto;}
+.canScroll2, .canScroll3, .canScroll4, .canScroll5 {height:100vh;overflow-y: auto;}
 .clear {clear:both;}
 .socials {display:inline;font-size:18px;}
 
@@ -125,7 +127,7 @@ td {line-height:30px;}
 .fixerScroll {overflow:scroll!important;margin-top:150px;z-index:0;}
 .emptyMe {display:none;}
 .displayNone {display:none;}
-#map_canvas {width:100%;height:300px;margin:0;padding:0;}
+#map_canvas {width:100%;height:80%;margin:0;padding:0;}
 #mapsContent {color:#202326;font-family:'Raleway'}
 .bottom {margin-bottom:30px;}
 .clearBothSides {clear:both;}
@@ -156,7 +158,7 @@ td {line-height:30px;}
 }
 @media screen and (max-width: 992px) {
 	.canScroll {height:550px;overflow-y: auto;}
-	.canScroll2, .canScroll3, .canScroll4 {height:680px;overflow-y: auto;}
+	.canScroll2, .canScroll3, .canScroll4, .canScroll5 {height:680px;overflow-y: auto;}
 }
 
 @media screen and (max-width: 479px) {

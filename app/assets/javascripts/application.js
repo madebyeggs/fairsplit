@@ -43,8 +43,23 @@ $(window).load(function() { // makes sure the whole site is loaded
 	$('.homeTitle').show();
 	//go straight to artists page if URL present
 	var str = window.location.href;
-	if (str.toLowerCase().indexOf("artist") >= 0) {
+	if (str.toLowerCase().indexOf("artists") >= 0) {
 		$('#container').isotope({ filter: '.artists' });
+	}
+	else if (str.toLowerCase().indexOf("announcements") >= 0) {
+		$('#container').isotope({ filter: '.announcements' });
+	}
+	else if (str.toLowerCase().indexOf("works") >= 0) {
+		$('#container').isotope({ filter: '.works' });
+	}
+	else if (str.toLowerCase().indexOf("playlists") >= 0) {
+		$('#container').isotope({ filter: '.playlists' });
+	}
+	else if (str.toLowerCase().indexOf("contact") >= 0) {
+		$('#container').isotope({ filter: '.contact' });
+	}
+	else { 
+		$('#container').isotope({ filter: '.announcements' });
 	}
 })
 
@@ -68,6 +83,60 @@ $(document).ready(function() {
 		$('#menu').slicknav();
 	});
 	
+	//artist open from URL 
+	var str = window.location.href;
+	if (str.toLowerCase().indexOf("artists/") >= 0) {
+		var launch_id = str.split("#")[2];
+		urlLaunch(launch_id);
+	}
+	else if (str.toLowerCase().indexOf("announcements/") >= 0) {
+		var launch_id = str.split("#")[2];
+		announcement_urlLaunch(launch_id);
+	}
+	else if (str.toLowerCase().indexOf("works/") >= 0) {
+		var launch_id = str.split("#")[2];
+		work_urlLaunch(launch_id);
+	}
+	else if (str.toLowerCase().indexOf("playlists/") >= 0) {
+		var launch_id = str.split("#")[2];
+		playlist_urlLaunch(launch_id);
+	}
+	else {
+		clear_all();
+	}
+	function urlLaunch(id) {
+		var div_id = '#' + 'artist' + id;
+		$(div_id).slideDown(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
+		$(".muteEffects").addClass("displayNone");
+		$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + id).position().top}, 'slow');
+	}
+	function announcement_urlLaunch(id) {
+		var div_id = '#' + 'announcement' + id;
+		$(div_id).slideDown(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
+		$(".muteEffects").addClass("displayNone");
+		$('.canScroll5').animate({scrollTop:$('#scrollHereAnnouncement' + id).position().top}, 'slow');
+	}
+	function work_urlLaunch(id) {
+		var div_id = '#' + 'video' + id;
+		$(div_id).slideDown(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
+		$(".muteEffects").addClass("displayNone");
+		$('.canScroll2').animate({scrollTop:$('#scrollHereVideo' + id).position().top}, 'slow');
+	}
+	function playlist_urlLaunch(id) {
+		var div_id = '#' + 'playlist' + id;
+		$(div_id).slideDown(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
+		$(".muteEffects").addClass("displayNone");
+		$('.canScroll3').animate({scrollTop:$('#scrollHerePlaylist' + id).position().top}, 'slow');
+	}
+	function clear_all() {
+		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
+		$(".muteEffects").removeClass("displayNone");
+	}
+	
 	//news page collapsing
 	//$('.shrinkable').collapser({
 		//mode: 'chars',
@@ -75,30 +144,51 @@ $(document).ready(function() {
 	//});
 	
 	// infiniteScroll
-	if ($('.pagination').length) {
-		$(window).scroll(function() {
-	    	var url = $('.pagination .next_page').attr('href');
-	      	if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-	        	$('.pagination').prepend('<img id="loader" src="../assets/ajax-loader2.gif" />');
-				return $.getScript(url);
-	      	}
-	    });
-	    return $(window).scroll();
-	}
+	//if ($('.pagination').length) {
+	//	$(window).scroll(function() {
+	  //  	var url = $('.pagination .next_page').attr('href');
+	    //  	if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+	      //  	$('.pagination').prepend('<img id="loader" src="../assets/ajax-loader2.gif" />');
+			//	return $.getScript(url);
+	      //	}
+	   // });
+	   // return $(window).scroll();
+	//}
 	
 	//news page collapsing2
-	$('.project').readmore({
-		speed: 505,
-		moreLink: '<a href="#" class="more">More</a>',
-	  	lessLink: '<a href="#" class="more">Less</a>',
-		collapsedHeight: 600,
-	  	afterToggle: function(trigger, element, expanded) {
-	    	if(! expanded) { // The "Close" link was clicked
-	      		$('html, body').animate( { scrollTop: element.offset().top }, {duration: 100 } );
-	    	}
-	  	}
-	});
+	//$('.project').readmore({
+	//	speed: 505,
+	//	moreLink: '<a href="#" class="more">More</a>',
+	  //	lessLink: '<a href="#" class="more">Less</a>',
+	//	collapsedHeight: 600,
+	//  	afterToggle: function(trigger, element, expanded) {
+	//    	if(! expanded) { // The "Close" link was clicked
+	//      		$('html, body').animate( { scrollTop: element.offset().top }, {duration: 100 } );
+	//    	}
+	//  	}
+	//});
 	
+	//newspage detail dynamics
+	//open
+	$(".launchAnnouncement").click(function(){
+		var id = jQuery(this).prev('.announcement-object-id').val();
+		var div_id = '#' + 'announcement' + id;
+		scroll_calc = $('.canScroll5').scrollTop();
+		$(div_id).slideDown(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
+		$(".muteEffects").addClass("displayNone");
+		$('.canScroll5').animate({scrollTop:$('#scrollHereAnnouncement' + id).position().top + scroll_calc}, 'slow');
+	});
+	//close
+	$(".announcementCloseIcon").click(function(){
+		var id = jQuery(this).prev('.announcement-object-id').val();
+		var div_id = '#' + 'announcement' + id;
+		scroll_calc = $('.canScroll5').scrollTop();
+		$(div_id).slideUp(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
+		$(".muteEffects").removeClass("displayNone");
+		$('.canScroll5').animate({scrollTop:scroll_calc}, 250);
+	});
 	//works VIDEO dynamics
 	//open
 	$(".launchVideo").click(function(){
@@ -108,7 +198,7 @@ $(document).ready(function() {
 		$(div_id).slideDown(500);
 		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 		$(".muteEffects").addClass("displayNone");
-		$('.canScroll2').animate({scrollTop:$('#scrollHere' + id).position().top + scroll_calc}, 'slow');
+		$('.canScroll2').animate({scrollTop:$('#scrollHereVideo' + id).position().top + scroll_calc}, 'slow');
 	});
 	//close
 	$(".videoCloseIcon").click(function(){
@@ -120,29 +210,27 @@ $(document).ready(function() {
 		$(".muteEffects").removeClass("displayNone");
 		$('.canScroll2').animate({scrollTop:scroll_calc}, 250);
 	});
-	
 	//listen PLAYLIST dynamics
 	//open
-	$(".launchSound").click(function(){
-		var id = jQuery(this).prev('.sound-object-id').val();
-		var div_id = '#' + 'sound' + id;
+	$(".launchPlaylist").click(function(){
+		var id = jQuery(this).prev('.playlist-object-id').val();
+		var div_id = '#' + 'playlist' + id;
 		scroll_calc = $('.canScroll3').scrollTop();
 		$(div_id).slideDown(500);
 		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 		$(".muteEffects").addClass("displayNone");
-		$('.canScroll3').animate({scrollTop:$('#scrollHereSound' + id).position().top + scroll_calc}, 'slow');
+		$('.canScroll3').animate({scrollTop:$('#scrollHerePlaylist' + id).position().top + scroll_calc}, 'slow');
 	});
 	//close
-	$(".soundCloseIcon").click(function(){
-		var id = jQuery(this).prev('.sound-object-id').val();
-		var div_id = '#' + 'sound' + id;
+	$(".playlistCloseIcon").click(function(){
+		var id = jQuery(this).prev('.playlist-object-id').val();
+		var div_id = '#' + 'playlist' + id;
 		scroll_calc = $('.canScroll3').scrollTop();
 		$(div_id).slideUp(500);
 		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
 		$(".muteEffects").removeClass("displayNone");
 		$('.canScroll3').animate({scrollTop:scroll_calc}, 250);
 	});
-	
 	//artist detail dynamics
 	//open
 	$(".launchArtist").click(function(){
@@ -154,20 +242,6 @@ $(document).ready(function() {
 		$(".muteEffects").addClass("displayNone");
 		$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + id).position().top + scroll_calc}, 'slow');
 	});
-	//artist open from URL 
-	var str = window.location.href;
-	if (str.toLowerCase().indexOf("artist") >= 0) {
-		var launch_id = str.split("#")[2];
-		urlLaunch(launch_id);
-	}
-	
-	function urlLaunch(id) {
-		var div_id = '#' + 'artist' + id;
-		$(div_id).slideDown(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-		$(".muteEffects").addClass("displayNone");
-		$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + id).position().top}, 'slow');
-	}
 	//close
 	$(".artistCloseIcon").click(function(){
 		var id = jQuery(this).prev('.artist-object-id').val();

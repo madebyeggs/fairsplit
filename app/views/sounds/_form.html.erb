@@ -11,6 +11,8 @@
 		<div class="formWrapper">	
 			<%= form_for(@sound) do |f| %>
 				<div class="col-md-12">
+					<%= f.label :click_if_this_is_the_latest_playlist, class: "formLabel" %>
+					<%= f.check_box :latest, {}, true, false %> <br /><br/>
 					<%= f.label :title, class: "formLabel" %>
 	    			<%= f.text_field :title, class: 'formField' %>
 					<%= f.label :description, class: "formLabel" %>

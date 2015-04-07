@@ -9,15 +9,22 @@
 							<th>TITLE</th>
 							<th>INFO</th>
 							<th>S'CLOUD</th>
+							<th>LATEST</th>
 						</tr>
 						<tr><hr class="ruler"/></tr>
 						<% @sounds.each do |s| %>
 							<tr class="tableRow">
-								<td width="25%"><%= truncate(s.title, :length => 28) %></td>
-								<td width="50%"><%= truncate(s.description, :length => 65) %></td>
-								<td width="19%"><%= s.url %></td>
+								<td width="20%"><%= truncate(s.title, :length => 28) %></td>
+								<td width="29%"><%= truncate(s.description, :length => 55) %></td>
+								<td width="8%"><%= s.url %></td>
+								<td width="7%"><%= s.latest %></td>
+								<td width="30%">
+									<a href="../#filter=.playlists/playlist#<%= s.id %>" target="_blank">
+										<%= "https://fairsplitmusic.com/#filter=.playlists/" + "playlist" + "#{s.id}" %>	
+									</a>
+								</td>
 								<td width="3%"><%= link_to image_tag('edit2.png'), edit_sound_path(s) %></td>
-								<td width="3%"><%= link_to image_tag('delete2.png'), s, :confirm => 'Are you sure you want to delete this work?', :method => :delete %></td>
+								<td width="3%"><%= link_to image_tag('delete2.png'), s, :confirm => 'Are you sure you want to delete this playlist?', :method => :delete %></td>
 							</tr>
 						<% end %>
 					</table>

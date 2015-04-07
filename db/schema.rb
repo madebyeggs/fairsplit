@@ -11,19 +11,28 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150403132205) do
+ActiveRecord::Schema.define(:version => 20150407170723) do
 
   create_table "announcements", :force => true do |t|
     t.string   "title"
     t.string   "video"
     t.text     "description"
     t.string   "soundcloud"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "large_image_file_name"
+    t.string   "large_image_content_type"
+    t.integer  "large_image_file_size"
+    t.datetime "large_image_updated_at"
+    t.boolean  "latest"
+    t.string   "square_image_file_name"
+    t.string   "square_image_content_type"
+    t.integer  "square_image_file_size"
+    t.datetime "square_image_updated_at"
   end
 
   create_table "artists", :force => true do |t|
@@ -40,6 +49,11 @@ ActiveRecord::Schema.define(:version => 20150403132205) do
     t.string   "small_image_content_type"
     t.integer  "small_image_file_size"
     t.datetime "small_image_updated_at"
+    t.boolean  "latest"
+    t.string   "large_image_file_name"
+    t.string   "large_image_content_type"
+    t.integer  "large_image_file_size"
+    t.datetime "large_image_updated_at"
   end
 
   create_table "homes", :force => true do |t|
@@ -61,6 +75,7 @@ ActiveRecord::Schema.define(:version => 20150403132205) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.boolean  "latest"
   end
 
   create_table "users", :force => true do |t|

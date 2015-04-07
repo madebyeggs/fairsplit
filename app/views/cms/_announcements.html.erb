@@ -7,17 +7,25 @@
 					<table width="100%">
 						<tr class="tableHeader">
 							<th>TITLE</th>
+							<th>DESCRIPTION</th>
 							<th>VIMEO</th>
-							<th>INFO</th>
 							<th>S'CLOUD</th>
+							<th>LATEST</th>
+							<th>POSTING URL</th>
 						</tr>
 						<tr><hr class="ruler"/></tr>
 						<% @announcements.each do |a| %>
 							<tr class="tableRow">
-								<td width="25%"><%= truncate(a.title, :length => 30) %></td>
+								<td width="15%"><%= truncate(a.title, :length => 25) %></td>
+								<td width="17%"><%= truncate(a.description, :length => 30) %></td>
 								<td width="10%"><%= a.video %></td>
-								<td width="45%"><%= truncate(a.description, :length => 60) %></td>
 								<td width="10%"><%= a.soundcloud %></td>
+								<td width="7%"><%= a.latest %></td>
+								<td width="35%">
+									<a href="../#filter=.announcements/announcement#<%= a.id %>" target="_blank">
+										<%= "https://fairsplitmusic.com/#filter=.announcements/" + "announcement" + "#{a.id}" %>	
+									</a>
+								</td>
 								<td width="3%"><%= link_to image_tag('edit2.png'), edit_announcement_path(a) %></td>
 								<td width="3%"><%= link_to image_tag('delete2.png'), a, :confirm => 'Are you sure you want to delete this news item?', :method => :delete %></td>
 							</tr>
