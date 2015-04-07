@@ -41,6 +41,11 @@ $(window).load(function() { // makes sure the whole site is loaded
 	$('body').delay(550).css({'overflow':'visible'});
 	//homePage title show
 	$('.homeTitle').show();
+	//go straight to artists page if URL present
+	var str = window.location.href;
+	if (str.toLowerCase().indexOf("artist") >= 0) {
+		$('#container').isotope({ filter: '.artists' });
+	}
 })
 
 $(document).ready(function() {
@@ -149,6 +154,20 @@ $(document).ready(function() {
 		$(".muteEffects").addClass("displayNone");
 		$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + id).position().top + scroll_calc}, 'slow');
 	});
+	//artist open from URL 
+	var str = window.location.href;
+	if (str.toLowerCase().indexOf("artist") >= 0) {
+		var launch_id = str.split("#")[2];
+		urlLaunch(launch_id);
+	}
+	
+	function urlLaunch(id) {
+		var div_id = '#' + 'artist' + id;
+		$(div_id).slideDown(500);
+		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
+		$(".muteEffects").addClass("displayNone");
+		$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + id).position().top}, 'slow');
+	}
 	//close
 	$(".artistCloseIcon").click(function(){
 		var id = jQuery(this).prev('.artist-object-id').val();
