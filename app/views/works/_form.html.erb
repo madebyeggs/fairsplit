@@ -25,6 +25,8 @@
 	    			<%= f.text_field :artist_name, class: 'formField' %>
 					<%= f.label :track_name, class: "formLabel" %>
 	    			<%= f.text_field :track_name, class: 'formField' %>
+					<%= button_to "Cancel", cms_path, :class => "btn" %>
+					<%= f.submit :class => "btn" %>
 				</div>
 				<div class="col-md-1">&nbsp;</div>
 				<div class="col-md-6">
@@ -36,7 +38,6 @@
 					<%= f.file_field :image %><br/>
 					<%= f.label :large_image_710X400, class: "formLabel" %><br />
 					<%= f.file_field :large_image %>
-					<br /><%= f.submit :class => "btn" %>
 				</div>
 			<% end %>
 		</div>

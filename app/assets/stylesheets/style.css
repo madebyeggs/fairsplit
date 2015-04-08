@@ -140,6 +140,13 @@ td {line-height:30px;}
 .squareImage {width:100%;}
 .squareImage img {max-width:100%;}
 .loader {background: url(../assets/ajax-loader2.gif) center center no-repeat;width:50px;height:59px;margin:10% auto;display:none;}
+.button_with_image {
+	background-color:none;
+	border:none;
+	background: url(../assets/delete2.png) #f2efa8 no-repeat 10px 6px;
+	cursor:pointer;
+	border: none;
+}
 
 
 @media screen and (max-width: 992px) {

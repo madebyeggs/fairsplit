@@ -34,6 +34,7 @@
 //= require scrollTo
 //= require gmap3
 //= require mapSettings
+//= require urlsForPosting
 
 $(window).load(function() { // makes sure the whole site is loaded
 	$('#status').fadeOut(); // will first fade out the loading animation
@@ -41,26 +42,6 @@ $(window).load(function() { // makes sure the whole site is loaded
 	$('body').delay(550).css({'overflow':'visible'});
 	//homePage title show
 	$('.homeTitle').show();
-	//go straight to artists page if URL present
-	var str = window.location.href;
-	if (str.toLowerCase().indexOf("artists") >= 0) {
-		$('#container').isotope({ filter: '.artists' });
-	}
-	else if (str.toLowerCase().indexOf("announcements") >= 0) {
-		$('#container').isotope({ filter: '.announcements' });
-	}
-	else if (str.toLowerCase().indexOf("works") >= 0) {
-		$('#container').isotope({ filter: '.works' });
-	}
-	else if (str.toLowerCase().indexOf("playlists") >= 0) {
-		$('#container').isotope({ filter: '.playlists' });
-	}
-	else if (str.toLowerCase().indexOf("contact") >= 0) {
-		$('#container').isotope({ filter: '.contact' });
-	}
-	else { 
-		$('#container').isotope({ filter: '.announcements' });
-	}
 })
 
 $(document).ready(function() {
@@ -82,60 +63,6 @@ $(document).ready(function() {
 	$(function(){
 		$('#menu').slicknav();
 	});
-	
-	//artist open from URL 
-	var str = window.location.href;
-	if (str.toLowerCase().indexOf("artists/") >= 0) {
-		var launch_id = str.split("#")[2];
-		urlLaunch(launch_id);
-	}
-	else if (str.toLowerCase().indexOf("announcements/") >= 0) {
-		var launch_id = str.split("#")[2];
-		announcement_urlLaunch(launch_id);
-	}
-	else if (str.toLowerCase().indexOf("works/") >= 0) {
-		var launch_id = str.split("#")[2];
-		work_urlLaunch(launch_id);
-	}
-	else if (str.toLowerCase().indexOf("playlists/") >= 0) {
-		var launch_id = str.split("#")[2];
-		playlist_urlLaunch(launch_id);
-	}
-	else {
-		clear_all();
-	}
-	function urlLaunch(id) {
-		var div_id = '#' + 'artist' + id;
-		$(div_id).slideDown(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-		$(".muteEffects").addClass("displayNone");
-		$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + id).position().top}, 'slow');
-	}
-	function announcement_urlLaunch(id) {
-		var div_id = '#' + 'announcement' + id;
-		$(div_id).slideDown(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-		$(".muteEffects").addClass("displayNone");
-		$('.canScroll5').animate({scrollTop:$('#scrollHereAnnouncement' + id).position().top}, 'slow');
-	}
-	function work_urlLaunch(id) {
-		var div_id = '#' + 'video' + id;
-		$(div_id).slideDown(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-		$(".muteEffects").addClass("displayNone");
-		$('.canScroll2').animate({scrollTop:$('#scrollHereVideo' + id).position().top}, 'slow');
-	}
-	function playlist_urlLaunch(id) {
-		var div_id = '#' + 'playlist' + id;
-		$(div_id).slideDown(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-		$(".muteEffects").addClass("displayNone");
-		$('.canScroll3').animate({scrollTop:$('#scrollHerePlaylist' + id).position().top}, 'slow');
-	}
-	function clear_all() {
-		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
-		$(".muteEffects").removeClass("displayNone");
-	}
 	
 	//news page collapsing
 	//$('.shrinkable').collapser({
@@ -191,19 +118,19 @@ $(document).ready(function() {
 	});
 	//works VIDEO dynamics
 	//open
-	$(".launchVideo").click(function(){
-		var id = jQuery(this).prev('.object-id').val();
-		var div_id = '#' + 'video' + id;
+	$(".launchWork").click(function(){
+		var id = jQuery(this).prev('.work-object-id').val();
+		var div_id = '#' + 'work' + id;
 		scroll_calc = $('.canScroll2').scrollTop();
 		$(div_id).slideDown(500);
 		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 		$(".muteEffects").addClass("displayNone");
-		$('.canScroll2').animate({scrollTop:$('#scrollHereVideo' + id).position().top + scroll_calc}, 'slow');
+		$('.canScroll2').animate({scrollTop:$('#scrollHereWork' + id).position().top + scroll_calc}, 'slow');
 	});
 	//close
-	$(".videoCloseIcon").click(function(){
-		var id = jQuery(this).prev('.object-id').val();
-		var div_id = '#' + 'video' + id;
+	$(".workCloseIcon").click(function(){
+		var id = jQuery(this).prev('.work-object-id').val();
+		var div_id = '#' + 'work' + id;
 		scroll_calc = $('.canScroll2').scrollTop();
 		$(div_id).slideUp(500);
 		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);

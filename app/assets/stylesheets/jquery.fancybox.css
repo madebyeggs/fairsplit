@@ -111,7 +111,7 @@
 	z-index: 8040;
 }
 
-.projectCloseIcon, .videoCloseIcon, .playlistCloseIcon, .artistCloseIcon, .announcementCloseIcon {
+.projectCloseIcon, .workCloseIcon, .playlistCloseIcon, .artistCloseIcon, .announcementCloseIcon {
 	display:inline;
 	float:right;
 	margin-top:15px;

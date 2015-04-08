@@ -32,7 +32,9 @@ class Artist < ActiveRecord::Base
     validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
     
     def falsify_all_others
-      self.class.where('id != ?', self.id).update_all("latest = 'false'")
+      if self.latest == true
+        self.class.where("id != ?", self.id).update_all("latest = 'false'")
+      end
     end
     
 end
