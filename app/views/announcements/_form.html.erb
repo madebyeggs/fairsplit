@@ -21,8 +21,6 @@
 					<%= f.file_field :square_image %><br/>
 					<%= f.label :soundcloud_identifier_eg_59219255, class: "formLabel" %>
 	    			<%= f.text_field :soundcloud, class: 'formField' %>
-					<%= button_to "Cancel", cms_path, :class => "btn" %>
-		    		<%= f.submit :class => "btn" %>
 				</div>
 				<div class="col-md-1">&nbsp;</div>
 				<div class="col-md-6">
@@ -32,6 +30,8 @@
 					<%= f.file_field :image %><br/>
 					<%= f.label :large_image_crop_to_710X400_before_uploading, class: "formLabel" %><br />
 					<%= f.file_field :large_image %><br/>
+					<%= button_to "Cancel", cms_path, :class => "btn" %>
+		    		<%= f.submit :class => "btn" %>
 				</div>
 			<% end %>
 		</div>
