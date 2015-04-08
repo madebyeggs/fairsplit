@@ -42,6 +42,7 @@ $(window).load(function() { // makes sure the whole site is loaded
 	$('body').delay(550).css({'overflow':'visible'});
 	//homePage title show
 	$('.homeTitle').show();
+	$('#container').isotope({ filter: '.announcements' });
 })
 
 $(document).ready(function() {
