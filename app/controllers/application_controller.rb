@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     @artist = Artist.first
     @announcements = Announcement.order("latest DESC, id DESC")
     @combined_sorted = (Announcement.all + Artist.where("latest = ?", true)).sort{|a,b| a.created_at <=> b.created_at }
-    @sounds = Sound.order("latest DESC")
+    @sounds = Sound.order("latest DESC, id DESC")
   end
   
 end
