@@ -11,11 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150407170723) do
+ActiveRecord::Schema.define(:version => 20150506162055) do
 
   create_table "announcements", :force => true do |t|
-    t.string   "title"
-    t.string   "video"
+    t.string   "homepage_title"
+    t.string   "vimeo"
     t.text     "description"
     t.string   "soundcloud"
     t.datetime "created_at",                :null => false
@@ -39,21 +39,23 @@ ActiveRecord::Schema.define(:version => 20150407170723) do
     t.string   "name"
     t.text     "description"
     t.string   "soundcloud"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.string   "small_image_file_name"
-    t.string   "small_image_content_type"
-    t.integer  "small_image_file_size"
-    t.datetime "small_image_updated_at"
+    t.string   "square_image_file_name"
+    t.string   "square_image_content_type"
+    t.integer  "square_image_file_size"
+    t.datetime "square_image_updated_at"
     t.boolean  "latest"
     t.string   "large_image_file_name"
     t.string   "large_image_content_type"
     t.integer  "large_image_file_size"
     t.datetime "large_image_updated_at"
+    t.string   "homepage_title"
+    t.string   "vimeo"
   end
 
   create_table "homes", :force => true do |t|
@@ -100,9 +102,9 @@ ActiveRecord::Schema.define(:version => 20150407170723) do
     t.string   "title"
     t.string   "client"
     t.text     "description"
-    t.string   "url"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.string   "vimeo"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "artist_name"
     t.string   "type_of_work"
     t.string   "image_file_name"
@@ -116,6 +118,12 @@ ActiveRecord::Schema.define(:version => 20150407170723) do
     t.datetime "large_image_updated_at"
     t.boolean  "latest"
     t.integer  "artist_id"
+    t.string   "soundcloud"
+    t.string   "homepage_title"
+    t.string   "square_image_file_name"
+    t.string   "square_image_content_type"
+    t.integer  "square_image_file_size"
+    t.datetime "square_image_updated_at"
   end
 
 end

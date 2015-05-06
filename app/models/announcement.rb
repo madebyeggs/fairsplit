@@ -1,5 +1,5 @@
 class Announcement < ActiveRecord::Base
-  attr_accessible :title, :image, :video, :description, :soundcloud, :large_image, :latest, :square_image
+  attr_accessible :homepage_title, :image, :vimeo, :description, :soundcloud, :large_image, :latest, :square_image
   before_save :falsify_all_others
   
   # This method associates the attribute ":avatar" with a file attachment

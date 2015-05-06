@@ -15,6 +15,8 @@
 					<%= f.check_box :latest, {}, true, false %> <br /><br/>
 					<%= f.label :title, class: "formLabel" %>
 	    			<%= f.text_field :title, class: 'formField' %>
+					<%= f.label :homepage_title, class: "formLabel" %>
+	    			<%= f.text_field :homepage_title, class: 'formField' %>
 					<%= f.label :client, class: "formLabel" %>
 	    			<%= f.text_field :client, class: 'formField' %>
 					<%= f.label :type_of_work, class: "formLabel" %>
@@ -26,7 +28,7 @@
 					<%= f.label :track_name, class: "formLabel" %>
 	    			<%= f.text_field :track_name, class: 'formField' %>
 					<%= f.label :vimeo_identifier_eg_86412013, class: "formLabel" %>
-	    			<%= f.text_field :url, class: 'formField' %>
+	    			<%= f.text_field :vimeo, class: 'formField' %>
 				</div>
 				<div class="col-md-1">&nbsp;</div>
 				<div class="col-md-6">
@@ -43,6 +45,13 @@
 					<%= f.file_field :large_image %>
 					<% if @work.large_image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @work.large_image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
+					<%= f.label :square_image_300X300, class: "formLabel" %><br />
+					<%= f.file_field :square_image %>
+					<% if @work.square_image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @work.square_image_file_name %>" }</p><br/>
 					<% else %>
 						<br/>
 					<% end %>

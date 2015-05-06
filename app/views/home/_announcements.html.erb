@@ -4,11 +4,11 @@
 			<div class="element">
 				<div class="images" id="announcementPicture<%= a.id %>">
 					<div class="announcement<%= a.id %>">
-						<% if a.latest?  %>
-							<%= image_tag(a.large_image) %>
-						<% else %>
+						<%# if a.latest?  %>
+							<%#= image_tag(a.large_image) %>
+						<%# else %>
 							<%= image_tag(a.image) %>
-						<% end %>
+						<%# end %>
 					</div>
 					
 					<div class="muteEffects">
@@ -20,7 +20,7 @@
 						</section>
 			        	<div class="vidTitle">
 			        		<div class="title-wrap">
-			            		<h3><%= a.title %></h3>
+			            		<h3><%= a.homepage_title %></h3>
 			          		</div>
 							<div class="subtitle-wrap">
 		            			<p><%= truncate(a.description, :length => 80) %></p>
@@ -33,16 +33,16 @@
 				<div class="projectInfo" id="scrollHereAnnouncement<%= a.id %>">
 					<input type="hidden" value=<%= a.id %> class="announcement-object-id">
 					<a class="announcementCloseIcon"></a>
-					<h1 class="projectName"><%= a.title %></h1>
+					<h1 class="projectName"><%= a.homepage_title %></h1>
 					<hr class="projectSeparator" />
 					<div class="artist-left">
 						<p class="projectDetail"><%= simple_format a.description, :class => "projectDetail" %></p>
 					</div>
 					<div class="artist-right">
-						<% if a.video? %>
+						<% if a.vimeo? %>
 							<div class="artistVideoContainer">
 								<div class="fitvids">
-									<iframe src="//player.vimeo.com/video/<%= a.video %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+									<iframe src="//player.vimeo.com/video/<%= a.vimeo %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 								</div>
 								<hr class="projectSeparator" />
 							</div>

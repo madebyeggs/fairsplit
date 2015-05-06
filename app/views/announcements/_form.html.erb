@@ -14,14 +14,14 @@
 					<%= f.label :click_if_this_is_the_latest_news_post, class: "formLabel" %>
 					<%= f.check_box :latest, {}, true, false %> <br /><br/>
 					<%= f.label :title, class: "formLabel" %>
-	    			<%= f.text_field :title, class: 'formField' %>
+	    			<%= f.text_field :homepage_title, class: 'formField' %>
 					<%= f.label :description, class: "formLabel" %>
 	    			<%= f.text_area :description, class: 'formArea' %>
 				</div>
 				<div class="col-md-1">&nbsp;</div>
 				<div class="col-md-6">
 					<%= f.label :vimeo_identifier_eg_86412013, class: "formLabel" %>
-	    			<%= f.text_field :video, class: 'formField' %>
+	    			<%= f.text_field :vimeo, class: 'formField' %>
 					<%= f.label :soundcloud_identifier_eg_59219255, class: "formLabel" %>
 	    			<%= f.text_field :soundcloud, class: 'formField' %>
 					<%= f.label :square_image_if_no_video_crop_to_300X300_before_uploading, class: "formLabel" %><br />

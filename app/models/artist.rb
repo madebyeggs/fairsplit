@@ -1,5 +1,5 @@
 class Artist < ActiveRecord::Base
-  attr_accessible :name, :description, :soundcloud, :image, :small_image, :latest, :large_image
+  attr_accessible :name, :description, :soundcloud, :image, :square_image, :latest, :large_image, :homepage_title, :vimeo
   has_many :works
   before_save :falsify_all_others
   
@@ -10,7 +10,7 @@ class Artist < ActiveRecord::Base
       main: '710x210>'
     }
     
-    has_attached_file :small_image, styles: {
+    has_attached_file :square_image, styles: {
       thumb: '100x100>',
       square: '200x200#',
       main: '300x300>'
@@ -26,7 +26,7 @@ class Artist < ActiveRecord::Base
     validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
     
     # Validate the attached image is image/jpg, image/png, etc
-    validates_attachment_content_type :small_image, :content_type => /\Aimage\/.*\Z/
+    validates_attachment_content_type :square_image, :content_type => /\Aimage\/.*\Z/
     
     # Validate the attached image is image/jpg, image/png, etc
     validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
