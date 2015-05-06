@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150506162055) do
+ActiveRecord::Schema.define(:version => 20150506165338) do
 
   create_table "announcements", :force => true do |t|
     t.string   "homepage_title"
@@ -70,14 +70,19 @@ ActiveRecord::Schema.define(:version => 20150506162055) do
   create_table "sounds", :force => true do |t|
     t.string   "title"
     t.text     "description"
-    t.string   "url"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.string   "soundcloud"
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
     t.boolean  "latest"
+    t.string   "homepage_title"
+    t.string   "square_image_file_name"
+    t.string   "square_image_content_type"
+    t.integer  "square_image_file_size"
+    t.datetime "square_image_updated_at"
   end
 
   create_table "users", :force => true do |t|

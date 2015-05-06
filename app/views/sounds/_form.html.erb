@@ -15,12 +15,21 @@
 					<%= f.check_box :latest, {}, true, false %> <br /><br/>
 					<%= f.label :title, class: "formLabel" %>
 	    			<%= f.text_field :title, class: 'formField' %>
+					<%= f.label :homepage_title, class: "formLabel" %>
+	    			<%= f.text_field :homepage_title, class: 'formField' %>
 					<%= f.label :soundcloud_identifier_eg_86412013, class: "formLabel" %>
-	    			<%= f.text_field :url, class: 'formField' %>
+	    			<%= f.text_field :soundcloud, class: 'formField' %>
 					<%= f.label :image_710X210, class: "formLabel" %><br />
 					<%= f.file_field :image %>
 					<% if @sound.image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @sound.image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
+					<%= f.label :sqaure_image_300X300, class: "formLabel" %><br />
+					<%= f.file_field :square_image %>
+					<% if @sound.square_image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @sound.square_image_file_name %>" }</p><br/>
 					<% else %>
 						<br/>
 					<% end %>
