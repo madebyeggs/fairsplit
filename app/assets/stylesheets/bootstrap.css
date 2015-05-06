@@ -2781,8 +2781,8 @@ select[multiple].form-group-lg .form-control {
   background-image: none;
   border: 1px solid transparent;
   white-space: nowrap;
-  padding: 1px 8px;
-  font-size: 14px;
+  padding: 2px 8px;
+  font-size: 10px;
   line-height: 1.42857143;
   border-radius: 4px;
   -webkit-user-select: none;

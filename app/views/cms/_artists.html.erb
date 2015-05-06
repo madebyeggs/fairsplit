@@ -7,25 +7,25 @@
 					<table width="100%">
 						<tr class="tableHeader">
 							<th>NAME</th>
+							<th>INFO</th>
 							<th>LATEST</th>
 							<th>S'CLOUD</th>
-							<th>INFO</th>
 							<th>POSTING URL</th>
 						</tr>
 						<tr><hr class="ruler"/></tr>
 						<% @artists.each do |a| %>
 							<tr class="tableRow">
-								<td width="18%"><%= truncate(a.name, :length => 28) %></td>
+								<td width="20%"><%= truncate(a.name, :length => 20) %></td>
+								<td width="34%"><%= truncate(a.description, :length => 40) %></td>
 								<td width="7%"><%= a.latest %></td>
-								<td width="10%"><%= a.soundcloud %></td>
-								<td width="30%"><%= truncate(a.description, :length => 50) %></td>
+								<td width="11%"><%= a.soundcloud %></td>
 								<td width="25%">
-									<a href="../#filter=.artists/artist#<%= a.id %>" target="_blank">
+									<a style="font-size:10px;" href="../#filter=.artists/artist#<%= a.id %>" target="_blank">
 										<%= "https://fairsplitmusic.com/#filter=.artists/" + "artist" + "#{a.id}" %>	
 									</a>
 								</td>
-								<td width="3%"><%= link_to "edit", edit_artist_path(a), :class => "btn btn2" %></td>
-								<td width="3%"><%= button_to "Delete", a, :method => :delete, :class => "btn btn2" %></td>
+								<td width="2%" class="topperButtons"><%= link_to "edit", edit_artist_path(a), :class => "btn btn2" %></td>
+								<td width="1%" class="topperButtons"><%= button_to "X", a, :method => :delete, :class => "btn btn2" %></td>
 							</tr>
 						<% end %>
 					</table>

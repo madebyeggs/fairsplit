@@ -11,26 +11,26 @@
 							<th>DESCRIPTION</th>
 							<th>VIMEO</th>
 							<th>LATEST</th>
-							<th>BELONGS TO</th>
+							<th>ARTIST</th>
 							<th>POSTING URL</th>
 						</tr>
 						<tr><hr class="ruler"/></tr>
 						<% @works.each do |work| %>
 						<% artist_name = work.artist.name rescue "NONE" %>
 							<tr class="tableRow">
-								<td width="12%"><%= truncate(work.title, :length => 18) %></td>
+								<td width="12%"><%= truncate(work.title, :length => 14) %></td>
 								<td width="8%"><%= truncate(work.client, :length => 10) %></td>
-								<td width="13%"><%= truncate(work.description, :length => 20) %></td>
+								<td width="20%"><%= truncate(work.description, :length => 25) %></td>
 								<td width="10%"><%= work.url %></td>
 								<td width="7%"><%= work.latest %></td>
-								<td width="16%"><%= truncate(artist_name, :length => 14) %></td>
-								<td width="28%">
-									<a href="../#filter=.works/work#<%= work.id %>" target="_blank">
+								<td width="12%"><%= truncate(artist_name, :length => 11) %></td>
+								<td width="24%">
+									<a style="font-size:10px;" href="../#filter=.works/work#<%= work.id %>" target="_blank">
 										<%= "https://fairsplitmusic.com/#filter=.works/" + "work" + "#{work.id}" %>	
 									</a>
 								</td>
-								<td width="3%"><%= link_to "edit", edit_work_path(work), :class => "btn btn2" %></td>
-								<td width="3%"><%= button_to "Delete", work, :method => :delete, :class => "btn btn2" %></td>
+								<td width="2%" class="topperButtons"><%= link_to "edit", edit_work_path(work), :class => "btn btn2" %></td>
+								<td width="1%" class="topperButtons"><%= button_to "X", work, :method => :delete, :class => "btn btn2" %></td>
 							</tr>
 						<% end %>
 					</table>
