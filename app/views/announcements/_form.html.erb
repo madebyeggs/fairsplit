@@ -15,21 +15,36 @@
 					<%= f.check_box :latest, {}, true, false %> <br /><br/>
 					<%= f.label :title, class: "formLabel" %>
 	    			<%= f.text_field :title, class: 'formField' %>
-					<%= f.label :vimeo_identifier_eg_86412013, class: "formLabel" %>
-	    			<%= f.text_field :video, class: 'formField' %>
-					<%= f.label :square_image_if_no_video_crop_to_300X300_before_uploading, class: "formLabel" %><br />
-					<%= f.file_field :square_image %><br/>
-					<%= f.label :soundcloud_identifier_eg_59219255, class: "formLabel" %>
-	    			<%= f.text_field :soundcloud, class: 'formField' %>
+					<%= f.label :description, class: "formLabel" %>
+	    			<%= f.text_area :description, class: 'formArea' %>
 				</div>
 				<div class="col-md-1">&nbsp;</div>
 				<div class="col-md-6">
-					<%= f.label :description, class: "formLabel" %>
-	    			<%= f.text_area :description, class: 'formArea' %>
+					<%= f.label :vimeo_identifier_eg_86412013, class: "formLabel" %>
+	    			<%= f.text_field :video, class: 'formField' %>
+					<%= f.label :soundcloud_identifier_eg_59219255, class: "formLabel" %>
+	    			<%= f.text_field :soundcloud, class: 'formField' %>
+					<%= f.label :square_image_if_no_video_crop_to_300X300_before_uploading, class: "formLabel" %><br />
+					<%= f.file_field :square_image %>
+					<% if @announcement.square_image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @announcement.square_image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
 					<%= f.label :image_crop_to_710X210_before_uploading, class: "formLabel" %><br />
-					<%= f.file_field :image %><br/>
+					<%= f.file_field :image %>
+					<% if @announcement.image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @announcement.image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
 					<%= f.label :large_image_crop_to_710X400_before_uploading, class: "formLabel" %><br />
-					<%= f.file_field :large_image %><br/>
+					<%= f.file_field :large_image %>
+					<% if @announcement.large_image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @announcement.large_image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
 					<%= button_to "Cancel", cms_path, :class => "btn" %>
 		    		<%= f.submit :class => "btn" %>
 				</div>

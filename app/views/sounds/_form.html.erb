@@ -10,18 +10,26 @@
 	
 		<div class="formWrapper">	
 			<%= form_for(@sound) do |f| %>
-				<div class="col-md-12">
+				<div class="col-md-5">
 					<%= f.label :click_if_this_is_the_latest_playlist, class: "formLabel" %>
 					<%= f.check_box :latest, {}, true, false %> <br /><br/>
 					<%= f.label :title, class: "formLabel" %>
 	    			<%= f.text_field :title, class: 'formField' %>
-					<%= f.label :description, class: "formLabel" %>
-	    			<%= f.text_area :description, class: 'formArea' %>
 					<%= f.label :soundcloud_identifier_eg_86412013, class: "formLabel" %>
 	    			<%= f.text_field :url, class: 'formField' %>
 					<%= f.label :image_710X210, class: "formLabel" %><br />
-					<%= f.file_field :image %><br/>
+					<%= f.file_field :image %>
+					<% if @sound.image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @sound.image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
 					<br/>
+				</div>
+				<div class="col-md-1"></div>
+				<div class="col-md-6">
+					<%= f.label :description, class: "formLabel" %>
+	    			<%= f.text_area :description, class: 'formArea' %>
 					<%= button_to "Cancel", cms_path, :class => "btn" %>
 					<%= f.submit :class => "btn" %>
 				</div>

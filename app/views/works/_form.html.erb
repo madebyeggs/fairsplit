@@ -13,8 +13,6 @@
 				<div class="col-md-5">
 					<%= f.label :click_if_this_is_the_latest_work, class: "formLabel" %>
 					<%= f.check_box :latest, {}, true, false %> <br /><br/>
-					<%= f.label :Belongs_to_which_artist_?, class: "formLabel" %><br/>
-					<%= f.collection_select :artist_id, Artist.all, :id, :name, :include_blank => true %><br/><br/>
 					<%= f.label :title, class: "formLabel" %>
 	    			<%= f.text_field :title, class: 'formField' %>
 					<%= f.label :client, class: "formLabel" %>
@@ -23,19 +21,31 @@
 	    			<%= f.text_field :type_of_work, class: 'formField' %>
 					<%= f.label :artist_name, class: "formLabel" %>
 	    			<%= f.text_field :artist_name, class: 'formField' %>
+					<%= f.label :Assign_to_which_artist_?, class: "formLabel" %><br/>
+					<%= f.collection_select :artist_id, Artist.all, :id, :name, :include_blank => true %><br/><br/>
 					<%= f.label :track_name, class: "formLabel" %>
 	    			<%= f.text_field :track_name, class: 'formField' %>
+					<%= f.label :vimeo_identifier_eg_86412013, class: "formLabel" %>
+	    			<%= f.text_field :url, class: 'formField' %>
 				</div>
 				<div class="col-md-1">&nbsp;</div>
 				<div class="col-md-6">
 					<%= f.label :description, class: "formLabel" %>
 	    			<%= f.text_area :description, class: 'formArea' %>
-					<%= f.label :vimeo_identifier_eg_86412013, class: "formLabel" %>
-	    			<%= f.text_field :url, class: 'formField' %>
 					<%= f.label :small_image_710X210, class: "formLabel" %><br />
-					<%= f.file_field :image %><br/>
+					<%= f.file_field :image %>
+					<% if @work.image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @work.image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
 					<%= f.label :large_image_710X400, class: "formLabel" %><br />
 					<%= f.file_field :large_image %>
+					<% if @work.large_image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @work.large_image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
 					<%= button_to "Cancel", cms_path, :class => "btn" %>
 					<%= f.submit :class => "btn" %>
 				</div>
