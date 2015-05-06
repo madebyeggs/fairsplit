@@ -19,7 +19,7 @@
 						<% artist_name = work.artist.name rescue "NONE" %>
 							<tr class="tableRow">
 								<td width="12%"><%= truncate(work.title, :length => 14) %></td>
-								<td width="8%"><%= truncate(work.client, :length => 10) %></td>
+								<td width="8%"><%= truncate(work.client, :length => 8) %></td>
 								<td width="20%"><%= truncate(work.description, :length => 25) %></td>
 								<td width="10%"><%= work.url %></td>
 								<td width="7%"><%= work.latest %></td>

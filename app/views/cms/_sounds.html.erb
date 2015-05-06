@@ -16,8 +16,8 @@
 						<% @sounds.each do |s| %>
 							<tr class="tableRow">
 								<td width="22%"><%= truncate(s.title, :length => 20) %></td>
-								<td width="34%"><%= truncate(s.description, :length => 32) %></td>
-								<td width="8%"><%= s.url %></td>
+								<td width="30%"><%= truncate(s.description, :length => 32) %></td>
+								<td width="12%"><%= s.url %></td>
 								<td width="7%"><%= s.latest %></td>
 								<td width="26%">
 									<a style="font-size:10px;" href="../#filter=.playlists/playlist#<%= s.id %>" target="_blank">
