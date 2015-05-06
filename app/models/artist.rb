@@ -1,7 +1,8 @@
 class Artist < ActiveRecord::Base
-  attr_accessible :name, :description, :soundcloud, :image, :square_image, :latest, :large_image, :homepage_title, :vimeo
+  attr_accessible :name, :description, :soundcloud, :image, :square_image, :latest, :large_image, :homepage_title, :vimeo, :uid
   has_many :works
   before_save :falsify_all_others
+  before_save :create_unique_id
   
   # This method associates the attribute ":avatar" with a file attachment
     has_attached_file :image, styles: {
@@ -35,6 +36,11 @@ class Artist < ActiveRecord::Base
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
+    end
+    
+    def create_unique_id
+      random = rand.to_s[2..16]
+      self.uid = random
     end
     
 end

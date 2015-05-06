@@ -1,8 +1,9 @@
 class Work < ActiveRecord::Base
   attr_accessible :title, :client, :description, :vimeo, :image, :large_image, :type_of_work, :artist_name, :track_name, 
-  :latest, :artist_id, :soundcloud, :homepage_title, :square_image
+  :latest, :artist_id, :soundcloud, :homepage_title, :square_image, :uid
   
   before_save :falsify_all_others
+  before_save :create_unique_id
   belongs_to :artist
   
   # This method associates the attribute ":avatar" with a file attachment
@@ -39,4 +40,8 @@ class Work < ActiveRecord::Base
       end
     end
     
+    def create_unique_id
+      random = rand.to_s[2..16]
+      self.uid = random
+    end
 end

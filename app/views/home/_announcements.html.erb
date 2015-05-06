@@ -2,8 +2,8 @@
 	<div class="canScroll5">
 		<% @combined_sorted.each do |a| %>
 			<div class="element">
-				<div class="images" id="announcementPicture<%= a.id %>">
-					<div class="announcement<%= a.id %>">
+				<div class="images" id="announcementPicture<%= a.uid %>">
+					<div class="announcement<%= a.uid %>">
 						<%# if a.latest?  %>
 							<%#= image_tag(a.large_image) %>
 						<%# else %>
@@ -13,7 +13,7 @@
 					
 					<div class="muteEffects">
 		    			<section class="hidden-infos">
-							<input type="hidden" value=<%= a.id %> class="announcement-object-id"> 
+							<input type="hidden" value=<%= a.uid %> class="announcement-object-uid"> 
 							<a class="launchAnnouncement"></a>
 			          		<div class="overlay3"></div>
 							<div class="icons4 play"></div>	        					
@@ -29,9 +29,9 @@
 					</div>
 		    	</div>
 			</div>
-			<div id="announcement<%= a.id %>" style="display:none;">
-				<div class="projectInfo" id="scrollHereAnnouncement<%= a.id %>">
-					<input type="hidden" value=<%= a.id %> class="announcement-object-id">
+			<div id="announcement<%= a.uid %>" style="display:none;">
+				<div class="projectInfo" id="scrollHereAnnouncement<%= a.uid %>">
+					<input type="hidden" value=<%= a.uid %> class="announcement-object-uid">
 					<a class="announcementCloseIcon"></a>
 					<h1 class="projectName"><%= a.homepage_title %></h1>
 					<hr class="projectSeparator" />

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150506175208) do
+ActiveRecord::Schema.define(:version => 20150506194413) do
 
   create_table "announcements", :force => true do |t|
     t.string   "homepage_title"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(:version => 20150506175208) do
     t.string   "square_image_content_type"
     t.integer  "square_image_file_size"
     t.datetime "square_image_updated_at"
+    t.string   "uid"
   end
 
   create_table "artists", :force => true do |t|
@@ -56,6 +57,7 @@ ActiveRecord::Schema.define(:version => 20150506175208) do
     t.datetime "large_image_updated_at"
     t.string   "homepage_title"
     t.string   "vimeo"
+    t.string   "uid"
   end
 
   create_table "homes", :force => true do |t|
@@ -67,24 +69,8 @@ ActiveRecord::Schema.define(:version => 20150506175208) do
     t.datetime "image_updated_at"
   end
 
-  create_table "sounds", :force => true do |t|
-    t.string   "title"
-    t.text     "description"
-    t.string   "soundcloud"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-    t.boolean  "latest"
-    t.string   "homepage_title"
-    t.string   "square_image_file_name"
-    t.string   "square_image_content_type"
-    t.integer  "square_image_file_size"
-    t.datetime "square_image_updated_at"
-    t.string   "vimeo"
-  end
+# Could not dump table "sounds" because of following StandardError
+#   Unknown type 'uuid' for column 'uuid'
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -130,6 +116,7 @@ ActiveRecord::Schema.define(:version => 20150506175208) do
     t.string   "square_image_content_type"
     t.integer  "square_image_file_size"
     t.datetime "square_image_updated_at"
+    t.string   "uid"
   end
 
 end

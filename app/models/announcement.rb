@@ -1,6 +1,7 @@
 class Announcement < ActiveRecord::Base
-  attr_accessible :homepage_title, :image, :vimeo, :description, :soundcloud, :large_image, :latest, :square_image
+  attr_accessible :homepage_title, :image, :vimeo, :description, :soundcloud, :large_image, :latest, :square_image, :uid
   before_save :falsify_all_others
+  before_save :create_unique_id
   
   # This method associates the attribute ":avatar" with a file attachment
     has_attached_file :image, styles: {
@@ -34,6 +35,11 @@ class Announcement < ActiveRecord::Base
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
+    end
+    
+    def create_unique_id
+      random = rand.to_s[2..16]
+      self.uid = random
     end
     
 end

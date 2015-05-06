@@ -99,9 +99,12 @@ $(document).ready(function() {
 	//newspage detail dynamics
 	//open
 	$(".launchAnnouncement").click(function(){
-		var id = jQuery(this).prev('.announcement-object-id').val();
+		var id = jQuery(this).prev('.announcement-object-uid').val();
 		var div_id = '#' + 'announcement' + id;
 		scroll_calc = $('.canScroll5').scrollTop();
+		console.log(id);
+		console.log(div_id);
+		console.log(scroll_calc);
 		$(div_id).slideDown(500);
 		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 		$(".muteEffects").addClass("displayNone");
@@ -109,7 +112,7 @@ $(document).ready(function() {
 	});
 	//close
 	$(".announcementCloseIcon").click(function(){
-		var id = jQuery(this).prev('.announcement-object-id').val();
+		var id = jQuery(this).prev('.announcement-object-uid').val();
 		var div_id = '#' + 'announcement' + id;
 		scroll_calc = $('.canScroll5').scrollTop();
 		$(div_id).slideUp(500);
