@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150506165338) do
+ActiveRecord::Schema.define(:version => 20150506175208) do
 
   create_table "announcements", :force => true do |t|
     t.string   "homepage_title"
@@ -83,6 +83,7 @@ ActiveRecord::Schema.define(:version => 20150506165338) do
     t.string   "square_image_content_type"
     t.integer  "square_image_file_size"
     t.datetime "square_image_updated_at"
+    t.string   "vimeo"
   end
 
   create_table "users", :force => true do |t|

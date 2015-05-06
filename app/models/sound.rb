@@ -1,5 +1,5 @@
 class Sound < ActiveRecord::Base
-  attr_accessible :title, :description, :soundcloud, :image, :latest, :homepage_title, :square_image
+  attr_accessible :title, :description, :soundcloud, :image, :latest, :homepage_title, :square_image, :vimeo
   before_save :falsify_all_others
   
   # This method associates the attribute ":avatar" with a file attachment
