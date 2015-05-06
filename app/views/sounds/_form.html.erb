@@ -26,7 +26,7 @@
 					<% else %>
 						<br/>
 					<% end %>
-					<%= f.label :sqaure_image_300X300, class: "formLabel" %><br />
+					<%= f.label :square_image_300X300, class: "formLabel" %><br />
 					<%= f.file_field :square_image %>
 					<% if @sound.square_image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @sound.square_image_file_name %>" }</p><br/>
