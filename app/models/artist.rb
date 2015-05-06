@@ -38,8 +38,7 @@ class Artist < ActiveRecord::Base
     end
     
     def create_unique_id
-      random = rand.to_s[2..16]
-      self.uid = random
+      self.uid = rand.to_s[2..16]
     end
     
 end
