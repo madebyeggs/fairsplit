@@ -1,8 +1,7 @@
 class Artist < ActiveRecord::Base
   attr_accessible :name, :description, :soundcloud, :image, :square_image, :latest, :large_image, :homepage_title, :vimeo, :uid
   has_many :works
-  before_save :falsify_all_others
-  before_save :create_unique_id
+  before_save :falsify_all_others, :create_unique_id
   
   # This method associates the attribute ":avatar" with a file attachment
     has_attached_file :image, styles: {
