@@ -1,7 +1,6 @@
 class Announcement < ActiveRecord::Base
   attr_accessible :homepage_title, :image, :vimeo, :description, :soundcloud, :large_image, :latest, :square_image, :uid
-  before_save :falsify_all_others
-  before_save :create_unique_id
+  before_save :falsify_all_others, :create_unique_id
   
   # This method associates the attribute ":avatar" with a file attachment
     has_attached_file :image, styles: {
@@ -38,8 +37,7 @@ class Announcement < ActiveRecord::Base
     end
     
     def create_unique_id
-      random = rand.to_s[2..16]
-      self.uid = random
+      self.uid = rand.to_s[2..16]
     end
     
 end
