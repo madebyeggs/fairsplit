@@ -36,7 +36,7 @@ class Artist < ActiveRecord::Base
     validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
     
     def create_unique_id
-      if object.new_record?
+      if self.new_record?
         id = Artist.connection.select_value("Select nextval('artists_id_seq')")
       else
         id = self.id
