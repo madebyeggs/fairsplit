@@ -23,7 +23,8 @@
 								<td width="7%"><%= a.latest %></td>
 								<td width="34%">
 									<a style="font-size:10px;" href="../#filter=.announcements/announcement#<%= a.id %>" target="_blank">
-										<%= "https://fairsplitmusic.com/#filter=.announcements/" + "announcement" + "#{a.id}" %>	
+										<%#= "https://fairsplitmusic.com/#filter=.announcements/" + "announcement#" + "#{a.id}" %>
+										Not currently available...	
 									</a>
 								</td>
 								<td width="2%" class="topperButtons"><%= link_to "edit", edit_announcement_path(a), :class => "btn btn2" %></td>
