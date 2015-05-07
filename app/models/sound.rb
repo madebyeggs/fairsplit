@@ -40,7 +40,7 @@ class Sound < ActiveRecord::Base
       self.is_work = false
       self.is_sound = true
       self.is_announcement = false
-      if self.latest == ''
+      if self.latest == '' || self.latest.blank?
         self.latest = false
       end
       if self.latest == true

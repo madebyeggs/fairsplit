@@ -46,7 +46,7 @@ class Announcement < ActiveRecord::Base
       self.is_work = false
       self.is_sound = false
       self.is_announcement = true
-      if self.latest == ''
+      if self.latest == '' || self.latest.blank?
         self.latest = false
       end
       if self.latest == true
