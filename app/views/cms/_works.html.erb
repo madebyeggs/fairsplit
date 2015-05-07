@@ -19,14 +19,20 @@
 						<% artist_name = work.artist.name rescue "NONE" %>
 							<tr class="tableRow">
 								<td width="12%"><%= truncate(work.title, :length => 14) %></td>
-								<td width="8%"><%= truncate(work.client, :length => 8) %></td>
+								<td width="12%"><%= truncate(work.client, :length => 12) %></td>
 								<td width="20%"><%= truncate(work.description, :length => 25) %></td>
 								<td width="10%"><%= work.vimeo %></td>
 								<td width="7%"><%= work.latest %></td>
 								<td width="12%"><%= truncate(artist_name, :length => 11) %></td>
-								<td width="24%">
-									<a style="font-size:10px;" href="../#filter=.works/work#<%= work.id %>" target="_blank">
-										<%= "https://fairsplitmusic.com/#filter=.works/" + "work" + "#{work.id}" %>	
+								<td width="20%">
+									<!--<a style="font-size:10px;" href="../#filter=.works/work#<%= work.id %>" target="_blank">
+										<%#= "https://fairsplitmusic.com/#filter=.works/" + "work" + "#{work.id}" %>	
+									</a>-->
+									<% bitly = Bitly.new('madebyeggs','R_9c183444d0d0432080764669badaf26a') %>
+									<% page_url = bitly.shorten("https://fairsplitmusic.com/#filter=.works/" + "work" + "#{work.id}") %>
+									<% shortened_url = page_url.short_url %>
+									<a href="../#filter=.playlists/playlist#<%= work.id %>" target="_blank">
+										<%= shortened_url %>	
 									</a>
 								</td>
 								<td width="2%" class="topperButtons"><%= link_to "edit", edit_work_path(work), :class => "btn btn2" %></td>

@@ -17,14 +17,16 @@
 						<% @announcements.each do |a| %>
 							<tr class="tableRow">
 								<td width="16%"><%= truncate(a.homepage_title, :length => 15) %></td>
-								<td width="20%"><%= truncate(a.description, :length => 22) %></td>
+								<td width="34%"><%= truncate(a.description, :length => 48) %></td>
 								<td width="9%"><%= a.vimeo %></td>
 								<td width="11%"><%= a.soundcloud %></td>
 								<td width="7%"><%= a.latest %></td>
-								<td width="34%">
-									<a style="font-size:10px;" href="../#filter=.announcements/announcement#<%= a.id %>" target="_blank">
-										<%#= "https://fairsplitmusic.com/#filter=.announcements/" + "announcement#" + "#{a.id}" %>
-										Not currently available...	
+								<td width="20%">
+									<% bitly = Bitly.new('madebyeggs','R_9c183444d0d0432080764669badaf26a') %>
+									<% page_url = bitly.shorten("https://fairsplitmusic.com/#filter=.announcements/" + "announcement" + "#{a.uid}") %>
+									<% shortened_url = page_url.short_url %>
+									<a href="../#filter=.announcements/announcement#<%= a.uid %>" target="_blank">
+										<%= shortened_url %>	
 									</a>
 								</td>
 								<td width="2%" class="topperButtons"><%= link_to "edit", edit_announcement_path(a), :class => "btn btn2" %></td>

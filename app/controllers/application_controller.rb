@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
+  require 'bitly'
+  
   def bring_in_models
     @works = Work.order("latest DESC, id DESC")
     @newest = Work.last
