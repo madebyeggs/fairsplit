@@ -48,6 +48,13 @@
 					<% else %>
 						<br/>
 					<% end %>
+					<%= f.label :square_image_300X300, class: "formLabel" %><br />
+					<%= f.file_field :square_image %>
+					<% if @work.square_image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @work.square_image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
 					<%= button_to "Cancel", cms_path, :class => "btn" %>
 					<%= f.submit :class => "btn" %>
 				</div>
