@@ -103,8 +103,8 @@ ActiveRecord::Schema.define(:version => 20150507111505) do
     t.string   "client"
     t.text     "description"
     t.string   "vimeo"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",               :null => false
+    t.datetime "updated_at",               :null => false
     t.string   "artist_name"
     t.string   "type_of_work"
     t.string   "image_file_name"
@@ -124,11 +124,6 @@ ActiveRecord::Schema.define(:version => 20150507111505) do
     t.boolean  "is_work"
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
-    t.string   "soundcloud"
-    t.string   "square_image_file_name"
-    t.string   "square_image_content_type"
-    t.integer  "square_image_file_size"
-    t.datetime "square_image_updated_at"
   end
 
 end
