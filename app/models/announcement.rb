@@ -52,7 +52,7 @@ class Announcement < ActiveRecord::Base
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
-      if self.short_uid_url == '' || self.short_id_url.blank?
+      if self.short_uid_url == '' || self.short_uid_url.blank?
 			  self.short_uid_url = short_uid_url
 			end
     end
