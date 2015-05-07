@@ -36,7 +36,11 @@ class Artist < ActiveRecord::Base
     validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
     
     def create_unique_id
-      id = self.id
+      if object.new_record?
+        id = "#{User.last.id+1}"
+      else
+        id = self.id
+      end
       uid = rand.to_s[2..16]
       bitly = Bitly.new('madebyeggs','R_9c183444d0d0432080764669badaf26a')
 		  id_url = bitly.shorten("https://fairsplitmusic.com/#filter=.artists/" + "artist" + "#{id}")
