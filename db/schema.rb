@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150506194413) do
+ActiveRecord::Schema.define(:version => 20150507080221) do
 
   create_table "announcements", :force => true do |t|
     t.string   "homepage_title"
@@ -34,6 +34,10 @@ ActiveRecord::Schema.define(:version => 20150506194413) do
     t.integer  "square_image_file_size"
     t.datetime "square_image_updated_at"
     t.string   "uid"
+    t.boolean  "is_artist"
+    t.boolean  "is_work"
+    t.boolean  "is_sound"
+    t.boolean  "is_announcement"
   end
 
   create_table "artists", :force => true do |t|
@@ -58,6 +62,10 @@ ActiveRecord::Schema.define(:version => 20150506194413) do
     t.string   "homepage_title"
     t.string   "vimeo"
     t.string   "uid"
+    t.boolean  "is_artist"
+    t.boolean  "is_work"
+    t.boolean  "is_sound"
+    t.boolean  "is_announcement"
   end
 
   create_table "homes", :force => true do |t|
@@ -117,6 +125,10 @@ ActiveRecord::Schema.define(:version => 20150506194413) do
     t.integer  "square_image_file_size"
     t.datetime "square_image_updated_at"
     t.string   "uid"
+    t.boolean  "is_artist"
+    t.boolean  "is_work"
+    t.boolean  "is_sound"
+    t.boolean  "is_announcement"
   end
 
 end

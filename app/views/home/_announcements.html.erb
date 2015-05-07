@@ -35,39 +35,54 @@
 					<a class="announcementCloseIcon"></a>
 					<h1 class="projectName"><%= a.homepage_title %></h1>
 					<hr class="projectSeparator" />
-					<div class="artist-left">
-						<p class="projectDetail"><%= simple_format a.description, :class => "projectDetail" %></p>
-					</div>
-					<div class="artist-right">
-						<% if a.vimeo? %>
-							<div class="artistVideoContainer">
-								<div class="fitvids">
-									<iframe src="//player.vimeo.com/video/<%= a.vimeo %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+					
+					<% if a.is_artist? || a.is_announcement? %>
+						<div class="artist-left">
+							<p class="projectDetail"><%= simple_format a.description, :class => "projectDetail" %></p>
+						</div>
+
+						<div class="artist-right">
+							<% if a.vimeo? %>
+								<div class="artistVideoContainer">
+									<div class="fitvids">
+										<iframe src="//player.vimeo.com/video/<%= a.vimeo %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+									</div>
+									<hr class="projectSeparator" />
 								</div>
-								<hr class="projectSeparator" />
-							</div>
-						<% else %>
-							<div class="artistSquareContainer">
-								<div class="squareImage">
-									<%= image_tag(a.square_image, :class => "squareImage") %>
+							<% else %>
+								<div class="artistSquareContainer">
+									<div class="squareImage">
+										<%= image_tag(a.square_image, :class => "squareImage") %>
+									</div>
+									<hr class="projectSeparator" />
 								</div>
-								<hr class="projectSeparator" />
-							</div>
-						<% end %>
-					</div>
-					<div class="artist-bottom">
-						<% if a.soundcloud? %>
-							<iframe width="100%" height="281" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/<%= a.soundcloud %>&amp;color=bdbdbd&amp;background_color=000000&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_artwork=false">
+							<% end %>
+						</div>
+
+						<div class="artist-bottom">
+							<% if a.soundcloud? %>
+								<iframe width="100%" height="281" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/<%= a.soundcloud %>&amp;color=bdbdbd&amp;background_color=000000&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_artwork=false">
+								</iframe>
+							<% end %>
+						</div>
+					<% elsif a.is_work? %>
+						<div class="fitvids">
+							<% if a.vimeo? %>
+								<iframe src="//player.vimeo.com/video/<%= a.vimeo %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+							<% end %>
+						</div>
+						<% if a.vimeo? %><hr class="projectSeparator" /><% end %>
+						<% if a.description? %><p class="projectDetail"><%= simple_format a.description, :class => "projectDetail" %></p><% end %>
+					<% else %>
+						<div class="fitvids">
+							<iframe width="100%" height="381" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/<%= a.soundcloud %>&amp;color=bdbdbd&amp;background_color=000000&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_artwork=false">
 							</iframe>
-						<% end %>
-					</div>
+						</div>
+						<hr class="projectSeparator" />
+						<% if a.description %><p class="projectDetail"><%= simple_format a.description, :class => "projectDetail" %></p><% end %>
+					<% end %>
 				</div>
 			</div>
 		<% end %>
-		<!--<div id="backtotop2">
-		  <ul>
-		    <li><a id="toTop2" class="bounce" href="#" onClick="return false">Back to Top</a></li>
-		  </ul>
-		</div>-->
 	</div>
 </div>

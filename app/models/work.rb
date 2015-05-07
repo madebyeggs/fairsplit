@@ -1,8 +1,8 @@
 class Work < ActiveRecord::Base
   attr_accessible :title, :client, :description, :vimeo, :image, :large_image, :type_of_work, :artist_name, :track_name, 
-  :latest, :artist_id, :soundcloud, :homepage_title, :square_image, :uid
+  :latest, :artist_id, :soundcloud, :homepage_title, :square_image, :uid, :is_artist, :is_work, :is_sound, :is_announcement
   
-  before_save :falsify_all_others, :create_unique_id
+  before_save :create_unique_id
   belongs_to :artist
   
   # This method associates the attribute ":avatar" with a file attachment
@@ -33,13 +33,14 @@ class Work < ActiveRecord::Base
     # Validate the attached image is image/jpg, image/png, etc
     validates_attachment_content_type :square_image, :content_type => /\Aimage\/.*\Z/
     
-    def falsify_all_others
+    def create_unique_id
+      self.uid = rand.to_s[2..16]
+      self.is_artist = false
+      self.is_work = true
+      self.is_sound = false
+      self.is_announcement = false
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
-    end
-    
-    def create_unique_id
-      self.uid = rand.to_s[2..16]
     end
 end
