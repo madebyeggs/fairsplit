@@ -1,8 +1,10 @@
 class Announcement < ActiveRecord::Base
   attr_accessible :homepage_title, :image, :vimeo, :description, :soundcloud, :large_image, :latest, :square_image, 
-  :uid, :is_artist, :is_work, :is_sound, :is_announcement
+  :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_url
   
   before_save :create_unique_id
+  
+  require 'bitly'
   
   # This method associates the attribute ":avatar" with a file attachment
     has_attached_file :image, styles: {
@@ -33,7 +35,13 @@ class Announcement < ActiveRecord::Base
     validates_attachment_content_type :square_image, :content_type => /\Aimage\/.*\Z/
     
     def create_unique_id
-      self.uid = rand.to_s[2..16]
+      uid = rand.to_s[2..16]
+      bitly = Bitly.new('madebyeggs','R_9c183444d0d0432080764669badaf26a')
+		  page_url = bitly.shorten("https://fairsplitmusic.com/#filter=.announcements/" + "announcement" + "#{uid}")
+		  shortened_url = page_url.short_url
+      if self.uid == ''
+        self.uid = uid
+      end
       self.is_artist = false
       self.is_work = false
       self.is_sound = false
@@ -41,6 +49,9 @@ class Announcement < ActiveRecord::Base
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
+      if self.short_url == ''
+			  self.short_url = shortened_url
+			end
     end
     
 end

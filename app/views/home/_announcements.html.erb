@@ -33,6 +33,7 @@
 				<div class="projectInfo" id="scrollHereAnnouncement<%= a.uid %>">
 					<input type="hidden" value=<%= a.uid %> class="announcement-object-uid">
 					<a class="announcementCloseIcon"></a>
+					<%= social_share_button_tag(a.homepage_title, :popup => "true", :url => a.short_uid_url) %>
 					<h1 class="projectName"><%= a.homepage_title %></h1>
 					<hr class="projectSeparator" />
 					

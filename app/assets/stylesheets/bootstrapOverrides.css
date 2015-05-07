@@ -4,6 +4,9 @@
 .btn2 {margin-top:0px;height:20px;}
 .topperButtons {vertical-align:middle;}
 .existingImageName {color:#a8a8a8;margin-top:6px;}
+.social-share-button {float:right;margin-right:20px;}
+.social-share-button-twitter, .social-share-button-facebook, .social-share-button-google_plus {max-width:50px;}
+.social-share-button-twitter a, .social-share-button-facebook a, .social-share-button-google_plus a {width:100px;}
 
 @media (max-width: 992px) {
 	.col-md-8, .col-md-4 {padding:0!important;}

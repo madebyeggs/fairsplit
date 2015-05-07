@@ -20,11 +20,8 @@
 								<td width="7%"><%= a.latest %></td>
 								<td width="11%"><%= a.soundcloud %></td>
 								<td width="20%">
-									<% bitly = Bitly.new('madebyeggs','R_9c183444d0d0432080764669badaf26a') %>
-									<% page_url = bitly.shorten("https://fairsplitmusic.com/#filter=.artists/" + "artist" + "#{a.id}") %>
-									<% shortened_url = page_url.short_url %>
 									<a href="../#filter=.artists/artist#<%= a.id %>" target="_blank">
-										<%= shortened_url %>	
+										<%= a.short_id_url %>	
 									</a>
 								</td>
 								<td width="2%" class="topperButtons"><%= link_to "edit", edit_artist_path(a), :class => "btn btn2" %></td>

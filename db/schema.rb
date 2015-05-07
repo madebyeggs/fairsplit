@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150507143316) do
+ActiveRecord::Schema.define(:version => 20150507212849) do
 
   create_table "announcements", :force => true do |t|
     t.string   "homepage_title"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(:version => 20150507143316) do
     t.boolean  "is_work"
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
+    t.string   "short_uid_url"
   end
 
   create_table "artists", :force => true do |t|
@@ -66,6 +67,8 @@ ActiveRecord::Schema.define(:version => 20150507143316) do
     t.boolean  "is_work"
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
+    t.string   "short_uid_url"
+    t.string   "short_id_url"
   end
 
   create_table "homes", :force => true do |t|
@@ -124,6 +127,8 @@ ActiveRecord::Schema.define(:version => 20150507143316) do
     t.boolean  "is_work"
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
+    t.string   "short_id_url"
+    t.string   "short_uid_url"
   end
 
 end

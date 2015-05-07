@@ -1,9 +1,11 @@
 class Artist < ActiveRecord::Base
   attr_accessible :name, :description, :soundcloud, :image, :square_image, :latest, :large_image, :homepage_title, :vimeo, :uid, 
-  :is_artist, :is_work, :is_sound, :is_announcement
+  :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url
   
   has_many :works
   before_save :create_unique_id
+  
+  require 'bitly'
   
   # This method associates the attribute ":avatar" with a file attachment
     has_attached_file :image, styles: {
@@ -34,7 +36,16 @@ class Artist < ActiveRecord::Base
     validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
     
     def create_unique_id
-      self.uid = rand.to_s[2..16]
+      id = self.id
+      uid = rand.to_s[2..16]
+      bitly = Bitly.new('madebyeggs','R_9c183444d0d0432080764669badaf26a')
+		  id_url = bitly.shorten("https://fairsplitmusic.com/#filter=.artists/" + "artist" + "#{id}")
+		  uid_url = bitly.shorten("https://fairsplitmusic.com/#filter=.artists/" + "artist" + "#{uid}")
+		  short_id_url = id_url.short_url
+		  short_uid_url = uid_url.short_url
+      if self.uid == ''
+        self.uid = uid
+      end
       self.is_artist = true
       self.is_work = false
       self.is_sound = false
@@ -42,6 +53,12 @@ class Artist < ActiveRecord::Base
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
+      if self.short_id_url == '' || self.short_id_url.blank?
+			  self.short_id_url = short_id_url
+			end
+			if self.short_uid_url == '' || self.short_uid_url.blank?
+			  self.short_uid_url = short_uid_url
+			end
     end
     
 end

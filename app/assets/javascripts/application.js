@@ -35,6 +35,7 @@
 //= require gmap3
 //= require mapSettings
 //= require urlsForPosting
+//= require social-share-button
 
 $(window).load(function() { // makes sure the whole site is loaded
 	$('#status').fadeOut(); // will first fade out the loading animation
