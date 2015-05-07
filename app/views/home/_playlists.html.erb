@@ -4,7 +4,11 @@
 			<div class="element">
 				<div class="images">
 					<div class="playlist<%= s.id %>">
-						<%= image_tag(s.image) %>
+						<% if a.latest?  %>
+							<%= image_tag(a.large_image) %>
+						<% else %>
+							<%= image_tag(a.image) %>
+						<% end %>
 					</div>
 					<div class="muteEffects">
 		    			<section class="hidden-infos">

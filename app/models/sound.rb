@@ -1,5 +1,6 @@
 class Sound < ActiveRecord::Base
-  attr_accessible :title, :description, :soundcloud, :image, :latest, :homepage_title, :square_image, :vimeo, :uid, :is_artist, :is_work, :is_sound, :is_announcement
+  attr_accessible :title, :description, :soundcloud, :image, :latest, :homepage_title, :square_image, :vimeo, :uid, 
+  :is_artist, :is_work, :is_sound, :is_announcement, :large_image
   before_save :create_unique_id
   
   # This method associates the attribute ":avatar" with a file attachment
@@ -13,6 +14,12 @@ class Sound < ActiveRecord::Base
       thumb: '100x100>',
       square: '200x200#',
       main: '300x300>'
+    }
+    
+    has_attached_file :square_image, styles: {
+      thumb: '100x100>',
+      square: '200x200#',
+      main: '710x400>'
     }
 
     # Validate the attached image is image/jpg, image/png, etc
