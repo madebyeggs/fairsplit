@@ -42,7 +42,7 @@
 						<% end %>
 					</div>
 					<% if w.vimeo? %><hr class="projectSeparator" /><% end %>
-					<p class="projectDetail"><%= simple_format w.description, :class => "projectDetail" %></p>
+					<% if w.description? %><p class="projectDetail"><%= simple_format w.description, :class => "projectDetail" %></p><% end %>
 				</div>
 			</div>
 		<% end %>

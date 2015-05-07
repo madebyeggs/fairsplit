@@ -32,7 +32,7 @@
 						</iframe>
 					</div>
 					<hr class="projectSeparator" />
-					<p class="projectDetail"><%= simple_format s.description, :class => "projectDetail" %></p>
+					<% if s.description? %><p class="projectDetail"><%= simple_format s.description, :class => "projectDetail" %></p><% end %>
 				</div>
 			</div>
 		<% end %>
