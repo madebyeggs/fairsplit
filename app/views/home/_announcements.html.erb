@@ -1,14 +1,14 @@
 <div class="rightHandSection2">
 	<div class="canScroll5">
-		<% @combined_sorted.each do |a| %>
+		<% @combined_sorted.each_with_index do |a, i| %>
 			<div class="element">
 				<div class="images" id="announcementPicture<%= a.uid %>">
 					<div class="announcement<%= a.uid %>">
-						<%# if a.latest?  %>
-							<%#= image_tag(a.large_image) %>
-						<%# else %>
+						<% if i == 0  %>
+							<%= image_tag(a.large_image) %>
+						<% else %>
 							<%= image_tag(a.image) %>
-						<%# end %>
+						<% end %>
 					</div>
 					
 					<div class="muteEffects">
