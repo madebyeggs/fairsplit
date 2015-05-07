@@ -50,6 +50,9 @@ class Artist < ActiveRecord::Base
       self.is_work = false
       self.is_sound = false
       self.is_announcement = false
+      if self.latest == ''
+        self.latest = false
+      end
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end

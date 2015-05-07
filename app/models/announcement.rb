@@ -46,10 +46,13 @@ class Announcement < ActiveRecord::Base
       self.is_work = false
       self.is_sound = false
       self.is_announcement = true
+      if self.latest == ''
+        self.latest = false
+      end
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
-      if self.short_uid_url == ''
+      if self.short_uid_url == '' || self.short_id_url.blank?
 			  self.short_uid_url = short_uid_url
 			end
     end
