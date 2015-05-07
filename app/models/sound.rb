@@ -16,7 +16,7 @@ class Sound < ActiveRecord::Base
       main: '300x300>'
     }
     
-    has_attached_file :square_image, styles: {
+    has_attached_file :large_image, styles: {
       thumb: '100x100>',
       square: '200x200#',
       main: '710x400>'
@@ -27,6 +27,9 @@ class Sound < ActiveRecord::Base
     
     # Validate the attached image is image/jpg, image/png, etc
     validates_attachment_content_type :square_image, :content_type => /\Aimage\/.*\Z/
+    
+    # Validate the attached image is image/jpg, image/png, etc
+    validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
     
     def create_unique_id
       self.uid = rand.to_s[2..16]

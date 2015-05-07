@@ -28,6 +28,11 @@
 					<% end %>
 					<%= f.label :large_image_710X400, class: "formLabel" %><br />
 					<%= f.file_field :large_image %>
+					<% if @sound.large_image.exists? rescue nil %>
+						<p class="existingImageName">{ Current Image: "<%= @sound.large_image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
 					<br/>
 				</div>
 				<div class="col-md-1"></div>
