@@ -39,7 +39,7 @@ class Announcement < ActiveRecord::Base
       bitly = Bitly.new('madebyeggs','R_9c183444d0d0432080764669badaf26a')
 		  uid_url = bitly.shorten("https://fairsplitmusic.com/#filter=.announcements/" + "announcement" + "#{uid}")
 		  short_uid_url = uid_url.short_url
-      if self.uid == ''
+      if self.uid == '' || self.uid.blank?
         self.uid = uid
       end
       self.is_artist = false
