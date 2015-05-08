@@ -33,7 +33,7 @@ class Sound < ActiveRecord::Base
         id = self.id
       end
       uid = rand.to_s[2..16]
-      bitly = Bitly.new('madebyeggs','R_9c183444d0d0432080764669badaf26a')
+      bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
 		  id_url = bitly.shorten("https://fairsplitmusic.com/#filter=.playlists/" + "playlist" + "#{id}")
 		  uid_url = bitly.shorten("https://fairsplitmusic.com/#filter=.playlists/" + "playlist" + "#{uid}")
 		  short_id_url = id_url.short_url
