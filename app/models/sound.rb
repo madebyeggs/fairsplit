@@ -27,7 +27,8 @@ class Sound < ActiveRecord::Base
     
     def create_unique_id
       if self.new_record?
-        id = Sound.connection.select_value("Select nextval('sounds_id_seq')")
+        #id = Sound.connection.select_value("Select nextval('sounds_id_seq')")
+        id = Sound.maximum(:id) + 1
       else
         id = self.id
       end

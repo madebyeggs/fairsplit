@@ -28,7 +28,8 @@ class Work < ActiveRecord::Base
     
     def create_unique_id
       if self.new_record?
-        id = Work.connection.select_value("Select nextval('works_id_seq')")
+        #id = Work.connection.select_value("Select nextval('works_id_seq')")
+        id = Work.maximum(:id) + 1
       else
         id = self.id
       end
