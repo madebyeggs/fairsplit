@@ -37,7 +37,7 @@ class Artist < ActiveRecord::Base
     
     def create_unique_id
       if self.new_record?
-        id = Artist.connection.select_value("Select nextval('artists_id_seq')")
+        #id = Artist.connection.select_value("Select nextval('artists_id_seq')")
         id = Artist.maximum(:id) + 1
       else
         id = self.id
