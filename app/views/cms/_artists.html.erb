@@ -16,7 +16,7 @@
 						<% @artists.each do |a| %>
 							<tr class="tableRow">
 								<td width="20%"><%= truncate(a.name, :length => 20) %></td>
-								<td width="39%"><%= truncate(a.description, :length => 62) %></td>
+								<td width="39%"><%= truncate(a.description, :length => 42) %></td>
 								<td width="7%"><%= a.latest %></td>
 								<td width="11%"><%= a.soundcloud %></td>
 								<td width="20%">
