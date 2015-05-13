@@ -19,11 +19,11 @@
 						<% artist_name = work.artist.name rescue "NONE" %>
 							<tr class="tableRow">
 								<td width="20%"><%= truncate(work.title, :length => 17) %></td>
-								<td width="17%"><%= truncate(work.client, :length => 17) %></td>
+								<td width="19%"><%= truncate(work.client, :length => 17) %></td>
 								<% if work.description.blank? || work.description == '' %>
-									<td width="7%">NO</td>
+									<td width="5%">NO</td>
 								<% else %>
-									<td width="7%">YES</td>
+									<td width="5%">YES</td>
 								<% end %>
 								<td width="10%"><%= work.vimeo %></td>
 								<td width="7%"><%= work.latest %></td>
