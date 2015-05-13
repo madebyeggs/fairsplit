@@ -8,7 +8,7 @@
 						<tr class="tableHeader">
 							<th>TITLE</th>
 							<th>CLIENT</th>
-							<th>DESCRIPTION</th>
+							<th>INFO</th>
 							<th>VIMEO</th>
 							<th>LATEST</th>
 							<th>ARTIST</th>
@@ -18,9 +18,13 @@
 						<% @works.each do |work| %>
 						<% artist_name = work.artist.name rescue "NONE" %>
 							<tr class="tableRow">
-								<td width="12%"><%= truncate(work.title, :length => 14) %></td>
-								<td width="12%"><%= truncate(work.client, :length => 12) %></td>
-								<td width="20%"><%= truncate(work.description, :length => 25) %></td>
+								<td width="17%"><%= truncate(work.title, :length => 17) %></td>
+								<td width="17%"><%= truncate(work.client, :length => 17) %></td>
+								<% if work.description.blank? || work.description == '' %>
+									<td width="10%">NO</td>
+								<% else %>
+									<td width="10%">YES</td>
+								<% end %>
 								<td width="10%"><%= work.vimeo %></td>
 								<td width="7%"><%= work.latest %></td>
 								<td width="12%"><%= truncate(artist_name, :length => 11) %></td>

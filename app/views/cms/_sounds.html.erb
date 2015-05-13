@@ -15,8 +15,12 @@
 						<tr><hr class="ruler"/></tr>
 						<% @sounds.each do |s| %>
 							<tr class="tableRow">
-								<td width="21%"><%= truncate(s.title, :length => 28) %></td>
-								<td width="30%"><%= truncate(s.description, :length => 38) %></td>
+								<td width="41%"><%= truncate(s.title, :length => 32) %></td>
+								<% if s.description.blank? || s.description == '' %>
+									<td width="10%">NO</td>
+								<% else %>
+									<td width="10%">YES</td>
+								<% end %>
 								<td width="12%"><%= s.soundcloud %></td>
 								<td width="7%"><%= s.latest %></td>
 								<td width="20%">
