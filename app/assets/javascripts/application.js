@@ -48,26 +48,29 @@ $(window).load(function() { // makes sure the whole site is loaded
 
 $(document).ready(function() {
 	
-	var frame = $('iframe'),
-	frameSrc = new Array();
-
-    if( frame.length ){
-        $.each( frame, function(i, f){
-            frameSrc[i] = $(f).attr('src');
-            //remove the src attribute so window will ignore these iframes
-            $(f).attr('src', '');
-        });
-
-        //window finish load
-        $(window).on('load',function(){
-            $.each( frame, function(a, x){
-                //put the src attribute value back
-                $(x).attr('src', frameSrc[a]);
-				//add fitvids class back in
-                $(x).attr('src', frameSrc[a]);
-            });
-        });
-    }
+	// var frame = $('iframe'),
+	// 	frameSrc = new Array();
+	// 
+	//     if( frame.length ){
+	//         $.each( frame, function(i, f){
+	//             frameSrc[i] = $(f).attr('src');
+	//             //remove the src attribute so window will ignore these iframes
+	//             $(f).attr('src', '');
+	//         });
+	// 
+	//         //window finish load
+	//         $(window).on('load',function(){
+	//             $.each( frame, function(a, x){
+	//                 //put the src attribute value back
+	//                 $(x).attr('src', frameSrc[a]);
+	// 				//add fitvids class back in
+	//                 $(x).attr('src', frameSrc[a]);
+	// 				//auto scalling video
+	// 
+	// 				$(".fitvids").fitVids();
+	//             });
+	//         });
+	//     }
   
 	//navigation links hover opcaity animation
 	$('.navButton a').css('opacity', 1);  
@@ -78,9 +81,6 @@ $(document).ready(function() {
 	function(){  
 	    $(this).stop().fadeTo('medium', 1);  
 	});
-	
-	//auto scalling video
-	$(".fitvids").fitVids();
 	
 	//mobileNavMenu
 	$(function(){

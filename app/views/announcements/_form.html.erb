@@ -11,8 +11,6 @@
 		<div class="formWrapper">	
 			<%= form_for(@announcement) do |f| %>
 				<div class="col-md-5">
-					<%= f.label :click_if_this_is_the_latest_news_post, class: "formLabel" %>
-					<%= f.check_box :latest, {}, true, false %> <br /><br/>
 					<%= f.label :title, class: "formLabel" %>
 	    			<%= f.text_field :homepage_title, class: 'formField' %>
 					<%= f.label :description, class: "formLabel" %>
