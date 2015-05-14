@@ -120,6 +120,7 @@ td {line-height:30px;}
 .work {margin:0px 0px 0px 0px;}
 .workImage img {width:100%;}
 .trackName {font-size:12px!important;}
+.justify li {text-align:justify!important;font-size:22px!important;line-height:30px!important;margin:30px!important;}
 
 /*CMSFixes */
 
