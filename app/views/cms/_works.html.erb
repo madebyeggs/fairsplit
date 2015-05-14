@@ -30,7 +30,7 @@
 								<td width="12%"><%= truncate(artist_name, :length => 11) %></td>
 								<td width="20%">
 									<a href="../#filter=.playlists/playlist#<%= work.id %>" target="_blank">
-										<%= work.short_id_url %>	
+										<%#= work.short_id_url %>	
 									</a>
 								</td>
 								<td width="2%" class="topperButtons"><%= link_to "edit", edit_work_path(work), :class => "btn btn2" %></td>
