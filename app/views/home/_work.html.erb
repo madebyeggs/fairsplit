@@ -38,7 +38,7 @@
 					<hr class="projectSeparator" />
 					<div class="fitvids">
 						<% if w.vimeo? %>
-			        	<iframe src="//player.vimeo.com/video/<%= w.vimeo %>?title=0&amp;byline=0&amp;portrait=0" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+			        	<iframe src="about:blank" id="workiFrame<%= w.id %>" data-src="//player.vimeo.com/video/<%= w.vimeo %>?title=0&amp;byline=0&amp;portrait=0" width="100%" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 						<% end %>
 					</div>
 					<% if w.vimeo? %><hr class="projectSeparator" /><% end %>

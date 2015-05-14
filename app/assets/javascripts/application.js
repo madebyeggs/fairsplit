@@ -37,16 +37,17 @@
 //= require urlsForPosting
 //= require social-share-button
 
-$(window).load(function() { // makes sure the whole site is loaded
-	$('#container').isotope({ filter: '.announcements' });
-})
-
 $(document).ready(function() {
-	$('#status').fadeOut(); // will first fade out the loading animation
-	$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-	$('body').delay(550).css({'overflow':'visible'});
-	//homePage title show
-	$('.homeTitle').show();	
+	
+	$(window).load(function() { // makes sure the whole site is loaded
+		$('#status').fadeOut(); // will first fade out the loading animation
+		$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+		$('body').delay(550).css({'overflow':'visible'});
+		//homePage title show
+		$('.homeTitle').show();
+		$('#container').isotope({ filter: '.announcements' });
+	});
+	
 	$('.fitvids').fitVids();
 	
 	//navigation links hover opcaity animation
@@ -74,6 +75,12 @@ $(document).ready(function() {
 		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 		$(".muteEffects").addClass("displayNone");
 		$('.canScroll5').animate({scrollTop:$('#scrollHereAnnouncement' + id).position().top + scroll_calc}, 'slow');
+		var home_sound_id = '#' + 'homeSoundiFrame' + id;
+		var homeSoundiFrame = $(home_sound_id);
+		homeSoundiFrame.attr("src", homeSoundiFrame.data("src"));
+		var home_video_id = '#' + 'homeVideoiFrame' + id;
+		var homeVideoiFrame = $(home_video_id);
+		homeVideoiFrame.attr("src", homeVideoiFrame.data("src"));
 	});
 	//close
 	$(".announcementCloseIcon").click(function(){
@@ -95,6 +102,9 @@ $(document).ready(function() {
 		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 		$(".muteEffects").addClass("displayNone");
 		$('.canScroll2').animate({scrollTop:$('#scrollHereWork' + id).position().top + scroll_calc}, 'slow');
+		var work_video_id = '#' + 'workiFrame' + id;
+		var workVideoiFrame = $(work_video_id);
+		workVideoiFrame.attr("src", workVideoiFrame.data("src"));
 	});
 	//close
 	$(".workCloseIcon").click(function(){
@@ -116,6 +126,9 @@ $(document).ready(function() {
 		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 		$(".muteEffects").addClass("displayNone");
 		$('.canScroll3').animate({scrollTop:$('#scrollHerePlaylist' + id).position().top + scroll_calc}, 'slow');
+		var sound_id = '#' + 'soundiFrame' + id;
+		var soundiFrame = $(sound_id);
+		soundiFrame.attr("src", soundiFrame.data("src"));
 	});
 	//close
 	$(".playlistCloseIcon").click(function(){
@@ -137,6 +150,9 @@ $(document).ready(function() {
 		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 		$(".muteEffects").addClass("displayNone");
 		$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + id).position().top + scroll_calc}, 'slow');
+		var artist_sound_id = '#' + 'artistSoundiFrame' + id;
+		var artistSoundiFrame = $(artist_sound_id);
+		artistSoundiFrame.attr("src", artistSoundiFrame.data("src"));
 	});
 	//close
 	$(".artistCloseIcon").click(function(){
