@@ -38,40 +38,17 @@
 //= require social-share-button
 
 $(window).load(function() { // makes sure the whole site is loaded
-	$('#status').fadeOut(); // will first fade out the loading animation
-	$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-	$('body').delay(550).css({'overflow':'visible'});
-	//homePage title show
-	$('.homeTitle').show();
 	$('#container').isotope({ filter: '.announcements' });
 })
 
 $(document).ready(function() {
+	$('#status').fadeOut(); // will first fade out the loading animation
+	$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
+	$('body').delay(550).css({'overflow':'visible'});
+	//homePage title show
+	$('.homeTitle').show();	
+	$('.fitvids').fitVids();
 	
-	// var frame = $('iframe'),
-	// 	frameSrc = new Array();
-	// 
-	//     if( frame.length ){
-	//         $.each( frame, function(i, f){
-	//             frameSrc[i] = $(f).attr('src');
-	//             //remove the src attribute so window will ignore these iframes
-	//             $(f).attr('src', '');
-	//         });
-	// 
-	//         //window finish load
-	//         $(window).on('load',function(){
-	//             $.each( frame, function(a, x){
-	//                 //put the src attribute value back
-	//                 $(x).attr('src', frameSrc[a]);
-	// 				//add fitvids class back in
-	//                 $(x).attr('src', frameSrc[a]);
-	// 				//auto scalling video
-	// 
-	// 				$(".fitvids").fitVids();
-	//             });
-	//         });
-	//     }
-  
 	//navigation links hover opcaity animation
 	$('.navButton a').css('opacity', 1);  
 	// when hover over the selected item change the opacity to 1  
@@ -86,37 +63,6 @@ $(document).ready(function() {
 	$(function(){
 		$('#menu').slicknav();
 	});
-	
-	//news page collapsing
-	//$('.shrinkable').collapser({
-		//mode: 'chars',
-		//truncate: 135
-	//});
-	
-	// infiniteScroll
-	//if ($('.pagination').length) {
-	//	$(window).scroll(function() {
-	  //  	var url = $('.pagination .next_page').attr('href');
-	    //  	if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-	      //  	$('.pagination').prepend('<img id="loader" src="../assets/ajax-loader2.gif" />');
-			//	return $.getScript(url);
-	      //	}
-	   // });
-	   // return $(window).scroll();
-	//}
-	
-	//news page collapsing2
-	//$('.project').readmore({
-	//	speed: 505,
-	//	moreLink: '<a href="#" class="more">More</a>',
-	  //	lessLink: '<a href="#" class="more">Less</a>',
-	//	collapsedHeight: 600,
-	//  	afterToggle: function(trigger, element, expanded) {
-	//    	if(! expanded) { // The "Close" link was clicked
-	//      		$('html, body').animate( { scrollTop: element.offset().top }, {duration: 100 } );
-	//    	}
-	//  	}
-	//});
 	
 	//newspage detail dynamics
 	//open
@@ -211,5 +157,5 @@ $(document).ready(function() {
 	
 	//autoscaling text on titles
 	$(".subTitle").fitText(1.0, { minFontSize: '16px', maxFontSize: '26px' });
-	
+
 });
