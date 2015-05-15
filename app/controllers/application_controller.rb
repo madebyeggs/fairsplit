@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   require 'bitly'
   
   def bring_in_models
-    @works = Work.order("latest DESC, id DESC")
+    @works = Work.order("latest DESC, created_at DESC")
     @newest = Work.last
     @artists = Artist.order("latest DESC, name ASC")
     @abouts = About.all
