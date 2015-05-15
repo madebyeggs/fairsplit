@@ -33,7 +33,6 @@
 //= require jquery.readmore
 //= require scrollTo
 //= require gmap3
-//= require urlsForPosting
 //= require social-share-button
 
 $(document).ready(function() {
