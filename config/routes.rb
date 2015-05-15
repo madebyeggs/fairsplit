@@ -11,4 +11,6 @@ V1::Application.routes.draw do
   resources :sounds
   resources :abouts
   
+  match '*path' => redirect('/')
+  
 end
