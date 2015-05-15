@@ -56,5 +56,5 @@
 --------------------------------------------------------------------------------------------------------*/
 
 @media only screen and (max-width: 563px) {
-	.icons2 {display:none;}
+	.icons2, .icons4 {display:none;}
 }

@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
     @works = Work.order("latest DESC, id DESC")
     @newest = Work.last
     @artists = Artist.order("latest DESC, name ASC")
+    @abouts = About.all
     @artist = Artist.first
     @announcements = Announcement.order("latest DESC, id DESC")
     time_range = (2.month.ago.beginning_of_month..Time.now)

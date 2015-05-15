@@ -51,7 +51,7 @@ a {
 .leftSide, .rightSide {background-color:#000000;}
 .leftSide {width:100%;padding-top:170px;}
 .logo {width:250px;margin:0 auto;}
-.logo img, {margin:0 auto;}
+.logo img {max-width:100%;margin:0 auto;}
 ul.navigation {list-style-type: none;}
 .navigationWrapper {width:250px;margin:40px auto!important;}
 .navigation a, .client {text-transform:uppercase;font-size:1.1em!important;color:#ffffff;font-family:'Raleway'}
@@ -68,6 +68,9 @@ li.navButton {margin:8px 0px 8px 0px!important;}
     bottom:5%;
     border-left:1px solid #3e3e3e;
 }
+
+.artistText {color:#ffffff;display:inline;width:100%;height:100%;}
+.artistText2 {color:#ffffff;width:100%;height:100%;font-size:15px;line-height:15px;}
 
 /* RIGHT SIDE */
 
@@ -120,7 +123,7 @@ td {line-height:30px;}
 .work {margin:0px 0px 0px 0px;}
 .workImage img {width:100%;}
 .trackName {font-size:12px!important;}
-.justify li {text-align:justify!important;font-size:22px!important;line-height:30px!important;margin:30px!important;}
+.justify {text-align:justify!important;font-size:18px!important;line-height:26px!important;margin:30px 7.5% 20px 2.5%!important;width:90%}
 
 /*CMSFixes */
 
@@ -149,7 +152,6 @@ td {line-height:30px;}
 	border: none;
 }
 
-
 @media screen and (max-width: 992px) {
 	/* #menu is the original menu */
 	.js #menu {
@@ -166,8 +168,12 @@ td {line-height:30px;}
 	.social, .client {display:none;}
 	.canScroll {height:550px;overflow-y: auto;}
 	.canScroll2, .canScroll3, .canScroll4, .canScroll5 {height:680px;overflow-y: auto;}
+	.logo {width:150px;margin-top:-20px;}
 }
 
-.artistText {color:#ffffff;display:inline;width:100%;height:100%;}
-.artistText2 {color:#ffffff;width:100%;height:100%;font-size:15px;line-height:15px;}
-
+@media screen and (max-width: 563px) {
+	.icons2, .icons4 {display:none;}
+	.subtitle-wrap {display:none;}
+	.title-wrap h3 {font-size:12px!important;width:100%;margin:0px 10px 0px 0px;}
+	
+}

@@ -9,5 +9,6 @@ V1::Application.routes.draw do
   resources :artists
   resources :homes
   resources :sounds
+  resources :abouts
   
 end
