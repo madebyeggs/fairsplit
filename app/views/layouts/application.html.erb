@@ -3,10 +3,57 @@
 	<head>
 		<title>Fairsplit Music | A music publishing &amp; master recording company for the 21st century.</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="Fairsplit Music is a music publishing and master recording company that focuses on music supervision, effective registration and synchronisation.">
+		<meta name="title" content="Fairsplit Music, Music Publishing and Master Recording Company">
 	  	<%= stylesheet_link_tag    "application", :media => "all" %>
 		<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=true" %>
 	  	<%= javascript_include_tag "application" %>
 	  	<%= csrf_meta_tags %>
+		<!-- Facebook Open Graph tags -->
+		<meta property="og:title" content="Fairsplit Music, Music Publishing and Master Recording Company">
+		<meta property="og:description" content="Fairsplit Music is a music publishing and master recording company that focuses on music supervision, effective registration and synchronisation.">
+		<meta property="og:site_name" content="Fairsplit Music">
+		<meta property="og:image" content="https://s3.amazonaws.com/fairsplit-images/fbLogo.jpg">
+		<meta property="og:image:type" content="image/jpeg">
+		<meta property="og:image:width" content="320px">
+		<meta property="og:image:height" content="320px">
+		<!-- Twitter card -->
+		<meta name="twitter:card" content="summary" />
+		<meta name="twitter:site" content="@fairsplitmusic" />
+		<meta name="twitter:title" content="Music Publishing and Master Recording Company" />
+		<meta name="twitter:description" content="Visit Fairsplit Music's website." />
+		<meta name="twitter:image" content="https://s3.amazonaws.com/fairsplit-images/fbLogo.jpg" />
+		<!-- Google Knowledge Graph - social profiles -->
+		<script type="application/ld+json">
+		{ "@context" : "http://schema.org",
+		  "@type" : "Organization",
+		  "name" : "Fairsplit Music",
+		  "url" : "http://www.fairsplitmusic.com/",
+		  "sameAs" : [
+		     "https://www.facebook.com/fairsplitmusic",
+		     "https://twitter.com/FairsplitMusic",
+		     "https://instagram.com/fairsplitmusic",
+		     "https://www.youtube.com/channel/UCk3ATtNUbTmgPLyTvadTMnw",
+		     "https://www.linkedin.com/company/fairsplit-music-publishing"]
+		}
+		</script>
+		<!-- Google Knowledge Graph - site name breadcrumb in SERPs -->
+		<script type="application/ld+json">
+		    {  "@context" : "http://schema.org",
+		       "@type" : "WebSite",
+		       "name" : "Fairsplit Music",
+		       "alternateName" : "FairsplitMusic",
+		       "url" : "http://www.fairsplitmusic.com/"
+		    }
+		</script>
+		<!-- Google Knowledge Graph - company logo -->
+		<script type="application/ld+json">
+		   { "@context": "http://schema.org",
+		      "@type": "Organization",
+		      "url": "http://www.fairsplitmusic.com/",
+		      "logo": "https://s3.amazonaws.com/fairsplit-images/fbLogo.jpg"
+		    }
+		</script>
 		<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700|Open+Sans:300,700' rel='stylesheet' type='text/css'>
 	</head>
 	<body bgcolor="#000000">
