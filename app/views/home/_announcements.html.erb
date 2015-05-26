@@ -21,10 +21,10 @@
 			        	<div class="vidTitle">
 							<% if a.is_work? %>
 								<div class="title-wrap">
-			            			<h3><%= w.client %> <i>"<%= w.title %>"</i></h3>
+			            			<h3><%= a.client %> <i>"<%= a.title %>"</i></h3>
 			          			</div>
 								<div class="subtitle-wrap">
-		            				<p><%= w.artist_name %>: <%= w.track_name %></p>
+		            				<p><%= a.artist_name %>: <%= a.track_name %></p>
 								</div>
 							<% elsif a.is_artist? %>
 			        			<div class="title-wrap">

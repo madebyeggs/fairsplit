@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150526204537) do
+ActiveRecord::Schema.define(:version => 20150526220752) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -68,7 +68,6 @@ ActiveRecord::Schema.define(:version => 20150526204537) do
     t.string   "large_image_content_type"
     t.integer  "large_image_file_size"
     t.datetime "large_image_updated_at"
-    t.string   "homepage_title"
     t.string   "vimeo"
     t.string   "uid"
     t.boolean  "is_artist"
@@ -130,7 +129,6 @@ ActiveRecord::Schema.define(:version => 20150526204537) do
     t.datetime "large_image_updated_at"
     t.boolean  "latest"
     t.integer  "artist_id"
-    t.string   "homepage_title"
     t.string   "uid"
     t.boolean  "is_artist"
     t.boolean  "is_work"
@@ -139,6 +137,7 @@ ActiveRecord::Schema.define(:version => 20150526204537) do
     t.string   "short_id_url"
     t.string   "short_uid_url"
     t.boolean  "homepage"
+    t.string   "homepage_title"
   end
 
 end
