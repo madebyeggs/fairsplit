@@ -26,6 +26,9 @@
 								<div class="subtitle-wrap">
 		            				<p><%= a.artist_name %>: <%= a.track_name %></p>
 								</div>
+								<div class="subtitle-wrap">
+		            				<p><%= a.created_at.strftime("%m") %></p>
+								</div>
 							<% elsif a.is_artist? %>
 			        			<div class="title-wrap">
 				            		<h3>NEW SIGNING: <%= a.name %></h3>
