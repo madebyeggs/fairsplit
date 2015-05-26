@@ -1,6 +1,6 @@
 class Work < ActiveRecord::Base
   attr_accessible :title, :client, :description, :vimeo, :image, :large_image, :type_of_work, :artist_name, :track_name, 
-  :latest, :artist_id, :homepage_title, :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url
+  :latest, :artist_id, :homepage_title, :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, :homepage
   
   before_save :create_unique_id
   belongs_to :artist
@@ -59,6 +59,9 @@ class Work < ActiveRecord::Base
       self.is_announcement = false
       if self.latest == '' || self.latest.blank?
         self.latest = false
+      end
+      if self.homepage == '' || self.homepage.blank?
+        self.homepage = false
       end
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")

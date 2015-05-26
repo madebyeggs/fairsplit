@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150515062309) do
+ActiveRecord::Schema.define(:version => 20150526204537) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -77,6 +77,7 @@ ActiveRecord::Schema.define(:version => 20150515062309) do
     t.boolean  "is_announcement"
     t.string   "short_uid_url"
     t.string   "short_id_url"
+    t.boolean  "homepage"
   end
 
   create_table "homes", :force => true do |t|
@@ -137,6 +138,7 @@ ActiveRecord::Schema.define(:version => 20150515062309) do
     t.boolean  "is_announcement"
     t.string   "short_id_url"
     t.string   "short_uid_url"
+    t.boolean  "homepage"
   end
 
 end

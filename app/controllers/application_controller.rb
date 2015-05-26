@@ -5,15 +5,10 @@ class ApplicationController < ActionController::Base
   
   def bring_in_models
     @works = Work.order("latest DESC, created_at DESC")
-    @newest = Work.last
     @artists = Artist.order("latest DESC, name ASC")
-    @abouts = About.all
-    @artist = Artist.first
-    @announcements = Announcement.order("latest DESC, id DESC")
-    time_range = (2.month.ago.beginning_of_month..Time.now)
-    @combined_sorted = (Announcement.all + Artist.where(:updated_at => time_range) + Sound.where(:updated_at => time_range) + Work.where(:updated_at => time_range)).sort {|a,b| b.created_at <=> a.created_at}
     @sounds = Sound.order("latest DESC, id DESC")
-    
+    @abouts = About.all
+    @combined_sorted = (Announcement.all + Work.where(:homepage => 1) + Artist.where(:homepage => 1) + Sound.where(:homepage => 1)).sort {|a,b| b.created_at <=> a.created_at}
   end
   
 end

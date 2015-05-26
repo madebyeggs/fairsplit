@@ -13,6 +13,8 @@
 				<div class="col-md-5">
 					<%= f.label :click_if_this_is_the_latest_playlist, class: "formLabel" %>
 					<%= f.check_box :latest, {}, true, false %> <br /><br/>
+					<%= f.label :click_to_add_this_to_the_homepage, class: "formLabel" %>
+					<%= f.check_box :homepage, {}, true, false %> <br /><br/>
 					<%= f.label :title, class: "formLabel" %>
 	    			<%= f.text_field :title, class: 'formField' %>
 					<%= f.label :homepage_title, class: "formLabel" %>

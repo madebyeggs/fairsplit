@@ -11,6 +11,7 @@
 							<th>INFO</th>
 							<th>VIMEO</th>
 							<th>LATEST</th>
+							<th>HOME</th>
 							<th>ARTIST</th>
 							<th>POSTING URL</th>
 						</tr>
@@ -18,8 +19,8 @@
 						<% @works.each do |work| %>
 						<% artist_name = work.artist.name rescue "NONE" %>
 							<tr class="tableRow">
-								<td width="20%"><%= truncate(work.title, :length => 17) %></td>
-								<td width="19%"><%= truncate(work.client, :length => 17) %></td>
+								<td width="18%"><%= truncate(work.title, :length => 16) %></td>
+								<td width="16%"><%= truncate(work.client, :length => 16) %></td>
 								<% if work.description.blank? || work.description == '' %>
 									<td width="5%">NO</td>
 								<% else %>
@@ -27,8 +28,9 @@
 								<% end %>
 								<td width="10%"><%= work.vimeo %></td>
 								<td width="7%"><%= work.latest %></td>
+								<td width="7%"><% if work.homepage == true %><%= "true" %><% else %><%= "false" %><% end %></td>
 								<td width="12%"><%= truncate(artist_name, :length => 11) %></td>
-								<td width="20%">
+								<td width="22%">
 									<a href="../#filter=.playlists/playlist#<%= work.id %>" target="_blank">
 										<%#= work.short_id_url %>	
 									</a>

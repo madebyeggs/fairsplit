@@ -9,6 +9,7 @@
 							<th>NAME</th>
 							<th>INFO</th>
 							<th>LATEST</th>
+							<th>HOME</th>
 							<th>S'CLOUD</th>
 							<th>POSTING URL</th>
 						</tr>
@@ -16,10 +17,11 @@
 						<% @artists.each do |a| %>
 							<tr class="tableRow">
 								<td width="20%"><%= truncate(a.name, :length => 20) %></td>
-								<td width="39%"><%= truncate(a.description, :length => 42) %></td>
+								<td width="30%"><%= truncate(a.description, :length => 30) %></td>
 								<td width="7%"><%= a.latest %></td>
+								<td width="7%"><% if a.homepage == true %><%= "true" %><% else %><%= "false" %><% end %></td>
 								<td width="11%"><%= a.soundcloud %></td>
-								<td width="20%">
+								<td width="22%">
 									<a href="../#filter=.artists/artist#<%= a.id %>" target="_blank">
 										<%#= a.short_id_url %>	
 									</a>

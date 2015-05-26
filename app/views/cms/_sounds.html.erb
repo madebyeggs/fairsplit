@@ -10,12 +10,13 @@
 							<th>INFO</th>
 							<th>S'CLOUD</th>
 							<th>LATEST</th>
+							<th>HOME</th>
 							<th>POSTING URL</th>
 						</tr>
 						<tr><hr class="ruler"/></tr>
 						<% @sounds.each do |s| %>
 							<tr class="tableRow">
-								<td width="41%"><%= truncate(s.title, :length => 32) %></td>
+								<td width="34%"><%= truncate(s.title, :length => 30) %></td>
 								<% if s.description.blank? || s.description == '' %>
 									<td width="10%">NO</td>
 								<% else %>
@@ -23,6 +24,7 @@
 								<% end %>
 								<td width="12%"><%= s.soundcloud %></td>
 								<td width="7%"><%= s.latest %></td>
+								<td width="7%"><% if s.homepage == true %><%= "true" %><% else %><%= "false" %><% end %></td>
 								<td width="20%">
 									<a href="../#filter=.playlists/playlist#<%= s.id %>" target="_blank">
 										<%#= s.short_id_url %>	

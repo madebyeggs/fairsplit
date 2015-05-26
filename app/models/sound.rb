@@ -1,6 +1,6 @@
 class Sound < ActiveRecord::Base
   attr_accessible :title, :description, :soundcloud, :image, :latest, :homepage_title, :square_image, :vimeo, :uid, 
-  :is_artist, :is_work, :is_sound, :is_announcement, :large_image, :short_id_url, :short_uid_url
+  :is_artist, :is_work, :is_sound, :is_announcement, :large_image, :short_id_url, :short_uid_url, :homepage
   
   before_save :create_unique_id
   
@@ -57,6 +57,9 @@ class Sound < ActiveRecord::Base
       self.is_announcement = false
       if self.latest == '' || self.latest.blank?
         self.latest = false
+      end
+      if self.homepage == '' || self.homepage.blank?
+        self.homepage = false
       end
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")

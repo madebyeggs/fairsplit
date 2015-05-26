@@ -1,6 +1,6 @@
 class Artist < ActiveRecord::Base
   attr_accessible :name, :description, :soundcloud, :image, :square_image, :latest, :large_image, :homepage_title, :vimeo, :uid, 
-  :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url
+  :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, :homepage
   
   has_many :works
   before_save :create_unique_id
@@ -72,6 +72,9 @@ class Artist < ActiveRecord::Base
       self.is_announcement = false
       if self.latest == '' || self.latest.blank?
         self.latest = false
+      end
+      if self.homepage == '' || self.homepage.blank?
+        self.homepage = false
       end
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
