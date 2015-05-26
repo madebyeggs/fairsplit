@@ -119,6 +119,7 @@ GEM
       rack
     rack-test (0.6.2)
       rack (>= 1.0)
+    rack-zippy (3.0.1)
     rails (3.2.13)
       actionmailer (= 3.2.13)
       actionpack (= 3.2.13)
@@ -207,6 +208,7 @@ DEPENDENCIES
   newrelic_rpm
   paperclip
   pg (= 0.15.1)
+  rack-zippy
   rails (= 3.2.13)
   rails_12factor (= 0.0.2)
   rspec-rails (= 2.13.1)

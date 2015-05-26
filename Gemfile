@@ -18,6 +18,7 @@ gem 'jquery-gmap3-rails'
 gem 'bitly', '~> 0.9.0'
 gem 'social-share-button'
 gem 'newrelic_rpm'
+gem 'rack-zippy'
 
 # Gems used only for assets and not required
 # in production environments by default.
