@@ -4,6 +4,7 @@ class ApplicationController < ActionController::Base
   require 'bitly'
   
   def bring_in_models
+    @announcements = Announcement.order("id DESC")
     @works = Work.order("latest DESC, created_at DESC")
     @artists = Artist.order("latest DESC, name ASC")
     @sounds = Sound.order("latest DESC, id DESC")
