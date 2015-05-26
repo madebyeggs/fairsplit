@@ -20,6 +20,7 @@
 						</section>
 			        	<div class="vidTitle">
 							<% if a.is_work? %>
+								<br/>
 								<div class="subtitle-wrap borderTop">
             						<p><%= a.created_at.strftime("%B %Y") %></p>
 								</div>
@@ -29,7 +30,8 @@
 								<div class="subtitle-wrap">
 		            				<p><%= a.artist_name %>: <%= a.track_name %></p>
 								</div>
-							<% elsif a.is_artist? %>	
+							<% elsif a.is_artist? %>
+								<br/>	
 								<div class="subtitle-wrap borderTop">
 	            					<p><%= a.created_at.strftime("%B %Y") %></p>
 								</div>
@@ -40,6 +42,7 @@
 			            			<p><%= truncate(a.description, :length => 80) %></p>
 								</div>
 							<% elsif a.is_sound? %>	
+								<br/>
 								<div class="subtitle-wrap borderTop">
 	            					<p><%= a.created_at.strftime("%B %Y") %></p>
 								</div>
@@ -50,6 +53,7 @@
 			            			<p><%= truncate(a.description, :length => 80) %></p>
 								</div>
 							<% else %>
+								<br/>
 								<div class="subtitle-wrap borderTop">
 	            					<p><%= a.created_at.strftime("%B %Y") %></p>
 								</div>
