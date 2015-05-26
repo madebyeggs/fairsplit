@@ -20,49 +20,53 @@
 						</section>
 			        	<div class="vidTitle">
 							<% if a.is_work? %>
-								<br/>
-								<div class="subtitle-wrap borderTop">
-            						<p><%= a.created_at.strftime("%B %Y") %></p>
-								</div>
+							
 								<div class="title-wrap">
 			            			<h3><%= a.client %> <i>"<%= a.title %>"</i></h3>
 			          			</div>
 								<div class="subtitle-wrap">
 		            				<p><%= a.artist_name %>: <%= a.track_name %></p>
 								</div>
-							<% elsif a.is_artist? %>
-								<br/>	
 								<div class="subtitle-wrap borderTop">
-	            					<p><%= a.created_at.strftime("%B %Y") %></p>
+            						<p><%= a.created_at.strftime("%B %Y") %></p>
 								</div>
+								
+							<% elsif a.is_artist? %>	
+								
 			        			<div class="title-wrap">
 				            		<h3>NEW SIGNING: <%= a.name %></h3>
 				          		</div>
 								<div class="subtitle-wrap">
 			            			<p><%= truncate(a.description, :length => 80) %></p>
 								</div>
-							<% elsif a.is_sound? %>	
-								<br/>
 								<div class="subtitle-wrap borderTop">
 	            					<p><%= a.created_at.strftime("%B %Y") %></p>
 								</div>
+								
+							<% elsif a.is_sound? %>	
+							
 								<div class="title-wrap">
 				            		<h3>NEW PLAYLIST: <%= a.title %></h3>
 				          		</div>
 								<div class="subtitle-wrap">
 			            			<p><%= truncate(a.description, :length => 80) %></p>
 								</div>
-							<% else %>
-								<br/>
 								<div class="subtitle-wrap borderTop">
 	            					<p><%= a.created_at.strftime("%B %Y") %></p>
 								</div>
+								
+							<% else %>
+							
 								<div class="title-wrap">
 				            		<h3><%= a.homepage_title %></h3>
 				          		</div>
 								<div class="subtitle-wrap">
 			            			<p><%= truncate(a.description, :length => 80) %></p>
 								</div>
+								<div class="subtitle-wrap borderTop">
+	            					<p><%= a.created_at.strftime("%B %Y") %></p>
+								</div>
+								
 							<% end %>
 			        	</div>
 					</div>
