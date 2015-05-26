@@ -8,7 +8,7 @@
 .social-share-button {float:right;margin-right:20px;}
 .social-share-button-twitter, .social-share-button-facebook, .social-share-button-google_plus {max-width:50px;}
 .social-share-button-twitter a, .social-share-button-facebook a, .social-share-button-google_plus a {width:100px;}
-.borderTop {margin-top:16px!important;}
+.borderTop {padding-top:16px!important;}
 
 @media (max-width: 992px) {
 	.col-md-8, .col-md-4 {padding:0!important;}
