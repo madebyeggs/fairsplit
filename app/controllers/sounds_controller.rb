@@ -49,7 +49,7 @@ class SoundsController < ApplicationController
     end
     
     def create_links
-      @sound = Artist.find(params[:id])
+      @sound = Sound.find(params[:id])
       bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
 		  id_url = bitly.shorten("https://fairsplitmusic.com/#filter=.sounds/" + "sound" + "#{@sound.id}")
 		  uid_url = bitly.shorten("https://fairsplitmusic.com/#filter=.sounds/" + "sound" + "#{@sound.uid}")

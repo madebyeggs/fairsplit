@@ -49,7 +49,7 @@ class WorksController < ApplicationController
     end
     
     def create_links
-      @work = Artist.find(params[:id])
+      @work = Work.find(params[:id])
       bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
 		  id_url = bitly.shorten("https://fairsplitmusic.com/#filter=.works/" + "work" + "#{@work.id}")
 		  uid_url = bitly.shorten("https://fairsplitmusic.com/#filter=.works/" + "work" + "#{@work.uid}")
