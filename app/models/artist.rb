@@ -4,7 +4,6 @@ class Artist < ActiveRecord::Base
   
   has_many :works
   before_save :create_unique_id
-  before_create :latest_cancels_others
   
   require 'bitly'
   
@@ -58,11 +57,6 @@ class Artist < ActiveRecord::Base
         id = self.id
       end
       uid = rand.to_s[2..16]
-      bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
-		  id_url = bitly.shorten("https://fairsplitmusic.com/#filter=.artists/" + "artist" + "#{id}")
-		  uid_url = bitly.shorten("https://fairsplitmusic.com/#filter=.artists/" + "artist" + "#{uid}")
-		  short_id_url = id_url.short_url
-		  short_uid_url = uid_url.short_url
       if self.uid == '' || self.uid.blank?
         self.uid = uid
       end
@@ -73,18 +67,17 @@ class Artist < ActiveRecord::Base
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
+      bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
+		  id_url = bitly.shorten("https://fairsplitmusic.com/#filter=.artists/" + "artist" + id)
+		  uid_url = bitly.shorten("https://fairsplitmusic.com/#filter=.artists/" + "artist" + "#{uid}")
+		  short_id_url = id_url.short_url
+		  short_uid_url = uid_url.short_url
       if self.short_id_url == '' || self.short_id_url.blank?
 			  self.short_id_url = short_id_url
 			end
 			if self.short_uid_url == '' || self.short_uid_url.blank?
 			  self.short_uid_url = short_uid_url
 			end
-    end
-    
-    def latest_cancels_others
-      if self.latest == true
-        self.class.where("id != ?", self.id).update_all("latest = 'false'")
-      end
     end
     
 end
