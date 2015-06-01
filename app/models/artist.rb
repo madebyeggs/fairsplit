@@ -51,11 +51,6 @@ class Artist < ActiveRecord::Base
     validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
     
     def create_unique_id
-      if self.new_record?
-        id = Artist.maximum(:id) + 1
-      else
-        id = self.id
-      end
       uid = rand.to_s[2..16]
       if self.uid == '' || self.uid.blank?
         self.uid = uid

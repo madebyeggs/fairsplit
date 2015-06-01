@@ -36,18 +36,7 @@ class Sound < ActiveRecord::Base
     validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
     
     def create_unique_id
-      if self.new_record?
-        #id = Sound.connection.select_value("Select nextval('sounds_id_seq')")
-        id = Sound.maximum(:id) + 1
-      else
-        id = self.id
-      end
       uid = rand.to_s[2..16]
-      bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
-		  id_url = bitly.shorten("https://fairsplitmusic.com/#filter=.playlists/" + "playlist" + "#{id}")
-		  uid_url = bitly.shorten("https://fairsplitmusic.com/#filter=.playlists/" + "playlist" + "#{uid}")
-		  short_id_url = id_url.short_url
-		  short_uid_url = uid_url.short_url
       if self.uid == '' || self.uid.blank?
         self.uid = uid
       end
@@ -58,11 +47,5 @@ class Sound < ActiveRecord::Base
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
-      if self.short_id_url == '' || self.short_id_url.blank?
-			  self.short_id_url = short_id_url
-			end
-			if self.short_uid_url == '' || self.short_uid_url.blank?
-			  self.short_uid_url = short_uid_url
-			end
     end
 end

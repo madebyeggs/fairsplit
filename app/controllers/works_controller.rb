@@ -47,5 +47,24 @@ class WorksController < ApplicationController
         format.html { redirect_to cms_path }
       end
     end
+    
+    def create_links
+      @work = Artist.find(params[:id])
+      bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
+		  id_url = bitly.shorten("https://fairsplitmusic.com/#filter=.works/" + "work" + "#{@work.id}")
+		  uid_url = bitly.shorten("https://fairsplitmusic.com/#filter=.works/" + "work" + "#{@work.uid}")
+		  short_id_url = id_url.short_url
+		  short_uid_url = uid_url.short_url
+      if @work.short_id_url == '' || @work.short_id_url.blank?
+			  @work.short_id_url = short_id_url
+			end
+			if @work.short_uid_url == '' || @work.short_uid_url.blank?
+			  @work.short_uid_url = short_uid_url
+			end
+		  @work.update_attributes(params[:work])
+			respond_to do |format|
+        format.html { redirect_to cms_path }
+      end
+    end
 
 end

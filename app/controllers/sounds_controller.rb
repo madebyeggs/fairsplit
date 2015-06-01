@@ -47,5 +47,24 @@ class SoundsController < ApplicationController
         format.html { redirect_to cms_path }
       end
     end
+    
+    def create_links
+      @sound = Artist.find(params[:id])
+      bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
+		  id_url = bitly.shorten("https://fairsplitmusic.com/#filter=.sounds/" + "sound" + "#{@sound.id}")
+		  uid_url = bitly.shorten("https://fairsplitmusic.com/#filter=.sounds/" + "sound" + "#{@sound.uid}")
+		  short_id_url = id_url.short_url
+		  short_uid_url = uid_url.short_url
+      if @sound.short_id_url == '' || @sound.short_id_url.blank?
+			  @sound.short_id_url = short_id_url
+			end
+			if @sound.short_uid_url == '' || @sound.short_uid_url.blank?
+			  @sound.short_uid_url = short_uid_url
+			end
+		  @sound.update_attributes(params[:sound])
+			respond_to do |format|
+        format.html { redirect_to cms_path }
+      end
+    end
 
 end

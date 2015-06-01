@@ -51,9 +51,6 @@ class Announcement < ActiveRecord::Base
     
     def create_unique_id
       uid = rand.to_s[2..16]
-      bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
-		  uid_url = bitly.shorten("https://fairsplitmusic.com/#filter=.announcements/" + "announcement" + "#{uid}")
-		  short_uid_url = uid_url.short_url
       if self.uid == '' || self.uid.blank?
         self.uid = uid
       end
@@ -61,7 +58,6 @@ class Announcement < ActiveRecord::Base
       self.is_work = false
       self.is_sound = false
       self.is_announcement = true
-      self.latest = false
       if self.short_uid_url == '' || self.short_uid_url.blank?
 			  self.short_uid_url = short_uid_url
 			end

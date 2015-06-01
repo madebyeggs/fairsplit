@@ -11,7 +11,11 @@ V1::Application.routes.draw do
   resources :sounds
   resources :abouts
   
+  get "/get_announcement_links" => "announcements#create_links", :as => :get_announcement_links
+  get "/get_work_links" => "works#create_links", :as => :get_work_links
   get "/get_artist_links" => "artists#create_links", :as => :get_artist_links
+  get "/get_sound_links" => "sounds#create_links", :as => :get_sound_links
+  
   match '*path' => redirect('/')
   
 end

@@ -27,11 +27,14 @@
 								<td width="7%"><% if s.homepage == true %><%= "true" %><% else %><%= "false" %><% end %></td>
 								<td width="20%">
 									<a href="../#filter=.playlists/playlist#<%= s.id %>" target="_blank">
-										<%#= s.short_id_url %>	
+										<%= s.short_id_url rescue nil %>	
 									</a>
 								</td>
-								<td width="2%" class="topperButtons"><%= link_to "edit", edit_sound_path(s), :class => "btn btn2" %></td>
+								<td width="1%" class="topperButtons"><%= link_to "E", edit_sound_path(s), :class => "btn btn2" %></td>
 								<td width="1%" class="topperButtons"><%= button_to "X", s, :method => :delete, :class => "btn btn2" %></td>
+								<td width="1%" class="topperButtons">
+									<%= link_to "L", get_sound_links_path(:id => s.id), :class => "btn btn2" %>
+								</td>
 							</tr>
 						<% end %>
 					</table>
