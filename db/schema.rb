@@ -76,6 +76,7 @@ ActiveRecord::Schema.define(:version => 20150601162951) do
     t.string   "short_uid_url"
     t.string   "short_id_url"
     t.boolean  "homepage",                  :default => false
+    t.string   "homepage_title"
   end
 
   create_table "homes", :force => true do |t|
@@ -165,6 +166,7 @@ ActiveRecord::Schema.define(:version => 20150601162951) do
     t.string   "short_id_url"
     t.string   "short_uid_url"
     t.boolean  "homepage",                 :default => false
+    t.string   "homepage_title"
   end
 
 end
