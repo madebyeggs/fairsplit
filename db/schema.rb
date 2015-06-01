@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150601162951) do
+ActiveRecord::Schema.define(:version => 20150601162620) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(:version => 20150601162951) do
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
     t.string   "short_uid_url"
+    t.boolean  "latest"
   end
 
   create_table "artists", :force => true do |t|
