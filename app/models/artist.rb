@@ -4,6 +4,7 @@ class Artist < ActiveRecord::Base
   
   has_many :works
   before_save :create_unique_id
+  before_create :latest_cancels_others
   
   require 'bitly'
   
@@ -69,7 +70,7 @@ class Artist < ActiveRecord::Base
       self.is_work = false
       self.is_sound = false
       self.is_announcement = false
-      if self.latest == true || self.latest != '' || !self.latest.blank?
+      if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
       if self.short_id_url == '' || self.short_id_url.blank?
@@ -78,6 +79,12 @@ class Artist < ActiveRecord::Base
 			if self.short_uid_url == '' || self.short_uid_url.blank?
 			  self.short_uid_url = short_uid_url
 			end
+    end
+    
+    def latest_cancels_others
+      if self.latest == true
+        self.class.where("id != ?", self.id).update_all("latest = 'false'")
+      end
     end
     
 end
