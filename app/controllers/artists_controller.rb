@@ -59,6 +59,7 @@ class ArtistsController < ApplicationController
 			if @artist.short_uid_url == '' || @artist.short_uid_url.blank?
 			  @artist.short_uid_url = short_uid_url
 			end
+		  @artist.update_attributes(params[:artist])
 			respond_to do |format|
         format.html { redirect_to cms_path }
       end
