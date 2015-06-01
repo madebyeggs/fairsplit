@@ -17,7 +17,7 @@
 						<% @artists.each do |a| %>
 							<tr class="tableRow">
 								<td width="20%"><%= truncate(a.name, :length => 20) %></td>
-								<td width="30%"><%= truncate(a.description, :length => 30) %></td>
+								<td width="26%"><%= truncate(a.description, :length => 24) %></td>
 								<td width="7%"><%= a.latest %></td>
 								<td width="7%"><% if a.homepage == true %><%= "true" %><% else %><%= "false" %><% end %></td>
 								<td width="11%"><%= a.soundcloud %></td>
@@ -28,6 +28,7 @@
 								</td>
 								<td width="2%" class="topperButtons"><%= link_to "edit", edit_artist_path(a), :class => "btn btn2" %></td>
 								<td width="1%" class="topperButtons"><%= button_to "X", a, :method => :delete, :class => "btn btn2" %></td>
+								<td width="4%" class="topperButtons"><%= button_to "Links", get_artist_links_path, method: :post, :class => "btn btn2" %></td>
 							</tr>
 						<% end %>
 					</table>
