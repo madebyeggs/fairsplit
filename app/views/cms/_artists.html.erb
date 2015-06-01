@@ -28,7 +28,9 @@
 								</td>
 								<td width="2%" class="topperButtons"><%= link_to "edit", edit_artist_path(a), :class => "btn btn2" %></td>
 								<td width="1%" class="topperButtons"><%= link_to "X", a, :method => :delete, data: {confirm: "Are you sure?"}, :class => "btn btn2" %></td>
-								<td width="4%" class="topperButtons"><%= link_to "Links", get_artist_links_path(a), method: :post, :class => "btn btn2" %></td>
+								<td width="4%" class="topperButtons">
+									<%= link_to "Links", get_artist_links_path(:id => a.id), :class => "btn btn2" %>
+								</td>
 							</tr>
 						<% end %>
 					</table>
