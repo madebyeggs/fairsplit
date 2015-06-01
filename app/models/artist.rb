@@ -3,7 +3,7 @@ class Artist < ActiveRecord::Base
   :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, :homepage
   
   has_many :works
-  #before_save :create_unique_id
+  before_save :create_unique_id
   
   require 'bitly'
   
