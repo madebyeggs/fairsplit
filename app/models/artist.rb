@@ -52,7 +52,6 @@ class Artist < ActiveRecord::Base
     
     def create_unique_id
       if self.new_record?
-        #id = Artist.connection.select_value("Select nextval('artists_id_seq')")
         id = Artist.maximum(:id) + 1
       else
         id = self.id
@@ -70,12 +69,6 @@ class Artist < ActiveRecord::Base
       self.is_work = false
       self.is_sound = false
       self.is_announcement = false
-      if self.latest == '' || self.latest.blank?
-        self.latest = false
-      end
-      if self.homepage == '' || self.homepage.blank?
-        self.homepage = false
-      end
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end

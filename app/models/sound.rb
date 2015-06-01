@@ -55,12 +55,6 @@ class Sound < ActiveRecord::Base
       self.is_work = false
       self.is_sound = true
       self.is_announcement = false
-      if self.latest == '' || self.latest.blank?
-        self.latest = false
-      end
-      if self.homepage == '' || self.homepage.blank?
-        self.homepage = false
-      end
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end

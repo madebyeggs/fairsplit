@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150526220752) do
+ActiveRecord::Schema.define(:version => 20150601162951) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(:version => 20150526220752) do
     t.string   "large_image_content_type"
     t.integer  "large_image_file_size"
     t.datetime "large_image_updated_at"
-    t.boolean  "latest"
     t.string   "square_image_file_name"
     t.string   "square_image_content_type"
     t.integer  "square_image_file_size"
@@ -53,8 +52,8 @@ ActiveRecord::Schema.define(:version => 20150526220752) do
     t.string   "name"
     t.text     "description"
     t.string   "soundcloud"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -63,7 +62,7 @@ ActiveRecord::Schema.define(:version => 20150526220752) do
     t.string   "square_image_content_type"
     t.integer  "square_image_file_size"
     t.datetime "square_image_updated_at"
-    t.boolean  "latest"
+    t.boolean  "latest",                    :default => false
     t.string   "large_image_file_name"
     t.string   "large_image_content_type"
     t.integer  "large_image_file_size"
@@ -76,7 +75,7 @@ ActiveRecord::Schema.define(:version => 20150526220752) do
     t.boolean  "is_announcement"
     t.string   "short_uid_url"
     t.string   "short_id_url"
-    t.boolean  "homepage"
+    t.boolean  "homepage",                  :default => false
   end
 
   create_table "homes", :force => true do |t|
@@ -88,8 +87,37 @@ ActiveRecord::Schema.define(:version => 20150526220752) do
     t.datetime "image_updated_at"
   end
 
-# Could not dump table "sounds" because of following StandardError
-#   Unknown type 'uuid' for column 'uuid'
+  create_table "sounds", :force => true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "soundcloud"
+    t.datetime "created_at",                                   :null => false
+    t.datetime "updated_at",                                   :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.boolean  "latest",                    :default => false
+    t.string   "homepage_title"
+    t.string   "square_image_file_name"
+    t.string   "square_image_content_type"
+    t.integer  "square_image_file_size"
+    t.datetime "square_image_updated_at"
+    t.string   "vimeo"
+    t.string   "uid"
+    t.boolean  "is_artist"
+    t.boolean  "is_work"
+    t.boolean  "is_sound"
+    t.boolean  "is_announcement"
+    t.string   "large_image_file_name"
+    t.string   "large_image_content_type"
+    t.integer  "large_image_file_size"
+    t.datetime "large_image_updated_at"
+    t.string   "short_url"
+    t.string   "short_uid_url"
+    t.string   "short_id_url"
+    t.boolean  "homepage",                  :default => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -114,8 +142,8 @@ ActiveRecord::Schema.define(:version => 20150526220752) do
     t.string   "client"
     t.text     "description"
     t.string   "vimeo"
-    t.datetime "created_at",               :null => false
-    t.datetime "updated_at",               :null => false
+    t.datetime "created_at",                                  :null => false
+    t.datetime "updated_at",                                  :null => false
     t.string   "artist_name"
     t.string   "type_of_work"
     t.string   "image_file_name"
@@ -127,7 +155,7 @@ ActiveRecord::Schema.define(:version => 20150526220752) do
     t.string   "large_image_content_type"
     t.integer  "large_image_file_size"
     t.datetime "large_image_updated_at"
-    t.boolean  "latest"
+    t.boolean  "latest",                   :default => false
     t.integer  "artist_id"
     t.string   "uid"
     t.boolean  "is_artist"
@@ -136,8 +164,7 @@ ActiveRecord::Schema.define(:version => 20150526220752) do
     t.boolean  "is_announcement"
     t.string   "short_id_url"
     t.string   "short_uid_url"
-    t.boolean  "homepage"
-    t.string   "homepage_title"
+    t.boolean  "homepage",                 :default => false
   end
 
 end
