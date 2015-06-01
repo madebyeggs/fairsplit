@@ -69,7 +69,7 @@ class Artist < ActiveRecord::Base
       self.is_work = false
       self.is_sound = false
       self.is_announcement = false
-      if self.latest == true
+      if self.latest == true || self.latest != '' || !self.latest.blank?
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
       if self.short_id_url == '' || self.short_id_url.blank?
