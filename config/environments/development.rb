@@ -36,4 +36,18 @@ V1::Application.configure do
   config.assets.debug = true
   
   config.action_mailer.default_url_options = { host: 'localhost:3000' }
+  
+  ARTIST_MAIN_PAPERCLIP_STORAGE_OPTS = {
+    :styles => {:main => '710X210>'},
+    :convert_options => { :all => '-quality 80' }
+  }
+  ARTIST_LARGE_PAPERCLIP_STORAGE_OPTS = {
+    :styles => {:main => '710X400>'},
+    :convert_options => { :all => '-quality 80' }
+  }
+  ARTIST_SQUARE_PAPERCLIP_STORAGE_OPTS = {
+    :styles => {:main => '300X300>'},
+    :convert_options => { :all => '-quality 80' }
+  }
+
 end
