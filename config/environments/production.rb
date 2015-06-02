@@ -74,7 +74,8 @@ V1::Application.configure do
   #     }
   #   }
   
-  COMMON_S3_INFORMATION = [
+  ARTIST_MAIN_PAPERCLIP_STORAGE_OPTS = {
+    styles: {main: '710x210>'},
     :storage => :s3,
     :s3_credentials => {
     :access_key_id => ENV['S3_KEY'],
@@ -82,21 +83,28 @@ V1::Application.configure do
     :url => ':s3_alias_url',
     :s3_host_alias => 'd2gtajjeesejrd.cloudfront.net', 
     :bucket => 'fairsplit-images',
-  ]
-  
-  ARTIST_MAIN_PAPERCLIP_STORAGE_OPTS = {
-    styles: {main: '710x210>'},
-    COMMON_S3_INFORMATION
     :path => "artists/images/:id_partition/:style/:filename"
   }
   ARTIST_LARGE_PAPERCLIP_STORAGE_OPTS = {
     styles: {main: '710x400>'},
-    COMMON_S3_INFORMATION
+    :storage => :s3,
+    :s3_credentials => {
+    :access_key_id => ENV['S3_KEY'],
+    :secret_access_key => ENV['S3_SECRET'] },
+    :url => ':s3_alias_url',
+    :s3_host_alias => 'd2gtajjeesejrd.cloudfront.net', 
+    :bucket => 'fairsplit-images',
     :path => "artists/large_images/:id_partition/:style/:filename"
   }
   ARTIST_SQUARE_PAPERCLIP_STORAGE_OPTS = {
     styles: {main: '300x300>'},
-    COMMON_S3_INFORMATION
+    :storage => :s3,
+    :s3_credentials => {
+    :access_key_id => ENV['S3_KEY'],
+    :secret_access_key => ENV['S3_SECRET'] },
+    :url => ':s3_alias_url',
+    :s3_host_alias => 'd2gtajjeesejrd.cloudfront.net', 
+    :bucket => 'fairsplit-images',
     :path => "artists/square_images/:id_partition/:style/:filename"
   }
 end

@@ -51,8 +51,8 @@ class WorksController < ApplicationController
     def create_links
       @work = Work.find(params[:id])
       bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
-		  id_url = bitly.shorten("https://fairsplitmusic.com/#filter=.works/" + "work" + "#{@work.id}")
-		  uid_url = bitly.shorten("https://fairsplitmusic.com/#filter=.works/" + "work" + "#{@work.uid}")
+		  id_url = bitly.shorten("https://www.fairsplitmusic.com/#filter=.works/" + "work" + "#{@work.id}")
+		  uid_url = bitly.shorten("https://www.fairsplitmusic.com/#filter=.works/" + "work" + "#{@work.uid}")
 		  short_id_url = id_url.short_url
 		  short_uid_url = uid_url.short_url
       if @work.short_id_url == '' || @work.short_id_url.blank?
