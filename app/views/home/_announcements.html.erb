@@ -77,7 +77,15 @@
 					<input type="hidden" value=<%= a.uid %> class="announcement-object-uid">
 					<a class="announcementCloseIcon"></a>
 					<!--<%#= social_share_button_tag(a.homepage_title, :popup => "true", :url => a.short_uid_url) %>-->
-					<h1 class="projectName"><%= a.homepage_title %></h1>
+					<% if a.is_artist? %>
+						<h1 class="projectName">NEW SIGNING: <%= a.name %></h1>
+					<% elsif a.is_sound? %>
+						<h1 class="projectName">NEW PLAYLIST: <%= a.title %></h1>
+					<% elsif a.is_worK? %>
+						<h1 class="projectName">NEW WORK: <%= w.client %> <i>"<%= w.title %>"</i></h1>
+					<% else %>
+						<h1 class="projectName"><%= a.homepage_title %></h1>
+					<% end %>
 					<hr class="projectSeparator" />
 					
 					<% if a.is_artist? || a.is_announcement? %>
