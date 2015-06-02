@@ -11,6 +11,7 @@ class Artist < ActiveRecord::Base
       has_attached_file :image, MAIN_PAPERCLIP_STORAGE_OPTS
     else
       has_attached_file :image, 
+      :convert_options => { :all => '-quality 92' }, 
       styles: {main: '710x210>'},
       :storage => :s3,
       :s3_credentials => {
@@ -27,6 +28,7 @@ class Artist < ActiveRecord::Base
     else
       has_attached_file :square_image,
       styles: {main: '300x300>'},
+      :convert_options => { :all => '-quality 92' }, 
       :storage => :s3,
       :s3_credentials => {
       :access_key_id => ENV['S3_KEY'],
@@ -41,6 +43,7 @@ class Artist < ActiveRecord::Base
       has_attached_file :large_image, LARGE_PAPERCLIP_STORAGE_OPTS
     else
       has_attached_file :large_image,
+      :convert_options => { :all => '-quality 92' }, 
       styles: {main: '710x400>'},
       :storage => :s3,
       :s3_credentials => {

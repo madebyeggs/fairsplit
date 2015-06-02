@@ -12,7 +12,8 @@ class Work < ActiveRecord::Base
     if Rails.env.development?
       has_attached_file :image, MAIN_PAPERCLIP_STORAGE_OPTS
     else
-      has_attached_file :image, 
+      has_attached_file :image,
+      :convert_options => { :all => '-quality 92' }, 
       styles: {main: '710x210>'},
       :storage => :s3,
       :s3_credentials => {
@@ -28,6 +29,7 @@ class Work < ActiveRecord::Base
       has_attached_file :large_image, LARGE_PAPERCLIP_STORAGE_OPTS
     else
       has_attached_file :large_image,
+      :convert_options => { :all => '-quality 92' }, 
       styles: {main: '710x400>'},
       :storage => :s3,
       :s3_credentials => {

@@ -12,6 +12,7 @@ class Announcement < ActiveRecord::Base
       has_attached_file :image, MAIN_PAPERCLIP_STORAGE_OPTS
     else
       has_attached_file :image, 
+      :convert_options => { :all => '-quality 92' }, 
       styles: {main: '710x210>'},
       :storage => :s3,
       :s3_credentials => {
@@ -27,6 +28,7 @@ class Announcement < ActiveRecord::Base
       has_attached_file :square_image, SQUARE_PAPERCLIP_STORAGE_OPTS
     else
       has_attached_file :square_image,
+      :convert_options => { :all => '-quality 92' }, 
       styles: {main: '300x300>'},
       :storage => :s3,
       :s3_credentials => {
@@ -42,6 +44,7 @@ class Announcement < ActiveRecord::Base
       has_attached_file :large_image, LARGE_PAPERCLIP_STORAGE_OPTS
     else
       has_attached_file :large_image,
+      :convert_options => { :all => '-quality 92' }, 
       styles: {main: '710x400>'},
       :storage => :s3,
       :s3_credentials => {
