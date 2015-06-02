@@ -31,7 +31,7 @@
 								<td width="7%"><% if work.homepage == true %><%= "true" %><% else %><%= "false" %><% end %></td>
 								<td width="12%"><%= truncate(artist_name, :length => 11) %></td>
 								<td width="22%">
-									<a href="../#filter=.playlists/playlist#<%= work.id %>" target="_blank">
+									<a href="../#filter=.works/work#<%= work.id %>" target="_blank">
 										<%= work.short_id_url rescue nil %>	
 									</a>
 								</td>
