@@ -155,9 +155,15 @@ $(document).ready(function() {
 			$(div_id).slideDown(500);
 			$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 			$(".muteEffects").addClass("displayNone");
+			var home_sound_id = '#' + 'homeSoundiFrame' + announcement_id;
+			var homeSoundiFrame = $(home_sound_id);
+			var home_video_id = '#' + 'homeVideoiFrame' + announcement_id;
+			var homeVideoiFrame = $(home_video_id);
 			$(document).ready(function() {
 				$('#container').isotope({ filter: '.announcements' });
 				$('.canScroll5').animate({scrollTop:$('#scrollHereAnnouncement' + announcement_id).position().top + 0}, 'slow');
+				homeVideoiFrame.attr("src", homeVideoiFrame.data("src"));
+				homeSoundiFrame.attr("src", homeSoundiFrame.data("src"));
 			})
 		}
 		function work_urlLaunch(work_id) {
@@ -165,9 +171,12 @@ $(document).ready(function() {
 			$(div_id).slideDown(500);
 			$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 			$(".muteEffects").addClass("displayNone");
+			var work_video_id = '#' + 'workiFrame' + work_id;
+			var workVideoiFrame = $(work_video_id);
 			$(document).ready(function() {
 				$('#container').isotope({ filter: '.works' });
 				$('.canScroll2').animate({scrollTop:$('#scrollHereWork' + work_id).position().top + 0}, 'slow');
+				workVideoiFrame.attr("src", workVideoiFrame.data("src"));
 			})
 		}
 		function artist_urlLaunch(artist_id) {
@@ -175,9 +184,12 @@ $(document).ready(function() {
 			$(div_id).slideDown(500);
 			$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 			$(".muteEffects").addClass("displayNone");
+			var artist_sound_id = '#' + 'artistSoundiFrame' + artist_id;
+			var artistSoundiFrame = $(artist_sound_id);
 			$(document).ready(function() {
 				$('#container').isotope({ filter: '.artists' });
 				$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + artist_id).position().top + 0}, 'slow');
+				artistSoundiFrame.attr("src", artistSoundiFrame.data("src"));
 			})
 		}
 		function playlist_urlLaunch(playlist_id) {
@@ -185,9 +197,12 @@ $(document).ready(function() {
 			$(div_id).slideDown(500);
 			$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
 			$(".muteEffects").addClass("displayNone");
+			var sound_id = '#' + 'soundiFrame' + playlist_id;
+			var soundiFrame = $(sound_id);
 			$(document).ready(function() {
 				$('#container').isotope({ filter: '.playlists' });
 				$('.canScroll3').animate({scrollTop:$('#scrollHerePlaylist' + playlist_id).position().top + 0}, 'slow');
+				soundiFrame.attr("src", soundiFrame.data("src"));
 			})
 		}
 		function clear_all() {

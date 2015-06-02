@@ -26,11 +26,15 @@
 										<%= a.short_id_url rescue nil %>	
 									</a>
 								</td>
+								<% if a.short_id_url == '' || a.short_id_url.blank? %>
+									<td width="1%" class="topperButtons">
+										<%= link_to "L", get_artist_links_path(:id => a.id), :class => "btn btn2", :remote => "true" %>
+									</td>
+								<% else %>
+									<td width="1%" class="topperButtons"></td>
+								<% end %>
 								<td width="1%" class="topperButtons"><%= link_to "E", edit_artist_path(a), :class => "btn btn2" %></td>
 								<td width="1%" class="topperButtons"><%= button_to "X", a, :method => :delete, :class => "btn btn2" %></td>
-								<td width="1%" class="topperButtons">
-									<%= link_to "L", get_artist_links_path(:id => a.id), :class => "btn btn2", :remote => "true" %>
-								</td>
 							</tr>
 						<% end %>
 					</table>
