@@ -64,47 +64,14 @@ V1::Application.configure do
   # Log the query plan for queries taking more than this (works
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
-  # config.paperclip_defaults = {
-  #     :storage => :s3,
-  #     :s3_protocol => 'https',
-  #     :s3_credentials => {
-  #       :bucket => ENV['S3_BUCKET_NAME'],
-  #       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-  #       :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
-  #     }
-  #   }
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_protocol => 'https',
+    :s3_credentials => {
+      :bucket => ENV['S3_BUCKET_NAME'],
+      :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
+      :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    }
+  }
   
-  ARTIST_MAIN_PAPERCLIP_STORAGE_OPTS = {
-    styles: {main: '710x210>'},
-    :storage => :s3,
-    :s3_credentials => {
-    :access_key_id => ENV['S3_KEY'],
-    :secret_access_key => ENV['S3_SECRET'] },
-    :url => ':s3_alias_url',
-    :s3_host_alias => 'd2gtajjeesejrd.cloudfront.net', 
-    :bucket => 'fairsplit-images',
-    :path => "artists/images/:id_partition/:style/:filename"
-  }
-  ARTIST_LARGE_PAPERCLIP_STORAGE_OPTS = {
-    styles: {main: '710x400>'},
-    :storage => :s3,
-    :s3_credentials => {
-    :access_key_id => ENV['S3_KEY'],
-    :secret_access_key => ENV['S3_SECRET'] },
-    :url => ':s3_alias_url',
-    :s3_host_alias => 'd2gtajjeesejrd.cloudfront.net', 
-    :bucket => 'fairsplit-images',
-    :path => "artists/large_images/:id_partition/:style/:filename"
-  }
-  ARTIST_SQUARE_PAPERCLIP_STORAGE_OPTS = {
-    styles: {main: '300x300>'},
-    :storage => :s3,
-    :s3_credentials => {
-    :access_key_id => ENV['S3_KEY'],
-    :secret_access_key => ENV['S3_SECRET'] },
-    :url => ':s3_alias_url',
-    :s3_host_alias => 'd2gtajjeesejrd.cloudfront.net', 
-    :bucket => 'fairsplit-images',
-    :path => "artists/square_images/:id_partition/:style/:filename"
-  }
 end
