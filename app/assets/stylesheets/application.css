@@ -17,6 +17,7 @@
  *= require deviseAndCMS
  *= require_tree .
  *= require font-awesome
+ *= require jquery-ui.theme.min
  *= require style
  *= require social-share-button
  *= require bootstrapOverrides

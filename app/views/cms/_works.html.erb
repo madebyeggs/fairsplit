@@ -37,12 +37,12 @@
 								</td>
 								<% if work.short_uid_url == '' || work.short_uid_url.blank? %>
 									<td width="1%" class="topperButtons">
-										<%= link_to 'L', get_work_links_path(:id => work.id), :class => "btn btn2" %>
+										<%= link_to 'L', get_work_links_path(:id => work.id), :title => "Generate sharing link for #{work.title}", :class => "btn btn2 tips" %>
 									</td>
 								<% else %>
 									<td width="1%" class="topperButtons"></td>
 								<% end %>
-								<td width="1%" class="topperButtons"><%= link_to "E", edit_work_path(work), :class => "btn btn2" %></td>
+								<td width="1%" class="topperButtons"><%= link_to "E", edit_work_path(work), :title => "Edit #{w.title}", :class => "btn btn2 tips" %></td>
 								<td width="1%" class="topperButtons"><%= button_to "X", work, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>
 							</tr>
 						<% end %>

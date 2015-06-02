@@ -13,6 +13,7 @@
 //= require jquery-1.9.1.min
 //= require jquery-migrate-1.2.1.min
 //= require jquery-easing-1.3
+//= require jquery-ui.min 
 //= require modernizr
 //= require retina
 //= require jquery.isotope.min
@@ -344,5 +345,7 @@ $(document).ready(function() {
 	        return false;
 	    }
 	});
+	
+	$(".tips").tooltip();
 
 });

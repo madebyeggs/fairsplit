@@ -32,12 +32,12 @@
 								</td>
 								<% if s.short_id_url == '' || s.short_id_url.blank? %>
 									<td width="1%" class="topperButtons">
-										<%= link_to 'L', get_sound_links_path(:id => s.id), :class => "btn btn2" %>
+										<%= link_to 'L', get_sound_links_path(:id => s.id), :title => "Generate sharing link for #{s.title} playlist", :class => "btn btn2 tips" %>
 									</td>
 								<% else %>
 									<td width="1%" class="topperButtons"></td>
 								<% end %>
-								<td width="1%" class="topperButtons"><%= link_to "E", edit_sound_path(s), :class => "btn btn2" %></td>
+								<td width="1%" class="topperButtons"><%= link_to "E", edit_sound_path(s), :title => "Edit #{s.name} playlist", :class => "btn btn2 tips" %></td>
 								<td width="1%" class="topperButtons"><%= button_to "X", s, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>
 							</tr>
 						<% end %>

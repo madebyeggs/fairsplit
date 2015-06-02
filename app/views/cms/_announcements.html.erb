@@ -26,12 +26,12 @@
 								</td>
 								<% if a.short_uid_url == '' || a.short_uid_url.blank? %>
 									<td width="1%" class="topperButtons">
-										<%= link_to 'L', get_announcement_links_path(:id => a.id), :class => "btn btn2" %>
+										<%= link_to 'L', get_announcement_links_path(:id => a.id), :title => "Generate sharing link for the announcement #{a.homepage_title}", :class => "btn btn2 tips" %>
 									</td>
 								<% else %>
 									<td width="1%" class="topperButtons"></td>
 								<% end %>
-								<td width="1%" class="topperButtons"><%= link_to "E", edit_announcement_path(a), :class => "btn btn2" %></td>
+								<td width="1%" class="topperButtons"><%= link_to "E", edit_announcement_path(a), :title => "Edit announcement", :class => "btn btn2 tips" %></td>
 								<td width="1%" class="topperButtons"><%= button_to "X", a, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>
 							</tr>
 						<% end %>
