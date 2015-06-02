@@ -26,6 +26,7 @@ class Sound < ActiveRecord::Base
     if Rails.env.development?
       has_attached_file :large_image, LARGE_PAPERCLIP_STORAGE_OPTS
     else
+      has_attached_file :large_image,
       styles: {main: '710x400>'},
       :storage => :s3,
       :s3_credentials => {
