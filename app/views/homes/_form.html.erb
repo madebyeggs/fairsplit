@@ -13,7 +13,9 @@
 				<div class="col-md-6">
 					<%= f.label :latest_news_image_image_710X150, class: "formLabel" %><br />
 					<%= f.file_field :image %><br/>
-					<br /><%= f.submit :class => "btn" %>
+					<br />
+					<%= link_to "Cancel", cms_path, :class => "btn" %>
+					<%= f.submit :class => "btn" %>
 				</div>
 			<% end %>
 		</div>

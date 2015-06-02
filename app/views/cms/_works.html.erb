@@ -35,12 +35,15 @@
 										<%= work.short_id_url rescue nil %>	
 									</a>
 								</td>
+								<% if work.short_uid_url == '' || work.short_uid_url.blank? %>
+									<td width="1%" class="topperButtons">
+										<%= link_to 'L', get_work_links_path(:id => work.id), :class => "btn btn2" %>
+									</td>
+								<% else %>
+									<td width="1%" class="topperButtons"></td>
+								<% end %>
 								<td width="1%" class="topperButtons"><%= link_to "E", edit_work_path(work), :class => "btn btn2" %></td>
-								<td width="1%" class="topperButtons"><%= button_to "X", work, :method => :delete, :class => "btn btn2" %></td>
-								
-								<td width="1%" class="topperButtons">
-									<%= link_to "L", get_work_links_path(:id => work.id), :class => "btn btn2" %>
-								</td>
+								<td width="1%" class="topperButtons"><%= button_to "X", work, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>
 							</tr>
 						<% end %>
 					</table>

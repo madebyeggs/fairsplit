@@ -24,12 +24,15 @@
 										<%= a.short_uid_url rescue nil %>	
 									</a>
 								</td>
+								<% if a.short_uid_url == '' || a.short_uid_url.blank? %>
+									<td width="1%" class="topperButtons">
+										<%= link_to 'L', get_announcement_links_path(:id => a.id), :class => "btn btn2" %>
+									</td>
+								<% else %>
+									<td width="1%" class="topperButtons"></td>
+								<% end %>
 								<td width="1%" class="topperButtons"><%= link_to "E", edit_announcement_path(a), :class => "btn btn2" %></td>
-								<td width="1%" class="topperButtons"><%= button_to "X", a, :method => :delete, :class => "btn btn2" %></td>
-								
-								<td width="1%" class="topperButtons">
-									<%= link_to "L", get_announcement_links_path(:id => a.id), :class => "btn btn2" %>
-								</td>
+								<td width="1%" class="topperButtons"><%= button_to "X", a, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>
 							</tr>
 						<% end %>
 					</table>

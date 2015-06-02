@@ -336,5 +336,13 @@ $(document).ready(function() {
 	
 	//autoscaling text on titles
 	$(".subTitle").fitText(1.0, { minFontSize: '16px', maxFontSize: '26px' });
+	
+	$('.delete_post').on('click', function() {
+		if(confirm('Are you sure you want to delete this method')){
+	    	return true
+	    }else{
+	        return false;
+	    }
+	});
 
 });

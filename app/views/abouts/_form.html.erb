@@ -17,7 +17,9 @@
 	    			<%= f.text_area :description, class: 'formArea' %>
 					<%= f.label :footer, class: "formLabel" %>
 	    			<%= f.text_field :footer, class: 'formField' %>
-					<br /><%= f.submit :class => "btn" %>
+					<br />
+					<%= link_to "Cancel", cms_path, :class => "btn" %>
+					<%= f.submit :class => "btn" %>
 				</div>
 			<% end %>
 		</div>

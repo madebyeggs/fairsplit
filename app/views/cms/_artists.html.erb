@@ -17,7 +17,7 @@
 						<% @artists.each do |a| %>
 							<tr class="tableRow">
 								<td width="20%"><%= truncate(a.name, :length => 20) %></td>
-								<td width="31%"><%= truncate(a.description, :length => 30) %></td>
+								<td width="31%"><%= truncate(a.description, :length => 28) %></td>
 								<td width="7%"><%= a.latest %></td>
 								<td width="7%"><% if a.homepage == true %><%= "true" %><% else %><%= "false" %><% end %></td>
 								<td width="11%"><%= a.soundcloud %></td>
@@ -28,13 +28,13 @@
 								</td>
 								<% if a.short_id_url == '' || a.short_id_url.blank? %>
 									<td width="1%" class="topperButtons">
-										<%= link_to "L", get_artist_links_path(:id => a.id), :class => "btn btn2", :remote => "true" %>
+										<%= link_to 'L', get_artist_links_path(:id => a.id), :class => "btn btn2" %>
 									</td>
 								<% else %>
 									<td width="1%" class="topperButtons"></td>
 								<% end %>
 								<td width="1%" class="topperButtons"><%= link_to "E", edit_artist_path(a), :class => "btn btn2" %></td>
-								<td width="1%" class="topperButtons"><%= button_to "X", a, :method => :delete, :class => "btn btn2" %></td>
+								<td width="1%" class="topperButtons"><%= button_to "X", a, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>
 							</tr>
 						<% end %>
 					</table>

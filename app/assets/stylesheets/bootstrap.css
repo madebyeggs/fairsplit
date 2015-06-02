@@ -2769,7 +2769,7 @@ select[multiple].form-group-lg .form-control {
   -ms-user-select: none;
   user-select: none;
 }
-.btn2 {
+.btn2, .btn3 {
   display: inline-block;
   margin-bottom: 0;
   font-weight: normal;

@@ -2,7 +2,8 @@
 .padder {padding-top:20px;}
 .padder2 {margin-top:70px;}
 .padder3 {margin-top:40px;}
-.btn2 {margin-top:0px;height:20px;}
+.btn2, .btn3 {margin-top:0px;height:20px;}
+.btn3 {background-color:#bb4747;}
 .topperButtons {vertical-align:middle;}
 .existingImageName {color:#a8a8a8;margin-top:6px;}
 .social-share-button {float:right;margin-right:20px;}
