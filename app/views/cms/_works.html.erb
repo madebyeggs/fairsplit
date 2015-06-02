@@ -42,7 +42,7 @@
 								<% else %>
 									<td width="1%" class="topperButtons"></td>
 								<% end %>
-								<td width="1%" class="topperButtons"><%= link_to "E", edit_work_path(work), :title => "Edit #{w.title}", :class => "btn btn2 tips" %></td>
+								<td width="1%" class="topperButtons"><%= link_to "E", edit_work_path(work), :title => "Edit #{work.title}", :class => "btn btn2 tips" %></td>
 								<td width="1%" class="topperButtons"><%= button_to "X", work, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>
 							</tr>
 						<% end %>
