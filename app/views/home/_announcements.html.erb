@@ -82,7 +82,7 @@
 					<% elsif a.is_sound? %>
 						<h1 class="projectName">NEW PLAYLIST: <%= a.title %></h1>
 					<% elsif a.is_worK? %>
-						<h1 class="projectName">NEW WORK: <%= w.client %> <i>"<%= w.title %>"</i></h1>
+						<h1 class="projectName">NEW WORK: <%= a.client %> <i>"<%= a.title %>"</i></h1>
 					<% else %>
 						<h1 class="projectName"><%= a.homepage_title %></h1>
 					<% end %>
