@@ -169,11 +169,11 @@ td {line-height:30px;}
 	.canScroll {height:550px;overflow-y: auto;}
 	.canScroll2, .canScroll3, .canScroll4, .canScroll5 {height:680px;overflow-y: auto;}
 	.logo {width:150px;margin-top:-20px;}
+	.subtitle-wrap, .overlay3 {display:none;}
+	.title-wrap {display:inline!important;}
+	.title-wrap h3 {font-size:12px!important;width:100%;margin:0px 10px 0px 0px;}
 }
 
 @media screen and (max-width: 563px) {
 	.icons2, .icons4 {display:none;}
-	.subtitle-wrap {display:none;}
-	.title-wrap h3 {font-size:12px!important;width:100%;margin:0px 10px 0px 0px;}
-	
 }
