@@ -93,6 +93,7 @@ td {line-height:30px;}
 .canScroll2, .canScroll3, .canScroll4, .canScroll5 {height:100vh;overflow-y: auto;}
 .clear {clear:both;}
 .socials {display:inline;font-size:18px;}
+.muteEffects2 {display:none;}
 
 /* NEWS */
 
