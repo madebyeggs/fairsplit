@@ -5,9 +5,9 @@
 				<div class="images" id="artistPicture<%= a.id %>">
 					<div class="artist<%= a.id %>">
 						<% if a.latest?  %>
-							<%= image_tag(a.large_image) %>
+							<%= image_tag(a.large_image, :alt => "#{a.name}") %>
 						<% else %>
-							<%= image_tag(a.image) %>
+							<%= image_tag(a.image, :alt => "#{a.name}") %>
 						<% end %>
 					</div>
 					<div class="muteEffects">

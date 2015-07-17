@@ -4,10 +4,30 @@
 			<div class="element">
 				<div class="images" id="announcementPicture<%= a.uid %>">
 					<div class="announcement<%= a.uid %>">
-						<% if i == 0  %>
-							<%= image_tag(a.large_image) %>
+						<% if a.is_work? %>
+							<% if i == 0  %>
+								<%= image_tag(a.large_image, :alt => "#{a.client} - #{a.title}") %>
+							<% else %>
+								<%= image_tag(a.image, :alt => "#{a.client} - #{a.title}") %>
+							<% end %>
+						<% elsif a.is_artist? %>
+							<% if i == 0  %>
+								<%= image_tag(a.large_image, :alt => "NEW SIGNING: #{a.name}") %>
+							<% else %>
+								<%= image_tag(a.image, :alt => "NEW SIGNING: #{a.name}") %>
+							<% end %>
+						<% elsif a.is_sound? %>
+							<% if i == 0  %>
+								<%= image_tag(a.large_image, :alt => "NEW PLAYLIST: #{a.title}") %>
+							<% else %>
+								<%= image_tag(a.image, :alt => "NEW PLAYLIST: #{a.title}") %>
+							<% end %>
 						<% else %>
-							<%= image_tag(a.image) %>
+							<% if i == 0  %>
+								<%= image_tag(a.large_image, :alt => "#{a.homepage_title}") %>
+							<% else %>
+								<%= image_tag(a.image, :alt => "#{a.homepage_title}") %>
+							<% end %>
 						<% end %>
 					</div>
 					

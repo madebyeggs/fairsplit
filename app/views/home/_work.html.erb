@@ -5,9 +5,9 @@
 				<div class="images">
 					<div class="work<%= w.id %>">
 						<% if w.latest?  %>
-							<%= image_tag(w.large_image) %>
+							<%= image_tag(w.large_image, :alt => "#{w.client} - #{w.title}") %>
 						<% else %>
-							<%= image_tag(w.image) %>
+							<%= image_tag(w.image, :alt => "#{w.client} - #{w.title}") %>
 						<% end %>
 					</div>
 					<div class="muteEffects">
