@@ -61,8 +61,8 @@ status2.gif: status2-b42f5aafdc0108f8059883448271d7cb.gif
 status2/index.gif: status2-b42f5aafdc0108f8059883448271d7cb.gif
 application.js: application-9cfa44ca940d8597ca7373831a1c0c99.js
 application/index.js: application-9cfa44ca940d8597ca7373831a1c0c99.js
-application.css: application-b12a6c0baba0a786906a72d0434152cf.css
-application/index.css: application-b12a6c0baba0a786906a72d0434152cf.css
+application.css: application-dba2358916b8198b70bd27212c011160.css
+application/index.css: application-dba2358916b8198b70bd27212c011160.css
 sprites/social-share-button.png: sprites/social-share-button-8335b21257c8e6c884103903842415c5.png
 sprites/social-share-button/index.png: sprites/social-share-button-8335b21257c8e6c884103903842415c5.png
 sprites/social-share-button@2x.png: sprites/social-share-button@2x-dad5934ac0572f5897a9c63a9795863e.png
