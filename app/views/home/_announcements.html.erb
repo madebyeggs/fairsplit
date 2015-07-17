@@ -40,7 +40,6 @@
 						</section>
 			        	<div class="vidTitle">
 							<% if a.is_work? %>
-							
 								<div class="title-wrap">
 			            			<h3><%= a.client %> <i>"<%= a.title %>"</i></h3>
 			          			</div>
@@ -50,9 +49,7 @@
 								<div class="subtitle-wrap borderTop">
             						<p><%= a.created_at.strftime("%B %Y") %></p>
 								</div>
-								
-							<% elsif a.is_artist? %>	
-								
+							<% elsif a.is_artist? %>
 			        			<div class="title-wrap">
 				            		<h3>NEW SIGNING: <%= a.name %></h3>
 				          		</div>
@@ -62,9 +59,7 @@
 								<div class="subtitle-wrap borderTop">
 	            					<p><%= a.created_at.strftime("%B %Y") %></p>
 								</div>
-								
-							<% elsif a.is_sound? %>	
-							
+							<% elsif a.is_sound? %>
 								<div class="title-wrap">
 				            		<h3>NEW PLAYLIST: <%= a.title %></h3>
 				          		</div>
@@ -74,9 +69,7 @@
 								<div class="subtitle-wrap borderTop">
 	            					<p><%= a.created_at.strftime("%B %Y") %></p>
 								</div>
-								
 							<% else %>
-							
 								<div class="title-wrap">
 				            		<h3><%= a.homepage_title %></h3>
 				          		</div>
@@ -86,11 +79,35 @@
 								<div class="subtitle-wrap borderTop">
 	            					<p><%= a.created_at.strftime("%B %Y") %></p>
 								</div>
-								
 							<% end %>
 			        	</div>
 					</div>
-		    	</div>
+					<div class="muteEffects2">
+		    			<section class="hidden-infos">
+							<input type="hidden" value=<%= a.uid %> class="announcement-object-uid">
+							<a class="launchAnnouncement"></a>      					
+						</section>
+			        	<div class="vidTitle">
+							<% if a.is_work? %>
+								<div class="titleWrap">
+			            			<h3><%= a.client %> <i>"<%= a.title %>"</i></h3>
+			          			</div>
+							<% elsif a.is_artist? %>
+			        			<div class="titleWrap">
+				            		<h3>NEW SIGNING: <%= a.name %></h3>
+				          		</div>
+							<% elsif a.is_sound? %>	
+								<div class="titleWrap">
+				            		<h3>NEW PLAYLIST: <%= a.title %></h3>
+				          		</div>
+							<% else %>
+								<div class="titleWrap">
+				            		<h3><%= a.homepage_title %></h3>
+				          		</div>
+							<% end %>
+			        	</div>
+					</div>
+				</div>
 			</div>
 			<div id="announcement<%= a.uid %>" style="display:none;">
 				<div class="projectInfo" id="scrollHereAnnouncement<%= a.uid %>">
