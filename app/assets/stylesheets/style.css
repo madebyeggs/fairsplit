@@ -175,7 +175,7 @@ td {line-height:30px;}
 	.title-wrap h3 {font-size:10px!important;width:100%;margin:0px 10px 0px 0px;}
 	.muteEffects2 {display:inline;}
 	.muteEffects {display:none;}
-	.titleWrap h3 {font-size:15px;margin:-15px 0px 0px -30px!important;background-color:rgba(0,0,0,0.5);padding:5px;width:100%;}
+	.titleWrap h3 {font-size:15px;margin:-15px 0px 0px -30px!important;padding:5px;width:100%!important;}
 }
 
 @media screen and (max-width: 563px) {
