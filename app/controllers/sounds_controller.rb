@@ -2,6 +2,7 @@ class SoundsController < ApplicationController
   before_filter :authenticate_user!
   
     def new
+      bring_in_models
       @sound = Sound.new
     end
 
@@ -26,6 +27,7 @@ class SoundsController < ApplicationController
     end
 
     def edit
+      bring_in_models
       @sound = Sound.find(params[:id])
     end
 

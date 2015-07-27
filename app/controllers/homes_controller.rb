@@ -2,6 +2,7 @@ class HomesController < ApplicationController
   before_filter :authenticate_user!
   
     def new
+      bring_in_models
       @home = Home.new
     end
 
@@ -26,6 +27,7 @@ class HomesController < ApplicationController
     end
 
     def edit
+      bring_in_models
       @home = Home.find(params[:id])
     end
 

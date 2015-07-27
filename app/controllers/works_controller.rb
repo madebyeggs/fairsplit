@@ -2,6 +2,7 @@ class WorksController < ApplicationController
   before_filter :authenticate_user!
   
     def new
+      bring_in_models
       @work = Work.new
     end
 
@@ -26,6 +27,7 @@ class WorksController < ApplicationController
     end
 
     def edit
+      bring_in_models
       @work = Work.find(params[:id])
     end
 

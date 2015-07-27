@@ -2,6 +2,7 @@ class ArtistsController < ApplicationController
   before_filter :authenticate_user!
   
     def new
+      bring_in_models
       @artist = Artist.new
     end
 
@@ -10,6 +11,7 @@ class ArtistsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
+      
     end
 
     def show
@@ -24,6 +26,8 @@ class ArtistsController < ApplicationController
     end
     
     def edit
+      bring_in_models
+      bring_in_models
       @artist = Artist.find(params[:id])
     end
 

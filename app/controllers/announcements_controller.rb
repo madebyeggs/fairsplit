@@ -2,6 +2,7 @@ class AnnouncementsController < ApplicationController
   before_filter :authenticate_user!
   
     def new
+      bring_in_models
       @announcement = Announcement.new
     end
 
@@ -26,6 +27,7 @@ class AnnouncementsController < ApplicationController
     end
 
     def edit
+      bring_in_models
       @announcement = Announcement.find(params[:id])
     end
 

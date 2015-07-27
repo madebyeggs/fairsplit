@@ -2,6 +2,7 @@ class AboutsController < ApplicationController
   before_filter :authenticate_user!
   
     def new
+      bring_in_models
       @about = About.new
     end
 
@@ -26,6 +27,7 @@ class AboutsController < ApplicationController
     end
 
     def edit
+      bring_in_models
       @about = About.find(params[:id])
     end
 
