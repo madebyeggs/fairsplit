@@ -19,7 +19,9 @@
 	    			<%= f.text_field :footer, class: 'formField' %>
 					<br />
 					<%= link_to "Cancel", cms_path, :class => "btn" %>
-					<%= f.submit class: "btn", data: {disable_with: "Submitting..."} %>
+					<% if !@user.email == "sofia@floatpr.com" %>
+						<%= f.submit class: "btn", data: {disable_with: "Submitting..."} %>
+					<% end %>
 				</div>
 			<% end %>
 		</div>
