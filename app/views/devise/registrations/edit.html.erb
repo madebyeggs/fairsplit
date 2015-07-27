@@ -5,7 +5,7 @@
 <div class="col-md-12">
 	<div class="col-md-8 col-sm-offset-2 topper">
 		
-		<h1 class="formHeader">Edit <%= resource_name.to_s.humanize %></h1>
+		<h1 class="formHeader">Edit</h1>
 		<hr class="projectSeparator" />
 	
 		<div class="formWrapper">	
@@ -31,10 +31,9 @@
 				  <div><%= f.label :current_password, :class => "formLabel" %> <i class="formLabel">(we need your current password to confirm your changes)</i><br />
 				    <%= f.password_field :current_password, autocomplete: "off", :class => "formField" %></div>
 
-				  <div><%= f.submit "Update" %></div>
+				  <div><%= f.submit "Update", class: "btn" %></div>
 				<% end %>
-
-				<%= link_to "Back", :back %>
+				
 			</div>
 			<div class="col-md-4">&nbsp;</div>
 		</div>
