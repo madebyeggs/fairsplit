@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     @sounds = Sound.order("latest DESC, id DESC")
     @abouts = About.all
     @combined_sorted = (Announcement.all + Work.where(:homepage => true) + Artist.where(:homepage => true) + Sound.where(:homepage => true)).sort {|a,b| b.created_at <=> a.created_at}
-    @users = User.all
+    @user = current_user
   end
   
 end
