@@ -40,7 +40,7 @@
 					<%= f.label :description, class: "formLabel" %>
 	    			<%= f.text_area :description, class: 'formArea' %>
 					<%= link_to "Cancel", cms_path, :class => "btn" %>
-					<%= f.submit :class => "btn" %>
+					<%= f.submit class: "btn", data: {disable_with: "Submitting..."} %>
 				</div>
 			<% end %>
 		</div>

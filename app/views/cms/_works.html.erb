@@ -43,7 +43,9 @@
 									<td width="1%" class="topperButtons"></td>
 								<% end %>
 								<td width="1%" class="topperButtons"><%= link_to "E", edit_work_path(work), :title => "Edit #{work.title}", :class => "btn btn2 tips" %></td>
-								<td width="1%" class="topperButtons"><%= button_to "X", work, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>
+								<% if !@user.email == "sofia@floatpr.com" %>
+									<td width="1%" class="topperButtons"><%= button_to "X", work, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>		
+								<% end %>
 							</tr>
 						<% end %>
 					</table>
