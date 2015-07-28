@@ -11,6 +11,7 @@ class ApplicationController < ActionController::Base
     @abouts = About.all
     @combined_sorted = (Announcement.all + Work.where(:homepage => true) + Artist.where(:homepage => true) + Sound.where(:homepage => true)).sort {|a,b| b.created_at <=> a.created_at}
     @user = current_user
+    @testing = "sofia@floatpr.com"
   end
   
 end

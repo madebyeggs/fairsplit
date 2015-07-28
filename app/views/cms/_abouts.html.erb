@@ -13,7 +13,7 @@
 							<tr class="tableRow">
 								<td width="97%"><%= truncate(a.description, :length => 120) %></td>
 								<td width="2%" class="topperButtons"><%= link_to "edit", edit_about_path(a), :title => "Edit about copy", :class => "btn btn2 tips" %></td>
-								<% if @user.email != "sofia@floatpr.com" %>
+								<% if @user.email != @testing %>
 									<td width="1%" class="topperButtons"><%= button_to "X", a, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>
 								<% end %>
 							</tr>
