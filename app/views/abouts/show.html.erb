@@ -1,0 +1,10 @@
+<div class="canScroll2">
+	<div class="projectInfo">
+		<h1 class="projectName"><%= @about.title %></h1>
+		<hr class="projectSeparator" />
+		<div class="aboutText">
+			<p class="projectDetail"><%= simple_format @about.description, class: "projectDetail" %></p>
+			<i><%= @about.footer %> - <%= Date.today.strftime("%B") %> <%= Time.now.year %></i>
+		</div>
+	</div>
+</div>

@@ -18,7 +18,9 @@
  *= require_tree .
  *= require font-awesome
  *= require jquery-ui.theme.min
+ *= require nprogress
+ *= require nprogress-bootstrap
+ *= require nprogressOverrides
  *= require style
- *= require social-share-button
  *= require bootstrapOverrides
  */

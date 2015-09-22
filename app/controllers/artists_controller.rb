@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => ["index", "show"]
   
     def new
       bring_in_models
@@ -16,13 +16,20 @@ class ArtistsController < ApplicationController
 
     def show
       @artist = Artist.find(params[:id])
+      set_meta_tags :og => {
+        :title    => "Fairsplit Music Artist:" + " " + "#{@artist.name}",
+        :url      => "http://fairsplitmusic.com/artists/" + "#{@artist.id}",
+        :image    => "#{@artist.square_image}"
+      }
     end
 
     def index
-      @artist = Artist.all
-      respond_to do |format|
-        format.html { redirect_to cms_path }
-      end
+      @artists = Artist.all
+      set_meta_tags :og => {
+        :title    => 'Fairsplit Artists',
+        :url      => 'http://fairsplitmusic.com/artists',
+        :image    => 'http://ia.media-imdb.com/rock.jpg'
+      }
     end
     
     def edit
@@ -67,6 +74,6 @@ class ArtistsController < ApplicationController
 			respond_to do |format|
         format.html { redirect_to cms_path }
       end
-    end
+    end    
 
 end

@@ -1,0 +1,46 @@
+<div class="canScroll2">
+	<% @works.each do |w| %>
+		<div class="element">
+			<div class="images">
+				<div class="work<%= w.id %>">
+					<% if w.latest?  %>
+						<%= image_tag(w.large_image, :alt => "#{w.client} - #{w.title}") %>
+					<% else %>
+						<%= image_tag(w.image, :alt => "#{w.client} - #{w.title}") %>
+					<% end %>
+				</div>
+				<div class="muteEffects">
+	    			<section class="hidden-infos"> 
+						<a class="launchWork"><%= link_to "", work_path(w.id) %></a>
+		          		<div class="overlay3"></div>
+						<div class="icons4 play"></div>	        					
+					</section>
+		        	<div class="vidTitle">
+		        		<div class="title-wrap">
+		            		<h3><%= w.client %> <i>"<%= w.title %>"</i></h3>
+		          		</div>
+						<div class="subtitle-wrap">
+	            			<p><%= w.artist_name %>: <%= w.track_name %></p>
+						</div>
+		        	</div>
+				</div>
+				<div class="muteEffects2">
+	    			<section class="hidden-infos">
+						<input type="hidden" value=<%= w.id %> class="work-object-id"> 
+						<a class="launchWork"></a>       					
+					</section>
+		        	<div class="vidTitle">
+		        		<div class="titleWrap">
+		            		<h3><%= w.client %> <i>"<%= w.title %>"</i></h3>
+		          		</div>
+		        	</div>
+				</div>
+	    	</div>
+		</div>
+	<% end %>
+	<!--<div id="backtotop2">
+	  <ul>
+	    <li><a id="toTop2" class="bounce" href="#" onClick="return false">Back to Top</a></li>
+	  </ul>
+	</div>-->
+</div>

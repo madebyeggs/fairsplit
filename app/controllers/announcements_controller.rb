@@ -1,5 +1,5 @@
 class AnnouncementsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => ["index"]
   
     def new
       bring_in_models
@@ -20,10 +20,7 @@ class AnnouncementsController < ApplicationController
     end
 
     def index
-      @announcement = Announcement.all
-      respond_to do |format|
-        format.html { redirect_to cms_path }
-      end
+      bring_in_models
     end
 
     def edit

@@ -1,8 +1,3 @@
-/*!
-    SlickNav Responsive Mobile Menu v1.0.1
-    (c) 2014 Josh Cope
-    licensed under MIT
-*/
 ;(function ($, document, window) {
     var
     // default settings object.
@@ -15,14 +10,20 @@
             closedSymbol: '&#9658;',
             openedSymbol: '&#9660;',
             prependTo: 'body',
+            appendTo: '',
             parentTag: 'a',
-            closeOnClick: true,
+            closeOnClick: false,
             allowParentLinks: false,
             nestedParentLinks: true,
             showChildren: false,
+            removeIds: false,
+            removeClasses: false,
+			brand: '',
             init: function () {},
-            open: function () {},
-            close: function () {}
+            beforeOpen: function () {},
+            beforeClose: function () {},
+            afterOpen: function () {},
+            afterClose: function () {}
         },
         mobileMenu = 'slicknav',
         prefix = 'slicknav';
@@ -59,6 +60,20 @@
             });
         } else {
             $this.mobileNav = menu;
+
+            // remove ids if set
+            $this.mobileNav.removeAttr('id');
+            $this.mobileNav.find('*').each(function (i, e) {
+                $(e).removeAttr('id');
+            });
+        }
+
+        // remove classes if set
+        if (settings.removeClasses) {
+            $this.mobileNav.removeAttr('class');
+            $this.mobileNav.find('*').each(function (i, e) {
+                $(e).removeAttr('class');
+            });
         }
 
         // styling class for the button
@@ -75,6 +90,10 @@
         // create menu bar
         $this.mobileNav.attr('class', prefix + '_nav');
         menuBar = $('<div class="' + prefix + '_menu"></div>');
+		if (settings.brand !== '') {
+			var brand = $('<div class="' + prefix + '_brand">'+settings.brand+'</div>');
+			$(menuBar).append(brand);
+		}
         $this.btn = $(
             ['<' + settings.parentTag + ' aria-haspopup="true" tabindex="0" class="' + prefix + '_btn ' + prefix + '_collapsed">',
                 '<span class="' + prefix + '_menutxt">' + settings.label + '</span>',
@@ -87,7 +106,11 @@
             ].join('')
         );
         $(menuBar).append($this.btn);
-        $(settings.prependTo).prepend(menuBar);
+        if(settings.appendTo !== '') {
+            $(settings.appendTo).append(menuBar);
+        } else {
+            $(settings.prependTo).prepend(menuBar);
+        }
         menuBar.append($this.mobileNav);
 
         // iterate over structure adding additional structure
@@ -105,7 +128,7 @@
                 // check for anchors
 
                 var a = item.contents(),
-                    containsAnchor = false;
+                    containsAnchor = false,
                     nodes = [];
 
                 $(a).each(function () {
@@ -131,11 +154,16 @@
                 } else
                     $(nodes).wrapAll('<span class="'+prefix+'_parent-link '+prefix+'_row"/>').parent();
 
-                item.addClass(prefix+'_collapsed');
+                if (!settings.showChildren) {
+                    item.addClass(prefix+'_collapsed');
+                } else {
+                    item.addClass(prefix+'_open');
+                }
+
                 item.addClass(prefix+'_parent');
 
                 // create parent arrow. wrap with link if parent links and separating
-                var arrowElement = $('<span class="'+prefix+'_arrow">'+settings.closedSymbol+'</span>');
+                var arrowElement = $('<span class="'+prefix+'_arrow">'+(settings.showChildren?settings.openedSymbol:settings.closedSymbol)+'</span>');
 
                 if (settings.allowParentLinks && !settings.nestedParentLinks && containsAnchor)
                     arrowElement = arrowElement.wrap(wrapElement).parent();
@@ -292,14 +320,18 @@
 
         if (el.hasClass(prefix+'_hidden')) {
             el.removeClass(prefix+'_hidden');
+             //Fire beforeOpen callback
+                if (!init) {
+                    settings.beforeOpen(trigger);
+                }
             el.slideDown(duration, settings.easingOpen, function(){
 
                 $(trigger).removeClass(prefix+'_animating');
                 $(parent).removeClass(prefix+'_animating');
 
-                //Fire open callback
+                //Fire afterOpen callback
                 if (!init) {
-                    settings.open(trigger);
+                    settings.afterOpen(trigger);
                 }
             });
             el.attr('aria-hidden','false');
@@ -307,6 +339,12 @@
             $this._setVisAttr(el, false);
         } else {
             el.addClass(prefix+'_hidden');
+
+            //Fire init or beforeClose callback
+            if (!init){
+                settings.beforeClose(trigger);
+            }
+
             el.slideUp(duration, this.settings.easingClose, function() {
                 el.attr('aria-hidden','true');
                 items.attr('tabindex', '-1');
@@ -316,11 +354,10 @@
                 $(trigger).removeClass(prefix+'_animating');
                 $(parent).removeClass(prefix+'_animating');
 
-                //Fire init or close callback
+                //Fire init or afterClose callback
                 if (!init){
-                    settings.close(trigger);
-                }
-                else if (trigger == 'init'){
+                    settings.afterClose(trigger);
+                } else if (trigger == 'init'){
                     settings.init();
                 }
             });

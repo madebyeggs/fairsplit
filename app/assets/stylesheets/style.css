@@ -3,6 +3,7 @@ html {background-color:#000000!important;}
 body {
 	/*overflow: hidden!important;*/
 	background-color:#000000!important;
+	font-family:sans-serif;
 }
 
 a {
@@ -38,6 +39,9 @@ a {
 }
 
 .fa {color:#ffffff;margin-right:5px;}
+.socialLinks {font-size:25px!important;}
+.links {margin:-40px 0px -20px 0px;}
+.spacer {margin-top:-15px!important;margin-bottom:22px!important;}
 
 /* MAIN */
 
@@ -115,6 +119,7 @@ td {line-height:30px;}
 .work {margin:0px 0px 0px 0px;}
 .workImage img {width:100%;}
 .trackName {font-size:12px!important;}
+i {font-size:18px;}
 .justify {text-align:justify!important;font-size:18px!important;line-height:26px!important;margin:30px 7.5% 20px 2.5%!important;width:90%}
 
 /*CMSFixes */
@@ -127,6 +132,7 @@ td {line-height:30px;}
 #mapsContent {color:#202326;font-family:'Raleway'}
 .bottom {margin-bottom:30px;}
 .clearBothSides {clear:both;}
+.aboutText {float:left;}
 .artist-left {width:55%;float:left;}
 .artist-right {width:40%;margin-left:5%;float:right;}
 .artist-bottom {width:100%;clear:both;float:left;margin:30px 0px 40px 0px;}

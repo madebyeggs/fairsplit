@@ -49,5 +49,9 @@ class AboutsController < ApplicationController
         format.html { redirect_to cms_path }
       end
     end
+    
+    def show
+      @about = About.find(params[:id])
+    end
 
 end

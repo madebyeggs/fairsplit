@@ -13,13 +13,14 @@ gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'paperclip'
 gem 'aws-sdk'
-gem 'will_paginate', '~> 3.0.7'
 gem 'jquery-gmap3-rails'
 gem 'bitly', '~> 0.9.0'
 gem 'google-analytics-rails'
-gem 'social-share-button'
 gem 'newrelic_rpm'
 gem 'rack-zippy'
+gem 'meta-tags'
+gem 'turbolinks'
+gem 'nprogress-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.

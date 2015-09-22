@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => ["index", "show"]
   
     def new
       bring_in_models
@@ -14,16 +14,21 @@ class WorksController < ApplicationController
     end
 
     def show
-      respond_to do |format|
-        format.html { redirect_to cms_path }
-      end
+      @work = Work.find(params[:id])
+      set_meta_tags :og => {
+        :title    => "Fairsplit Music Project:" + " " + "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
+        :url      => "http://fairsplitmusic.com/works/" + "#{@work.id}",
+        :image    => "#{@work.image}"
+      }
     end
 
     def index
-      @work = Work.all
-      respond_to do |format|
-        format.html { redirect_to cms_path }
-      end
+      @works = Work.all
+      set_meta_tags :og => {
+        :title    => 'Fairsplit Projects',
+        :url      => 'http://fairsplitmusic.com/works',
+        :image    => 'http://ia.media-imdb.com/rock.jpg'
+      }
     end
 
     def edit
