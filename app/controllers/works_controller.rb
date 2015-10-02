@@ -15,9 +15,12 @@ class WorksController < ApplicationController
 
     def show
       @work = Work.find(params[:id])
+      if request.path != work_path(@work)
+        redirect_to @work, status: :moved_permanently
+      end
       set_meta_tags :og => {
         :title    => "Fairsplit Music Project:" + " " + "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
-        :url      => "http://fairsplitmusic.com/works/" + "#{@work.id}",
+        :url      => "http://fairsplitmusic.com/works/" + "#{@work.slug}",
         :image    => "#{@work.image}"
       }
     end
@@ -58,15 +61,10 @@ class WorksController < ApplicationController
     def create_links
       @work = Work.find(params[:id])
       bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
-		  id_url = bitly.shorten("http://www.fairsplitmusic.com/#filter=.works/" + "work" + "#" + "#{@work.id}")
-		  uid_url = bitly.shorten("http://www.fairsplitmusic.com/#filter=.works/" + "work" + "#" + "#{@work.uid}")
+		  id_url = bitly.shorten("http://www.fairsplitmusic.com/works/" + "#{@work.slug}")
 		  short_id_url = id_url.short_url
-		  short_uid_url = uid_url.short_url
       if @work.short_id_url == '' || @work.short_id_url.blank?
 			  @work.short_id_url = short_id_url
-			end
-			if @work.short_uid_url == '' || @work.short_uid_url.blank?
-			  @work.short_uid_url = short_uid_url
 			end
 		  @work.update_attributes(params[:work])
 			respond_to do |format|

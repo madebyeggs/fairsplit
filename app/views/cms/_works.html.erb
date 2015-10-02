@@ -31,11 +31,11 @@
 								<td width="7%"><% if work.homepage == true %><%= "true" %><% else %><%= "false" %><% end %></td>
 								<td width="12%"><%= truncate(artist_name, :length => 11) %></td>
 								<td width="22%">
-									<a href="../#filter=.works/work#<%= work.id %>" target="_blank">
+									<a href="../works/<%= work.slug %>" target="_blank">
 										<%= work.short_id_url rescue nil %>	
 									</a>
 								</td>
-								<% if work.short_uid_url == '' || work.short_uid_url.blank? %>
+								<% if work.short_id_url == '' || work.short_id_url.blank? %>
 									<td width="1%" class="topperButtons">
 										<%= link_to 'L', get_work_links_path(:id => work.id), :title => "Generate sharing link for #{work.title}", :class => "btn btn2 tips" %>
 									</td>

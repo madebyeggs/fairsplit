@@ -2,6 +2,9 @@ class Work < ActiveRecord::Base
   attr_accessible :title, :client, :description, :vimeo, :image, :large_image, :type_of_work, :artist_name, :track_name, 
   :latest, :artist_id, :homepage_title, :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, :homepage
   
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history]
+  
   before_save :create_unique_id
   belongs_to :artist
   
@@ -49,10 +52,6 @@ class Work < ActiveRecord::Base
     validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
     
     def create_unique_id
-      uid = rand.to_s[2..16]
-      if self.uid == '' || self.uid.blank?
-        self.uid = uid
-      end
       self.is_artist = false
       self.is_work = true
       self.is_sound = false

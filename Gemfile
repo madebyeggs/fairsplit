@@ -10,6 +10,7 @@ gem 'jquery-ui-rails'
 gem 'therubyracer'
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem "friendly_id"
 gem 'devise'
 gem 'paperclip'
 gem 'aws-sdk'

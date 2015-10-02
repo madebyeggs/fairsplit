@@ -2,6 +2,9 @@ class Announcement < ActiveRecord::Base
   attr_accessible :homepage_title, :image, :vimeo, :description, :soundcloud, :large_image, :latest, :square_image, 
   :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_uid_url
   
+  extend FriendlyId
+  friendly_id :homepage_title, use: [:slugged, :history]
+  
   before_save :create_unique_id
   
   require 'bitly'
@@ -66,17 +69,9 @@ class Announcement < ActiveRecord::Base
     validates_attachment_content_type :square_image, :content_type => /\Aimage\/.*\Z/
     
     def create_unique_id
-      uid = rand.to_s[2..16]
-      if self.uid == '' || self.uid.blank?
-        self.uid = uid
-      end
       self.is_artist = false
       self.is_work = false
       self.is_sound = false
       self.is_announcement = true
-      if self.short_uid_url == '' || self.short_uid_url.blank?
-			  self.short_uid_url = short_uid_url
-			end
     end
-    
 end

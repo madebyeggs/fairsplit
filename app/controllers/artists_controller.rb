@@ -16,9 +16,12 @@ class ArtistsController < ApplicationController
 
     def show
       @artist = Artist.find(params[:id])
+      if request.path != artist_path(@artist)
+        redirect_to @artist, status: :moved_permanently
+      end
       set_meta_tags :og => {
         :title    => "Fairsplit Music Artist:" + " " + "#{@artist.name}",
-        :url      => "http://fairsplitmusic.com/artists/" + "#{@artist.id}",
+        :url      => "http://fairsplitmusic.com/artists/" + "#{@artist.slug}",
         :image    => "#{@artist.square_image}"
       }
     end
@@ -60,15 +63,10 @@ class ArtistsController < ApplicationController
     def create_links
       @artist = Artist.find(params[:id])
       bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
-		  id_url = bitly.shorten("http://www.fairsplitmusic.com/#filter=.artists/" + "artist" + "#" + "#{@artist.id}")
-		  uid_url = bitly.shorten("http://www.fairsplitmusic.com/#filter=.artists/" + "artist" + "#" + "#{@artist.uid}")
+		  id_url = bitly.shorten("http://www.fairsplitmusic.com/artists/" + "#{@artist.slug}")
 		  short_id_url = id_url.short_url
-		  short_uid_url = uid_url.short_url
       if @artist.short_id_url == '' || @artist.short_id_url.blank?
 			  @artist.short_id_url = short_id_url
-			end
-			if @artist.short_uid_url == '' || @artist.short_uid_url.blank?
-			  @artist.short_uid_url = short_uid_url
 			end
 		  @artist.update_attributes(params[:artist])
 			respond_to do |format|

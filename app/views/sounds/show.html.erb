@@ -1,42 +1,40 @@
 <div class="canScroll4">
 	<div class="projectInfo">
 		<%= link_to '', :back, :class => "artistCloseIcon" %>
-		<h1 class="projectName"><%= @work.client %> "<%= @work.title %>"</h1>
-		<h3 class="projectSubtitle"><%= @work.type_of_work %></h3>
-		<h3 class="projectSubtitle spacer"><em>MUSIC - </em><%= @work.artist_name %>: <%= @work.track_name %></h3>
+		<h1 class="projectName"><%= @sound.title %></h1>
 		<div class="links">
 			<input id="twitter" type="hidden" 
-				data-url="http://fairsplitmusic.com/works/<%= @work.slug %>"
-				data-description="<%= truncate(@work.description, :length => 90) %>" 
+				data-url="http://fairsplitmusic.com/sounds/<%= @sound.slug %>"
+				data-description="<%= truncate(@sound.description, :length => 90) %>" 
 				data-via="fairsplitmusic" 
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>
 			<input id="facebook" type="hidden" 
-				data-url="http://fairsplitmusic.com/works/<%= @work.slug %>" 
+				data-url="http://fairsplitmusic.com/sounds/<%= @sound.slug %>" 
 				data-title="Fairsplit Music project"
-				data-description="<%= truncate(@work.description, :length => 90) %>" 
+				data-description="<%= truncate(@sound.description, :length => 90) %>" 
 				data-media="http://sonnyt.com/assets/imgs/prettySocial.png" 
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'facebook' }, :class => 'prettySocial fa fa-facebook socialLinks' %>
 			<input id="googleplus" type="hidden" 
-				data-url="http://fairsplitmusic.com/works/<%= @work.slug %>" 
-				data-description="<%= truncate(@work.description, :length => 90) %>" 
+				data-url="http://fairsplitmusic.com/sounds/<%= @sound.slug %>" 
+				data-description="<%= truncate(@sound.description, :length => 90) %>" 
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'googleplus' }, :class => 'prettySocial fa fa-google-plus socialLinks' %>
 			<input id="pinterest" type="hidden" 
-				data-url="http://fairsplitmusic.com/works/<%= @work.slug %>" 
-				data-description="<%= truncate(@work.description, :length => 90) %>" 
+				data-url="http://fairsplitmusic.com/sounds/<%= @sound.slug %>" 
+				data-description="<%= truncate(@sound.description, :length => 90) %>" 
 				data-media="http://sonnyt.com/assets/imgs/prettySocial.png" 
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'pinterest' }, :class => 'prettySocial fa fa-pinterest socialLinks' %>
 			<input id="linkedin" type="hidden" 
-				data-url="http://fairsplitmusic.com/works/<%= @work.slug %>" 
+				data-url="http://fairsplitmusic.com/sounds/<%= @sound.slug %>" 
 				data-title="Fairsplit Music project" 
-				data-description="<%= truncate(@work.description, :length => 90) %>" 
+				data-description="<%= truncate(@sound.description, :length => 90) %>" 
 				data-via="fairsplitmusic" 
 				data-media="http://sonnyt.com/assets/imgs/prettySocial.png" 
 				class="socialLinksHidden"
@@ -45,11 +43,10 @@
 		</div>
 		<hr class="projectSeparator" />
 		<div class="fitvids">
-			<% if @work.vimeo? %>
-        	<iframe src="https://player.vimeo.com/video/<%= @work.vimeo %>?title=0&amp;byline=0&amp;" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-			<% end %>
+			<iframe width="100%" height="450" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/<%= @sound.soundcloud %>&amp;color=bdbdbd&amp;background_color=000000&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_artwork=false" src="about:blank">
+			</iframe>
 		</div>
-		<% if @work.vimeo? %><hr class="projectSeparator" /><% end %>
-		<% if @work.description? %><p class="projectDetail"><%= simple_format @work.description, :class => "projectDetail" %></p><% end %>
+		<hr class="projectSeparator" />
+		<% if @sound.description? %><p class="projectDetail"><%= simple_format @sound.description, :class => "projectDetail" %></p><% end %>
 	</div>
 </div>

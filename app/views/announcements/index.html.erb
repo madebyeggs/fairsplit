@@ -1,8 +1,8 @@
 <div class="canScroll5">
 	<% @combined_sorted.each_with_index do |a, i| %>
 		<div class="element">
-			<div class="images" id="announcementPicture<%= a.uid %>">
-				<div class="announcement<%= a.uid %>">
+			<div class="images">
+				<div class="">
 					<% if a.is_work? %>
 						<% if i == 0  %>
 							<%= image_tag(a.large_image, :alt => "#{a.client} - #{a.title}") %>
@@ -32,8 +32,15 @@
 
 				<div class="muteEffects">
 	    			<section class="hidden-infos">
-						<input type="hidden" value=<%= a.uid %> class="announcement-object-uid"> 
-						<a class="launchAnnouncement"></a>
+						<% if a.is_work? %>
+							<a class="launchAnnouncement"><%= link_to '', work_path(a) %></a>
+						<% elsif a.is_artist? %>
+							<a class="launchAnnouncement"><%= link_to '', artist_path(a) %></a>
+						<% elsif a.is_sound? %>
+							<a class="launchAnnouncement"><%= link_to '', sound_path(a) %></a>
+						<% else %>
+							<a class="launchAnnouncement"><%= link_to '', announcement_path(a) %></a>
+						<% end %>
 		          		<div class="overlay3"></div>
 						<div class="icons4 play"></div>	        					
 					</section>
@@ -81,94 +88,6 @@
 						<% end %>
 		        	</div>
 				</div>
-				<div class="muteEffects2">
-	    			<section class="hidden-infos">
-						<input type="hidden" value=<%= a.uid %> class="announcement-object-uid">
-						<a class="launchAnnouncement"></a>      					
-					</section>
-		        	<div class="vidTitle">
-						<% if a.is_work? %>
-							<div class="titleWrap">
-		            			<h3><%= a.client %> <i>"<%= a.title %>"</i></h3>
-		          			</div>
-						<% elsif a.is_artist? %>
-		        			<div class="titleWrap">
-			            		<h3>NEW SIGNING: <%= a.name %></h3>
-			          		</div>
-						<% elsif a.is_sound? %>	
-							<div class="titleWrap">
-			            		<h3>NEW PLAYLIST: <%= a.title %></h3>
-			          		</div>
-						<% else %>
-							<div class="titleWrap">
-			            		<h3><%= a.homepage_title %></h3>
-			          		</div>
-						<% end %>
-		        	</div>
-				</div>
-			</div>
-		</div>
-		<div id="announcement<%= a.uid %>" style="display:none;">
-			<div class="projectInfo" id="scrollHereAnnouncement<%= a.uid %>">
-				<input type="hidden" value=<%= a.uid %> class="announcement-object-uid">
-				<a class="announcementCloseIcon"></a>
-				<!--<%#= social_share_button_tag(a.homepage_title, :popup => "true", :url => a.short_uid_url) %>-->
-				<% if a.is_artist? %>
-					<h1 class="projectName">NEW SIGNING: <%= a.name %></h1>
-				<% elsif a.is_sound? %>
-					<h1 class="projectName">NEW PLAYLIST: <%= a.title %></h1>
-				<% elsif a.is_work? %>
-					<h1 class="projectName">NEW WORK: <%= a.client %> <i>"<%= a.title %>"</i></h1>
-				<% else %>
-					<h1 class="projectName"><%= a.homepage_title %></h1>
-				<% end %>
-				<hr class="projectSeparator" />
-
-				<% if a.is_artist? || a.is_announcement? %>
-					<div class="artist-left">
-						<p class="projectDetail"><%= simple_format a.description, :class => "projectDetail" %></p>
-					</div>
-
-					<div class="artist-right">
-						<% if a.vimeo? %>
-							<div class="artistVideoContainer">
-								<div class="fitvids">
-									<iframe src="//player.vimeo.com/video/<%= a.vimeo %>?title=0&amp;byline=0&amp;portrait=0" id="homeVideoiFrame<%= a.uid %>" width="100%" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-								</div>
-								<hr class="projectSeparator" />
-							</div>
-						<% else %>
-							<div class="artistSquareContainer">
-								<div class="squareImage">
-									<%= image_tag(a.square_image, :class => "squareImage") %>
-								</div>
-								<hr class="projectSeparator" />
-							</div>
-						<% end %>
-					</div>
-
-					<div class="artist-bottom">
-						<% if a.soundcloud? %>
-							<iframe width="100%" height="450" scrolling="no" frameborder="no" id="homeSoundiFrame<%= a.uid %>" src="about:blank" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/<%= a.soundcloud %>&amp;color=bdbdbd&amp;background_color=000000&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_artwork=false">
-							</iframe>
-						<% end %>
-					</div>
-				<% elsif a.is_work? %>
-					<div class="fitvids">
-						<% if a.vimeo? %>
-							<iframe src="//player.vimeo.com/video/<%= a.vimeo %>?title=0&amp;byline=0&amp;portrait=0" id="homeVideoiFrame<%= a.uid %>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-						<% end %>
-					</div>
-					<% if a.vimeo? %><hr class="projectSeparator" /><% end %>
-					<% if a.description? %><p class="projectDetail"><%= simple_format a.description, :class => "projectDetail" %></p><% end %>
-				<% else %>
-					<div class="fitvids">
-						<iframe width="100%" height="450" scrolling="no" frameborder="no" id="homeSoundiFrame<%= a.uid %>" data-src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/playlists/<%= a.soundcloud %>&amp;color=bdbdbd&amp;background_color=000000&amp;auto_play=false&amp;hide_related=true&amp;show_comments=false&amp;show_user=false&amp;show_reposts=false&amp;show_artwork=false" src="about:blank">
-						</iframe>
-					</div>
-					<hr class="projectSeparator" />
-					<% if a.description %><p class="projectDetail"><%= simple_format a.description, :class => "projectDetail" %></p><% end %>
-				<% end %>
 			</div>
 		</div>
 	<% end %>

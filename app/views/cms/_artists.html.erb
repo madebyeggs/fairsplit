@@ -22,7 +22,7 @@
 								<td width="7%"><% if a.homepage == true %><%= "true" %><% else %><%= "false" %><% end %></td>
 								<td width="11%"><%= a.soundcloud %></td>
 								<td width="22%">
-									<a href="../#filter=.artists/artist#<%= a.id %>" target="_blank">
+									<a href="../artists/<%= a.slug %>" target="_blank">
 										<%= a.short_id_url rescue nil %>	
 									</a>
 								</td>

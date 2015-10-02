@@ -1,5 +1,5 @@
 class SoundsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => ["index", "show"]
   
     def new
       bring_in_models
@@ -14,16 +14,24 @@ class SoundsController < ApplicationController
     end
 
     def show
-      respond_to do |format|
-        format.html { redirect_to cms_path }
+      @sound = Sound.find(params[:id])
+      if request.path != sound_path(@sound)
+        redirect_to @sound, status: :moved_permanently
       end
+      set_meta_tags :og => {
+        :title    => "Fairsplit Music Artist:" + " " + "#{@sound.title}",
+        :url      => "http://fairsplitmusic.com/artists/" + "#{@sound.slug}",
+        :image    => "#{@sound.image}"
+      }
     end
 
     def index
-      @sound = Sound.all
-      respond_to do |format|
-        format.html { redirect_to cms_path }
-      end
+      @sounds = Sound.all
+      set_meta_tags :og => {
+        :title    => 'Fairsplit Playlists',
+        :url      => 'http://fairsplitmusic.com/sounds',
+        :image    => ''
+      }
     end
 
     def edit
@@ -54,14 +62,9 @@ class SoundsController < ApplicationController
       @sound = Sound.find(params[:id])
       bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
 		  id_url = bitly.shorten("http://www.fairsplitmusic.com/#filter=.playlists/" + "playlist" + "#" + "#{@sound.id}")
-		  uid_url = bitly.shorten("http://www.fairsplitmusic.com/#filter=.playlists/" + "playlist" + "#" + "#{@sound.uid}")
 		  short_id_url = id_url.short_url
-		  short_uid_url = uid_url.short_url
       if @sound.short_id_url == '' || @sound.short_id_url.blank?
 			  @sound.short_id_url = short_id_url
-			end
-			if @sound.short_uid_url == '' || @sound.short_uid_url.blank?
-			  @sound.short_uid_url = short_uid_url
 			end
 		  @sound.update_attributes(params[:sound])
 			respond_to do |format|

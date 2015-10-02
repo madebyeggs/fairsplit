@@ -1,17 +1,17 @@
 <div class="canScroll4">	
 	<div class="projectInfo">
-		<%= link_to '', artists_path, :class => "artistCloseIcon" %>
+		<%= link_to '', :back, :class => "artistCloseIcon" %>
 		<h1 class="projectName"><%= @artist.name %></h1>
 		<div class="links">
 			<input id="twitter" type="hidden" 
-				data-url="http://fairsplitmusic.com/artists/<%= @artist.id %>"
+				data-url="http://fairsplitmusic.com/artists/<%= @artist.slug %>"
 				data-description="<%= truncate(@artist.description, :length => 90) %>" 
 				data-via="fairsplitmusic" 
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>
 			<input id="facebook" type="hidden" 
-				data-url="http://fairsplitmusic.com/artists/<%= @artist.id %>" 
+				data-url="http://fairsplitmusic.com/artists/<%= @artist.slug %>" 
 				data-title="Fairsplit Music artist"
 				data-description="<%= truncate(@artist.description, :length => 90) %>" 
 				data-media="http://sonnyt.com/assets/imgs/prettySocial.png" 
@@ -19,20 +19,20 @@
 			>
 			<%= link_to "", "#", data: { type: 'facebook' }, :class => 'prettySocial fa fa-facebook socialLinks' %>
 			<input id="googleplus" type="hidden" 
-				data-url="http://fairsplitmusic.com/artists/<%= @artist.id %>" 
+				data-url="http://fairsplitmusic.com/artists/<%= @artist.slug %>" 
 				data-description="<%= truncate(@artist.description, :length => 90) %>" 
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'googleplus' }, :class => 'prettySocial fa fa-google-plus socialLinks' %>
 			<input id="pinterest" type="hidden" 
-				data-url="http://fairsplitmusic.com/artists/<%= @artist.id %>" 
+				data-url="http://fairsplitmusic.com/artists/<%= @artist.slug %>" 
 				data-description="<%= truncate(@artist.description, :length => 90) %>" 
 				data-media="http://sonnyt.com/assets/imgs/prettySocial.png" 
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'pinterest' }, :class => 'prettySocial fa fa-pinterest socialLinks' %>
 			<input id="linkedin" type="hidden" 
-				data-url="http://fairsplitmusic.com/artists/<%= @artist.id %>" 
+				data-url="http://fairsplitmusic.com/artists/<%= @artist.slug %>" 
 				data-title="Fairsplit Music artist" 
 				data-description="<%= truncate(@artist.description, :length => 90) %>" 
 				data-via="fairsplitmusic" 

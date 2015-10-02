@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20150601162620) do
+ActiveRecord::Schema.define(:version => 20151002120413) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -40,14 +40,16 @@ ActiveRecord::Schema.define(:version => 20150601162620) do
     t.string   "square_image_content_type"
     t.integer  "square_image_file_size"
     t.datetime "square_image_updated_at"
-    t.string   "uid"
     t.boolean  "is_artist"
     t.boolean  "is_work"
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
-    t.string   "short_uid_url"
     t.boolean  "latest"
+    t.string   "slug"
+    t.string   "short_id_url"
   end
+
+  add_index "announcements", ["slug"], :name => "index_announcements_on_slug"
 
   create_table "artists", :force => true do |t|
     t.string   "name"
@@ -69,16 +71,26 @@ ActiveRecord::Schema.define(:version => 20150601162620) do
     t.integer  "large_image_file_size"
     t.datetime "large_image_updated_at"
     t.string   "vimeo"
-    t.string   "uid"
     t.boolean  "is_artist"
     t.boolean  "is_work"
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
-    t.string   "short_uid_url"
     t.string   "short_id_url"
     t.boolean  "homepage",                  :default => false
     t.string   "homepage_title"
+    t.string   "slug"
   end
+
+  create_table "friendly_id_slugs", :force => true do |t|
+    t.string   "slug",                         :null => false
+    t.integer  "sluggable_id",                 :null => false
+    t.string   "sluggable_type", :limit => 40
+    t.datetime "created_at"
+  end
+
+  add_index "friendly_id_slugs", ["slug", "sluggable_type"], :name => "index_friendly_id_slugs_on_slug_and_sluggable_type", :unique => true
+  add_index "friendly_id_slugs", ["sluggable_id"], :name => "index_friendly_id_slugs_on_sluggable_id"
+  add_index "friendly_id_slugs", ["sluggable_type"], :name => "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "homes", :force => true do |t|
     t.datetime "created_at",         :null => false
@@ -106,7 +118,6 @@ ActiveRecord::Schema.define(:version => 20150601162620) do
     t.integer  "square_image_file_size"
     t.datetime "square_image_updated_at"
     t.string   "vimeo"
-    t.string   "uid"
     t.boolean  "is_artist"
     t.boolean  "is_work"
     t.boolean  "is_sound"
@@ -116,10 +127,12 @@ ActiveRecord::Schema.define(:version => 20150601162620) do
     t.integer  "large_image_file_size"
     t.datetime "large_image_updated_at"
     t.string   "short_url"
-    t.string   "short_uid_url"
     t.string   "short_id_url"
     t.boolean  "homepage",                  :default => false
+    t.string   "slug"
   end
+
+  add_index "sounds", ["slug"], :name => "index_sounds_on_slug"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -159,15 +172,16 @@ ActiveRecord::Schema.define(:version => 20150601162620) do
     t.datetime "large_image_updated_at"
     t.boolean  "latest",                   :default => false
     t.integer  "artist_id"
-    t.string   "uid"
     t.boolean  "is_artist"
     t.boolean  "is_work"
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
     t.string   "short_id_url"
-    t.string   "short_uid_url"
     t.boolean  "homepage",                 :default => false
     t.string   "homepage_title"
+    t.string   "slug"
   end
+
+  add_index "works", ["slug"], :name => "index_works_on_slug"
 
 end
