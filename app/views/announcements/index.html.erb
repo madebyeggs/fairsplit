@@ -5,27 +5,27 @@
 				<div class="">
 					<% if a.is_work? %>
 						<% if i == 0  %>
-							<%= image_tag(a.large_image, :alt => "#{a.client} - #{a.title}") %>
+							<%= image_tag(a.large_image, :alt => "#{a.client} - #{a.title}", :class => "lazy") %>
 						<% else %>
-							<%= image_tag(a.image, :alt => "#{a.client} - #{a.title}") %>
+							<%= image_tag(a.image, :alt => "#{a.client} - #{a.title}", :class => "lazy") %>
 						<% end %>
 					<% elsif a.is_artist? %>
 						<% if i == 0  %>
-							<%= image_tag(a.large_image, :alt => "NEW SIGNING: #{a.name}") %>
+							<%= image_tag(a.large_image, :alt => "NEW SIGNING: #{a.name}", :class => "lazy") %>
 						<% else %>
-							<%= image_tag(a.image, :alt => "NEW SIGNING: #{a.name}") %>
+							<%= image_tag(a.image, :alt => "NEW SIGNING: #{a.name}", :class => "lazy") %>
 						<% end %>
 					<% elsif a.is_sound? %>
 						<% if i == 0  %>
-							<%= image_tag(a.large_image, :alt => "NEW PLAYLIST: #{a.title}") %>
+							<%= image_tag(a.large_image, :alt => "NEW PLAYLIST: #{a.title}", :class => "lazy") %>
 						<% else %>
-							<%= image_tag(a.image, :alt => "NEW PLAYLIST: #{a.title}") %>
+							<%= image_tag(a.image, :alt => "NEW PLAYLIST: #{a.title}", :class => "lazy") %>
 						<% end %>
 					<% else %>
 						<% if i == 0  %>
-							<%= image_tag(a.large_image, :alt => "#{a.homepage_title}") %>
+							<%= image_tag(a.large_image, :alt => "#{a.homepage_title}", :class => "lazy") %>
 						<% else %>
-							<%= image_tag(a.image, :alt => "#{a.homepage_title}") %>
+							<%= image_tag(a.image, :alt => "#{a.homepage_title}", :class => "lazy") %>
 						<% end %>
 					<% end %>
 				</div>

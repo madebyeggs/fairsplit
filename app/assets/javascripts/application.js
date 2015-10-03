@@ -38,7 +38,9 @@ function applicash(){
 	
 	$('.fitvids').fitVids();
 	
-	$("img").lazyload();
+	$("img.lazy").lazyload({
+	    effect : "fadeIn"
+	});
 	
 	//navigation links hover opcaity animation
 	$('.navigationButton a').css('opacity', 1);  
