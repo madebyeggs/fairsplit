@@ -20,6 +20,7 @@ gem 'google-analytics-rails'
 gem 'social-share-button'
 gem 'newrelic_rpm'
 gem 'rack-zippy'
+gem 'lazyload-rails'
 
 # Gems used only for assets and not required
 # in production environments by default.
