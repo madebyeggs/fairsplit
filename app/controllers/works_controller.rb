@@ -26,7 +26,7 @@ class WorksController < ApplicationController
     end
 
     def index
-      @works = Work.all
+      @works = Work.order("latest DESC, created_at DESC")
       set_meta_tags :og => {
         :title    => 'Fairsplit Projects',
         :url      => 'http://fairsplitmusic.com/works',

@@ -26,7 +26,7 @@ class SoundsController < ApplicationController
     end
 
     def index
-      @sounds = Sound.all
+      @sounds = Sound.("latest DESC, id DESC")
       set_meta_tags :og => {
         :title    => 'Fairsplit Playlists',
         :url      => 'http://fairsplitmusic.com/sounds',
