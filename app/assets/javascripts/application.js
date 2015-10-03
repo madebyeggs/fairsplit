@@ -14,6 +14,7 @@
 //= require turbolinks
 //= require modernizr
 //= require retina
+//= require jquery.lazyload
 //= require image-hover
 //= require jquery.fitvids
 //= require jquery.slicknav
@@ -36,6 +37,8 @@ function applicash(){
 	$('.prettySocial').prettySocial();
 	
 	$('.fitvids').fitVids();
+	
+	$("img").lazyload();
 	
 	//navigation links hover opcaity animation
 	$('.navigationButton a').css('opacity', 1);  
