@@ -151,7 +151,7 @@ i {font-size:18px;}
 }
 .topMargin {margin-top:43px!important;text-align: center;}
 
-#loading, #loading2 {
+#loading, #loading0, #loading1, #loading2, #loading3, #loading4, #loading5, #loading6, #loading7, #loading7 {
 	height:29%;
    	width: 22%;
    	position: fixed;

@@ -41,6 +41,8 @@ $(function() {
     // When the player is ready, add listeners for pause, finish, and playProgress
     player.addEvent('ready', function() {
         $('#loading').hide();
+		$('#loading0').hide();
+		$('#loading1').hide();
 		$('#loading2').hide();
 		$('#loading3').hide();
 		$('#loading4').hide();
