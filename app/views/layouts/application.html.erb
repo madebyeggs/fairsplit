@@ -78,7 +78,8 @@
 		
 		<div id="contentHome">
 		
-			<% if controller_name == "abouts" && controller.action_name == "show" || 
+			<% if controller_name == "abouts" && controller.action_name == "index" || 
+			      controller_name == "contacts" && controller.action_name == "index" || 
 				  controller_name == "announcements" && controller.action_name == "index" || 
 				  controller_name == "announcements" && controller.action_name == "show" || 
 				  controller_name == "artists" && controller.action_name == "index" || 
@@ -86,7 +87,7 @@
 				  controller_name == "sounds" && controller.action_name == "index" || 
 				  controller_name == "sounds" && controller.action_name == "show" ||
 				  controller_name == "works" && controller.action_name == "index" || 
-				  controller_name == "works" && controller.action_name == "show" %>
+				  controller_name == "works" && controller.action_name == "show" %> 
 		
 				<div class="navigation"><%= render 'layouts/navigation' %></div>
 				<div class="main"><%= render 'layouts/main' %></div>

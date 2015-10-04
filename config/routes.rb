@@ -7,14 +7,15 @@ V1::Application.routes.draw do
   resources :works
   resources :announcements
   resources :artists
-  resources :homes
   resources :sounds
-  resources :abouts
   
   get "/get_announcement_links" => "announcements#create_links", :as => :get_announcement_links
   get "/get_work_links" => "works#create_links", :as => :get_work_links
   get "/get_artist_links" => "artists#create_links", :as => :get_artist_links
   get "/get_sound_links" => "sounds#create_links", :as => :get_sound_links
+  
+  resources :abouts, :path => "about"
+  resources :contacts, :path => "contact"
   
   match '*path' => redirect('/')
   

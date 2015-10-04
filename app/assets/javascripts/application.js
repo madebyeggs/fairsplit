@@ -22,8 +22,8 @@
 //= require nprogress-turbolinks
 //= require jquery.prettySocial
 //= require frogaloop
-// gmap3
-// mapSettings
+//= require gmap3
+//= require mapSettings
 
 
 $(document).on('page:load', function() {
