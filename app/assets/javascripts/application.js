@@ -14,7 +14,6 @@
 //= require turbolinks
 //= require modernizr
 //= require retina
-//= require jquery.lazyload
 //= require image-hover
 //= require jquery.fitvids
 //= require jquery.slicknav
@@ -22,6 +21,7 @@
 //= require nprogress
 //= require nprogress-turbolinks
 //= require jquery.prettySocial
+//= require frogaloop
 // gmap3
 // mapSettings
 
@@ -32,15 +32,24 @@ $(document).on('page:load', function() {
 $(document).ready(function() {
 	applicash();
 });
+
+$(function() {
+    var iframe = $('#player');
+    var player = $f(iframe);
+
+    // When the player is ready, add listeners for pause, finish, and playProgress
+    player.addEvent('ready', function() {
+        $('#loading').hide();
+		$('#loading2').hide();
+		console.log('loaded!');
+    });
+});
+
 function applicash(){
 	
 	$('.prettySocial').prettySocial();
 	
 	$('.fitvids').fitVids();
-	
-	$("img.lazy").lazyload({
-	    effect : "fadeIn"
-	});
 	
 	//navigation links hover opcaity animation
 	$('.navigationButton a').css('opacity', 1);  

@@ -149,6 +149,31 @@ i {font-size:18px;}
 	cursor:pointer;
 	border: none;
 }
+.topMargin {margin-top:43px!important;text-align: center;}
+
+#loading, #loading2 {
+	height:29%;
+   	width: 22%;
+   	position: fixed;
+   	background-color: #000;
+   	z-index: 99;
+	text-align: center;
+}
+#loading2 {
+	height:51%;
+	width:52.1%;
+}
+.centerer, .centerer2
+{
+    display: inline-block;
+    height: 60%;
+    vertical-align: middle;
+}
+#loadingImage, #loadingImage2 {
+	display: inline-block;
+	vertical-align: middle;
+	margin-left:-46px!important;
+}
 
 @media screen and (max-width: 992px) {
 	/* #menu is the original menu */
@@ -174,6 +199,7 @@ i {font-size:18px;}
 	.muteEffects {display:none;}
 	.titleWrap h3 {font-size:15px;margin:-15px 0px 0px -30px!important;padding:5px;width:100%!important;text-shadow: black 1px 1px 2px;}
 	.rightSide {border-left:none;}
+	#loading2 {width:80%;height:31%;}
 }
 
 @media screen and (max-width: 563px) {

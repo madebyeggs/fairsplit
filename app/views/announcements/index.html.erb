@@ -2,30 +2,30 @@
 	<% @combined_sorted.each_with_index do |a, i| %>
 		<div class="element">
 			<div class="images">
-				<div class="">
+				<div class="imageContainer">
 					<% if a.is_work? %>
 						<% if i == 0  %>
-							<%= image_tag(a.large_image, :alt => "#{a.client} - #{a.title}", :class => "lazy") %>
+							<%= image_tag a.large_image, alt: "#{a.title} - #{a.client}" %>
 						<% else %>
-							<%= image_tag(a.image, :alt => "#{a.client} - #{a.title}", :class => "lazy") %>
+							<%= image_tag a.image, alt: "#{a.title} - #{a.client}" %>
 						<% end %>
 					<% elsif a.is_artist? %>
 						<% if i == 0  %>
-							<%= image_tag(a.large_image, :alt => "NEW SIGNING: #{a.name}", :class => "lazy") %>
+							<%= image_tag a.large_image, alt: "#{a.name}" %>
 						<% else %>
-							<%= image_tag(a.image, :alt => "NEW SIGNING: #{a.name}", :class => "lazy") %>
+							<%= image_tag a.image, alt: "#{a.name}" %>
 						<% end %>
 					<% elsif a.is_sound? %>
 						<% if i == 0  %>
-							<%= image_tag(a.large_image, :alt => "NEW PLAYLIST: #{a.title}", :class => "lazy") %>
+							<%= image_tag a.large_image, alt: "#{a.title}" %>
 						<% else %>
-							<%= image_tag(a.image, :alt => "NEW PLAYLIST: #{a.title}", :class => "lazy") %>
+							<%= image_tag a.image, alt: "#{a.title}" %>
 						<% end %>
 					<% else %>
 						<% if i == 0  %>
-							<%= image_tag(a.large_image, :alt => "#{a.homepage_title}", :class => "lazy") %>
+							<%= image_tag a.large_image, alt: "#{a.homepage_title}" %>
 						<% else %>
-							<%= image_tag(a.image, :alt => "#{a.homepage_title}", :class => "lazy") %>
+							<%= image_tag a.image, alt: "#{a.homepage_title}" %>
 						<% end %>
 					<% end %>
 				</div>

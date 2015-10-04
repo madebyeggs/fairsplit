@@ -49,6 +49,10 @@
 			<% if @artist.works.count > 0 %>
 				<div class="artistVideoContainer">
 					<% @artist.works.each do |aw| %>
+						<div id="loading">
+							<span class="centerer"></span>
+							<%= image_tag 'status2.gif', :id => "loadingImage" %>
+						</div>
 						<div class="fitvids">
 							<iframe src="https://player.vimeo.com/video/<%= aw.vimeo %>?title=0&amp;byline=0&amp;" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 						</div>
