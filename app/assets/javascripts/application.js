@@ -42,6 +42,10 @@ $(function() {
     player.addEvent('ready', function() {
         $('#loading').hide();
 		$('#loading2').hide();
+		$('#loading3').hide();
+		$('#loading4').hide();
+		$('#loading5').hide();
+		$('#loading6').hide();
 		console.log('loaded!');
     });
 });

@@ -48,8 +48,8 @@
 		<div class="artist-right">
 			<% if @artist.works.count > 0 %>
 				<div class="artistVideoContainer">
-					<% @artist.works.each do |aw| %>
-						<div id="loading">
+					<% @artist.works.each do |aw, i| %>
+						<div id="loading<%= i %>">
 							<span class="centerer"></span>
 							<%= image_tag 'status2.gif', :id => "loadingImage" %>
 						</div>
