@@ -25,11 +25,6 @@
 // gmap3
 // mapSettings
 
-$(window).ready(function(){
-	$('#preloader').fadeOut(function(){
-		$('#contentHome').fadeIn();
-	});
-});
 
 $(document).on('page:load', function() {
 	applicash();
@@ -52,6 +47,8 @@ $(function() {
 });
 
 function applicash(){
+	
+	$('#preloader').fadeOut();
 	
 	$('.prettySocial').prettySocial();
 	
