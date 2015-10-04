@@ -22,7 +22,7 @@ class ArtistsController < ApplicationController
       set_meta_tags :og => {
         :title    => "Fairsplit Music Artist:" + " " + "#{@artist.name}",
         :url      => "http://fairsplitmusic.com/artists/" + "#{@artist.slug}",
-        :image    => "#{@artist.square_image}"
+        :image    => ""
       }
     end
 
@@ -31,7 +31,7 @@ class ArtistsController < ApplicationController
       set_meta_tags :og => {
         :title    => 'Fairsplit Artists',
         :url      => 'http://fairsplitmusic.com/artists',
-        :image    => 'http://ia.media-imdb.com/rock.jpg'
+        :image    => ''
       }
     end
     

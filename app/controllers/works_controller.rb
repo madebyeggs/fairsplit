@@ -21,7 +21,7 @@ class WorksController < ApplicationController
       set_meta_tags :og => {
         :title    => "Fairsplit Music Project:" + " " + "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
         :url      => "http://fairsplitmusic.com/works/" + "#{@work.slug}",
-        :image    => "#{@work.image}"
+        :image    => ""
       }
     end
 
@@ -30,7 +30,7 @@ class WorksController < ApplicationController
       set_meta_tags :og => {
         :title    => 'Fairsplit Projects',
         :url      => 'http://fairsplitmusic.com/works',
-        :image    => 'http://ia.media-imdb.com/rock.jpg'
+        :image    => ''
       }
     end
 

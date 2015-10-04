@@ -19,9 +19,9 @@ class SoundsController < ApplicationController
         redirect_to @sound, status: :moved_permanently
       end
       set_meta_tags :og => {
-        :title    => "Fairsplit Music Artist:" + " " + "#{@sound.title}",
+        :title    => "Fairsplit Music Playlist:" + " " + "#{@sound.title}",
         :url      => "http://fairsplitmusic.com/artists/" + "#{@sound.slug}",
-        :image    => "#{@sound.image}"
+        :image    => ""
       }
     end
 

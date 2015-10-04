@@ -19,14 +19,19 @@ class AnnouncementsController < ApplicationController
         redirect_to @announcement, status: :moved_permanently
       end
       set_meta_tags :og => {
-        :title    => "Fairsplit Music Artist:" + " " + "#{@announcement.homepage_title}",
-        :url      => "http://fairsplitmusic.com/artists/" + "#{@announcement.slug}",
-        :image    => "#{@announcement.square_image}"
+        :title    => "Fairsplit Music:" + " " + "#{@announcement.homepage_title}",
+        :url      => "http://fairsplitmusic.com/announcements/" + "#{@announcement.slug}",
+        :image    => ""
       }
     end
 
     def index
       bring_in_models
+      set_meta_tags :og => {
+        :title    => "Fairsplit Music Latest News",
+        :url      => "http://fairsplitmusic.com/announcements",
+        :image    => ""
+      }
     end
 
     def edit

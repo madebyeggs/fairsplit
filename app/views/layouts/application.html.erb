@@ -72,24 +72,32 @@
 	
 	<body bgcolor="#000000">
 		
-		<% if controller_name == "abouts" && controller.action_name == "show" || 
-			  controller_name == "announcements" && controller.action_name == "index" || 
-			  controller_name == "announcements" && controller.action_name == "show" || 
-			  controller_name == "artists" && controller.action_name == "index" || 
-			  controller_name == "artists" && controller.action_name == "show" || 
-			  controller_name == "sounds" && controller.action_name == "index" || 
-			  controller_name == "sounds" && controller.action_name == "show" ||
-			  controller_name == "works" && controller.action_name == "index" || 
-			  controller_name == "works" && controller.action_name == "show" %>
+		<div id="preloader">
+			<%= image_tag 'status2.gif', :id => "status" %>
+		</div>
 		
-			<div class="navigation"><%= render 'layouts/navigation' %></div>
-			<div class="main"><%= render 'layouts/main' %></div>
-			
-		<% else %>
+		<div id="contentHome">
 		
-			<%= yield %>
+			<% if controller_name == "abouts" && controller.action_name == "show" || 
+				  controller_name == "announcements" && controller.action_name == "index" || 
+				  controller_name == "announcements" && controller.action_name == "show" || 
+				  controller_name == "artists" && controller.action_name == "index" || 
+				  controller_name == "artists" && controller.action_name == "show" || 
+				  controller_name == "sounds" && controller.action_name == "index" || 
+				  controller_name == "sounds" && controller.action_name == "show" ||
+				  controller_name == "works" && controller.action_name == "index" || 
+				  controller_name == "works" && controller.action_name == "show" %>
+		
+				<div class="navigation"><%= render 'layouts/navigation' %></div>
+				<div class="main"><%= render 'layouts/main' %></div>
 			
-		<% end %>
+			<% else %>
+		
+				<%= yield %>
+			
+			<% end %>
+			
+		</div>
 		
 	</body>
 	
