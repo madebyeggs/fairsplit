@@ -20,39 +20,24 @@
 //= require nprogress
 //= require nprogress-turbolinks
 //= require jquery.prettySocial
-//= require frogaloop
 //= require gmap3
 //= require mapSettings
 //= require jquery.fitvids
+//= require froogaloop
 
 
-$(document).on('page:load', applicash);
-$(document).ready(applicash);
-
-$(function() {
-    var iframe = $('#player');
-    var player = $f(iframe);
-
-    // When the player is ready, add listeners for pause, finish, and playProgress
-    player.addEvent('ready', function() {
-        $('#loading').hide();
-		$('#loading0').hide();
-		$('#loading1').hide();
-		$('#loading2').hide();
-		$('#loading3').hide();
-		$('#loading4').hide();
-		$('#loading5').hide();
-		$('#loading6').hide();
-		console.log('loaded!');
-    });
+$(document).ready(function(){
+	do_on_load();
+});
+$(window).bind('page:change', function(){
+	do_on_load();
 });
 
-var applicash;
-applicash = function(){
-	
-	$('#preloader').fadeOut();
-	$('.prettySocial').prettySocial();
+function do_on_load() {
+
 	$('.fitvids').fitVids();
+	$('.prettySocial').prettySocial();
+	$(".tips").tooltip();
 	
 	//navigation links hover opcaity animation
 	$('.navigationButton a').css('opacity', 1);  
@@ -64,10 +49,8 @@ applicash = function(){
 	    $(this).stop().fadeTo('medium', 1);  
 	});
 	
-	//mobileNavMenu
-	$(function(){
-		$('#menu').slicknav();
-	});
+	
+	$('#menu').slicknav();
 	
 	$('.delete_post').on('click', function() {
 		if(confirm('Are you sure you want to delete this record')){
@@ -76,7 +59,23 @@ applicash = function(){
 	        return false;
 	    }
 	});
-	
-	$(".tips").tooltip(); 
-	
+
 }
+
+$(function(){
+	
+	var iframe = $('#player');
+	var player = $f(iframe);
+
+	// When the player is ready, add listeners for pause, finish, and playProgress
+	player.addEvent('ready', function() {
+		$('#loading').hide();
+		$('#loading0').hide();
+		$('#loading1').hide();
+		$('#loading2').hide();
+		$('#loading3').hide();
+		$('#loading4').hide();
+		$('#loading5').hide();
+		$('#loading6').hide();
+	});
+});
