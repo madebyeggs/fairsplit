@@ -151,7 +151,7 @@ i {font-size:18px;}
 }
 .topMargin {margin-top:43px!important;text-align: center;}
 
-#loading, #loading0, #loading1, #loading2, #loading3, #loading4, #loading5, #loading6, #loading7, #loading7 {
+#videoLoader, #videoLoader0, #videoLoader1, #videoLoader2, #videoLoader3, #videoLoader4, #videoLoader5, #videoLoader6, #videoLoader7, #videoLoader8, #videoLoaderWork {
 	height:29%;
    	width: 22%;
    	position: fixed;
@@ -159,7 +159,7 @@ i {font-size:18px;}
    	z-index: 99;
 	text-align: center;
 }
-#loading2 {
+#videoLoaderWork {
 	height:51%;
 	width:52.1%;
 }

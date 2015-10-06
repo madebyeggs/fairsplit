@@ -15,29 +15,31 @@
 //= require modernizr
 //= require retina
 //= require image-hover
+//= require jquery.fitvids
 //= require jquery.slicknav
 //= require twitter/bootstrap
 //= require nprogress
 //= require nprogress-turbolinks
 //= require jquery.prettySocial
+//= require frogaloop
 //= require gmap3
-//= require mapSettings
-//= require jquery.fitvids
-//= require froogaloop
 
 
-$(document).ready(function(){
-	do_on_load();
-});
-$(window).bind('page:change', function(){
-	do_on_load();
+$(document).on('page:load', function() {
+	applicash();
 });
 
-function do_on_load() {
+$(document).ready(function() {
+	applicash();
+});
 
-	$('.fitvids').fitVids();
+function applicash(){
+	
+	$('#preloader').fadeOut();
+	
 	$('.prettySocial').prettySocial();
-	$(".tips").tooltip();
+	
+	$('.fitvids').fitVids();
 	
 	//navigation links hover opcaity animation
 	$('.navigationButton a').css('opacity', 1);  
@@ -49,8 +51,10 @@ function do_on_load() {
 	    $(this).stop().fadeTo('medium', 1);  
 	});
 	
-	
-	$('#menu').slicknav();
+	//mobileNavMenu
+	$(function(){
+		$('#menu').slicknav();
+	});
 	
 	$('.delete_post').on('click', function() {
 		if(confirm('Are you sure you want to delete this record')){
@@ -59,23 +63,35 @@ function do_on_load() {
 	        return false;
 	    }
 	});
-
+	
+	$(".tips").tooltip();
+	
+	if ($('.pagination').length) {
+		$(window).scroll(function() {
+	    	var url = $('.pagination .next_page').attr('href');
+	      	if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+	        	$('.pagination').text("Loading...");
+	        return $.getScript(url);
+	    	}
+		});
+	   	return $(window).scroll();
+	}	
 }
 
-$(function(){
-	
-	var iframe = $('#player');
-	var player = $f(iframe);
+$(function() {
+    var iframe = $('#videoPlayer');
+    var player = $f(iframe);
 
-	// When the player is ready, add listeners for pause, finish, and playProgress
-	player.addEvent('ready', function() {
-		$('#loading').hide();
-		$('#loading0').hide();
-		$('#loading1').hide();
-		$('#loading2').hide();
-		$('#loading3').hide();
-		$('#loading4').hide();
-		$('#loading5').hide();
-		$('#loading6').hide();
-	});
+    // When the player is ready, add listeners for pause, finish, and playProgress
+    player.addEvent('ready', function() {
+        $('#videoLoader').hide();
+		$('#videoLoader0').hide();
+		$('#videoLoader1').hide();
+		$('#videoLoader2').hide();
+		$('#videoLoader3').hide();
+		$('#videoLoader4').hide();
+		$('#videoLoader5').hide();
+		$('#videoLoader6').hide();
+		$('#videoLoaderWork').hide();
+    });
 });
