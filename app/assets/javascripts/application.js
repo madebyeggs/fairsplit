@@ -87,20 +87,20 @@ $(function() {
     });
 });
 
-$(function(){
-	if ($('.pagination').length) {
-	    $(window).scroll(function() {
-	      var url = $('.pagination .next_page').attr('href');
-	      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
-	        $('.pagination').text("Loading...");
-	        return $.getScript(url, function(){
-				imageHover();
-			});
-	      }
-	    });
-	    return $(window).scroll();
-	  }
-})
+// $(function(){
+// 	if ($('.pagination').length) {
+// 	    $(window).scroll(function() {
+// 	      var url = $('.pagination .next_page').attr('href');
+// 	      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+// 	        $('.pagination').text("Loading...");
+// 	        return $.getScript(url, function(){
+// 				applicash();
+// 			});
+// 	      }
+// 	    });
+// 	    return $(window).scroll();
+// 	  }
+// })
 
 function imageHover(){
 	jQuery('.title-wrap, .subtitle-wrap, .paragraph-wrap').not('.flexslider .title-wrap, .flexslider .subtitle-wrap, .paragraph-wrap').each(function() {
