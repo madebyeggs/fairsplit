@@ -8,240 +8,33 @@
 		</div>
 	</div>
 	<div class="topperMargin"></div>
-	<div class="grid-whole">
-  		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
+	<!-- <div class="grid-whole">
+			<%# @clients.each do |c| %>
+		  		<div class="grid-eighth">
+					<div class="element">
+						<div class="images">
+							<%#= image_tag(c.image) %>
+							<div class="muteEffects">
+		 						<section class="hidden-infos">
+									<a class="launchArtist"><%#= link_to '', c.url, :target => "blank" %></a>
+		        					<div class="overlay4"></div>       					
+								</section>
+		      					<div class="vidTitle">
+		      						<div class="subtitle-wrap">
+		        					</div>
+		      					</div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-		</div>
-		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
-					</div>
+			<%# end %>
+		</div> -->
+		<div class="grid-whole">
+			<% @clients.each do |c| %>
+				<div class="grid-eighth">
+					<%= link_to(image_tag(c.image), c.url, :target => "blank") %>
 				</div>
-			</div>
-		</div>
-		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="grid-eighth">
-			<div class="element">
-				<div class="images">
-					<%= image_tag "sony.png" %>
-					<div class="muteEffects">
- 						<section class="hidden-infos">
-							<a class="launchArtist"><%= link_to '', 'http://google.com' %></a>
-        					<div class="overlay3"></div>       					
-						</section>
-      					<div class="vidTitle">
-      						<div class="title-wrap reposition">
-          						<h3><%= "Sony" %></h3>
-        					</div>
-      					</div>
-					</div>
-				</div>
-			</div>
+			<% end %>
 		</div>
 	</div>
 </div>

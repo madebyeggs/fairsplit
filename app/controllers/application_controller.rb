@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
     @abouts = About.all
     @combined_sorted = (Announcement.all + Work.homepage + Artist.homepage + Sound.homepage).sort {|a,b| b.created_at <=> a.created_at}#.paginate(:page => params[:page], :per_page => 4)
     @user = current_user
+    @clients = Client.common_order
     @testing = "sofia@floatpr.com"
   end
   

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151002120413) do
+ActiveRecord::Schema.define(:version => 20151006154523) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -79,6 +79,17 @@ ActiveRecord::Schema.define(:version => 20151002120413) do
     t.boolean  "homepage",                  :default => false
     t.string   "homepage_title"
     t.string   "slug"
+  end
+
+  create_table "clients", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+    t.string   "url"
   end
 
   create_table "friendly_id_slugs", :force => true do |t|

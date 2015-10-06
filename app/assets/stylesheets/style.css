@@ -175,7 +175,7 @@ i {font-size:18px;}
 	margin-left:-46px!important;
 }
 .topperMargin {margin-top:80px!important;float:left;clear:both;width:100%;}
-.grid-eighth {width:12.5%;float:left;}
+.grid-eighth {width:16.66%;float:left;}
 .grid-eighth img{width:100%;}
 .fixerSpace {margin:-15px 0px 25px 0px;}
 
@@ -202,7 +202,7 @@ i {font-size:18px;}
 	.canScroll {height:550px;overflow-y: auto;}
 	.canScroll2, .canScroll3, .canScroll4, .canScroll5 {height:680px;overflow-y: auto;}
 	.logo {width:150px;margin-top:-20px;}
-	.subtitle-wrap {display:none;}
+	.subtitle-wrap, .subtitle-wrap2 {display:none;}
 	.title-wrap, .overlay3 {display:inline!important;}
 	.title-wrap h3 {font-size:10px!important;width:100%;margin:0px 10px 0px 0px;}
 	.muteEffects2 {display:inline;}
@@ -217,5 +217,3 @@ i {font-size:18px;}
 	.icons2, .icons4 {display:none;}
 	.grid-eighth {width:33.333333%;float:left;}
 }
-
-.reposition {font-size:2em!important;}

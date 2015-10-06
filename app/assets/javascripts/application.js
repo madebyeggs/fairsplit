@@ -164,6 +164,16 @@ function imageHover(){
 			"opacity": "0"
 		}, 150 );
    	});
+
+	jQuery('.element').hover(function() {
+		 jQuery(this).find('.caption, .overlay4').stop().animate({
+			"opacity": "1"
+		}, 150 );
+		}, function() {
+		jQuery(this).find('.caption, .overlay4').stop().animate({
+			"opacity": "0"
+		}, 150 );
+   	});
   
   	jQuery('.element').hover(function() {
 		 jQuery(this).find('.hidden-infos').stop().fadeToggle(150);	 

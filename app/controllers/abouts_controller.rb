@@ -21,6 +21,7 @@ class AboutsController < ApplicationController
 
     def index
       @about = About.first
+      bring_in_models
       set_meta_tags :og => {
         :title    => 'About Fairsplit Music',
         :url      => 'http://fairsplitmusic.com/abouts',

@@ -8,6 +8,7 @@ V1::Application.routes.draw do
   resources :announcements
   resources :artists
   resources :sounds
+  resources :clients
   
   get "/get_announcement_links" => "announcements#create_links", :as => :get_announcement_links
   get "/get_work_links" => "works#create_links", :as => :get_work_links
