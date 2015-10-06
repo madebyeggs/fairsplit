@@ -77,4 +77,12 @@ class Artist < ActiveRecord::Base
       end
     end
     
+    def self.common_order
+      order("latest DESC, name ASC")
+    end
+    
+    def self.homepage
+      where(:homepage => true)
+    end
+    
 end

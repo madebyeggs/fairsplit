@@ -27,7 +27,7 @@ class ArtistsController < ApplicationController
     end
 
     def index
-      @artists = Artist.order("latest DESC, name ASC")
+      @artists = Artist.common_order
       set_meta_tags :og => {
         :title    => 'Fairsplit Artists',
         :url      => 'http://fairsplitmusic.com/artists',

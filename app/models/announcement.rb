@@ -74,4 +74,8 @@ class Announcement < ActiveRecord::Base
       self.is_sound = false
       self.is_announcement = true
     end
+    
+    def self.common_order
+      order("id DESC")
+    end
 end

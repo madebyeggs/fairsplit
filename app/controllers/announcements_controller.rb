@@ -32,6 +32,10 @@ class AnnouncementsController < ApplicationController
         :url      => "http://fairsplitmusic.com/announcements",
         :image    => ""
       }
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def edit

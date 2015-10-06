@@ -195,6 +195,7 @@ GEM
     uuidtools (2.1.4)
     warden (1.2.3)
       rack (>= 1.0)
+    will_paginate (3.0.7)
 
 PLATFORMS
   ruby
@@ -226,6 +227,7 @@ DEPENDENCIES
   turbolinks
   twitter-bootstrap-rails
   uglifier (>= 1.0.3)
+  will_paginate (~> 3.0.7)
 
 BUNDLED WITH
    1.10.5

@@ -60,4 +60,12 @@ class Work < ActiveRecord::Base
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
     end
+    
+    def self.common_order
+      order("latest DESC, created_at DESC")
+    end
+    
+    def self.homepage
+      where(:homepage => true)
+    end
 end

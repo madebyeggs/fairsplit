@@ -2,14 +2,15 @@ class ApplicationController < ActionController::Base
   protect_from_forgery
   
   require 'bitly'
+  require 'will_paginate/array'
   
   def bring_in_models
-    @announcements = Announcement.order("id DESC")
-    @works = Work.order("latest DESC, created_at DESC")
-    @artists = Artist.order("latest DESC, name ASC")
-    @sounds = Sound.order("latest DESC, id DESC")
+    @announcements = Announcement.common_order
+    @works = Work.common_order
+    @artists = Artist.common_order
+    @sounds = Sound.common_order
     @abouts = About.all
-    @combined_sorted = (Announcement.all + Work.where(:homepage => true) + Sound.where(:homepage => true)).sort {|a,b| b.created_at <=> a.created_at}
+    @combined_sorted = (Announcement.all + Work.homepage + Artist.homepage + Sound.homepage).sort {|a,b| b.created_at <=> a.created_at}#.paginate(:page => params[:page], :per_page => 3)
     @user = current_user
     @testing = "sofia@floatpr.com"
   end

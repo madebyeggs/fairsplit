@@ -174,6 +174,15 @@ i {font-size:18px;}
 	vertical-align: middle;
 	margin-left:-46px!important;
 }
+.topperMargin {margin-top:80px!important;float:left;clear:both;width:100%;}
+.grid-eighth {width:12.5%;float:left;}
+.grid-eighth img{width:100%;}
+
+@media screen and (max-width: 1575px) {
+	
+	.grid-eighth {width:20%;float:left;}
+
+}
 
 @media screen and (max-width: 992px) {
 	/* #menu is the original menu */
@@ -200,8 +209,12 @@ i {font-size:18px;}
 	.titleWrap h3 {font-size:15px;margin:-15px 0px 0px -30px!important;padding:5px;width:100%!important;text-shadow: black 1px 1px 2px;}
 	.rightSide {border-left:none;}
 	#loading2 {width:80%;height:31%;}
+	.grid-eighth {width:20%;float:left;}
 }
 
 @media screen and (max-width: 563px) {
 	.icons2, .icons4 {display:none;}
+	.grid-eighth {width:33.333333%;float:left;}
 }
+
+.reposition {font-size:2em!important;}

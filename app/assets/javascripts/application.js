@@ -15,7 +15,6 @@
 //= require modernizr
 //= require retina
 //= require image-hover
-//= require jquery.fitvids
 //= require jquery.slicknav
 //= require twitter/bootstrap
 //= require nprogress
@@ -24,15 +23,11 @@
 //= require frogaloop
 //= require gmap3
 //= require mapSettings
+//= require jquery.fitvids
 
 
-$(document).on('page:load', function() {
-	applicash();
-});
-
-$(document).ready(function() {
-	applicash();
-});
+$(document).on('page:load', applicash);
+$(document).ready(applicash);
 
 $(function() {
     var iframe = $('#player');
@@ -52,12 +47,11 @@ $(function() {
     });
 });
 
-function applicash(){
+var applicash;
+applicash = function(){
 	
 	$('#preloader').fadeOut();
-	
 	$('.prettySocial').prettySocial();
-	
 	$('.fitvids').fitVids();
 	
 	//navigation links hover opcaity animation
@@ -83,6 +77,6 @@ function applicash(){
 	    }
 	});
 	
-	$(".tips").tooltip();
+	$(".tips").tooltip(); 
 	
 }
