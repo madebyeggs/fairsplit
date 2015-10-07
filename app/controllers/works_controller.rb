@@ -14,6 +14,7 @@ class WorksController < ApplicationController
     end
 
     def show
+      bring_in_models
       @work = Work.find(params[:id])
       if request.path != work_path(@work)
         redirect_to @work, status: :moved_permanently

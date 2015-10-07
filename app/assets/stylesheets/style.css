@@ -178,6 +178,7 @@ i {font-size:18px;}
 .grid-eighth {width:16.66%;float:left;}
 .grid-eighth img{width:100%;}
 .fixerSpace {margin:-15px 0px 25px 0px;}
+/*.fadeMe {display:none;}*/
 
 @media screen and (max-width: 1575px) {
 	
