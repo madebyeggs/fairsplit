@@ -21,8 +21,8 @@ class WorksController < ApplicationController
       end
       set_meta_tags :og => {
         :title    => "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
+        :video    => "https://player.vimeo.com/video/#{@work.vimeo}",
         :url      => "#{@currentUrl}",
-        :video    => "https://vimeo.com/#{@work.vimeo}",
         :description => "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!",
         :image    => ""
       }
