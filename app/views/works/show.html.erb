@@ -17,7 +17,7 @@
 				data-url="<%= @currentUrl %>"
 				data-title="<%= @work.client %> +  ' ' + <%= @work.title %>"
 				data-description="<%= truncate(@work.description, :length => 90) %>" 
-				data-media="http://sonnyt.com/assets/imgs/prettySocial.png" 
+				data-media="<%= @work.large_image %>" 
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'facebook' }, :class => 'prettySocial fa fa-facebook socialLinks' %>
