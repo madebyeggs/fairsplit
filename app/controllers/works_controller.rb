@@ -23,6 +23,7 @@ class WorksController < ApplicationController
         :title    => "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
         :url      => "#{@currentUrl}",
         :video    => "https://vimeo.com/#{@work.vimeo}",
+        :description => "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!"
         :image    => ""
       }
     end
