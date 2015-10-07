@@ -15,6 +15,7 @@
 			<input id="facebook" type="hidden"
 			 	data-type="video.other"
 				data-url="<%= @currentUrl %>"
+				data-video="https://vimeo.com/<%= @work.vimeo %>"
 				data-title="<%= @work.client %> +  ' ' + <%= @work.title %>"
 				data-description="<%= truncate(@work.description, :length => 90) %>" 
 				data-media="<%= @work.large_image %>" 

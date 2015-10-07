@@ -20,8 +20,9 @@ class WorksController < ApplicationController
         redirect_to @work, status: :moved_permanently
       end
       set_meta_tags :og => {
-        :title    => "Fairsplit Music Project:" + " " + "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
-        :url      => "http://fairsplitmusic.com/works/" + "#{@work.slug}",
+        :title    => "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
+        :url      => "#{@currentUrl}",
+        :video    => "https://vimeo.com/#{@work.vimeo}",
         :image    => ""
       }
     end
