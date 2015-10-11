@@ -48,6 +48,13 @@
 					<% else %>
 						<br/>
 					<% end %>
+					<%= f.label :Facebook_image_1200X650, class: "formLabel" %><br />
+					<%= f.file_field :facebook_image %>
+					<% if @work.facebook_image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @work.facebook_image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
 					<%= link_to "Cancel", cms_path, :class => "btn" %>
 					<% if @user.email != @testing %>
 						<%= f.submit class: "btn", data: {disable_with: "Submitting..."} %>

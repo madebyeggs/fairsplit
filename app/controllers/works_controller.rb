@@ -24,7 +24,7 @@ class WorksController < ApplicationController
         :video    => "https://player.vimeo.com/video/#{@work.vimeo}",
         :url      => "#{@currentUrl}",
         :description => "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!",
-        :image    => "#{@work.large_image}"
+        :image    => "#{@work.facebook_image}"
       }
     end
 

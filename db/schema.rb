@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151006154523) do
+ActiveRecord::Schema.define(:version => 20151011124105) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -168,8 +168,8 @@ ActiveRecord::Schema.define(:version => 20151006154523) do
     t.string   "client"
     t.text     "description"
     t.string   "vimeo"
-    t.datetime "created_at",                                  :null => false
-    t.datetime "updated_at",                                  :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.string   "artist_name"
     t.string   "type_of_work"
     t.string   "image_file_name"
@@ -181,16 +181,20 @@ ActiveRecord::Schema.define(:version => 20151006154523) do
     t.string   "large_image_content_type"
     t.integer  "large_image_file_size"
     t.datetime "large_image_updated_at"
-    t.boolean  "latest",                   :default => false
+    t.boolean  "latest",                      :default => false
     t.integer  "artist_id"
     t.boolean  "is_artist"
     t.boolean  "is_work"
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
     t.string   "short_id_url"
-    t.boolean  "homepage",                 :default => false
+    t.boolean  "homepage",                    :default => false
     t.string   "homepage_title"
     t.string   "slug"
+    t.string   "facebook_image_file_name"
+    t.string   "facebook_image_content_type"
+    t.integer  "facebook_image_file_size"
+    t.datetime "facebook_image_updated_at"
   end
 
   add_index "works", ["slug"], :name => "index_works_on_slug"

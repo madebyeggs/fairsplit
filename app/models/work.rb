@@ -1,6 +1,6 @@
 class Work < ActiveRecord::Base
   attr_accessible :title, :client, :description, :vimeo, :image, :large_image, :type_of_work, :artist_name, :track_name, 
-  :latest, :artist_id, :homepage_title, :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, :homepage
+  :latest, :artist_id, :homepage_title, :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, :homepage, :facebook_image
   
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
@@ -42,6 +42,22 @@ class Work < ActiveRecord::Base
       :s3_host_alias => 'd2gtajjeesejrd.cloudfront.net', 
       :bucket => 'fairsplit-images',
       :path => "works/large_images/:id_partition/:style/:filename"
+    end
+    
+    if Rails.env.development?
+      has_attached_file :facebook_image, FACEBOOK_PAPERCLIP_STORAGE_OPTS
+    else
+      has_attached_file :facebook_image,
+      :convert_options => { :all => '-quality 92' }, 
+      styles: {main: '1200x650>'},
+      :storage => :s3,
+      :s3_credentials => {
+      :access_key_id => ENV['S3_KEY'],
+      :secret_access_key => ENV['S3_SECRET'] },
+      :url => ':s3_alias_url',
+      :s3_host_alias => 'd2gtajjeesejrd.cloudfront.net', 
+      :bucket => 'fairsplit-images',
+      :path => "works/facebook_images/:id_partition/:style/:filename"
     end
     
 
