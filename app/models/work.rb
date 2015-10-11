@@ -49,7 +49,7 @@ class Work < ActiveRecord::Base
     else
       has_attached_file :facebook_image,
       :convert_options => { :all => '-quality 92' }, 
-      styles: {main: '1200x650>'},
+      styles: {main: '1200x630>'},
       :storage => :s3,
       :s3_credentials => {
       :access_key_id => ENV['S3_KEY'],
