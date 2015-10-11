@@ -67,6 +67,9 @@ class Work < ActiveRecord::Base
     # Validate the attached image is image/jpg, image/png, etc
     validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
     
+    # Validate the attached image is image/jpg, image/png, etc
+    validates_attachment_content_type :facebook_image, :content_type => /\Aimage\/.*\Z/
+    
     def create_unique_id
       self.is_artist = false
       self.is_work = true
