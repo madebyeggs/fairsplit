@@ -1,14 +1,14 @@
 <div class="canScroll4">
 	<div class="projectInfo">
 		<%= link_to '', :back, :class => "artistCloseIcon" %>
-		<h1 class="projectName"><%= @work.client %> "<%= @work.title %>"</h1>
-		<h3 class="projectSubtitle fixerSpace"><%= @work.type_of_work %></h3>
-		<h3 class="projectSubtitle spacer"><em>MUSIC - </em><%= @work.artist_name %>: <%= @work.track_name %></h3>
+		<h1 class="projectName titleSize1"><%= @work.client %> "<%= @work.title %>"</h1>
+		<h3 class="projectSubtitle fixerSpace descriptionSize1 upcase"><%= @work.type_of_work %></h3>
+		<h3 class="projectSubtitle spacer descriptionSize1 upcase italics"><em>MUSIC - </em><%= @work.artist_name %>: <%= @work.track_name %></h3>
 		<div class="links">
 			<input id="twitter" type="hidden" 
 				data-url="<%= @currentUrl %>"
 				data-image="<%= @work.facebook_image %>"
-				data-description="<%= truncate(@work.description, :length => 90) %>" 
+				data-description="Great sync!" 
 				data-via="fairsplitmusic" 
 				class="socialLinksHidden"
 			>
@@ -57,6 +57,6 @@
 			<% end %>
 		</div>
 		<% if @work.vimeo? %><hr class="projectSeparator" /><% end %>
-		<% if @work.description? %><p class="projectDetail"><%= simple_format @work.description, :class => "projectDetail" %></p><% end %>
+		<% if @work.description? %><p class="projectDetail"><%= simple_format @work.description, :class => "projectDetail descriptionSize1" %></p><% end %>
 	</div>
 </div>

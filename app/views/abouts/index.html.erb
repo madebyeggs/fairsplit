@@ -1,10 +1,10 @@
 <div class="canScroll2 fadeMe">
 	<div class="projectInfo">
-		<h1 class="projectName"><%= @about.title %></h1>
+		<h1 class="projectName titleSize1"><%= @about.title %></h1>
 		<hr class="projectSeparator" />
 		<div class="aboutText">
-			<p class="projectDetail"><%= simple_format @about.description, class: "projectDetail" %></p>
-			<i><%= @about.footer %> - <%= Date.today.strftime("%B") %> <%= Time.now.year %></i>
+			<p class="projectDetail"><%= simple_format @about.description, class: "projectDetail descriptionSize1" %></p>
+			<p class="descriptionSize1 italics"><%= @about.footer %> - <%= Date.today.strftime("%B") %> <%= Time.now.year %></p>
 		</div>
 	</div>
 	<div class="topperMargin"></div>
@@ -32,7 +32,7 @@
 		<div class="grid-whole">
 			<% @clients.each do |c| %>
 				<div class="grid-eighth">
-					<%= link_to(image_tag(c.image), c.url, :target => "blank") %>
+					<%= link_to(image_tag(c.image), c.url, :target => "blank", :class => "greyScale" ) %>
 				</div>
 			<% end %>
 		</div>

@@ -1,7 +1,7 @@
 <div class="canScroll5">
 	<div class="projectInfo">
 		<%= link_to '', :back, :class => "artistCloseIcon" %>
-		<h1 class="projectName"><%= @announcement.homepage_title %></h1>
+		<h1 class="projectName titleSize1"><%= @announcement.homepage_title %></h1>
 		<div class="links">
 			<input id="twitter" type="hidden" 
 				data-url="http://fairsplitmusic.com/announcements/<%= @announcement.slug %>"
@@ -43,7 +43,7 @@
 		</div>
 		<hr class="projectSeparator" />
 		<div class="artist-left">
-			<p class="projectDetail"><%= simple_format @announcement.description, :class => "projectDetail" %></p>
+			<p class="projectDetail"><%= simple_format @announcement.description, :class => "projectDetail descriptionSize1" %></p>
 		</div>
 
 		<div class="artist-right">

@@ -18,8 +18,11 @@
 					</section>
 		        	<div class="vidTitle">
 		        		<div class="title-wrap">
-		            		<h3><%= s.title %></i></h3>
+		            		<h3 class="descriptionSize1 upcase"><%= s.title %></h3>
 		          		</div>
+						<div class="subtitle-wrap">
+		           			<p><%= truncate(s.description, :length => 80, :class => "descriptionSize1") %></p>
+						</div>
 		        	</div>
 				</div>
 				<div class="muteEffects2">

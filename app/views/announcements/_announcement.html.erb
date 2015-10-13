@@ -16,12 +16,12 @@
 			</section>
         	<div class="vidTitle">
 				<div class="title-wrap">
-            		<h3><%= announcement.homepage_title %></h3>
+            		<h3 class="descriptionSize1 upcase"><%= announcement.homepage_title %></h3>
           		</div>
 				<div class="subtitle-wrap">
-        			<p><%= truncate(announcement.description, :length => 80) %></p>
+        			<p><%= truncate(announcement.description, :length => 80, :class => "descriptionSize1") %></p>
 				</div>
-				<div class="subtitle-wrap borderTop">
+				<div class="subtitle-wrap borderTop italics">
 					<p><%= announcement.created_at.strftime("%B %Y") %></p>
 				</div>
         	</div>

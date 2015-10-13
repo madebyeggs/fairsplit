@@ -16,12 +16,12 @@
 			</section>
         	<div class="vidTitle">
 				<div class="title-wrap">
-            		<h3>NEW PLAYLIST: <%= sound.title %></h3>
+            		<h3 class="descriptionSize1 upcase">NEW PLAYLIST: <%= sound.title %></h3>
           		</div>
 				<div class="subtitle-wrap">
-           			<p><%= truncate(sound.description, :length => 80) %></p>
+           			<p><%= truncate(sound.description, :length => 80, :class => "descriptionSize1") %></p>
 				</div>
-				<div class="subtitle-wrap borderTop">
+				<div class="subtitle-wrap borderTop italics">
    					<p><%= sound.created_at.strftime("%B %Y") %></p>
 				</div>
         	</div>

@@ -24,4 +24,5 @@
  *= require style
  *= require bootstrapOverrides
  *= require pagination
+ *= require font-size
  */
