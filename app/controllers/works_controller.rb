@@ -26,6 +26,16 @@ class WorksController < ApplicationController
         :description => "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!",
         :image    => "#{@work.facebook_image}"
       }
+      set_meta_tags twitter: {
+        card: "player",
+        site: "@fairsplitmusic",
+        title: "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
+        description: "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!",
+        player: {
+          _:      "https://player.vimeo.com/video/#{@work.vimeo}",
+          stream: "https://player.vimeo.com/video/#{@work.vimeo}",
+        }
+      }
     end
 
     def index
