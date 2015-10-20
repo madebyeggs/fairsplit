@@ -33,7 +33,7 @@ class WorksController < ApplicationController
         description: "Fairsplit Music recently worked with #{@work.client} on thier new project '#{@work.title}'. Have a look at the results!",
         player: {
           _:      "https://player.vimeo.com/video/#{@work.vimeo}",
-          stream: "https://player.vimeo.com/video/#{@work.vimeo}",
+          stream: "https://player.vimeo.com/video/#{@work.vimeo}"
         }
       }
     end
@@ -41,7 +41,7 @@ class WorksController < ApplicationController
     def index
       @works = Work.common_order
       set_meta_tags :og => {
-        :title    => 'Fairsplit Projects',
+        :title    => 'Fairsplit Music | Latest Work',
         :url      => 'http://fairsplitmusic.com/works',
         :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
       }
