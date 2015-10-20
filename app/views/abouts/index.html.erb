@@ -32,7 +32,7 @@
 		<div class="grid-whole">
 			<% @clients.each do |c| %>
 				<div class="grid-eighth">
-					<%= link_to(image_tag(c.image), c.url, :target => "blank", :class => "greyScale" ) %>
+					<%= link_to(image_tag(c.image), c.url, :target => "blank" ) %>
 				</div>
 			<% end %>
 		</div>

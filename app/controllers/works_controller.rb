@@ -30,7 +30,7 @@ class WorksController < ApplicationController
         card: "player",
         site: "@fairsplitmusic",
         title: "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
-        description: "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!",
+        description: "Fairsplit Music recently worked with #{@work.client} on thier new project '#{@work.title}'. Have a look at the results!",
         player: {
           _:      "https://player.vimeo.com/video/#{@work.vimeo}",
           stream: "https://player.vimeo.com/video/#{@work.vimeo}",
@@ -43,7 +43,14 @@ class WorksController < ApplicationController
       set_meta_tags :og => {
         :title    => 'Fairsplit Projects',
         :url      => 'http://fairsplitmusic.com/works',
-        :image    => ''
+        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
+      }
+      set_meta_tags twitter: {
+        card: "summary_large_image",
+        site: "@fairsplitmusic",
+        title: "The latest work from Fairsplit music",
+        description: "",
+        image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
       }
     end
 
