@@ -19,12 +19,17 @@ class WorksController < ApplicationController
       if request.path != work_path(@work)
         redirect_to @work, status: :moved_permanently
       end
-      set_meta_tags :og => {
-        :title    => "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
-        :video    => "https://player.vimeo.com/video/#{@work.vimeo}",
-        :url      => "#{@currentUrl}",
-        :description => "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!",
-        :image    => "#{@work.facebook_image}"
+      set_meta_tags og: {
+        title: "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
+        video: {
+          url: "https://player.vimeo.com/video/#{@work.vimeo}",
+          secure_url: "https://player.vimeo.com/video/#{@work.vimeo}",
+          
+        },
+        url: "#{@currentUrl}",
+        site_name: "Fairsplit Music",
+        description: "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!",
+        image: "#{@work.facebook_image}"
       }
       set_meta_tags twitter: {
         card: "player",
