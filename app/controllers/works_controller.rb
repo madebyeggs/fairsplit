@@ -20,7 +20,7 @@ class WorksController < ApplicationController
         redirect_to @work, status: :moved_permanently
       end
       set_meta_tags og: {
-        type: "video"
+        type: "video",
         title: "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
         video: {
           url: "https://player.vimeo.com/video/#{@work.vimeo}",
