@@ -36,6 +36,7 @@ class WorksController < ApplicationController
           stream: "https://player.vimeo.com/video/#{@work.vimeo}"
         }
       }
+      render :show, flush: true
     end
 
     def index
