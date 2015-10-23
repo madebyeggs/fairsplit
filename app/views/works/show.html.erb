@@ -15,6 +15,7 @@
 			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>
 			<input id="facebook" type="hidden"
 			 	data-type="video.other"
+				data-video_url="https://player.vimeo.com/video/<%= @work.vimeo %>}"
 				data-url="<%= @currentUrl %>"
 				data-title="<%= @work.client %> +  ' ' + <%= @work.title %>"
 				data-description="Fairsplit Music recently worked with <%= @work.client %> on thier new project <%= @work.title %>. Have a look at the results!" 
