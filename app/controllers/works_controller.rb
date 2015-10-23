@@ -21,9 +21,7 @@ class WorksController < ApplicationController
       end
       set_meta_tags og: {
         image: "#{@work.facebook_image}",
-        video: {
-          url: "https://player.vimeo.com/video/#{@work.vimeo}"
-        },
+        video: "https://player.vimeo.com/video/#{@work.vimeo}",
         url: "#{@currentUrl}",
         title: "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
         description: "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!",
