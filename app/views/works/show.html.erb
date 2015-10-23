@@ -1,6 +1,6 @@
 <div class="canScroll4">
 	<div class="projectInfo">
-		<%= link_to '', :back, :class => "artistCloseIcon" %>
+		<%= link_to '', works_path, :class => "artistCloseIcon" %>
 		<h1 class="projectName titleSize1"><%= @work.client %> "<%= @work.title %>"</h1>
 		<h3 class="projectSubtitle fixerSpace descriptionSize1 upcase"><%= @work.type_of_work %></h3>
 		<h3 class="projectSubtitle spacer descriptionSize1 upcase italics"><em>MUSIC - </em><%= @work.artist_name %>: <%= @work.track_name %></h3>
