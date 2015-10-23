@@ -25,7 +25,7 @@ class WorksController < ApplicationController
         url: "#{@currentUrl}",
         title: "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
         description: "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!",
-        type: "video",
+        type: "video.other",
       }
       set_meta_tags twitter: {
         card: "player",
