@@ -24,7 +24,7 @@ class WorksController < ApplicationController
         url: "https://player.vimeo.com/video/#{@work.vimeo}",
         title: "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
         description: "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!",
-        type: "video.other",
+        type: "video.other"
       }
       set_meta_tags twitter: {
         card: "player",
