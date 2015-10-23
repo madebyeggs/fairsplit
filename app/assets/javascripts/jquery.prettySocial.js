@@ -22,7 +22,7 @@
                     }
                 },
                 facebook: {
-                    url: 'https://www.facebook.com/sharer/sharer.php?s=100&p[title]={{title}}&p[summary]={{description}}&p[url]={{url}}&p[images][0]={{media}}',
+					url: "https://www.facebook.com/dialog/share?app_id=1723612194533881&amp;href=https%3A%2F%2Fvimeo.com%2F{{url}}%3Fref%3Dfb-share&amp;redirect_uri=https://vimeo.com/_facebook/log_share?[clip_id]={{url}}", 
                     popup: {
                         width: 626,
                         height: 436
