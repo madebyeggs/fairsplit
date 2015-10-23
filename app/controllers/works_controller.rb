@@ -20,17 +20,14 @@ class WorksController < ApplicationController
         redirect_to @work, status: :moved_permanently
       end
       set_meta_tags og: {
-        type: "video",
-        title: "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
+        image: "#{@work.facebook_image}",
         video: {
-          url: "https://player.vimeo.com/video/#{@work.vimeo}",
-          secure_url: "https://player.vimeo.com/video/#{@work.vimeo}",
-          
+          url: "https://player.vimeo.com/video/#{@work.vimeo}"
         },
         url: "#{@currentUrl}",
-        site_name: "Fairsplit Music",
+        title: "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
         description: "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!",
-        image: "#{@work.facebook_image}"
+        type: "video",
       }
       set_meta_tags twitter: {
         card: "player",
@@ -42,7 +39,6 @@ class WorksController < ApplicationController
           stream: "https://player.vimeo.com/video/#{@work.vimeo}"
         }
       }
-      render :show, flush: true
     end
 
     def index
