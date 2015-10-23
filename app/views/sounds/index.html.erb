@@ -1,0 +1,42 @@
+<div class="canScroll3 fadeMe">
+	<% @sounds.each do |s| %>
+		<div class="element">
+			<div class="images">
+				<div class="playlist<%= s.id %>">
+					<% if s.latest?  %>
+						<%= image_tag(s.large_image, :alt => "#{s.title}") %>
+					<% else %>
+						<%= image_tag(s.image, :alt => "#{s.title}") %>
+					<% end %>
+				</div>
+				<div class="muteEffects">
+	    			<section class="hidden-infos">
+						<input type="hidden" value=<%= s.id %> class="playlist-object-id"> 
+						<a class="launchAnnouncement"><%= link_to '', sound_path(s) %></a>
+		          		<div class="overlay3"></div>
+						<div class="icons4 play"></div>	        					
+					</section>
+		        	<div class="vidTitle">
+		        		<div class="title-wrap">
+		            		<h3 class="descriptionSize1 upcase"><%= s.title %></h3>
+		          		</div>
+						<div class="subtitle-wrap">
+		           			<p><%= truncate(s.description, :length => 80, :class => "descriptionSize1") %></p>
+						</div>
+		        	</div>
+				</div>
+				<div class="muteEffects2">
+	    			<section class="hidden-infos">
+						<input type="hidden" value=<%= s.id %> class="playlist-object-id"> 
+						<a class="launchPlaylist"></a>       					
+					</section>
+		        	<div class="vidTitle">
+		        		<div class="titleWrap">
+		            		<h3><%= s.title %></h3>
+		          		</div>
+		        	</div>
+				</div>
+	    	</div>
+		</div>
+	<% end %>
+</div>

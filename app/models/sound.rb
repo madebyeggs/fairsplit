@@ -2,6 +2,9 @@ class Sound < ActiveRecord::Base
   attr_accessible :title, :description, :soundcloud, :image, :latest, :homepage_title, :square_image, :vimeo, :uid, 
   :is_artist, :is_work, :is_sound, :is_announcement, :large_image, :short_id_url, :short_uid_url, :homepage
   
+  extend FriendlyId
+  friendly_id :title, use: [:slugged, :history]
+  
   before_save :create_unique_id
   
   require 'bitly'
@@ -47,10 +50,6 @@ class Sound < ActiveRecord::Base
     validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
     
     def create_unique_id
-      uid = rand.to_s[2..16]
-      if self.uid == '' || self.uid.blank?
-        self.uid = uid
-      end
       self.is_artist = false
       self.is_work = false
       self.is_sound = true
@@ -58,5 +57,13 @@ class Sound < ActiveRecord::Base
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
+    end
+    
+    def self.common_order
+      order("latest DESC, id DESC")
+    end
+    
+    def self.homepage
+      where(:homepage => true)
     end
 end

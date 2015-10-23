@@ -20,11 +20,11 @@
 								<td width="9%"><%= a.vimeo %></td>
 								<td width="11%"><%= a.soundcloud %></td>
 								<td width="20%">
-									<a href="../#filter=.announcements/announcement#<%= a.uid %>" target="_blank">
-										<%= a.short_uid_url rescue nil %>	
+									<a href="../announcements/<%= a.slug %>" target="_blank">
+										<%= a.short_id_url rescue nil %>	
 									</a>
 								</td>
-								<% if a.short_uid_url == '' || a.short_uid_url.blank? %>
+								<% if a.short_id_url == '' || a.short_id_url.blank? %>
 									<td width="1%" class="topperButtons">
 										<%= link_to 'L', get_announcement_links_path(:id => a.id), :title => "Generate sharing link for the announcement #{a.homepage_title}", :class => "btn btn2 tips" %>
 									</td>

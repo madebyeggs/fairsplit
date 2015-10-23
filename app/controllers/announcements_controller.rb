@@ -1,5 +1,5 @@
 class AnnouncementsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => ["index", "show"]
   
     def new
       bring_in_models
@@ -14,15 +14,27 @@ class AnnouncementsController < ApplicationController
     end
 
     def show
-      respond_to do |format|
-        format.html { redirect_to cms_path }
+      @announcement = Announcement.find(params[:id])
+      if request.path != announcement_path(@announcement)
+        redirect_to @announcement, status: :moved_permanently
       end
+      set_meta_tags :og => {
+        :title    => "Fairsplit Music:" + " " + "#{@announcement.homepage_title}",
+        :url      => "http://fairsplitmusic.com/announcements/" + "#{@announcement.slug}",
+        :image    => ""
+      }
     end
 
     def index
-      @announcement = Announcement.all
+      bring_in_models
+      set_meta_tags :og => {
+        :title    => "Fairsplit Music Latest News",
+        :url      => "http://fairsplitmusic.com/announcements",
+        :image    => ""
+      }
       respond_to do |format|
-        format.html { redirect_to cms_path }
+        format.html
+        format.js
       end
     end
 
@@ -53,10 +65,10 @@ class AnnouncementsController < ApplicationController
     def create_links
       @announcement = Announcement.find(params[:id])
       bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
-		  uid_url = bitly.shorten("http://www.fairsplitmusic.com/#filter=.announcements/" + "announcement" + "#" + "#{@announcement.uid}")
-		  short_uid_url = uid_url.short_url
-			if @announcement.short_uid_url == '' || @announcement.short_uid_url.blank?
-			  @announcement.short_uid_url = short_uid_url
+		  id_url = bitly.shorten("http://www.fairsplitmusic.com/announcements/" + "#{@announcement.slug}")
+		  short_id_url = id_url.short_url
+			if @announcement.short_id_url == '' || @announcement.short_id_url.blank?
+			  @announcement.short_id_url = short_id_url
 			end
 		  @announcement.update_attributes(params[:announcement])
 			respond_to do |format|

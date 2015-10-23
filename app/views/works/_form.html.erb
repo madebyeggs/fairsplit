@@ -1,5 +1,5 @@
 <div class="col-md-12">
-	<div class="logo2"><a href="../"><%= image_tag('logo.png') %></a></div>
+	<div class="logo2"><%= link_to(image_tag('logo.png'), cms_path) %></div>
 </div>
 
 <div class="col-md-12">
@@ -45,6 +45,13 @@
 					<%= f.file_field :large_image %>
 					<% if @work.large_image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @work.large_image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
+					<%= f.label :Facebook_image_1200X630, class: "formLabel" %><br />
+					<%= f.file_field :facebook_image %>
+					<% if @work.facebook_image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @work.facebook_image_file_name %>" }</p><br/>
 					<% else %>
 						<br/>
 					<% end %>

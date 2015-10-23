@@ -5,25 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 		<meta name="description" content="Our passion is diverse, authentic music. Our expertise is in applying it to picture. We choose writers that create vibrant textures and emotions, transcending beyond music into powerful, dynamic audio visual format.">
 		<meta name="title" content="Fairsplit Music, Music Publishing and Master Recording Company">
-	  	<%= stylesheet_link_tag    "application", :media => "all" %>
-		<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=true" %>
-	  	<%= javascript_include_tag "application" %>
-	  	<%= csrf_meta_tags %>
-		<!-- Facebook Open Graph tags -->
-		<meta property="og:title" content="Fairsplit Music | Sync focussed music publishing for the 21st century">
-		<meta property="og:description" content="Our passion is diverse, authentic music. Our expertise is in applying it to picture. We choose writers that create vibrant textures and emotions, transcending beyond music into powerful, dynamic audio visual format.">
-		<meta property="og:site_name" content="Fairsplit Music">
-		<meta property="og:image" content="https://s3.amazonaws.com/fairsplit-images/fbLogo2.jpg">
-		<meta property="og:image:type" content="image/jpeg">
-		<meta property="og:image:width" content="320px">
-		<meta property="og:image:height" content="320px">
-		<!-- Twitter card -->
-		<meta name="twitter:card" content="summary" />
-		<meta name="twitter:site" content="@fairsplitmusic" />
-		<meta name="twitter:title" content="Music Publishing and Master Recording Company" />
-		<meta name="twitter:description" content="Visit Fairsplit Music's website." />
-		<meta name="twitter:image" content="https://s3.amazonaws.com/fairsplit-images/fbLogo2.jpg" />
-		<meta name="google-site-verification" content="au7xB-qirLQLeSWY68cDsCwNr75ioVGIxMpsD7Ox54A" />
+	  	
 		<!-- Google Knowledge Graph - social profiles -->
 		<script type="application/ld+json">
 		{ "@context" : "http://schema.org",
@@ -38,6 +20,7 @@
 		     "https://www.linkedin.com/company/fairsplit-music-publishing"]
 		}
 		</script>
+		
 		<!-- Google Knowledge Graph - site name breadcrumb in SERPs -->
 		<script type="application/ld+json">
 		    {  "@context" : "http://schema.org",
@@ -47,6 +30,7 @@
 		       "url" : "http://www.fairsplitmusic.com/"
 		    }
 		</script>
+		
 		<!-- Google Knowledge Graph - company logo -->
 		<script type="application/ld+json">
 		   { "@context": "http://schema.org",
@@ -58,15 +42,47 @@
 		
 		<%= analytics_init if Rails.env.production? %>
 		
+		<%= stylesheet_link_tag    "application", :media => "all" %>
+		<%= javascript_include_tag "application" %>
+		<%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?sensor=true" %>
+		<%= csrf_meta_tags %>
+		<%= javascript_include_tag :defaults %>
+		<%= display_meta_tags %>
+		
 		<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700|Open+Sans:300,700' rel='stylesheet' type='text/css'>
+		
 	</head>
-	<body bgcolor="#000000">
 	
-		<div id="preloader">
-		    <div id="status">&nbsp;</div>
+	<body bgcolor="#000000">
+	<!-- 		
+			<div id="preloader">
+				<%#= image_tag 'status2.gif', :id => "status" %>
+			</div> -->
+		
+		<div id="contentHome">
+		
+			<% if controller_name == "abouts" && controller.action_name == "index" || 
+			      controller_name == "contacts" && controller.action_name == "index" || 
+				  controller_name == "announcements" && controller.action_name == "index" || 
+				  controller_name == "announcements" && controller.action_name == "show" || 
+				  controller_name == "artists" && controller.action_name == "index" || 
+				  controller_name == "artists" && controller.action_name == "show" || 
+				  controller_name == "sounds" && controller.action_name == "index" || 
+				  controller_name == "sounds" && controller.action_name == "show" ||
+				  controller_name == "works" && controller.action_name == "index" || 
+				  controller_name == "works" && controller.action_name == "show" %> 
+		
+				<div class="navigation"><%= render 'layouts/navigation' %></div>
+				<div class="main"><%= render 'layouts/main' %></div>
+			
+			<% else %>
+		
+				<%= yield %>
+			
+			<% end %>
+			
 		</div>
 		
-		<%= yield %>
-
 	</body>
+	
 </html>

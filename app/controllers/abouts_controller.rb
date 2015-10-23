@@ -1,5 +1,5 @@
 class AboutsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, :except => ["index"]
   
     def new
       bring_in_models
@@ -20,10 +20,13 @@ class AboutsController < ApplicationController
     end
 
     def index
-      @about = About.all
-      respond_to do |format|
-        format.html { redirect_to cms_path }
-      end
+      @about = About.first
+      bring_in_models
+      set_meta_tags :og => {
+        :title    => 'About Fairsplit Music',
+        :url      => 'http://fairsplitmusic.com/abouts',
+        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
+      }
     end
 
     def edit
@@ -48,6 +51,10 @@ class AboutsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
+    end
+    
+    def show
+      @about = About.find(params[:id])
     end
 
 end

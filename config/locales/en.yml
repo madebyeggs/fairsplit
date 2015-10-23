@@ -4,5 +4,5 @@
 en:
   hello: "Hello world"
   will_paginate:
-      previous_label: <span class="emptyMe"></span>
-      next_label: <span class="emptyMe"></span>
+      previous_label: <span class=""></span>
+      next_label: <span class=""></span>

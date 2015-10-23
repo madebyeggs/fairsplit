@@ -49,5 +49,9 @@ V1::Application.configure do
     :styles => {:main => '300X300>'},
     :convert_options => { :all => '-quality 80' }
   }
+  FACEBOOK_PAPERCLIP_STORAGE_OPTS = {
+    :styles => {:main => '1200X630>'},
+    :convert_options => { :all => '-quality 80' }
+  }
 
 end

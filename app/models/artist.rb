@@ -2,6 +2,9 @@ class Artist < ActiveRecord::Base
   attr_accessible :name, :description, :soundcloud, :image, :square_image, :latest, :large_image, :homepage_title, :vimeo, :uid, 
   :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, :homepage
   
+  extend FriendlyId
+  friendly_id :name, use: [:slugged, :history]
+  
   has_many :works
   before_save :create_unique_id
   
@@ -65,10 +68,6 @@ class Artist < ActiveRecord::Base
     validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
     
     def create_unique_id
-      uid = rand.to_s[2..16]
-      if self.uid == '' || self.uid.blank?
-        self.uid = uid
-      end
       self.is_artist = true
       self.is_work = false
       self.is_sound = false
@@ -76,6 +75,14 @@ class Artist < ActiveRecord::Base
       if self.latest == true
         self.class.where("id != ?", self.id).update_all("latest = 'false'")
       end
+    end
+    
+    def self.common_order
+      order("latest DESC, name ASC")
+    end
+    
+    def self.homepage
+      where(:homepage => true)
     end
     
 end

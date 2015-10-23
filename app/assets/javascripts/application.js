@@ -11,216 +11,42 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery-1.9.1.min
-//= require jquery-migrate-1.2.1.min
-//= require jquery-easing-1.3
-//= require jquery-ui.min 
+//= require turbolinks
 //= require modernizr
 //= require retina
-//= require jquery.isotope.min
-//= require jquery.ba-bbq.min
-//= require jquery.isotope.load_home
-//= require jquery.form
-//= require input.fields
-//= require responsive-nav
-//= require jquery.flexslider-min
-//= require jquery.fancybox.pack
-//= require image-hover
-//= require scrollup
 //= require jquery.fitvids
-//= require twitter/bootstrap
 //= require jquery.slicknav
-//= require jquery.fittext
-//= require jquery.collapser
-//= require jquery.readmore
-//= require scrollTo
+//= require twitter/bootstrap
+//= require nprogress
+//= require nprogress-turbolinks
+//= require jquery.prettySocial
+//= require frogaloop
 //= require gmap3
-//= require social-share-button
+
+
+$(document).on('page:load', function() {
+	applicash();
+});
 
 $(document).ready(function() {
+	applicash();
+});
+
+function applicash(){
 	
-	$(window).load(function() { // makes sure the whole site is loaded
-		$('#status').fadeOut(); // will first fade out the loading animation
-		$('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website.
-		$('body').delay(550).css({'overflow':'visible'});
-		//homePage title show
-		$('.homeTitle').show();
-		$('#container').isotope({ filter: '.announcements' });
-		$("#map_canvas").show();
-
-		// Create an array of styles.
-		var styles = [
-			{
-		  		stylers: [
-		    		{ visibility: "on" },
-		    		{ saturation: -100 },
-					{ gamma: 1 }
-		  		]
-			},{
-				featureType: "poi.business",
-				elementType: "labels",
-				stylers: [
-					{ visibility: "off" }
-				]
-			}
-		];
-
-		// Create a new StyledMapType object, passing it the array of styles,
-		// as well as the name to be displayed on the map type control.
-		var styledMap = new google.maps.StyledMapType(styles,{name: "Styled Map"});
-
-		// Map Coordination (center)
-		var latlng = new google.maps.LatLng(51.524693, -0.083074);
-
-		// Map Options
-		var myOptions = {
-			zoom: 16,
-			center: latlng,
-			mapTypeId: google.maps.MapTypeId.ROADMAP,
-			disableDefaultUI: true,
-			scrollwheel: false,
-			disableDoubleClickZoom: false,
-			zoomControl: true,
-			zoomControlOptions: true,
-			mapTypeControlOptions: {
-				mapTypeIds: [google.maps.MapTypeId.ROADMAP, 'map_style']
-			}
-		};
-
-		var map = new google.maps.Map(document.getElementById('map_canvas'), myOptions);
-
-		//Associate the styled map with the MapTypeId and set it to display.
-		map.mapTypes.set('map_style', styledMap);
-		map.setMapTypeId('map_style');
-
-		// Marker Image
-		var image = 'assets/marker.png';
-
-		// Marker Coordination
-		var myLatlng = new google.maps.LatLng(51.523571, -0.078459);
-
-		// Marker Text 
-		var contentString = '<div id="mapsContent">'+
-		'<div id="siteNotice">'+
-		'</div>'+
-		'<p>' +
-
-		'<h4>' + 'YOU CAN FIND US AT:' + '</h4>' + 'Village Underground, 54 Holywell Lane,' + '<br/>' + 'London, EC2A 3PQ' + 
-
-		'</p>'+
-		'</div>';
-
-		var marker = new google.maps.Marker({
-			position: myLatlng,
-			map: map,
-			title: 'The Office',
-			icon: image
-		});
-
-		var infowindow = new google.maps.InfoWindow({
-			content: contentString
-		});
-
-		//toggle marker text	  	
-		google.maps.event.addListener(marker, 'click', function() {
-			infowindow.open(map,marker);
-		});
-
-		//auto open marker text
-		infowindow.open(map,marker);
-
-		/* ========= End Marker ========= */
-		
-		//artist open from URL 
-		var str = window.location.href;
-		if (str.toLowerCase().indexOf("announcements/") >= 0) {
-			var announcement_id = str.split("#")[2];
-			announcement_urlLaunch(announcement_id);
-		}
-		else if (str.toLowerCase().indexOf("works/") >= 0) {
-			var work_id = str.split("#")[2];
-			work_urlLaunch(work_id);
-		}
-		else if (str.toLowerCase().indexOf("artists/") >= 0) {
-			var artist_id = str.split("#")[2];
-			artist_urlLaunch(artist_id);
-		}
-		else if (str.toLowerCase().indexOf("playlists/") >= 0) {
-			var playlist_id = str.split("#")[2];
-			playlist_urlLaunch(playlist_id);
-		}
-		else {
-			clear_all();
-		}
-		function announcement_urlLaunch(announcement_id) {
-			var div_id = '#' + 'announcement' + announcement_id;
-			$(div_id).slideDown(500);
-			$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-			$(".muteEffects").addClass("displayNone");
-			var home_sound_id = '#' + 'homeSoundiFrame' + announcement_id;
-			var homeSoundiFrame = $(home_sound_id);
-			var home_video_id = '#' + 'homeVideoiFrame' + announcement_id;
-			var homeVideoiFrame = $(home_video_id);
-			$(document).ready(function() {
-				$('#container').isotope({ filter: '.announcements' });
-				$('.canScroll5').animate({scrollTop:$('#scrollHereAnnouncement' + announcement_id).position().top + 0}, 'slow');
-				homeVideoiFrame.attr("src", homeVideoiFrame.data("src"));
-				homeSoundiFrame.attr("src", homeSoundiFrame.data("src"));
-			})
-		}
-		function work_urlLaunch(work_id) {
-			var div_id = '#' + 'work' + work_id;
-			$(div_id).slideDown(500);
-			$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-			$(".muteEffects").addClass("displayNone");
-			var work_video_id = '#' + 'workiFrame' + work_id;
-			var workVideoiFrame = $(work_video_id);
-			$(document).ready(function() {
-				$('#container').isotope({ filter: '.works' });
-				$('.canScroll2').animate({scrollTop:$('#scrollHereWork' + work_id).position().top + 0}, 'slow');
-				workVideoiFrame.attr("src", workVideoiFrame.data("src"));
-			})
-		}
-		function artist_urlLaunch(artist_id) {
-			var div_id = '#' + 'artist' + artist_id;
-			$(div_id).slideDown(500);
-			$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-			$(".muteEffects").addClass("displayNone");
-			var artist_sound_id = '#' + 'artistSoundiFrame' + artist_id;
-			var artistSoundiFrame = $(artist_sound_id);
-			$(document).ready(function() {
-				$('#container').isotope({ filter: '.artists' });
-				$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + artist_id).position().top + 0}, 'slow');
-				artistSoundiFrame.attr("src", artistSoundiFrame.data("src"));
-			})
-		}
-		function playlist_urlLaunch(playlist_id) {
-			var div_id = '#' + 'playlist' + playlist_id;
-			$(div_id).slideDown(500);
-			$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-			$(".muteEffects").addClass("displayNone");
-			var sound_id = '#' + 'soundiFrame' + playlist_id;
-			var soundiFrame = $(sound_id);
-			$(document).ready(function() {
-				$('#container').isotope({ filter: '.playlists' });
-				$('.canScroll3').animate({scrollTop:$('#scrollHerePlaylist' + playlist_id).position().top + 0}, 'slow');
-				soundiFrame.attr("src", soundiFrame.data("src"));
-			})
-		}
-		function clear_all() {
-			$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
-			$(".muteEffects").removeClass("displayNone");
-		}
-	});
+	$('#preloader').fadeOut();
+	
+	$('.prettySocial').prettySocial();
 	
 	$('.fitvids').fitVids();
 	
 	//navigation links hover opcaity animation
-	$('.navButton a').css('opacity', 1);  
+	$('.navigationButton a').css('opacity', 1);  
 	// when hover over the selected item change the opacity to 1  
-	$('.navButton a').hover(function(){  
+	$('.navigationButton a').hover(function(){ 
 		$(this).stop().fadeTo('medium', 0.4);  
-	},  
-	function(){  
+		},  
+		function(){  
 	    $(this).stop().fadeTo('medium', 1);  
 	});
 	
@@ -228,115 +54,6 @@ $(document).ready(function() {
 	$(function(){
 		$('#menu').slicknav();
 	});
-	
-	//newspage detail dynamics
-	//open
-	$(".launchAnnouncement").click(function(){
-		var id = jQuery(this).prev('.announcement-object-uid').val();
-		var div_id = '#' + 'announcement' + id;
-		scroll_calc = $('.canScroll5').scrollTop();
-		$(div_id).slideDown(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-		$(".muteEffects").addClass("displayNone");
-		$('.canScroll5').animate({scrollTop:$('#scrollHereAnnouncement' + id).position().top + scroll_calc}, 'slow');
-		var home_sound_id = '#' + 'homeSoundiFrame' + id;
-		var homeSoundiFrame = $(home_sound_id);
-		homeSoundiFrame.attr("src", homeSoundiFrame.data("src"));
-		var home_video_id = '#' + 'homeVideoiFrame' + id;
-		var homeVideoiFrame = $(home_video_id);
-		homeVideoiFrame.attr("src", homeVideoiFrame.data("src"));
-	});
-	//close
-	$(".announcementCloseIcon").click(function(){
-		var id = jQuery(this).prev('.announcement-object-uid').val();
-		var div_id = '#' + 'announcement' + id;
-		scroll_calc = $('.canScroll5').scrollTop();
-		$(div_id).slideUp(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
-		$(".muteEffects").removeClass("displayNone");
-		$('.canScroll5').animate({scrollTop:scroll_calc}, 250);
-	});
-	//works VIDEO dynamics
-	//open
-	$(".launchWork").click(function(){
-		var id = jQuery(this).prev('.work-object-id').val();
-		var div_id = '#' + 'work' + id;
-		scroll_calc = $('.canScroll2').scrollTop();
-		$(div_id).slideDown(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-		$(".muteEffects").addClass("displayNone");
-		$('.canScroll2').animate({scrollTop:$('#scrollHereWork' + id).position().top + scroll_calc}, 'slow');
-		var work_video_id = '#' + 'workiFrame' + id;
-		var workVideoiFrame = $(work_video_id);
-		workVideoiFrame.attr("src", workVideoiFrame.data("src"));
-	});
-	//close
-	$(".workCloseIcon").click(function(){
-		var id = jQuery(this).prev('.work-object-id').val();
-		var div_id = '#' + 'work' + id;
-		scroll_calc = $('.canScroll2').scrollTop();
-		$(div_id).slideUp(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
-		$(".muteEffects").removeClass("displayNone");
-		$('.canScroll2').animate({scrollTop:scroll_calc}, 250);
-	});
-	//listen PLAYLIST dynamics
-	//open
-	$(".launchPlaylist").click(function(){
-		var id = jQuery(this).prev('.playlist-object-id').val();
-		var div_id = '#' + 'playlist' + id;
-		scroll_calc = $('.canScroll3').scrollTop();
-		$(div_id).slideDown(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-		$(".muteEffects").addClass("displayNone");
-		$('.canScroll3').animate({scrollTop:$('#scrollHerePlaylist' + id).position().top + scroll_calc}, 'slow');
-		var sound_id = '#' + 'soundiFrame' + id;
-		var soundiFrame = $(sound_id);
-		soundiFrame.attr("src", soundiFrame.data("src"));
-	});
-	//close
-	$(".playlistCloseIcon").click(function(){
-		var id = jQuery(this).prev('.playlist-object-id').val();
-		var div_id = '#' + 'playlist' + id;
-		scroll_calc = $('.canScroll3').scrollTop();
-		$(div_id).slideUp(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
-		$(".muteEffects").removeClass("displayNone");
-		$('.canScroll3').animate({scrollTop:scroll_calc}, 250);
-	});
-	//artist detail dynamics
-	//open
-	$(".launchArtist").click(function(){
-		var id = jQuery(this).prev('.artist-object-id').val();
-		var div_id = '#' + 'artist' + id;
-		scroll_calc = $('.canScroll4').scrollTop();
-		$(div_id).slideDown(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("fast", 0.3);
-		$(".muteEffects").addClass("displayNone");
-		$('.canScroll4').animate({scrollTop:$('#scrollHereArtist' + id).position().top + scroll_calc}, 'slow');
-		var artist_sound_id = '#' + 'artistSoundiFrame' + id;
-		var artistSoundiFrame = $(artist_sound_id);
-		artistSoundiFrame.attr("src", artistSoundiFrame.data("src"));
-	});
-	//close
-	$(".artistCloseIcon").click(function(){
-		var id = jQuery(this).prev('.artist-object-id').val();
-		var div_id = '#' + 'artist' + id;
-		scroll_calc = $('.canScroll4').scrollTop();
-		$(div_id).slideUp(500);
-		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
-		$(".muteEffects").removeClass("displayNone");
-		$('.canScroll4').animate({scrollTop:scroll_calc}, 250);
-	});
-	
-	//bug fix on navigtaion buttons
-	$(".fixMute").click(function(){
-		$(".muteEffects").removeClass("displayNone");
-		$(".element").children(':not(.projectInfo)').fadeTo("slow", 1);
-	});
-	
-	//autoscaling text on titles
-	$(".subTitle").fitText(1.0, { minFontSize: '16px', maxFontSize: '26px' });
 	
 	$('.delete_post').on('click', function() {
 		if(confirm('Are you sure you want to delete this record')){
@@ -347,5 +64,153 @@ $(document).ready(function() {
 	});
 	
 	$(".tips").tooltip();
+	
+	imageHover();
+	
+}
 
+$(function() {
+    var iframe = $('#videoPlayer');
+    var player = $f(iframe);
+
+    // When the player is ready, add listeners for pause, finish, and playProgress
+    player.addEvent('ready', function() {
+        $('#videoLoader').hide();
+		$('#videoLoader0').hide();
+		$('#videoLoader1').hide();
+		$('#videoLoader2').hide();
+		$('#videoLoader3').hide();
+		$('#videoLoader4').hide();
+		$('#videoLoader5').hide();
+		$('#videoLoader6').hide();
+		$('#videoLoaderWork').hide();
+    });
 });
+
+// $(function(){
+// 	if ($('.pagination').length) {
+// 	    $(window).scroll(function() {
+// 	      var url = $('.pagination .next_page').attr('href');
+// 	      if (url && $(window).scrollTop() > $(document).height() - $(window).height() - 50) {
+// 	        $('.pagination').text("Loading...");
+// 	        return $.getScript(url, function(){
+// 				applicash();
+// 			});
+// 	      }
+// 	    });
+// 	    return $(window).scroll();
+// 	  }
+// })
+
+function imageHover(){
+	jQuery('.title-wrap, .subtitle-wrap, .paragraph-wrap').not('.flexslider .title-wrap, .flexslider .subtitle-wrap, .paragraph-wrap').each(function() {
+    	jQuery(this).data('wrapping', jQuery(this).width());
+    	jQuery(this).css('width', 0);
+ 	});
+
+  	jQuery('.images').not('.flexslider .images').bind('mouseenter', function() {
+    	jQuery(this).find('.title-wrap').stop().each(function() {
+      		jQuery(this).animate({
+        		width: jQuery(this).data('wrapping')
+     		}, 150);
+  		});
+    	jQuery(this).find('.subtitle-wrap').stop().each(function() {
+      		jQuery(this).delay(250).animate({
+        		width: jQuery(this).data('wrapping')
+      		}, 150);
+    	});
+		jQuery(this).find('.paragraoh-wrap').stop().each(function() {
+      		jQuery(this).delay(250).animate({
+        		width: jQuery(this).data('wrapping')
+      		}, 150);
+    	});
+  	});
+
+  	jQuery('.images').not('.flexslider .images').bind('mouseleave', function() {
+    	jQuery(this).find('.title-wrap').stop().each(function() {
+      		jQuery(this).animate({
+        		width: 0
+      		}, 0);
+  		});
+    	jQuery(this).find('.subtitle-wrap').stop().each(function() {
+      		jQuery(this).animate({
+        		width: 0
+      		}, 0);
+    	});
+		jQuery(this).find('.paragraoh-wrap').stop().each(function() {
+      		jQuery(this).animate({
+        		width: 0
+      		}, 0);
+    	});
+  	});
+
+  
+  	jQuery('.element').hover(function() {
+		jQuery(this).find('.caption, .overlay2').stop().animate({
+			"opacity": "1"
+		}, 150 );
+		}, function() {
+		jQuery(this).find('.caption, .overlay2').stop().animate({
+			"opacity": "0"
+		}, 150 ); 
+	});
+
+	jQuery('.element').hover(function() {
+		 jQuery(this).find('.caption, .overlay3').stop().animate({
+			"opacity": "1"
+		}, 150 );
+		}, function() {
+		jQuery(this).find('.caption, .overlay3').stop().animate({
+			"opacity": "0"
+		}, 150 );
+   	});
+
+	jQuery('.element').hover(function() {
+		 jQuery(this).find('.caption, .overlay4').stop().animate({
+			"opacity": "1"
+		}, 150 );
+		}, function() {
+		jQuery(this).find('.caption, .overlay4').stop().animate({
+			"opacity": "0"
+		}, 150 );
+   	});
+  
+  	jQuery('.element').hover(function() {
+		 jQuery(this).find('.hidden-infos').stop().fadeToggle(150);	 
+   	});
+  
+  	jQuery('.about').click(function() {
+		 jQuery(this).find('.movable-content').stop().animate({
+			"margin-left": "300px"
+		}, 200 ); 
+   	});
+  
+   	jQuery('.about').bind('mouseleave', function() {
+		 jQuery(this).find('.movable-content').stop().animate({
+			"margin-left": "0px"
+		}, 200 ); 
+   	});
+
+  	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+  		$('body').addClass('touch')
+	}
+  
+	jQuery('#options li').not('.touch #options li').bind('mouseover', function() {
+  		jQuery(this).find('.menu-line').stop().animate({
+			"width": "100%"
+		}, 150 );
+   	});
+
+	jQuery('#options li').not('.touch #options li').bind('mouseout', function() {
+  		jQuery(this).find('.menu-line').stop().animate({
+			"width": "0"
+		}, 150 );
+   	});
+
+	jQuery('.button').hover(function() {
+		jQuery(this).animate({backgroundColor:'#ddd'}, 150);
+		}, function() {
+		jQuery(this).animate({backgroundColor:'#d6d6d6'}, 250); 
+   	});
+	
+}

@@ -38,20 +38,22 @@
 .title-wrap h3, .title-wrap2 h3 {font-size:14px; letter-spacing:1px; text-transform:uppercase; }
 .subtitle-wrap p {font-size:12px; font-weight:400;font-family:'Raleway';font-style:none;margin-top:12px;text-transform:none;}
 .subtitle-wrap {margin-top:-22px!important;width:110%;}
+.middleFixer {text-transform:uppercase!important;margin-top:50%!important;}
 
 .inline2 {background-color:#000000;color:#ffffff;display:none;width:60%;margin:0 auto;}
 .inlineContent {font-family:'Raleway';font-size:25px;margin:15px;}
 .projectInfo {width:80%;margin:10px 10%;padding:2px 0px 40px 0px;}
-.projectName {text-align:left;font-size:22px;margin:30px 0px 22px 0px;}
-.projectSubtitle {font-size:18px;margin:0;}
+.projectName {text-align:left;margin:30px 0px 22px 0px;}
+.projectSubtitle {margin:0;}
 .projectSeparator {color:#ffffff; margin:30px 0px 15px 0px;}
-.projectDetail {font-size:15px;margin:20px 0px 40px;text-align:justify;}
+.projectDetail {margin:20px 0px 40px;text-align:justify;}
 
 .hidden-infos a {position:absolute; top:0; left:0; width:100%; height:100%; z-index:1000 }
 .hidden-infos { display:none; position:absolute; top:0; left:0; width:100%; height:100%; z-index:1000 }
 .overlay { display:block; position:absolute; top:0; /*left:0;*/ background:url(../assets/bg-overlay.png) repeat; z-index:10; width:100%; height:960px; /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -moz-opacity: 0; -khtml-opacity: 0; opacity: 0;*/ }
 .overlay2 { display:block; position:absolute; top:0; /*left:0;*/ background:url(../assets/bg-overlay.png) repeat; z-index:10; width:100%; height:960px; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -moz-opacity: 0; -khtml-opacity: 0; opacity: 0; }
 .overlay3 { display:block; position:absolute; top:0; /*left:0;*/ background:url(../assets/bg-overlay3.png) repeat; z-index:10; width:100%; height:960px; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -moz-opacity: 0; -khtml-opacity: 0; opacity: 0; }
+.overlay4 { display:block; position:absolute; top:0; /*left:0;*/ background:url(../assets/bg-overlay4.png) repeat; z-index:10; width:100%; height:960px; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -moz-opacity: 0; -khtml-opacity: 0; opacity: 0; }
 /* End Image Hover
 --------------------------------------------------------------------------------------------------------*/
 

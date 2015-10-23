@@ -10,17 +10,20 @@ gem 'jquery-ui-rails'
 gem 'therubyracer'
 gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
 gem "twitter-bootstrap-rails"
+gem "friendly_id"
 gem 'devise'
 gem 'paperclip'
 gem 'aws-sdk'
-gem 'will_paginate', '~> 3.0.7'
 gem 'jquery-gmap3-rails'
 gem 'bitly', '~> 0.9.0'
 gem 'google-analytics-rails'
-gem 'social-share-button'
 gem 'newrelic_rpm'
 gem 'rack-zippy'
 gem 'lazyload-rails'
+gem 'meta-tags'
+gem 'turbolinks'
+gem 'nprogress-rails'
+gem 'will_paginate', '~> 3.0.7'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -41,5 +44,6 @@ end
 
 group :production do
   gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
 end
+
+gem 'rails_12factor', '0.0.2', group: [:staging, :production]
