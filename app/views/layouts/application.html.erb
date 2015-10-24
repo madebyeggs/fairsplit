@@ -50,43 +50,6 @@
 		
 		<link href='https://fonts.googleapis.com/css?family=Raleway:400,500,700|Open+Sans:300,700' rel='stylesheet' type='text/css'>
 		
-		<script type="coffeescript">
-			$ ->
-			  loadFacebookSDK()
-			  bindFacebookEvents() unless window.fbEventsBound
-
-			bindFacebookEvents = ->
-			  $(document)
-			    .on('page:fetch', saveFacebookRoot)
-			    .on('page:change', restoreFacebookRoot)
-			    .on('page:load', ->
-			      FB?.XFBML.parse()
-			    )
-			  @fbEventsBound = true
-
-			saveFacebookRoot = ->
-			  if $('#fb-root').length
-			    @fbRoot = $('#fb-root').detach()
-
-			restoreFacebookRoot = ->
-			  if @fbRoot?
-			    if $('#fb-root').length
-			      $('#fb-root').replaceWith @fbRoot
-			    else
-			      $('body').append @fbRoot
-
-			loadFacebookSDK = ->
-			  window.fbAsyncInit = initializeFacebookSDK
-			  $.getScript("//connect.facebook.net/en_US/sdk.js")
-
-			initializeFacebookSDK = ->
-			  FB.init
-			    appId  : '1723612194533881'
-			    status : true
-			    cookie : true
-			    xfbml  : true
-		</script>
-		
 	</head>
 	
 	<body bgcolor="#000000">
