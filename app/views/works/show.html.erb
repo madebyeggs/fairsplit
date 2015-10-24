@@ -14,15 +14,13 @@
 			<input id="twitter" type="hidden" 
 				data-url="<%= @currentUrl %>"
 				data-image="<%= @work.facebook_image %>"
-				data-description="Great sync!" 
+				data-description="New work from Fairsplit music..." 
 				data-via="fairsplitmusic" 
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>
 			<input id="facebook" type="hidden" 
-				data-url="<%= @currentUrl %>"
-				data-href="https://player.vimeo.com/<%= @work.vimeo %>"
-				data-redirect_uri="<%= @currentUrl %>"
+				data-url="https://vimeo.com/<%= @work.vimeo %>"
 				data-image="<%= @work.facebook_image %>"
 				class="socialLinksHidden"
 			>

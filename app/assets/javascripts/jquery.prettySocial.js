@@ -22,7 +22,7 @@
                     }
                 },
                 facebook: {
-                    url: 'https://www.facebook.com/dialog/share?app_id=1723612194533881&amp;display=popup&amp;href={{href}}&amp;redirect_uri={{redirect_uri}}',
+                    url: 'https://www.facebook.com/sharer/sharer.php?s=100&p[title]={{title}}&p[summary]={{description}}&p[url]={{url}}&p[images][0]={{media}}',
                     popup: {
                         width: 626,
                         height: 436
@@ -77,8 +77,6 @@
                                   .replace(/{{title}}/g, encodeURIComponent(link.title))
                                   .replace(/{{description}}/g, encodeURIComponent(link.description))
                                   .replace(/{{media}}/g, encodeURIComponent(link.media))
-								  .replace(/{{href}}/g, encodeURIComponent(link.href))
-								  .replace(/{{redirect_uri}}/g, encodeURIComponent(link.redirect_uri))
                                   .replace(/{{via}}/g, encodeURIComponent(link.via));
 
                 return url;
@@ -104,8 +102,6 @@
                 title: $(this).prev('.socialLinksHidden').data('title') || '',
                 description: $(this).prev('.socialLinksHidden').data('description') || '',
                 media: $(this).prev('.socialLinksHidden').data('media') || '',
-				href: $(this).prev('.socialLinksHidden').data('href') || '',
-				redirect_uri: $(this).prev('.socialLinksHidden').data('redirect_uri') || '',
                 via: $(this).prev('.socialLinksHidden').data('via') || ''
             };
 
