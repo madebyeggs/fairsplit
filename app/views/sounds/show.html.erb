@@ -1,6 +1,10 @@
 <div class="canScroll4">
 	<div class="projectInfo">
-		<%= link_to '', sounds_path, :class => "artistCloseIcon" %>
+		<% if request.referer == "http://localhost:3000/announcements" || "http://www.fairsplitmusic.com/announcements" %>
+			<%= link_to '', announcements_path, :class => "artistCloseIcon" %>
+		<% else %>
+			<%= link_to '', sounds_path, :class => "artistCloseIcon" %>
+		<% end %>
 		<h1 class="projectName titleSize1"><%= @sound.title %></h1>
 		<div class="links">
 			<input id="twitter" type="hidden" 
