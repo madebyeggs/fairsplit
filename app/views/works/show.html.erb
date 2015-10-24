@@ -19,7 +19,9 @@
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>
-				<a data-service="facebook" data-action="post" href="https://www.facebook.com/dialog/share?app_id=1723612194533881&amp;display=popup&amp;href=https%3A%2F%2Fvimeo.com%2F<%= @work.vimeo %>%3Fref%3Dfb-share&amp;redirect_uri=<%= @currentUrl %>" target="popup" title="Share on Facebook" class="fa fa-facebook socialLinks" data-width="500" data-height="300" data-fatal-attraction="container:player|component:success_share|keyword:facebook"></a>
+			<input id="facebook" type="hidden" 			
+				value"https://www.facebook.com/dialog/share?app_id=1723612194533881&amp;display=popup&amp;href=https%3A%2F%2Fvimeo.com%2F<%= @work.vimeo %>%3Fref%3Dfb-share&amp;redirect_uri=http://www.fairsplitmusic.com/works">
+			<a href="javascript:void(0)" data-service="facebook" data-action="post" class="fa fa-facebook socialLinks"></a>
 			<input id="googleplus" type="hidden" 
 				data-url="<%= @currentUrl %>"
 				data-media="<%= @work.facebook_image %>"
