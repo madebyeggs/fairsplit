@@ -7,7 +7,6 @@
 		<% else %>
 			<%= link_to '', works_path, :class => "artistCloseIcon" %>
 		<% end %>
-		<%= request.referer %>
 		<h1 class="projectName titleSize1"><%= @work.client %> "<%= @work.title %>"</h1>
 		<h3 class="projectSubtitle fixerSpace descriptionSize1 upcase"><%= @work.type_of_work %></h3>
 		<h3 class="projectSubtitle spacer descriptionSize1 upcase italics"><em>MUSIC - </em><%= @work.artist_name %>: <%= @work.track_name %></h3>
@@ -59,20 +58,3 @@
 		<% if @work.description? %><p class="projectDetail"><%= simple_format @work.description, :class => "projectDetail descriptionSize1" %></p><% end %>
 	</div>
 </div>
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1723612194533881',
-      xfbml      : true,
-      version    : 'v2.4'
-    });
-  };
-
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
