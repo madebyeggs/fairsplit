@@ -65,17 +65,6 @@ function applicash(){
 	
 	$(".tips").tooltip();
 	
-	$(".fa-facebook").click(function(){
-		var URL = $(this).prev('#facebook').val();
-		FB.ui({
-		  method: 'share_open_graph',
-		  action_type: 'og.likes',
-		  action_properties: JSON.stringify({
-		      object:URL,
-		  })
-		}, function(response){});
-	});
-	
 	imageHover();
 	
 }
