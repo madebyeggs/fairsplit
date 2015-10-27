@@ -12,7 +12,7 @@
 			<input id="twitter" type="hidden" 
 				data-url="<%= @currentUrl %>"
 				data-media="<%= @artist.facebook_image %>"
-				data-description="<%= @artist.description %>" 
+				data-description="<%= truncate(@artist.description, :length => 50) %>" 
 				data-via="fairsplitmusic" 
 				class="socialLinksHidden"
 			>
