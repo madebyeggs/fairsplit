@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151027101950) do
+ActiveRecord::Schema.define(:version => 20151027130826) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -120,13 +120,13 @@ ActiveRecord::Schema.define(:version => 20151027101950) do
     t.string   "title"
     t.text     "description"
     t.string   "soundcloud"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.boolean  "latest",                    :default => false
+    t.boolean  "latest",                      :default => false
     t.string   "homepage_title"
     t.string   "square_image_file_name"
     t.string   "square_image_content_type"
@@ -143,8 +143,12 @@ ActiveRecord::Schema.define(:version => 20151027101950) do
     t.datetime "large_image_updated_at"
     t.string   "short_url"
     t.string   "short_id_url"
-    t.boolean  "homepage",                  :default => false
+    t.boolean  "homepage",                    :default => false
     t.string   "slug"
+    t.string   "facebook_image_file_name"
+    t.string   "facebook_image_content_type"
+    t.integer  "facebook_image_file_size"
+    t.datetime "facebook_image_updated_at"
   end
 
   add_index "sounds", ["slug"], :name => "index_sounds_on_slug"

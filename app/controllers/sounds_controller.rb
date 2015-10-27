@@ -14,23 +14,42 @@ class SoundsController < ApplicationController
     end
 
     def show
+      bring_in_models
       @sound = Sound.find(params[:id])
       if request.path != sound_path(@sound)
         redirect_to @sound, status: :moved_permanently
       end
-      set_meta_tags :og => {
-        :title    => "Fairsplit Music Playlist:" + " " + "#{@sound.title}",
-        :url      => "http://fairsplitmusic.com/artists/" + "#{@sound.slug}",
-        :image    => ""
+      set_meta_tags og: {
+        url: "#{@currentUrl}",
+        image: "#{@sound.facebook_image}",
+        title: "#{@sound.title}",
+        description: "#{@sound.description}",
+        type: "music.playlist"
       }
+      set_meta_tags twitter: {
+        card: "summary_large_image",
+        site: "@fairsplitmusic",
+        title: "#{@sound.title}",
+        description: "#{@sound.description}",
+        image: "#{@sound.facebook_image}"
+      }
+      render :show, flush: true
     end
 
     def index
+      bring_in_models
       @sounds = Sound.common_order
       set_meta_tags :og => {
-        :title    => 'Fairsplit Playlists',
-        :url      => 'http://fairsplitmusic.com/sounds',
+        :url => "#{@currentUrl}",
+        :title    => 'Fairsplit Music | Playlists',
         :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
+      }
+      set_meta_tags twitter: {
+        card: "summary_large_image",
+        site: "@fairsplitmusic",
+        title: "Fairsplit music's Playlists",
+        description: "Come on over and listen to some of our music",
+        image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
       }
     end
 

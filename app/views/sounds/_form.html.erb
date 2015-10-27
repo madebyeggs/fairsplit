@@ -33,6 +33,13 @@
 					<% else %>
 						<br/>
 					<% end %>
+					<%= f.label :Facebook_image_1200X630, class: "formLabel" %><br />
+					<%= f.file_field :facebook_image %>
+					<% if @sound.facebook_image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @sound.facebook_image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
 					<br/>
 				</div>
 				<div class="col-md-1"></div>

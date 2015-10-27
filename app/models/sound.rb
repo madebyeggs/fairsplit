@@ -1,6 +1,6 @@
 class Sound < ActiveRecord::Base
   attr_accessible :title, :description, :soundcloud, :image, :latest, :homepage_title, :square_image, :vimeo, :uid, 
-  :is_artist, :is_work, :is_sound, :is_announcement, :large_image, :short_id_url, :short_uid_url, :homepage
+  :is_artist, :is_work, :is_sound, :is_announcement, :large_image, :short_id_url, :short_uid_url, :homepage, :facebook_image
   
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
@@ -43,11 +43,30 @@ class Sound < ActiveRecord::Base
       :path => "sounds/large_images/:id_partition/:style/:filename"
     end
     
+    if Rails.env.development?
+      has_attached_file :facebook_image, FACEBOOK_PAPERCLIP_STORAGE_OPTS
+    else
+      has_attached_file :facebook_image,
+      styles: {main: '1200x630>'},
+      :convert_options => { :all => '-quality 92' },
+      :storage => :s3,
+      :s3_credentials => {
+      :access_key_id => ENV['S3_KEY'],
+      :secret_access_key => ENV['S3_SECRET'] },
+      :url => ':s3_alias_url',
+      :s3_host_alias => 'd2gtajjeesejrd.cloudfront.net', 
+      :bucket => 'fairsplit-images',
+      :path => "sounds/facebook_images/:id_partition/:style/:filename"
+    end
+    
     # Validate the attached image is image/jpg, image/png, etc
     validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
     
     # Validate the attached image is image/jpg, image/png, etc
     validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
+    
+    # Validate the attached image is image/jpg, image/png, etc
+    validates_attachment_content_type :facebook_image, :content_type => /\Aimage\/.*\Z/
     
     def create_unique_id
       self.is_artist = false
