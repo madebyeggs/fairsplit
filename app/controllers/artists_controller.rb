@@ -11,7 +11,6 @@ class ArtistsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
-      
     end
 
     def show
@@ -21,7 +20,6 @@ class ArtistsController < ApplicationController
       end
       set_meta_tags og: {
         image: "#{@artist.facebook_image}",
-        url: "#{@currentUrl}",
         title: "#{@artist.name}",
         description: "#{@artist.description}",
         type: "image"
@@ -40,7 +38,6 @@ class ArtistsController < ApplicationController
       @artists = Artist.common_order
       set_meta_tags :og => {
         :title    => 'Fairsplit Music | Artists',
-        :url      => 'http://fairsplitmusic.com/artists',
         :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
       }
       set_meta_tags twitter: {

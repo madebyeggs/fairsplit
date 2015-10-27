@@ -17,15 +17,15 @@
 			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>
 			<input id="facebook" type="hidden" 
 				data-url="<%= @currentUrl %>"
-				data-image="<%= @artist.facebook_image %>"
-				data-description="<%= @artist.description %>"
+				data-media="https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
+				data-description="<%= @artist.description %>."
 				data-title="<%= @artist.name %>"
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'facebook' }, :class => 'prettySocial fa fa-facebook socialLinks' %>
 			<input id="googleplus" type="hidden" 
 				data-url="<%= @currentUrl %>"
-				data-image="<%= @artist.facebook_image %>"
+				data-media="<%= @artist.facebook_image %>"
 				data-description="<%= @artist.description %>."
 				data-title="<%= @artist.name %>"
 				class="socialLinksHidden"

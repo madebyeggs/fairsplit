@@ -23,7 +23,6 @@ gem 'lazyload-rails'
 gem 'meta-tags'
 gem 'turbolinks'
 gem 'nprogress-rails'
-gem 'will_paginate', '~> 3.0.7'
 
 # Gems used only for assets and not required
 # in production environments by default.
