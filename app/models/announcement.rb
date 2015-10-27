@@ -60,11 +60,11 @@ class Announcement < ActiveRecord::Base
     end
     
     if Rails.env.development?
-      has_attached_file :facebook_image, LARGE_PAPERCLIP_STORAGE_OPTS
+      has_attached_file :facebook_image, FACEBOOK_PAPERCLIP_STORAGE_OPTS
     else
       has_attached_file :facebook_image,
-      :convert_options => { :all => '-quality 92' }, 
       styles: {main: '1200x630>'},
+      :convert_options => { :all => '-quality 92' },
       :storage => :s3,
       :s3_credentials => {
       :access_key_id => ENV['S3_KEY'],
