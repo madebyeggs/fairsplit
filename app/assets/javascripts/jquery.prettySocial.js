@@ -22,7 +22,7 @@
                     }
                 },
                 facebook: {
-                    url: 'https://www.facebook.com/sharer/sharer.php?u={{url}}&amp;title={{title}}',
+                    url: 'https://www.facebook.com/sharer/sharer.php?s=100&p[title]={{title}}&p[summary]={{description}}&p[url]={{url}}&p[images][0]={{media}}',
                     popup: {
                         width: 626,
                         height: 436

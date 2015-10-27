@@ -1,6 +1,5 @@
 <div class="canScroll4">	
 	<div class="projectInfo">
-		<%= @currentUrl %>
 		<% if request.referer == "http://localhost:3000/announcements" %>
 			<%= link_to '', announcements_path, :class => "artistCloseIcon" %>
 		<% elsif request.referer == "http://www.fairsplitmusic.com/announcements" %>
