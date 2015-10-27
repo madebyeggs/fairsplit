@@ -30,7 +30,7 @@ class AnnouncementsController < ApplicationController
         card: "summary_large_image",
         site: "@fairsplitmusic",
         title: "#{@announcement.title}",
-        description: "#{@announcement.description}",
+        description: "#{truncate(@announcement.description, :length => 50)}",
         image: "#{@announcement.facebook_image}"
       }
       render :show, flush: true

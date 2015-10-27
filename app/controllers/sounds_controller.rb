@@ -30,7 +30,7 @@ class SoundsController < ApplicationController
         card: "summary_large_image",
         site: "@fairsplitmusic",
         title: "#{@sound.title}",
-        description: "#{@sound.description}",
+        description: "#{truncate(@sound.description, :length => 50)}",
         image: "#{@sound.facebook_image}"
       }
       render :show, flush: true

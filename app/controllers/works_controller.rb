@@ -51,7 +51,7 @@ class WorksController < ApplicationController
         card: "summary_large_image",
         site: "@fairsplitmusic",
         title: "The latest work from Fairsplit music",
-        description: "",
+        description: "The home for all of Fairsplit's latest works",
         image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
       }
     end
