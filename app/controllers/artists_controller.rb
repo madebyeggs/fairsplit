@@ -14,6 +14,7 @@ class ArtistsController < ApplicationController
     end
 
     def show
+      bring_in_models
       @artist = Artist.find(params[:id])
       if request.path != artist_path(@artist)
         redirect_to @artist, status: :moved_permanently

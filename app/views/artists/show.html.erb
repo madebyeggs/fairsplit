@@ -1,6 +1,9 @@
 <div class="canScroll4">	
 	<div class="projectInfo">
-		<% if request.referer == "http://localhost:3000/announcements" || "http://www.fairsplitmusic.com/announcements" %>
+		<%= @currentUrl %>
+		<% if request.referer == "http://localhost:3000/announcements" %>
+			<%= link_to '', announcements_path, :class => "artistCloseIcon" %>
+		<% elsif request.referer == "http://www.fairsplitmusic.com/announcements" %>
 			<%= link_to '', announcements_path, :class => "artistCloseIcon" %>
 		<% else %>
 			<%= link_to '', artists_path, :class => "artistCloseIcon" %>
@@ -17,6 +20,9 @@
 			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>
 			<input id="facebook" type="hidden" 
 				data-url="<%= @currentUrl %>"
+				data-media="<%= @artist.facebook_image %>"
+				data-description="<%= @artist.description %>"
+				data-title="<%= @artist.name %>"
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'facebook' }, :class => 'prettySocial fa fa-facebook socialLinks' %>
