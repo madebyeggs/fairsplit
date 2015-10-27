@@ -14,23 +14,41 @@ class AnnouncementsController < ApplicationController
     end
 
     def show
+      bring_in_models
       @announcement = Announcement.find(params[:id])
       if request.path != announcement_path(@announcement)
         redirect_to @announcement, status: :moved_permanently
       end
-      set_meta_tags :og => {
-        :title    => "Fairsplit Music:" + " " + "#{@announcement.homepage_title}",
-        :url      => "http://fairsplitmusic.com/announcements/" + "#{@announcement.slug}",
-        :image    => ""
+      set_meta_tags og: {
+        url: "#{@currentUrl}",
+        image: "#{@announcement.facebook_image}",
+        title: "#{@announcement.title}",
+        description: "#{@announcement.description}",
+        type: "article"
       }
+      set_meta_tags twitter: {
+        card: "summary_large_image",
+        site: "@fairsplitmusic",
+        title: "#{@announcement.title}",
+        description: "#{@announcement.description}",
+        image: "#{@announcement.facebook_image}"
+      }
+      render :show, flush: true
     end
 
     def index
       bring_in_models
       set_meta_tags :og => {
-        :title    => "Fairsplit Music Latest News",
-        :url      => "http://fairsplitmusic.com/announcements",
-        :image    => ""
+        :url => "#{@currentUrl}",
+        :title    => 'Fairsplit Music | Announcements',
+        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
+      }
+      set_meta_tags twitter: {
+        card: "summary_large_image",
+        site: "@fairsplitmusic",
+        title: "Fairsplit music's latest news",
+        description: "The home for all of Fairsplit's latest news",
+        image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
       }
       respond_to do |format|
         format.html

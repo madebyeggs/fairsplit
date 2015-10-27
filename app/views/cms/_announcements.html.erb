@@ -10,15 +10,21 @@
 							<th>DESCRIPTION</th>
 							<th>VIMEO</th>
 							<th>S'CLOUD</th>
+							<th>FB IMAGE</th>
 							<th>POSTING URL</th>
 						</tr>
 						<tr><hr class="ruler"/></tr>
 						<% @announcements.each do |a| %>
 							<tr class="tableRow">
 								<td width="16%"><%= truncate(a.homepage_title, :length => 15) %></td>
-								<td width="41%"><%= truncate(a.description, :length => 40) %></td>
+								<td width="31%"><%= truncate(a.description, :length => 30) %></td>
 								<td width="9%"><%= a.vimeo %></td>
 								<td width="11%"><%= a.soundcloud %></td>
+								<% if a.facebook_image == '' || a.facebook_image.blank? %>
+									<td width="10%" class="topperButtons">NO</td>
+								<% else %>
+									<td width="10%" class="topperButtons">YES</td>
+								<% end %>
 								<td width="20%">
 									<a href="../announcements/<%= a.slug %>" target="_blank">
 										<%= a.short_id_url rescue nil %>	

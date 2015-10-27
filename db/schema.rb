@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151027130826) do
+ActiveRecord::Schema.define(:version => 20151027134318) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20151027130826) do
     t.string   "vimeo"
     t.text     "description"
     t.string   "soundcloud"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -47,6 +47,10 @@ ActiveRecord::Schema.define(:version => 20151027130826) do
     t.boolean  "latest"
     t.string   "slug"
     t.string   "short_id_url"
+    t.string   "facebook_image_file_name"
+    t.string   "facebook_image_content_type"
+    t.integer  "facebook_image_file_size"
+    t.datetime "facebook_image_updated_at"
   end
 
   add_index "announcements", ["slug"], :name => "index_announcements_on_slug"
