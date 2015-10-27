@@ -19,7 +19,7 @@ class ArtistsController < ApplicationController
         redirect_to @artist, status: :moved_permanently
       end
       set_meta_tags og: {
-        image: "https://s3.amazonaws.com/fairsplit-images/artists/facebook_images/000/000/008/main/birch-and-meadow-press-v2.jpg",
+        image: "#{@artist.facebook_image}",
         title: "#{@artist.name}",
         description: "#{@artist.description}",
         type: "image"

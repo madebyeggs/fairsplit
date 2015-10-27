@@ -17,8 +17,8 @@
 			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>
 			<input id="facebook" type="hidden" 
 				data-url="<%= @currentUrl %>"
-				data-media="https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
-				data-description="<%= @artist.description %>."
+				data-media="<%= @artist.facebook_image %>"
+				data-description="<%= @artist.description %>"
 				data-title="<%= @artist.name %>"
 				class="socialLinksHidden"
 			>
@@ -26,7 +26,7 @@
 			<input id="googleplus" type="hidden" 
 				data-url="<%= @currentUrl %>"
 				data-media="<%= @artist.facebook_image %>"
-				data-description="<%= @artist.description %>."
+				data-description="<%= @artist.description %>"
 				data-title="<%= @artist.name %>"
 				class="socialLinksHidden"
 			>
@@ -34,7 +34,7 @@
 			<input id="pinterest" type="hidden" 
 				data-url="<%= @currentUrl %>" 
 				data-media="<%= @artist.facebook_image %>"
-				data-description="<%= @artist.description %>."
+				data-description="<%= @artist.description %>"
 				data-title="<%= @artist.name %>"
 				class="socialLinksHidden"
 			>
