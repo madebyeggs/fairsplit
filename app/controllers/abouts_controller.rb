@@ -24,7 +24,7 @@ class AboutsController < ApplicationController
       bring_in_models
       set_meta_tags :og => {
         :title    => 'About Fairsplit Music',
-        :url      => 'http://fairsplitmusic.com/abouts',
+        :url      => "#{@currentUrl}",
         :description      => "#{simple_format @about.description}",
         :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
       }
