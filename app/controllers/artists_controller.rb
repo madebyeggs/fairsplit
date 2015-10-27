@@ -37,6 +37,7 @@ class ArtistsController < ApplicationController
     end
 
     def index
+      bring_in_models
       @artists = Artist.common_order
       set_meta_tags :og => {
         :url => "#{@currentUrl}",

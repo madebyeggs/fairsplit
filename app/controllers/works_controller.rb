@@ -40,6 +40,7 @@ class WorksController < ApplicationController
     end
 
     def index
+      bring_in_models
       @works = Work.common_order
       set_meta_tags :og => {
         :url => "#{@currentUrl}",
