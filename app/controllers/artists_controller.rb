@@ -19,6 +19,7 @@ class ArtistsController < ApplicationController
         redirect_to @artist, status: :moved_permanently
       end
       set_meta_tags og: {
+        url: "#{@currentUrl}",
         image: "#{@artist.facebook_image}",
         title: "#{@artist.name}",
         description: "#{@artist.description}",
@@ -37,6 +38,7 @@ class ArtistsController < ApplicationController
     def index
       @artists = Artist.common_order
       set_meta_tags :og => {
+        url: "#{@currentUrl}",
         :title    => 'Fairsplit Music | Artists',
         :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
       }

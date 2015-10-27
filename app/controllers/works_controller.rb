@@ -42,6 +42,7 @@ class WorksController < ApplicationController
     def index
       @works = Work.common_order
       set_meta_tags :og => {
+        url: "#{@currentUrl}",
         :title    => 'Fairsplit Music | Latest Work',
         :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
       }
