@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151011124105) do
+ActiveRecord::Schema.define(:version => 20151027101950) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(:version => 20151011124105) do
     t.string   "name"
     t.text     "description"
     t.string   "soundcloud"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(:version => 20151011124105) do
     t.string   "square_image_content_type"
     t.integer  "square_image_file_size"
     t.datetime "square_image_updated_at"
-    t.boolean  "latest",                    :default => false
+    t.boolean  "latest",                      :default => false
     t.string   "large_image_file_name"
     t.string   "large_image_content_type"
     t.integer  "large_image_file_size"
@@ -76,9 +76,13 @@ ActiveRecord::Schema.define(:version => 20151011124105) do
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
     t.string   "short_id_url"
-    t.boolean  "homepage",                  :default => false
+    t.boolean  "homepage",                    :default => false
     t.string   "homepage_title"
     t.string   "slug"
+    t.string   "facebook_image_file_name"
+    t.string   "facebook_image_content_type"
+    t.integer  "facebook_image_file_size"
+    t.datetime "facebook_image_updated_at"
   end
 
   create_table "clients", :force => true do |t|

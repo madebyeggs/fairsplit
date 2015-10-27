@@ -11,17 +11,23 @@
 							<th>LATEST</th>
 							<th>HOME</th>
 							<th>S'CLOUD</th>
+							<th>FB IMAGE</th>
 							<th>POSTING URL</th>
 						</tr>
 						<tr><hr class="ruler"/></tr>
 						<% @artists.each do |a| %>
 							<tr class="tableRow">
-								<td width="20%"><%= truncate(a.name, :length => 20) %></td>
-								<td width="31%"><%= truncate(a.description, :length => 28) %></td>
+								<td width="15%"><%= truncate(a.name, :length => 14) %></td>
+								<td width="25%"><%= truncate(a.description, :length => 25) %></td>
 								<td width="7%"><%= a.latest %></td>
 								<td width="7%"><% if a.homepage == true %><%= "true" %><% else %><%= "false" %><% end %></td>
-								<td width="11%"><%= a.soundcloud %></td>
-								<td width="22%">
+								<td width="13%"><%= a.soundcloud %></td>
+								<% if a.facebook_image == '' || a.facebook_image.blank? %>
+									<td width="10%" class="topperButtons">NO</td>
+								<% else %>
+									<td width="10%" class="topperButtons">YES</td>
+								<% end %>
+								<td width="20%">
 									<a href="../artists/<%= a.slug %>" target="_blank">
 										<%= a.short_id_url rescue nil %>	
 									</a>

@@ -13,7 +13,7 @@
 		<div class="links">
 			<input id="twitter" type="hidden" 
 				data-url="<%= @currentUrl %>"
-				data-image="<%= @work.facebook_image %>"
+				data-media="<%= @work.facebook_image %>"
 				data-description="New work from Fairsplit music..." 
 				data-via="fairsplitmusic" 
 				class="socialLinksHidden"
@@ -22,32 +22,36 @@
 			<input id="facebook" type="hidden" 
 				data-url="https://vimeo.com/<%= @work.vimeo %>"
 				data-image="<%= @work.facebook_image %>"
+				data-description="Fairsplit Music are deligthed to have recently worked with <%= @work.client %> on thier new project <%= @work.title %>."
+				data-title="<%= @work.client %> - <%= @work.title %>"
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'facebook' }, :class => 'prettySocial fa fa-facebook socialLinks' %>
 			<input id="googleplus" type="hidden" 
-				data-url="<%= @currentUrl %>"
-				data-media="<%= @work.facebook_image %>"
-				data-description="Fairsplit Music recently worked with <%= @work.client %> on thier new project <%= @work.title %>. Have a look at the results!"
+				data-url="https://vimeo.com/<%= @work.vimeo %>"
+				data-image="<%= @work.facebook_image %>"
+				data-description="Fairsplit Music are deligthed to have recently worked with <%= @work.client %> on thier new project <%= @work.title %>."
+				data-title="<%= @work.client %> - <%= @work.title %>"
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'googleplus' }, :class => 'prettySocial fa fa-google-plus socialLinks' %>
 			<input id="pinterest" type="hidden" 
-				data-url="<%= @currentUrl %>" 
-				data-description="Fairsplit Music recently worked with <%= @work.client %> on thier new project <%= @work.title %>. Have a look at the results!"
-				data-media="<%= @work.facebook_image %>" 
+				data-url="https://vimeo.com/<%= @work.vimeo %>" 
+				data-media="<%= @work.facebook_image %>"
+				data-description="Fairsplit Music are deligthed to have recently worked with <%= @work.client %> on thier new project <%= @work.title %>."
+				data-title="<%= @work.client %> - <%= @work.title %>"
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'pinterest' }, :class => 'prettySocial fa fa-pinterest socialLinks' %>
-			<input id="linkedin" type="hidden" 
-				data-url="<%= @currentUrl %>" 
-				data-title="Fairsplit Music project" 
-				data-description="Fairsplit Music recently worked with <%= @work.client %> on thier new project <%= @work.title %>. Have a look at the results!"
-				data-via="fairsplitmusic" 
-				data-media="<%= @work.facebook_image %>" 
-				class="socialLinksHidden"
-			>
-			<%= link_to "", "#", data: { type: 'linkedin' }, :class => 'prettySocial fa fa-linkedin socialLinks' %>
+			<!-- <input id="linkedin" type="hidden" 
+							data-url="<%#= @currentUrl %>" 
+							data-title="Fairsplit Music project" 
+							data-description="Fairsplit Music are deligthed to have recently worked with <%#= @work.client %> on thier new project <%#= @work.title %>."
+							data-via="fairsplitmusic" 
+							data-media="https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg" 
+							class="socialLinksHidden"
+						>
+						<%#= link_to "", "#", data: { type: 'linkedin' }, :class => 'prettySocial fa fa-linkedin socialLinks' %> -->
 		</div>
 		<hr class="projectSeparator" />
 		<div class="fitvids">

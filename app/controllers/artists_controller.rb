@@ -19,19 +19,36 @@ class ArtistsController < ApplicationController
       if request.path != artist_path(@artist)
         redirect_to @artist, status: :moved_permanently
       end
-      set_meta_tags :og => {
-        :title    => "Fairsplit Music Artist:" + " " + "#{@artist.name}",
-        :url      => "http://fairsplitmusic.com/artists/" + "#{@artist.slug}",
-        :image    => ""
+      set_meta_tags og: {
+        image: "#{@artist.facebook_image}",
+        url: "#{@currentUrl}",
+        title: "#{@artist.name}",
+        description: "#{@artist.description}",
+        type: "image"
       }
+      set_meta_tags twitter: {
+        card: "summary_large_image",
+        site: "@fairsplitmusic",
+        title: "#{@artist.name}",
+        description: "#{@artist.description}",
+        image: "#{@artist.facebook_image}"
+      }
+      render :show, flush: true
     end
 
     def index
       @artists = Artist.common_order
       set_meta_tags :og => {
-        :title    => 'Fairsplit Artists',
+        :title    => 'Fairsplit Music | Artists',
         :url      => 'http://fairsplitmusic.com/artists',
-        :image    => ''
+        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
+      }
+      set_meta_tags twitter: {
+        card: "summary_large_image",
+        site: "@fairsplitmusic",
+        title: "Fairsplit music's Artists",
+        description: "The home for all of Fairsplit's artists",
+        image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
       }
     end
     
