@@ -65,6 +65,7 @@ function applicash(){
 	
 	$(".tips").tooltip();
 	
+	
 	imageHover();
 	
 }

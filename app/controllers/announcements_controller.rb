@@ -22,15 +22,15 @@ class AnnouncementsController < ApplicationController
       set_meta_tags og: {
         url: "#{@currentUrl}",
         image: "#{@announcement.facebook_image}",
-        title: "#{@announcement.title}",
+        title: "#{@announcement.homepage_title}",
         description: "#{@announcement.description}",
         type: "article"
       }
       set_meta_tags twitter: {
         card: "summary_large_image",
         site: "@fairsplitmusic",
-        title: "#{@announcement.title}",
-        description: "#{truncate(@announcement.description, :length => 50)}",
+        title: "#{@announcement.homepage_title}",
+        description: "#{@announcement.description}",
         image: "#{@announcement.facebook_image}"
       }
       render :show, flush: true

@@ -23,7 +23,7 @@ class ArtistsController < ApplicationController
         url: "#{@currentUrl}",
         image: "#{@artist.facebook_image}",
         title: "#{@artist.name}",
-        description: "#{truncate(@artist.description, :length => 50)}",
+        description: "#{@artist.description}",
         type: "musician"
       }
       set_meta_tags twitter: {
