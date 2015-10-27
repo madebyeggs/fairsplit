@@ -22,7 +22,7 @@ class ArtistsController < ApplicationController
         image: "#{@artist.facebook_image}",
         title: "#{@artist.name}",
         description: "#{@artist.description}",
-        type: "image"
+        type: "musician"
       }
       set_meta_tags twitter: {
         card: "summary_large_image",
