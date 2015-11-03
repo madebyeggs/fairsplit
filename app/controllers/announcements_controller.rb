@@ -84,7 +84,7 @@ class AnnouncementsController < ApplicationController
     def create_links
       @announcement = Announcement.find(params[:id])
       bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
-		  id_url = bitly.shorten("http://www.fairsplitmusic.com/announcements/" + "#{@announcement.slug}")
+		  id_url = bitly.shorten("http://www.splitmusic.co.uk/announcements/" + "#{@announcement.slug}")
 		  short_id_url = id_url.short_url
 			if @announcement.short_id_url == '' || @announcement.short_id_url.blank?
 			  @announcement.short_id_url = short_id_url

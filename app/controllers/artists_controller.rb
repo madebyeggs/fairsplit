@@ -82,7 +82,7 @@ class ArtistsController < ApplicationController
     def create_links
       @artist = Artist.find(params[:id])
       bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
-		  id_url = bitly.shorten("http://www.fairsplitmusic.com/artists/" + "#{@artist.slug}")
+		  id_url = bitly.shorten("http://www.splitmusic.co.uk/artists/" + "#{@artist.slug}")
 		  short_id_url = id_url.short_url
       if @artist.short_id_url == '' || @artist.short_id_url.blank?
 			  @artist.short_id_url = short_id_url
