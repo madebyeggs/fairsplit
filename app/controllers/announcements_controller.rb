@@ -46,8 +46,8 @@ class AnnouncementsController < ApplicationController
       }
       set_meta_tags twitter: {
         card: "summary_large_image",
-        site: "@fairsplitmusic",
-        title: "Fairsplit music's latest news",
+        site: "@FairsplitMusic",
+        title: "21st Century Music Publishing | Unique Music to Picture",
         description: "21st Century Music Publishing | Unique Music to Picture",
         image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
       }
