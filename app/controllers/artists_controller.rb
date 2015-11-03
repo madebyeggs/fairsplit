@@ -41,14 +41,15 @@ class ArtistsController < ApplicationController
       @artists = Artist.common_order
       set_meta_tags :og => {
         :url => "#{@currentUrl}",
-        :title    => 'Fairsplit Music | Artists',
-        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
+        :title    => 'Split Music | Artists',
+        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg',
+        :description => '21st Century Music Publishing | Unique Music to Picture'
       }
       set_meta_tags twitter: {
         card: "summary_large_image",
         site: "@fairsplitmusic",
-        title: "Fairsplit music's Artists",
-        description: "The home for all of Fairsplit's artists",
+        title: "Split Music | Artists",
+        description: "21st Century Music Publishing | Unique Music to Picture",
         image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
       }
     end

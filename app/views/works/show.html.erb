@@ -14,15 +14,15 @@
 			<input id="twitter" type="hidden" 
 				data-url="<%= @currentUrl %>"
 				data-media="<%= @work.facebook_image %>"
-				data-description="New work from Fairsplit music..." 
-				data-via="fairsplitmusic" 
+				data-description="Split Music | NEW WORK: <%= @work.title %> for <%= @work.client %> featuring <%= @work.track_name %> by <%= @work.artist_name %>" 
+				data-via="FairsplitMusic" 
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>
 			<input id="facebook" type="hidden" 
 				data-url="https://vimeo.com/<%= @work.vimeo %>"
 				data-media="<%= @work.facebook_image %>"
-				data-description="Fairsplit Music are deligthed to have recently worked with <%= @work.client %> on thier new project <%= @work.title %>."
+				data-description="Split Music | NEW WORK: <%= @work.title %> for <%= @work.client %> featuring <%= @work.track_name %> by <%= @work.artist_name %>"
 				data-title="<%= @work.client %> - <%= @work.title %>"
 				class="socialLinksHidden"
 			>
@@ -30,7 +30,7 @@
 			<input id="googleplus" type="hidden" 
 				data-url="https://vimeo.com/<%= @work.vimeo %>"
 				data-media="<%= @work.facebook_image %>"
-				data-description="Fairsplit Music are deligthed to have recently worked with <%= @work.client %> on thier new project <%= @work.title %>."
+				data-description="Split Music | NEW WORK: <%= @work.title %> for <%= @work.client %> featuring <%= @work.track_name %> by <%= @work.artist_name %>"
 				data-title="<%= @work.client %> - <%= @work.title %>"
 				class="socialLinksHidden"
 			>
@@ -38,7 +38,7 @@
 			<input id="pinterest" type="hidden" 
 				data-url="https://vimeo.com/<%= @work.vimeo %>" 
 				data-media="<%= @work.facebook_image %>"
-				data-description="Fairsplit Music are deligthed to have recently worked with <%= @work.client %> on thier new project <%= @work.title %>."
+				data-description="Split Music | NEW WORK: <%= @work.title %> for <%= @work.client %> featuring <%= @work.track_name %> by <%= @work.artist_name %>"
 				data-title="<%= @work.client %> - <%= @work.title %>"
 				class="socialLinksHidden"
 			>

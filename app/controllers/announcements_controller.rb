@@ -40,14 +40,15 @@ class AnnouncementsController < ApplicationController
       bring_in_models
       set_meta_tags :og => {
         :url => "#{@currentUrl}",
-        :title    => 'Fairsplit Music | Announcements',
-        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
+        :title    => 'Split Music',
+        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg',
+        :description => "21st Century Music Publishing | Unique Music to Picture"
       }
       set_meta_tags twitter: {
         card: "summary_large_image",
         site: "@fairsplitmusic",
         title: "Fairsplit music's latest news",
-        description: "The home for all of Fairsplit's latest news",
+        description: "21st Century Music Publishing | Unique Music to Picture",
         image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
       }
       respond_to do |format|

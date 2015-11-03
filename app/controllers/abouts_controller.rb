@@ -23,7 +23,7 @@ class AboutsController < ApplicationController
       @about = About.first
       bring_in_models
       set_meta_tags :og => {
-        :title    => 'About Fairsplit Music',
+        :title    => 'Split Music | About',
         :url      => "#{@currentUrl}",
         :description      => "#{@about.description}",
         :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
@@ -31,8 +31,8 @@ class AboutsController < ApplicationController
       set_meta_tags twitter: {
         card: "summary_large_image",
         site: "@fairsplitmusic",
-        title: "About Fairsplit music",
-        description: "About Fairsplit music",
+        title: "Split Music | About",
+        description: "21st Century Music Publishing | Unique Music to Picture",
         image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
       }
     end

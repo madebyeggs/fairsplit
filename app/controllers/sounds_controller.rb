@@ -41,14 +41,15 @@ class SoundsController < ApplicationController
       @sounds = Sound.common_order
       set_meta_tags :og => {
         :url => "#{@currentUrl}",
-        :title    => 'Fairsplit Music | Playlists',
-        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
+        :title    => 'Split Music | Listen',
+        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg',
+        :description => '21st Century Music Publishing | Unique Music to Picture'
       }
       set_meta_tags twitter: {
         card: "summary_large_image",
-        site: "@fairsplitmusic",
-        title: "Fairsplit music's Playlists",
-        description: "Come on over and listen to some of our music",
+        site: "@FairsplitMusic",
+        title: "Split Music | Listen",
+        description: "21st Century Music Publishing | Unique Music to Picture",
         image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
       }
     end

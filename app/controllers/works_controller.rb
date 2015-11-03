@@ -22,15 +22,15 @@ class WorksController < ApplicationController
       set_meta_tags og: {
         image: "#{@work.facebook_image}",
         url: "https://player.vimeo.com/video/#{@work.vimeo}",
-        title: "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
-        description: "Fairsplit Music recently worked with #{@work.client} on thier new project #{@work.title}. Have a look at the results!",
+        title: "#{@work.client}" + " " + "#{@work.client}",
+        description: "Split Music | NEW WORK: #{@work.title}" + " " + "for" + " " + "#{@work.client}" + " " + "featuring" + " " + "#{@work.track_name}" + " " + "by" + " " + "#{@work.artist_name}",
         type: "video.other"
       }
       set_meta_tags twitter: {
         card: "player",
         site: "@fairsplitmusic",
-        title: "#{@work.client}" + " " + "|" + " " + "#{@work.title}",
-        description: "Fairsplit Music recently worked with #{@work.client} on thier new project '#{@work.title}'. Have a look at the results!",
+        title: "#{@work.client}" + " " + "#{@work.client}",
+        description: "Split Music | NEW WORK: #{@work.title}" + " " + "for" + " " + "#{@work.client}" + " " + "featuring" + " " + "#{@work.track_name}" + " " + "by" + " " + "#{@work.artist_name}",
         player: {
           _:      "https://player.vimeo.com/video/#{@work.vimeo}",
           stream: "https://player.vimeo.com/video/#{@work.vimeo}"
@@ -44,14 +44,15 @@ class WorksController < ApplicationController
       @works = Work.common_order
       set_meta_tags :og => {
         :url => "#{@currentUrl}",
-        :title    => 'Fairsplit Music | Latest Work',
-        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
+        :title    => 'Split Music | Work',
+        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg',
+        :description => "21st Century Music Publishing | Unique Music to Picture"
       }
       set_meta_tags twitter: {
         card: "summary_large_image",
         site: "@fairsplitmusic",
-        title: "The latest work from Fairsplit music",
-        description: "The home for all of Fairsplit's latest works",
+        title: "Split Music | Work",
+        description: "21st Century Music Publishing | Unique Music to Picture",
         image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
       }
     end
