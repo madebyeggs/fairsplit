@@ -43,6 +43,8 @@ fancybox_sprite.png: fancybox_sprite-34a7c426274a072a2fb3c1509b4eec39.png
 fancybox_sprite/index.png: fancybox_sprite-34a7c426274a072a2fb3c1509b4eec39.png
 fancybox_sprite@2x.png: fancybox_sprite@2x-e5ff24c147607612b500191584df2502.png
 fancybox_sprite@2x/index.png: fancybox_sprite@2x-e5ff24c147607612b500191584df2502.png
+favicon.ico: favicon-a6c2fbe46ef6f5382d6a9dcb2cdc95b5.ico
+favicon/index.ico: favicon-a6c2fbe46ef6f5382d6a9dcb2cdc95b5.ico
 favicon.png: favicon-2c7bed48063201ac741c59c1b2c1f7aa.png
 favicon/index.png: favicon-2c7bed48063201ac741c59c1b2c1f7aa.png
 home/homeImg1.jpg: home/homeImg1-7869dda535241bf408615238821a7830.jpg
