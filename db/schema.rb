@@ -46,7 +46,6 @@ ActiveRecord::Schema.define(:version => 20151106102903) do
     t.boolean  "is_announcement"
     t.boolean  "latest"
     t.string   "slug"
-    t.string   "short_id_url"
     t.string   "facebook_image_file_name"
     t.string   "facebook_image_content_type"
     t.integer  "facebook_image_file_size"
@@ -79,7 +78,6 @@ ActiveRecord::Schema.define(:version => 20151106102903) do
     t.boolean  "is_work"
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
-    t.string   "short_id_url"
     t.boolean  "homepage",                    :default => false
     t.string   "homepage_title"
     t.string   "slug"
@@ -148,7 +146,6 @@ ActiveRecord::Schema.define(:version => 20151106102903) do
     t.integer  "large_image_file_size"
     t.datetime "large_image_updated_at"
     t.string   "short_url"
-    t.string   "short_id_url"
     t.boolean  "homepage",                    :default => false
     t.string   "slug"
     t.string   "facebook_image_file_name"
@@ -201,7 +198,6 @@ ActiveRecord::Schema.define(:version => 20151106102903) do
     t.boolean  "is_work"
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
-    t.string   "short_id_url"
     t.boolean  "homepage",                    :default => false
     t.string   "homepage_title"
     t.string   "slug"
