@@ -23,7 +23,7 @@
 			<input id="facebook" type="hidden" 
 				data-url="https://vimeo.com/<%= @work.vimeo %>"
 				data-media="<%= @work.facebook_image %>"
-				data-description="Split Music | NEW WORK: <%= @work.title %> for <%= @work.client %> featuring <%= @work.track_name %> by <%= @work.artist_name + ' ' + @work.artist.fb_url %>"
+				data-description="Split Music | NEW WORK: <%= @work.title %> for <%= @work.client %> featuring <%= @work.track_name %> by <%= @work.artist_name + ' ' + @work.artist.fb_url rescue nil %>"
 				data-title="<%= @work.client %> - <%= @work.title %>"
 				class="socialLinksHidden"
 			>

@@ -21,7 +21,7 @@
 			<input id="facebook" type="hidden" 
 				data-url="<%= @currentUrl %>"
 				data-media="<%= @artist.facebook_image %>"
-				data-description="<%= @artist.description + ' ' + @artist.fb_url %>"
+				data-description="<%= @artist.description + ' ' + @artist.fb_url rescue nil %>"
 				data-title="<%= @artist.name %>"
 				class="socialLinksHidden"
 			>
