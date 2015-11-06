@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(:version => 20151106102903) do
     t.string   "facebook_image_content_type"
     t.integer  "facebook_image_file_size"
     t.datetime "facebook_image_updated_at"
+    t.string   "short_uid_url"
   end
 
   add_index "announcements", ["slug"], :name => "index_announcements_on_slug"
