@@ -13,7 +13,7 @@
 				data-url="<%= @currentUrl %>"
 				data-media="<%= @artist.facebook_image %>"
 				data-description="<%= truncate(@artist.description, :length => 50) %>" 
-				data-via="FairsplitMusic @<%= @artist.twitter_name %>"
+				data-via="FairsplitMusic <% if @artist.twitter_name.blank? || @artist.twitter_name == '' %><% else %>@<%= @artist.twitter_name %><% end %>"
 				data-related="FairsplitMusic"   
 				class="socialLinksHidden"
 			>
