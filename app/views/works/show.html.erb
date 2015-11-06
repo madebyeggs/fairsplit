@@ -1,9 +1,9 @@
 <div class="canScroll4">
 	<div class="projectInfo">
-		<% if request.referer == "http://localhost:3000/announcements" %>
-			<%= link_to '', announcements_path, :class => "artistCloseIcon" %>
-		<% elsif request.referer == "http://www.fairsplitmusic.com/announcements" %>
-			<%= link_to '', announcements_path, :class => "artistCloseIcon" %>
+		<% if request.referer == "http://localhost:3000/news" %>
+			<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
+		<% elsif request.referer == "http://www.fairsplitmusic.com/news" %>
+			<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
 		<% else %>
 			<%= link_to '', works_path, :class => "artistCloseIcon" %>
 		<% end %>
@@ -14,15 +14,16 @@
 			<input id="twitter" type="hidden" 
 				data-url="<%= @currentUrl %>"
 				data-media="<%= @work.facebook_image %>"
-				data-description="Split Music | NEW WORK: <%= @work.title %> for <%= @work.client %> featuring <%= @work.track_name %> by <%= @work.artist_name %>" 
-				data-via="FairsplitMusic" 
+				data-description="Split Music | NEW WORK: for <%= @work.client %>" 
+				data-via="FairsplitMusic @<%= @work.artist.twitter_name %>"
+				data-related="FairsplitMusic"   
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>
 			<input id="facebook" type="hidden" 
 				data-url="https://vimeo.com/<%= @work.vimeo %>"
 				data-media="<%= @work.facebook_image %>"
-				data-description="Split Music | NEW WORK: <%= @work.title %> for <%= @work.client %> featuring <%= @work.track_name %> by <%= @work.artist_name %>"
+				data-description="Split Music | NEW WORK: <%= @work.title %> for <%= @work.client %> featuring <%= @work.track_name %> by <%= @work.artist_name + ' ' + @work.artist.fb_url %>"
 				data-title="<%= @work.client %> - <%= @work.title %>"
 				class="socialLinksHidden"
 			>

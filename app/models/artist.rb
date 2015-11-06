@@ -1,6 +1,6 @@
 class Artist < ActiveRecord::Base
   attr_accessible :name, :description, :soundcloud, :image, :square_image, :latest, :large_image, :homepage_title, :vimeo, :uid, 
-  :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, :homepage, :facebook_image
+  :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, :homepage, :facebook_image, :fb_url, :twitter_name
   
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]

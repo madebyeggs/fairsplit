@@ -1,11 +1,11 @@
 <div class="canScroll4">
 	<div class="projectInfo">
-		<% if request.referer == "http://localhost:3000/announcements" %>
-			<%= link_to '', announcements_path, :class => "artistCloseIcon" %>
-		<% elsif request.referer == "http://www.fairsplitmusic.com/announcements" %>
-			<%= link_to '', announcements_path, :class => "artistCloseIcon" %>
+		<% if request.referer == "http://localhost:3000/news" %>
+			<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
+		<% elsif request.referer == "http://www.fairsplitmusic.com/news" %>
+			<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
 		<% else %>
-			<%= link_to '', sounds_path, :class => "artistCloseIcon" %>
+			<%= link_to '', playlists_path, :class => "artistCloseIcon" %>
 		<% end %>
 		<h1 class="projectName titleSize1"><%= @sound.title %></h1>
 		<div class="links">
@@ -14,6 +14,7 @@
 				data-media="<%= @sound.facebook_image %>"
 				data-description="<%= truncate(@sound.description, :length => 50) %>" 
 				data-via="fairsplitmusic" 
+				data-related="FairsplitMusic"  
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>

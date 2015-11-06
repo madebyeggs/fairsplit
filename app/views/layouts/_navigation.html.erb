@@ -8,12 +8,12 @@
 				<%= link_to 'CMS', cms_path %></div>
 			</div>
 		<% end %>
-		<div class="logo"><%= link_to(image_tag('newLogo.jpg'), announcements_path) %></div>
+		<div class="logo"><%= link_to(image_tag('newLogo.jpg'), news_index_path) %></div>
 		<div class="navigationWrapper">
 			<ul id="menu" class="navigation option-set clearfix">
 				<li class="navButton"><%= link_to 'Our Work', works_path, :class => "navigationButton" %></li>
 				<li class="navButton"><%= link_to 'Artists', artists_path, :class => "navigationButton" %></li>
-				<li class="navButton"><%= link_to 'Listen', sounds_path, :class => "navigationButton" %></li>
+				<li class="navButton"><%= link_to 'Listen', playlists_path, :class => "navigationButton" %></li>
 				<li class="navButton"><%= link_to 'About', abouts_path, :class => "navigationButton" %></li>
 				<li class="navButton"><%= link_to 'Contact', contacts_path, :class => "navigationButton" %></li>
 			</ul>

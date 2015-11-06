@@ -1,13 +1,14 @@
 <div class="canScroll5">
 	<div class="projectInfo">
-		<%= link_to '', announcements_path, :class => "artistCloseIcon" %>
+		<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
 		<h1 class="projectName titleSize1"><%= @announcement.homepage_title %></h1>
 		<div class="links">
 			<input id="twitter" type="hidden" 
 				data-url="<%= @currentUrl %>"
 				data-media="<%= @announcement.facebook_image %>"
 				data-description="<%= truncate(@announcement.description, :length => 50) %>" 
-				data-via="FairsplitMusic" 
+				data-via="FairsplitMusic"
+				data-related="FairsplitMusic"  
 				class="socialLinksHidden"
 			>
 			<%= link_to "", "#", data: { type: 'twitter' }, :class => 'prettySocial fa fa-twitter socialLinks' %>

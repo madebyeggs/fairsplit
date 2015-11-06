@@ -16,7 +16,7 @@ class AnnouncementsController < ApplicationController
     def show
       bring_in_models
       @announcement = Announcement.find(params[:id])
-      if request.path != announcement_path(@announcement)
+      if request.path != news_path(@announcement)
         redirect_to @announcement, status: :moved_permanently
       end
       set_meta_tags og: {
@@ -77,20 +77,6 @@ class AnnouncementsController < ApplicationController
       @announcement = Announcement.find(params[:id])
       @announcement.destroy
       respond_to do |format|
-        format.html { redirect_to cms_path }
-      end
-    end
-    
-    def create_links
-      @announcement = Announcement.find(params[:id])
-      bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
-		  id_url = bitly.shorten("http://www.splitmusic.co.uk/announcements/" + "#{@announcement.slug}")
-		  short_id_url = id_url.short_url
-			if @announcement.short_id_url == '' || @announcement.short_id_url.blank?
-			  @announcement.short_id_url = short_id_url
-			end
-		  @announcement.update_attributes(params[:announcement])
-			respond_to do |format|
         format.html { redirect_to cms_path }
       end
     end

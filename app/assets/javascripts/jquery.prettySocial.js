@@ -29,7 +29,7 @@
                     }
                 },
                 twitter: {
-                    url: 'https://twitter.com/share?url={{url}}&via={{via}}&text={{description}}',
+                    url: 'https://twitter.com/intent/tweet?url={{url}}&via={{via}}&related={{related}}&text={{description}}',
                     popup: {
                         width: 685,
                         height: 500
@@ -77,7 +77,8 @@
                                   .replace(/{{title}}/g, encodeURIComponent(link.title))
                                   .replace(/{{description}}/g, encodeURIComponent(link.description))
                                   .replace(/{{media}}/g, encodeURIComponent(link.media))
-                                  .replace(/{{via}}/g, encodeURIComponent(link.via));
+                                  .replace(/{{via}}/g, encodeURIComponent(link.via))
+								  .replace(/{{related}}/g, encodeURIComponent(link.related));
 
                 return url;
             };
@@ -102,7 +103,8 @@
                 title: $(this).prev('.socialLinksHidden').data('title') || '',
                 description: $(this).prev('.socialLinksHidden').data('description') || '',
                 media: $(this).prev('.socialLinksHidden').data('media') || '',
-                via: $(this).prev('.socialLinksHidden').data('via') || ''
+                via: $(this).prev('.socialLinksHidden').data('via') || '',
+				related: $(this).prev('.socialLinksHidden').data('related') || ''
             };
 
             // prepare link

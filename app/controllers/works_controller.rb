@@ -80,19 +80,5 @@ class WorksController < ApplicationController
         format.html { redirect_to cms_path }
       end
     end
-    
-    def create_links
-      @work = Work.find(params[:id])
-      bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
-		  id_url = bitly.shorten("http://www.splitmusic.co.uk/works/" + "#{@work.slug}")
-		  short_id_url = id_url.short_url
-      if @work.short_id_url == '' || @work.short_id_url.blank?
-			  @work.short_id_url = short_id_url
-			end
-		  @work.update_attributes(params[:work])
-			respond_to do |format|
-        format.html { redirect_to cms_path }
-      end
-    end
 
 end

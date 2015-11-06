@@ -5,6 +5,7 @@
 .formLabel {color:#d3d3d3;font-family:'Raleway';text-transform:uppercase;font-size:14px;letter-spacing:2px;}
 .formField {color:#d3d3d3!important;margin-bottom:15px;width:100%;height:35px!important;background-color:#202326;border:1px solid #202326;-moz-border-radius: 3px;border-radius: 3px;}
 .formArea {color:#d3d3d3!important;margin-bottom:15px;width:100%;height:350px!important;background-color:#202326;border:1px solid #202326;-moz-border-radius: 3px;border-radius: 3px;}
+.formAreaArtist {color:#d3d3d3!important;margin-bottom:15px;width:100%;height:250px!important;background-color:#202326;border:1px solid #202326;-moz-border-radius: 3px;border-radius: 3px;}
 .btn {text-transform:uppercase;font-weight:700;background-color:#668B8B;color:#d3d3d3;margin-top:10px;display:inline;float:left;margin-right:16px;}
 .btn:active {background-color:#668B8B;color:#d3d3d3;}
 .formMessage {color:#919191;}

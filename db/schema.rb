@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151027134318) do
+ActiveRecord::Schema.define(:version => 20151106102903) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -87,6 +87,8 @@ ActiveRecord::Schema.define(:version => 20151027134318) do
     t.string   "facebook_image_content_type"
     t.integer  "facebook_image_file_size"
     t.datetime "facebook_image_updated_at"
+    t.string   "fb_url"
+    t.string   "twitter_name"
   end
 
   create_table "clients", :force => true do |t|

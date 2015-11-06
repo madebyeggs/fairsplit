@@ -16,7 +16,7 @@ class SoundsController < ApplicationController
     def show
       bring_in_models
       @sound = Sound.find(params[:id])
-      if request.path != sound_path(@sound)
+      if request.path != playlist_path(@sound)
         redirect_to @sound, status: :moved_permanently
       end
       set_meta_tags og: {
@@ -74,20 +74,6 @@ class SoundsController < ApplicationController
       @sound = Sound.find(params[:id])
       @sound.destroy
       respond_to do |format|
-        format.html { redirect_to cms_path }
-      end
-    end
-    
-    def create_links
-      @sound = Sound.find(params[:id])
-      bitly = Bitly.new(ENV['BITLY_USER'],ENV['BITLY_PASS'])
-		  id_url = bitly.shorten("http://www.splitmusic.co.uk/sounds/" + "#{@sound.slug}")
-		  short_id_url = id_url.short_url
-      if @sound.short_id_url == '' || @sound.short_id_url.blank?
-			  @sound.short_id_url = short_id_url
-			end
-		  @sound.update_attributes(params[:sound])
-			respond_to do |format|
         format.html { redirect_to cms_path }
       end
     end

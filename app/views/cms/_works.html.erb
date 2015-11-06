@@ -14,14 +14,13 @@
 							<th>HOME</th>
 							<th>ARTIST</th>
 							<th>FB IMAGE</th>
-							<th>POSTING URL</th>
 						</tr>
 						<tr><hr class="ruler"/></tr>
 						<% @works.each do |work| %>
 						<% artist_name = work.artist.name rescue "NONE" %>
 							<tr class="tableRow">
-								<td width="20%"><%= truncate(work.title, :length => 17) %></td>
-								<td width="16%"><%= truncate(work.client, :length => 15) %></td>
+								<td width="27%"><%= truncate(work.title, :length => 27) %></td>
+								<td width="22%"><%= truncate(work.client, :length => 22) %></td>
 								<% if work.description.blank? || work.description == '' %>
 									<td width="6%">NO</td>
 								<% else %>
@@ -35,18 +34,6 @@
 									<td width="10%" class="topperButtons">NO</td>
 								<% else %>
 									<td width="10%" class="topperButtons">YES</td>
-								<% end %>
-								<td width="13%">
-									<a href="../works/<%= work.slug %>" target="_blank">
-										<%= work.short_id_url rescue nil %>	
-									</a>
-								</td>
-								<% if work.short_id_url == '' || work.short_id_url.blank? %>
-									<td width="1%" class="topperButtons">
-										<%= link_to 'L', get_work_links_path(:id => work.id), :title => "Generate sharing link for #{work.title}", :class => "btn btn2 tips" %>
-									</td>
-								<% else %>
-									<td width="1%" class="topperButtons"></td>
 								<% end %>
 								<td width="1%" class="topperButtons"></td>
 								<td width="1%" class="topperButtons"><%= link_to "E", edit_work_path(work), :title => "Edit #{work.title}", :class => "btn btn2 tips" %></td>
