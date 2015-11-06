@@ -86,6 +86,7 @@ ActiveRecord::Schema.define(:version => 20151106102903) do
     t.string   "facebook_image_content_type"
     t.integer  "facebook_image_file_size"
     t.datetime "facebook_image_updated_at"
+    t.string   "short_uid_url"
     t.string   "fb_url"
     t.string   "twitter_name"
   end
@@ -153,6 +154,7 @@ ActiveRecord::Schema.define(:version => 20151106102903) do
     t.string   "facebook_image_content_type"
     t.integer  "facebook_image_file_size"
     t.datetime "facebook_image_updated_at"
+    t.string   "short_uid_url"
   end
 
   add_index "sounds", ["slug"], :name => "index_sounds_on_slug"
@@ -206,6 +208,7 @@ ActiveRecord::Schema.define(:version => 20151106102903) do
     t.string   "facebook_image_content_type"
     t.integer  "facebook_image_file_size"
     t.datetime "facebook_image_updated_at"
+    t.string   "short_uid_url"
   end
 
   add_index "works", ["slug"], :name => "index_works_on_slug"
