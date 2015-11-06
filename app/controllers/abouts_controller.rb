@@ -26,14 +26,14 @@ class AboutsController < ApplicationController
         :title    => 'Split Music | About',
         :url      => "#{@currentUrl}",
         :description      => "#{@about.description}",
-        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
+        :image    => "#{@social.abouts_image}"
       }
       set_meta_tags twitter: {
         card: "summary_large_image",
         site: "@fairsplitmusic",
         title: "Split Music | About",
         description: "21st Century Music Publishing | Unique Music to Picture",
-        image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
+        image: "#{@social.abouts_image}"
       }
     end
 

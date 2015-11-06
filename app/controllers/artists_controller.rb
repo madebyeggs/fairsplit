@@ -42,7 +42,7 @@ class ArtistsController < ApplicationController
       set_meta_tags :og => {
         :url => "#{@currentUrl}",
         :title    => 'Split Music | Artists',
-        :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg',
+        :image    => "#{@social.artists_image}",
         :description => '21st Century Music Publishing | Unique Music to Picture'
       }
       set_meta_tags twitter: {
@@ -50,7 +50,7 @@ class ArtistsController < ApplicationController
         site: "@fairsplitmusic",
         title: "Split Music | Artists",
         description: "21st Century Music Publishing | Unique Music to Picture",
-        image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
+        image: "#{@social.artists_image}"
       }
     end
     

@@ -7,14 +7,14 @@ class ContactsController < ApplicationController
       :title    => 'Split Music | Contact',
       :url      => "#{@currentUrl}",
       :description      => "Split Music | London HQ",
-      :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
+      :image    => "#{@social.contacts_image}"
     }
     set_meta_tags twitter: {
       card: "summary_large_image",
       site: "@fairsplitmusic",
       title: "Split Music | Contact",
       description: "Split Music | London HQ",
-      image: "https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg"
+      image: "#{@social.contacts_image}"
     }
   end
   

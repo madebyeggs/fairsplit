@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151106102903) do
+ActiveRecord::Schema.define(:version => 20151106155253) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -120,6 +120,36 @@ ActiveRecord::Schema.define(:version => 20151106102903) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+  end
+
+  create_table "socials", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "announcements_image_file_name"
+    t.string   "announcements_image_content_type"
+    t.integer  "announcements_image_file_size"
+    t.datetime "announcements_image_updated_at"
+    t.string   "works_image_file_name"
+    t.string   "works_image_content_type"
+    t.integer  "works_image_file_size"
+    t.datetime "works_image_updated_at"
+    t.string   "artists_image_file_name"
+    t.string   "artists_image_content_type"
+    t.integer  "artists_image_file_size"
+    t.datetime "artists_image_updated_at"
+    t.string   "playlists_image_file_name"
+    t.string   "playlists_image_content_type"
+    t.integer  "playlists_image_file_size"
+    t.datetime "playlists_image_updated_at"
+    t.string   "abouts_image_file_name"
+    t.string   "abouts_image_content_type"
+    t.integer  "abouts_image_file_size"
+    t.datetime "abouts_image_updated_at"
+    t.string   "contacts_image_file_name"
+    t.string   "contacts_image_content_type"
+    t.integer  "contacts_image_file_size"
+    t.datetime "contacts_image_updated_at"
   end
 
   create_table "sounds", :force => true do |t|

@@ -15,6 +15,8 @@ class ApplicationController < ActionController::Base
     @clients = Client.common_order
     @testing = "sofia@floatpr.com"
     @currentUrl = request.env['REQUEST_URI'].to_s
+    @socials = Social.all
+    @social = Social.first
   end
   
 end

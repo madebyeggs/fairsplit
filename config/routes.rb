@@ -11,6 +11,7 @@ V1::Application.routes.draw do
   resources :playlists, :controller=>"sounds"
   resources :sounds
   resources :clients
+  resources :socials
   
   get "/get_announcement_links" => "announcements#create_links", :as => :get_announcement_links
   get "/get_work_links" => "works#create_links", :as => :get_work_links
