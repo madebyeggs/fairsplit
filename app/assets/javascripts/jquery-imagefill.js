@@ -6,7 +6,6 @@
  *
  * Dual MIT & GPL license
  *
- * Project Page: http://johnpolacek.github.io/imagefill.js
  *
  * The jQuery plugin for making images fill their containers (and be centered)
  *

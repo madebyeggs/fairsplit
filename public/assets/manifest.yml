@@ -59,8 +59,10 @@ marker.png: marker-7567c487dabfbd7d0b779234bfeae7b9.png
 marker/index.png: marker-7567c487dabfbd7d0b779234bfeae7b9.png
 sony.png: sony-347c3a751747c315978b2a5bb157da05.png
 sony/index.png: sony-347c3a751747c315978b2a5bb157da05.png
-splitPic.jpg: splitPic-b26b0d1f8e30702959247a1159757de9.jpg
-splitPic/index.jpg: splitPic-b26b0d1f8e30702959247a1159757de9.jpg
+splitPic.png: splitPic-feb78c033bdc0d4211e0e1d34d307b70.png
+splitPic/index.png: splitPic-feb78c033bdc0d4211e0e1d34d307b70.png
+splitPic@2x.png: splitPic@2x-feb78c033bdc0d4211e0e1d34d307b70.png
+splitPic@2x/index.png: splitPic@2x-feb78c033bdc0d4211e0e1d34d307b70.png
 status2.gif: status2-b42f5aafdc0108f8059883448271d7cb.gif
 status2/index.gif: status2-b42f5aafdc0108f8059883448271d7cb.gif
 application.js: application-8d08af94f67dc8ef0c6be3d2fbe7ff47.js
