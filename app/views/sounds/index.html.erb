@@ -3,11 +3,7 @@
 		<div class="element">
 			<div class="images">
 				<div class="playlist<%= s.id %>">
-					<% if s.latest?  %>
-						<%= image_tag(s.large_image, :alt => "#{s.title}") %>
-					<% else %>
-						<%= image_tag(s.image, :alt => "#{s.title}") %>
-					<% end %>
+					<%= image_tag(s.image, :alt => "#{s.title}") %>
 				</div>
 				<div class="muteEffects">
 	    			<section class="hidden-infos">

@@ -1,4 +1,5 @@
-.col-md-8 { padding-right:0!important;}
+.col-md-8, .col-md-9 { padding-right:0!important;}
+.col-md-1 {margin:-40px 0px 0px -15px!important;}
 .padder {padding-top:20px;}
 .padder2 {margin-top:70px;}
 .padder3 {margin-top:40px;}
@@ -50,8 +51,8 @@
 .borderTop {padding-top:16px!important;}
 
 @media (max-width: 992px) {
-	.col-md-8, .col-md-4 {padding:0!important;}
-	.col-md-8 {padding-bottom:50px!important;}
+	.col-md-8, .col-md-9, .col-md-4 {padding:0!important;}
+	.col-md-8, .col-md-9 {padding-bottom:50px!important;}
 	.fa {max-width:80%!important;}
 	.padder2 {width:90%;padding:0 5% 8px 5%;font-size:29px;margin-top:-30px;}
 	.right {text-align:right!important;}

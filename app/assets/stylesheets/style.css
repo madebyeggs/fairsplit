@@ -55,14 +55,15 @@ a {
 .leftSide, .rightSide {background-color:#000000;}
 .leftSide {width:100%;padding-top:120px;}
 .rightSide {border-left:1px solid #3e3e3e;}
-.logo {width:200px;margin:0 auto;}
-.logo img {max-width:100%;margin:0 0 0 -28px;}
+.logo {width:70%;margin:0 auto;}
+.logo img {max-width:100%;}
 ul.navigation {list-style-type: none;}
-.navigationWrapper {width:250px;margin:80px auto!important;}
+.navigationWrapper {margin:50px 15%!important;}
 .navigation a, .client {text-transform:uppercase;font-size:1.1em!important;color:#ffffff;font-family:'Raleway'}
 li.navButton {margin:8px 0px 8px 0px!important;}
-.social {width:250px;margin:100px auto 0px auto;}
+.social {margin:100px 15% 0px 15%;}
 .centerSocial {margin:0 auto;}
+.icon {margin-top:15px!important;}
 .client {position:absolute;margin:240px 0px 0px 80%;font-family:'Raleway'}
 
 .artistText {color:#ffffff;display:inline;width:100%;height:100%;}

@@ -3,11 +3,7 @@
 		<div class="element">
 			<div class="images">
 				<div class="">
-					<% if w.latest?  %>
-						<%= image_tag(w.large_image, :alt => "#{w.client} - #{w.title}") %>
-					<% else %>
-						<%= image_tag(w.image, :alt => "#{w.client} - #{w.title}") %>
-					<% end %>
+					<%= image_tag(w.image, :alt => "#{w.client} - #{w.title}") %>
 				</div>
 				<div class="muteEffects">
 	    			<section class="hidden-infos"> 
