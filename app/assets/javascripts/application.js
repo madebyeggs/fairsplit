@@ -77,6 +77,8 @@ function applicash(){
 	
 	imageHover();
 	
+	$(".subtitle-wrap").show();
+	
 }
 
 function masonry(){
