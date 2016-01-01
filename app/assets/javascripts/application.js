@@ -30,11 +30,15 @@
 
 
 $(document).on('page:load', function() {
-	applicash();
+	applicash(function(){
+		masonry();
+	});
 });
 
 $(document).ready(function() {
-	applicash();
+	applicash(function(){
+		masonry();
+	});
 });
 
 function applicash(){
@@ -73,10 +77,13 @@ function applicash(){
 	
 	imageHover();
 	
+}
+
+function masonry(){
 	$('#masonry-container').masonry({
 		itemSelector: '.box',
 	});
-	
+	console.log('masonry loaded');
 }
 
 $(function() {
