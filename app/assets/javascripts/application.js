@@ -27,6 +27,9 @@
 //= require masonry/jquery.imagesloaded.min
 //= require masonry/jquery.infinitescroll.min
 //= require masonry/modernizr-transitions
+//= require jquery.fittext
+//= require jquery.lettering
+//= require jquery.textillate
 
 
 $(document).on('page:load', function() {
@@ -122,6 +125,8 @@ $(function() {
 // })
 
 function imageHover(){
+	
+	
 	jQuery('.title-wrap, .subtitle-wrap, .paragraph-wrap').not('.flexslider .title-wrap, .flexslider .subtitle-wrap, .paragraph-wrap').each(function() {
     	jQuery(this).data('wrapping', jQuery(this).width());
     	jQuery(this).css('width', 0);
@@ -134,12 +139,14 @@ function imageHover(){
      		}, 150);
   		});
     	jQuery(this).find('.subtitle-wrap').stop().each(function() {
-      		jQuery(this).delay(250).animate({
+			jQuery(this).animate({
         		width: jQuery(this).data('wrapping')
-      		}, 150);
+     		}, 0, function(){
+		      	jQuery(this).find('.subtitle').textillate({ in: { effect: 'fadeInLeft', delayScale: .01, delay: 100 } });
+			});
     	});
 		jQuery(this).find('.paragraoh-wrap').stop().each(function() {
-      		jQuery(this).delay(250).animate({
+      		jQuery(this).delay(150).animate({
         		width: jQuery(this).data('wrapping')
       		}, 150);
     	});
@@ -149,7 +156,7 @@ function imageHover(){
     	jQuery(this).find('.title-wrap').stop().each(function() {
       		jQuery(this).animate({
         		width: 0
-      		}, 0);
+				}, 0);
   		});
     	jQuery(this).find('.subtitle-wrap').stop().each(function() {
       		jQuery(this).animate({
@@ -167,31 +174,31 @@ function imageHover(){
   	jQuery('.element').hover(function() {
 		jQuery(this).find('.caption, .overlay2').stop().animate({
 			"opacity": "1"
-		}, 150 );
+		}, 500 );
 		}, function() {
 		jQuery(this).find('.caption, .overlay2').stop().animate({
 			"opacity": "0"
-		}, 150 ); 
+		}, 500 ); 
 	});
 
 	jQuery('.element').hover(function() {
 		 jQuery(this).find('.caption, .overlay3').stop().animate({
 			"opacity": "1"
-		}, 150 );
+		}, 500 );
 		}, function() {
 		jQuery(this).find('.caption, .overlay3').stop().animate({
 			"opacity": "0"
-		}, 150 );
+		}, 500 );
    	});
 
 	jQuery('.element').hover(function() {
 		 jQuery(this).find('.caption, .overlay4').stop().animate({
 			"opacity": "1"
-		}, 150 );
+		}, 500 );
 		}, function() {
 		jQuery(this).find('.caption, .overlay4').stop().animate({
 			"opacity": "0"
-		}, 150 );
+		}, 500 );
    	});
   
   	jQuery('.element').hover(function() {
