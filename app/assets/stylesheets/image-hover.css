@@ -1,5 +1,6 @@
 /* =Image Hover
 --------------------------------------------------------------------------------------------------------*/
+
 .element {position:relative; /*background:#e9e9e9*/ }
 .overflow, .element {overflow:hidden; }
 .images img, .images2 img {width:100%; display: block; position:relative; max-width: 100% !important; z-index:0 }
