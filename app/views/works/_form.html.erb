@@ -5,7 +5,7 @@
 <div class="col-md-12">
 	<div class="col-md-8 col-sm-offset-2 topper">
 
-		<h1 class="formHeader">Add/edit your work's content below</h1>
+		<h1 class="formHeader">Add/edit your placement's content below</h1>
 		<hr class="projectSeparator" />
 	
 		<div class="formWrapper">	
@@ -57,7 +57,7 @@
 					<% end %>
 					<%= link_to "Cancel", cms_path, :class => "btn" %>
 					<% if @user.email != @testing %>
-						<%= f.submit class: "btn", data: {disable_with: "Submitting..."} %>
+						<%= f.submit "update placement", class: "btn", data: {disable_with: "Submitting..."} %>
 					<% end %>
 				</div>
 			<% end %>
