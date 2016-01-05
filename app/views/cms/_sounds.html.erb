@@ -30,7 +30,7 @@
 								<% else %>
 									<td width="10%" class="topperButtons">YES</td>
 								<% end %>
-								<td width="1%" class="topperButtons"><%= link_to "E", edit_sound_path(s), :title => "Edit #{s.title} playlist", :class => "btn btn2 tips" %></td>
+								<td width="1%" class="topperButtons"><%= link_to "E", edit_release_path(s), :title => "Edit release - #{s.title}", :class => "btn btn2 tips" %></td>
 								<% if @user.email != @testing %>
 									<td width="1%" class="topperButtons"><%= button_to "X", s, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>
 								<% end %>
@@ -51,5 +51,5 @@
 	</div>
 	<h6>
 	<input type="hidden" value="works" class="modal-model-type">
-	<h6><%= link_to 'Add new playlist', new_sound_path, :class => "darkButton2" %></h6>
+	<h6><%= link_to 'Add new playlist', new_release_path, :class => "darkButton2" %></h6>
 </div>
