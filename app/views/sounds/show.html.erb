@@ -1,11 +1,13 @@
 <div class="canScroll4">
 	<div class="projectInfo">
-		<% if request.referer == "http://localhost:3000/news" %>
-			<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
-		<% elsif request.referer == "http://www.fairsplitmusic.com/news" %>
-			<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
-		<% else %>
+		<% if request.referer == "http://localhost:3000/placements" %>
 			<%= link_to '', releases_path, :class => "artistCloseIcon" %>
+		<% elsif request.referer == "https://powerful-basin-1782.herokuapp.com/placements" %>
+			<%= link_to '', releases_path, :class => "artistCloseIcon" %>
+		<% elsif request.referer == "http://splitmusic.co.uk/placements" %>
+			<%= link_to '', releases_path, :class => "artistCloseIcon" %>
+		<% else %>
+			<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
 		<% end %>
 		<h1 class="projectName titleSize1"><%= @sound.title %></h1>
 		<div class="links">
