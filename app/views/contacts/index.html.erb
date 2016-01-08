@@ -16,7 +16,9 @@
 				<div class="col-xs-12">
 					<p class="descriptionSize1">
 						<br/>
-							licensing@splitmusic.co.uk
+							<% @abouts.each do |a| %>
+								<%= a.email %>
+							<% end %>
 						<br/>
 					</p>
 				</div>

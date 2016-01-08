@@ -1,11 +1,7 @@
 <div class="element">
 	<div class="images">
 		<div class="imageContainer">
-			<% if sound_counter == 0 %>
-				<%= image_tag sound.large_image, alt: "#{sound.title}" %>
-			<% else %>
-				<%= image_tag sound.image, alt: "#{sound.title}" %>
-			<% end %>
+			<%= image_tag sound.image, alt: "#{sound.title}" %>
 		</div>
 
 		<div class="muteEffects">

@@ -1,11 +1,7 @@
 <div class="element">
 	<div class="images">
 		<div class="imageContainer">
-			<% if work_counter == 0 %>
-				<%= image_tag work.large_image, alt: "#{work.title} - #{work.client}" %>
-			<% else %>
-				<%= image_tag work.image, alt: "#{work.title} - #{work.client}" %>
-			<% end %>
+			<%= image_tag work.image, alt: "#{work.title} - #{work.client}" %>
 		</div>
 
 		<div class="muteEffects">

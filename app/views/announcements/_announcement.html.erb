@@ -1,11 +1,7 @@
 <div class="element">
 	<div class="images">
 		<div class="imageContainer">
-			<% if announcement_counter == 0 %>
-				<%= image_tag announcement.large_image, alt: "#{announcement.homepage_title}" %>
-			<% else %>
-				<%= image_tag announcement.image, alt: "#{announcement.homepage_title}" %>
-			<% end %>
+			<%= image_tag announcement.image, alt: "#{announcement.homepage_title}" %>
 		</div>
 
 		<div class="muteEffects">

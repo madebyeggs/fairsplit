@@ -1,17 +1,17 @@
 <div class="cmsWrapper">
 	<div class="releases">
-		<div class="divHeader">About copy</div>
+		<div class="divHeader">Contact details</div>
 		<div class="tableWrapper">
 			<div class="tableContent">
 				<% if @abouts.count > 0 %>
 					<table width="100%">
 						<tr class="tableHeader">
-							<th>DESCRIPTION</th>
+							<th>CONTACT EMAIL ADDRESS</th>
 						</tr>
 						<tr><hr class="ruler"/></tr>
 						<% @abouts.each do |a| %>
 							<tr class="tableRow">
-								<td width="97%"><%= truncate(a.description, :length => 120) %></td>
+								<td width="97%"><%= a.email %></td>
 								<td width="2%" class="topperButtons"><%= link_to "edit", edit_about_path(a), :title => "Edit about copy", :class => "btn btn2 tips" %></td>
 								<% if @user.email != @testing %>
 									<td width="1%" class="topperButtons"><%= button_to "X", a, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>
@@ -23,7 +23,7 @@
 					<table width="100%">
 						<tr class="tableRow empty">
 							<td>
-								<em>YOU HAVE NO ABOUT COPY YET... ADD SOME BELOW ?!</em>
+								<em>YOU HAVE NO CONTACT DETAILS IN PLACE YET... ADD SOME BELOW ?!</em>
 							</td>
 						</tr>
 					</table>

@@ -1,5 +1,5 @@
 <div class="col-md-12">
-	<div class="logo2"><%= link_to(image_tag('splitPic.png'), cms_path) %></div>
+	<div class="logo2"><%= link_to(image_tag('newLogo.jpg'), cms_path) %></div>
 </div>
 
 <div class="col-md-12">
@@ -11,6 +11,8 @@
 		<div class="formWrapper">	
 			<%= form_for(@about) do |f| %>
 				<div class="col-md-6">
+					<%= f.label :email_address, class: "formLabel" %>
+	    			<%= f.text_field :email, class: 'formField' %>
 					<%= f.label :title, class: "formLabel" %>
 	    			<%= f.text_field :title, class: 'formField' %>
 					<%= f.label :description, class: "formLabel" %>

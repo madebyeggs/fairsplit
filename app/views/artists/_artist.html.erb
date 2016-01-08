@@ -1,11 +1,7 @@
 <div class="element">
 	<div class="images">
 		<div class="imageContainer">
-			<% if artist_counter == 0 %>
-				<%= image_tag artist.large_image, alt: "#{artist.name}" %>	
-			<% else %>
-				<%= image_tag artist.image, alt: "#{artist.name}" %>	
-			<% end %>
+			<%= image_tag artist.image, alt: "#{artist.name}" %>
 		</div>
 
 		<div class="muteEffects">

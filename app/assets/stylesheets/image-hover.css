@@ -42,6 +42,7 @@
 .subtitle-wrap2 p {font-size:12px; font-weight:400;font-family:'Raleway';font-style:none;margin-top:12px;text-transform:none;overflow:visible;white-space:normal;}
 .subtitle-wrap2 {margin-top:-20px!important;width:90%;}
 .middleFixer {text-transform:uppercase!important;margin-top:50%!important;}
+.nowrap h3 {overflow:visible!important;white-space:nowrap!important;}
 
 .inline2 {background-color:#000000;color:#ffffff;display:none;width:60%;margin:0 auto;}
 .inlineContent {font-family:'Raleway';font-size:25px;margin:15px;}
