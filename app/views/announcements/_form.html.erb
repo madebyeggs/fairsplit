@@ -22,28 +22,21 @@
 	    			<%= f.text_field :vimeo, class: 'formField' %>
 					<%= f.label :soundcloud_identifier_eg_59219255, class: "formLabel" %>
 	    			<%= f.text_field :soundcloud, class: 'formField' %>
-					<%= f.label :square_image_if_no_video_crop_to_300X300_before_uploading, class: "formLabel" %><br />
+					<%= f.label :square_image_if_no_video_in_post_300X300, class: "formLabel" %><br />
 					<%= f.file_field :square_image %>
 					<% if @announcement.square_image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @announcement.square_image_file_name %>" }</p><br/>
 					<% else %>
 						<br/>
 					<% end %>
-					<%= f.label :image_crop_to_710X210_before_uploading, class: "formLabel" %><br />
+					<%= f.label :homepage_image_710X210, class: "formLabel" %><br />
 					<%= f.file_field :image %>
 					<% if @announcement.image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @announcement.image_file_name %>" }</p><br/>
 					<% else %>
 						<br/>
 					<% end %>
-					<%= f.label :large_image_crop_to_710X400_before_uploading, class: "formLabel" %><br />
-					<%= f.file_field :large_image %>
-					<% if @announcement.large_image.exists? %>
-						<p class="existingImageName">{ Current Image: "<%= @announcement.large_image_file_name %>" }</p><br/>
-					<% else %>
-						<br/>
-					<% end %>
-					<%= f.label :Facebook_image_1200X630, class: "formLabel" %><br />
+					<%= f.label :facebook_image_1200X630, class: "formLabel" %><br />
 					<%= f.file_field :facebook_image %>
 					<% if @announcement.facebook_image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @announcement.facebook_image_file_name %>" }</p><br/>

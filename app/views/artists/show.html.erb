@@ -1,11 +1,13 @@
 <div class="canScroll4">	
 	<div class="projectInfo">
-		<% if request.referer == "http://localhost:3000/news" %>
-			<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
-		<% elsif request.referer == "http://www.fairsplitmusic.com/news" %>
-			<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
-		<% else %>
+		<% if request.referer == "http://localhost:3000/artists" %>
 			<%= link_to '', artists_path, :class => "artistCloseIcon" %>
+		<% elsif request.referer == "https://powerful-basin-1782.herokuapp.com/artists" %>
+			<%= link_to '', artists_path, :class => "artistCloseIcon" %>
+		<% elsif request.referer == "http://splitmusic.co.uk/artists" %>
+			<%= link_to '', artists_path, :class => "artistCloseIcon" %>
+		<% else %>
+			<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
 		<% end %>
 		<h1 class="projectName titleSize1"><%= @artist.name %></h1>
 		<div class="links">
@@ -57,29 +59,29 @@
 			<p class="projectDetail"><%= simple_format @artist.description, :class => "projectDetail descriptionSize1" %></p>
 		</div>
 		<div class="artist-right">
-			<% if @artist.works.count > 0 %>
-				<div class="artistVideoContainer">
-					<% @artist.works.each_with_index do |aw, i| %>
-						<div id="videoLoader<%= i %>">
-							<span class="centerer"></span>
-							<%= image_tag 'status2.gif', :id => "loadingImage" %>
-						</div>
-						<div class="fitvids">
-							<iframe id="videoPlayer" src="https://player.vimeo.com/video/<%= aw.vimeo %>?title=0&amp;byline=0&amp;" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
-						</div>
-						<div class="videoTitling descriptionSize1 upcase">
-							<%= aw.client %><br/><i class="descriptionSize1 upcase"><%= aw.title %></i>
-						</div>
-						<hr class="projectSeparator" />
-					<% end %>
-				</div>
-			<% elsif @artist.square_image %>
+			<!-- <%# if @artist.works.count > 0 %>
+							<div class="artistVideoContainer">
+								<%# @artist.works.each_with_index do |aw, i| %>
+									<div id="videoLoader<%#= i %>">
+										<span class="centerer"></span>
+										<%#= image_tag 'status2.gif', :id => "loadingImage" %>
+									</div>
+									<div class="fitvids">
+										<iframe id="videoPlayer" src="https://player.vimeo.com/video/<%#= aw.vimeo %>?title=0&amp;byline=0&amp;" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+									</div>
+									<div class="videoTitling descriptionSize1 upcase">
+										<%#= aw.client %><br/><i class="descriptionSize1 upcase"><%#= aw.title %></i>
+									</div>
+									<hr class="projectSeparator" />
+								<%# end %>
+							</div> -->
+			<%# elsif @artist.square_image %>
 				<div class="artistSquareContainer">
 					<div class="squareImage">
 						<%= image_tag(@artist.square_image, :class => "squareImage") %>
 					</div>
 				</div>
-			<% end %>
+			<%# end %>
 		</div>
 		<div class="artist-bottom">
 			<% if @artist.soundcloud? %>

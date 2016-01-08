@@ -17,7 +17,7 @@ class WorksController < ApplicationController
       bring_in_models
       @work = Work.find(params[:id])
       if request.path != work_path(@work)
-        redirect_to @work, status: :moved_permanently
+        redirect_to @work, status: :moved_permanently and return
       end
       set_meta_tags og: {
         image: "#{@work.facebook_image}",

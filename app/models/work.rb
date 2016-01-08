@@ -1,6 +1,7 @@
 class Work < ActiveRecord::Base
   attr_accessible :title, :client, :description, :vimeo, :image, :large_image, :type_of_work, :artist_name, :track_name, 
-  :latest, :artist_id, :homepage_title, :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, :homepage, :facebook_image
+  :latest, :artist_id, :homepage_title, :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, 
+  :homepage, :facebook_image, :grid_square_image
   
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
@@ -29,11 +30,11 @@ class Work < ActiveRecord::Base
     end
     
     if Rails.env.development?
-      has_attached_file :large_image, LARGE_PAPERCLIP_STORAGE_OPTS
+      has_attached_file :grid_square_image, GRID_SQUARE_PAPERCLIP_STORAGE_OPTS
     else
-      has_attached_file :large_image,
+      has_attached_file :grid_square_image,
       :convert_options => { :all => '-quality 92' }, 
-      styles: {main: '710x400>'},
+      styles: {main: '400x400>'},
       :storage => :s3,
       :s3_credentials => {
       :access_key_id => ENV['S3_KEY'],
@@ -41,7 +42,7 @@ class Work < ActiveRecord::Base
       :url => ':s3_alias_url',
       :s3_host_alias => 'd2gtajjeesejrd.cloudfront.net', 
       :bucket => 'fairsplit-images',
-      :path => "works/large_images/:id_partition/:style/:filename"
+      :path => "works/grid_square_images/:id_partition/:style/:filename"
     end
     
     if Rails.env.development?
@@ -65,7 +66,7 @@ class Work < ActiveRecord::Base
     validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
     
     # Validate the attached image is image/jpg, image/png, etc
-    validates_attachment_content_type :large_image, :content_type => /\Aimage\/.*\Z/
+    validates_attachment_content_type :grid_square_image, :content_type => /\Aimage\/.*\Z/
     
     # Validate the attached image is image/jpg, image/png, etc
     validates_attachment_content_type :facebook_image, :content_type => /\Aimage\/.*\Z/

@@ -28,28 +28,21 @@
 				</div>
 				<div class="col-md-1">&nbsp;</div>
 				<div class="col-md-6">
-					<%= f.label :artist_main_square_image_crop_to_400X400_before_uploading, class: "formLabel" %><br />
+					<%= f.label :main_grid_square_image_400X400, class: "formLabel" %><br />
 					<%= f.file_field :square_image %>
 					<% if @artist.square_image.exists? %>
 					  <p class="existingImageName">{ Current Image: "<%= @artist.square_image_file_name %>" }</p><br/>
 					<% else %>
 						<br/>
 					<% end %>
-					<%= f.label :artist_homepage_small_image_crop_to_710X210_before_uploading, class: "formLabel" %><br />
+					<%= f.label :homepage_image_710X210_before_uploading, class: "formLabel" %><br />
 					<%= f.file_field :image %>
 					<% if @artist.image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @artist.image_file_name %>" }</p><br/>
 					<% else %>
 						<br/>
 					<% end %>
-					<%= f.label :artist_homepage_large_image_crop_to_710X400_before_uploading, class: "formLabel" %><br />
-					<%= f.file_field :large_image %>
-					<% if @artist.large_image.exists? %>
-					  <p class="existingImageName">{ Current Image: "<%= @artist.large_image_file_name %>" }</p><br/>
-					<% else %>
-						<br/>
-					<% end %>
-					<%= f.label :artist_Facebook_image_1200X630, class: "formLabel" %><br />
+					<%= f.label :facebook_image_1200X630, class: "formLabel" %><br />
 					<%= f.file_field :facebook_image %>
 					<% if @artist.facebook_image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @artist.facebook_image_file_name %>" }</p><br/>

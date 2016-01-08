@@ -26,17 +26,10 @@
 					<% else %>
 						<br/>
 					<% end %>
-					<%= f.label :homepage_small_image_710X210, class: "formLabel" %><br />
+					<%= f.label :homepage_image_710X210, class: "formLabel" %><br />
 					<%= f.file_field :image %>
 					<% if @sound.image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @sound.image_file_name %>" }</p>
-					<% else %>
-						<br/>
-					<% end %>
-					<%= f.label :homepage_large_image_710X400, class: "formLabel" %><br />
-					<%= f.file_field :large_image %>
-					<% if @sound.large_image.exists? %>
-						<p class="existingImageName">{ Current Image: "<%= @sound.large_image_file_name %>" }</p>
 					<% else %>
 						<br/>
 					<% end %>

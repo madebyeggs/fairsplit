@@ -36,13 +36,14 @@
 .vidSubtitle { top: 46px; font-weight: 400; left:40px !important; }
 .title-wrap, .title-wrap2, .subtitle-wrap, .subtitle-wrap2 { overflow: hidden; position: relative;text-transform:uppercase; }
 .title-wrap h3, .title-wrap2 h3, .subtitle-wrap p, .subtitle-wrap2 p { overflow: hidden; white-space: nowrap; color:#fff; padding:0px; font-weight:700; text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.3); }
-.title-wrap h3, .title-wrap2 h3 {font-size:14px; letter-spacing:1px; text-transform:uppercase; }
-.subtitle-wrap p {font-size:12px; font-weight:400;font-family:'Raleway';font-style:none;margin-top:12px;text-transform:none;}
+.title-wrap h3, .title-wrap2 h3 {font-size:14px; letter-spacing:1px; text-transform:uppercase;}
+.subtitle-wrap p {font-size:12px; font-weight:400;font-family:'Raleway';font-style:none;margin-top:12px;text-transform:none;text-align:justify;}
 .subtitle-wrap {margin-top:-22px!important;width:110%;}
-.subtitle-wrap2 p {font-size:12px; font-weight:400;font-family:'Raleway';font-style:none;margin-top:12px;text-transform:none;overflow:visible;white-space:normal;}
+.subtitle-wrap2 p {font-size:12px; font-weight:400;font-family:'Raleway';font-style:none;margin-top:22px;text-transform:none;overflow:visible;white-space:normal;text-align:justify;}
 .subtitle-wrap2 {margin-top:-20px!important;width:90%;}
 .middleFixer {text-transform:uppercase!important;margin-top:50%!important;}
-.nowrap h3 {overflow:visible!important;white-space:nowrap!important;}
+.title-wrap h3 {overflow:visible;white-space:normal;}
+.title-wrap2 {margin-top:-22px;margin-bottom:-30px!important;}
 
 .inline2 {background-color:#000000;color:#ffffff;display:none;width:60%;margin:0 auto;}
 .inlineContent {font-family:'Raleway';font-size:25px;margin:15px;}
@@ -55,11 +56,17 @@
 .hidden-infos a {position:absolute; top:0; left:0; width:100%; height:100%; z-index:1000 }
 .hidden-infos { display:none; position:absolute; top:0; left:0; width:100%; height:100%; z-index:1000 }
 .overlay { display:block; position:absolute; top:0; /*left:0;*/ background:url(../assets/bg-overlay.png) repeat; z-index:10; width:100%; height:960px; /*-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -moz-opacity: 0; -khtml-opacity: 0; opacity: 0;*/ }
-.overlay2 { display:block; position:absolute; top:0; /*left:0;*/ background:url(../assets/bg-overlay.png) repeat; z-index:10; width:100%; height:960px; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -moz-opacity: 0; -khtml-opacity: 0; opacity: 0; }
+.overlay2 { display:block; position:absolute; top:0; /*left:0;*/ background:url(../assets/bg-overlay.png) repeat; z-index:10; width:100%; height:960px; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";}
 .overlay3 { display:block; position:absolute; top:0; /*left:0;*/ background:url(../assets/bg-overlay3.png) repeat; z-index:10; width:100%; height:960px; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -moz-opacity: 0; -khtml-opacity: 0; opacity: 0; }
 .overlay4 { display:block; position:absolute; top:0; /*left:0;*/ background:url(../assets/bg-overlay4.png) repeat; z-index:10; width:100%; height:960px; -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)"; -moz-opacity: 0; -khtml-opacity: 0; opacity: 0; }
+
+.overImage { position:absolute; top:0px; width:100%; height:100%; background:url(../assets/bg-overlay.png) repeat; z-index:10; }
 /* End Image Hover
 --------------------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 992px){
+	.title-wrap2 h3 {overflow:visible;white-space:normal;margin:0px!important;padding:0px!important;}
+}
 
 @media only screen and (max-width: 563px) {
 	.icons2, .icons4 {display:none;}

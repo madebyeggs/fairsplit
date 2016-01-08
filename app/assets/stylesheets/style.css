@@ -27,15 +27,15 @@ a {
 }
 
 #status {
-    width:25px;
-    height:25px;
+    width:32px;
+    height:32px;
     position:absolute;
     left:55%; /* centers the loading animation horizontally one the screen */
     top:50%; /* centers the loading animation vertically one the screen */
     background-image:url(../assets/status2.gif); /* path to your loading animation */
     background-repeat:no-repeat;
     background-position:center;
-    margin:-100px 0 0 -100px; /* is width and height divided by two */
+    margin:-16px 0 0 -16px; /* is width and height divided by two */
 }
 
 .fa {color:#ffffff;margin-right:5px;}
@@ -212,6 +212,7 @@ i {font-size:18px;}
 	.rightSide {border-left:none;}
 	#loading2 {width:80%;height:31%;}
 	.grid-eighth {width:20%;float:left;}
+	.subtitle-wrap, .subtitle-wrap2 {display:none;}
 }
 
 @media screen and (max-width: 563px) {

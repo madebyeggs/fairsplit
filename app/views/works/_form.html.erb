@@ -34,17 +34,17 @@
 				<div class="col-md-6">
 					<%= f.label :description, class: "formLabel" %>
 	    			<%= f.text_area :description, class: 'formArea' %>
-					<%= f.label :small_image_710X210, class: "formLabel" %><br />
-					<%= f.file_field :image %>
-					<% if @work.image.exists? %>
-						<p class="existingImageName">{ Current Image: "<%= @work.image_file_name %>" }</p><br/>
+					<%= f.label :main_grid_square_image_400X400, class: "formLabel" %><br />
+					<%= f.file_field :grid_square_image %>
+					<% if @work.grid_square_image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @work.grid_square_image_file_name %>" }</p><br/>
 					<% else %>
 						<br/>
 					<% end %>
-					<%= f.label :large_image_710X400, class: "formLabel" %><br />
-					<%= f.file_field :large_image %>
-					<% if @work.large_image.exists? %>
-						<p class="existingImageName">{ Current Image: "<%= @work.large_image_file_name %>" }</p><br/>
+					<%= f.label :homepage_image_710X210, class: "formLabel" %><br />
+					<%= f.file_field :image %>
+					<% if @work.image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @work.image_file_name %>" }</p><br/>
 					<% else %>
 						<br/>
 					<% end %>

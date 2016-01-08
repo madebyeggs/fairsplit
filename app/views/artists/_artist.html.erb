@@ -2,6 +2,7 @@
 	<div class="images">
 		<div class="imageContainer">
 			<%= image_tag artist.image, alt: "#{artist.name}" %>
+			<div class="overImage"></div>
 		</div>
 
 		<div class="muteEffects">
@@ -11,11 +12,11 @@
 				<div class="icons4 play"></div>	        					
 			</section>
         	<div class="vidTitle">
-        		<div class="title-wrap">
-	            	<h3 class="descriptionSize1 upcase">NEW SIGNING: <%= artist.name %></h3>
+        		<div class="title-wrap2">
+	            	<h3 class="descriptionSize1 upcase title"><%= artist.name %></h3>
 	          	</div>
-				<div class="subtitle-wrap">
-            		<p><%= truncate(artist.description, :length => 120, :class => "descriptionSize1") %></p>
+				<div class="subtitle-wrap2">
+            		<p class="subtitle"><%= truncate(artist.description, :length => 260, :class => "descriptionSize1") %></p>
 				</div>
 				<div class="subtitle-wrap borderTop italics">
     				<p><%= artist.created_at.strftime("%B %Y") %></p>

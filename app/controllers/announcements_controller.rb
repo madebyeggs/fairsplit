@@ -16,8 +16,8 @@ class AnnouncementsController < ApplicationController
     def show
       bring_in_models
       @announcement = Announcement.find(params[:id])
-      if request.path != news_path(@announcement)
-        redirect_to @announcement, status: :moved_permanently
+      if request.path != announcement_path(@announcement)
+        redirect_to @announcement, status: :moved_permanently and return
       end
       set_meta_tags og: {
         url: "#{@currentUrl}",
