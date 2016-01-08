@@ -1,10 +1,10 @@
 <div class="canScroll4">
 	<div class="projectInfo">
-		<% if request.referer == "http://localhost:3000/placements" %>
+		<% if request.referer == "http://localhost:3000/releases" %>
 			<%= link_to '', releases_path, :class => "artistCloseIcon" %>
-		<% elsif request.referer == "https://powerful-basin-1782.herokuapp.com/placements" %>
+		<% elsif request.referer == "https://powerful-basin-1782.herokuapp.com/releases" %>
 			<%= link_to '', releases_path, :class => "artistCloseIcon" %>
-		<% elsif request.referer == "http://splitmusic.co.uk/placements" %>
+		<% elsif request.referer == "http://splitmusic.co.uk/releases" %>
 			<%= link_to '', releases_path, :class => "artistCloseIcon" %>
 		<% else %>
 			<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
