@@ -161,6 +161,11 @@ function imageHover(){
 	        		width: 0
 	      		}, 0);
 	    	});
+			jQuery(this).find('.subtitle-wrap3').stop().each(function() {
+	      		jQuery(this).animate({
+	        		width: 0
+	      		}, 0);
+	    	});
 			jQuery(this).find('.title-wrap2').stop().each(function() {
 	      		jQuery(this).animate({
 	        		width: 0

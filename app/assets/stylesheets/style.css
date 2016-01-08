@@ -212,7 +212,7 @@ i {font-size:18px;}
 	.rightSide {border-left:none;}
 	#loading2 {width:80%;height:31%;}
 	.grid-eighth {width:20%;float:left;}
-	.subtitle-wrap, .subtitle-wrap2 {display:none;}
+	.subtitle-wrap, .subtitle-wrap2, .subtitle-wrap3 {display:none;}
 }
 
 @media screen and (max-width: 563px) {
