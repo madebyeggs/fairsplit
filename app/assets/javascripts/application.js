@@ -111,7 +111,7 @@ $(function() {
 
 function imageHover(){
 	if ($(window).width() > 992) {
-		jQuery('.subtitle-wrap, .subtitle-wrap2, .paragraph-wrap, .title-wrap2').not('.flexslider .subtitle-wrap, .flexslider .title-wrap2, .paragraph-wrap').each(function() {
+		jQuery('.subtitle-wrap, .subtitle-wrap2, .subtitle-wrap3, .paragraph-wrap, .title-wrap2').not('.flexslider .subtitle-wrap, .flexslider .title-wrap2, .paragraph-wrap').each(function() {
 	    	jQuery(this).data('wrapping', jQuery(this).width());
 	    	jQuery(this).css('width', 0);
 	 	});
@@ -123,6 +123,13 @@ function imageHover(){
 	      		}, 150);
 	    	});
 			jQuery(this).find('.subtitle-wrap2').stop().each(function() {
+	      		jQuery(this).delay(250).animate({
+	        		width: jQuery(this).data('wrapping')
+	      		}, 0, function(){
+					jQuery(this).find('.subtitle').textillate({ in: { effect: 'fadeInLeft',  delayScale: 0.1, delay: 30 } });
+				});
+	    	});
+			jQuery(this).find('.subtitle-wrap3').stop().each(function() {
 	      		jQuery(this).delay(250).animate({
 	        		width: jQuery(this).data('wrapping')
 	      		}, 0, function(){
