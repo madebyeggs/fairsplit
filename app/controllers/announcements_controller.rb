@@ -16,7 +16,7 @@ class AnnouncementsController < ApplicationController
     def show
       bring_in_models
       @announcement = Announcement.find(params[:id])
-      if request.path != announcement_path(@announcement)
+      if request.path != news_path(@announcement)
         redirect_to @announcement, status: :moved_permanently and return
       end
       set_meta_tags og: {
@@ -32,8 +32,8 @@ class AnnouncementsController < ApplicationController
         title: "#{@announcement.homepage_title}",
         description: "#{@announcement.description}",
         image: "#{@announcement.facebook_image}"
-      }      # 
-            # render :show, flush: true
+      }
+      render :show, flush: true
     end
 
     def index

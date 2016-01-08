@@ -17,7 +17,7 @@ class ArtistsController < ApplicationController
       bring_in_models
       @artist = Artist.find(params[:id])
       if request.path != artist_path(@artist)
-        redirect_to @artist, status: :moved_permanently
+        redirect_to @artist, status: :moved_permanently and return
       end
       set_meta_tags og: {
         url: "#{@currentUrl}",

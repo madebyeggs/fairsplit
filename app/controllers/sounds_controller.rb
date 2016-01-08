@@ -17,7 +17,7 @@ class SoundsController < ApplicationController
       bring_in_models
       @sound = Sound.find(params[:id])
       if request.path != release_path(@sound)
-        redirect_to @sound, status: :moved_permanently
+        redirect_to @sound, status: :moved_permanently and return
       end
       set_meta_tags og: {
         url: "#{@currentUrl}",
