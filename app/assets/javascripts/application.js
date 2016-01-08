@@ -39,6 +39,8 @@ $(document).ready(function() {
 	applicash();
 });
 
+// turbolinks page load syntax
+
 function applicash(){
 	
 	$('#preloader').fadeOut();
