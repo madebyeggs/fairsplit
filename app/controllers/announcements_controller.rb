@@ -33,7 +33,6 @@ class AnnouncementsController < ApplicationController
         description: "#{@announcement.description}",
         image: "#{@announcement.facebook_image}"
       }
-      render :show, flush: true
     end
 
     def index
