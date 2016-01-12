@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20151011124105) do
+ActiveRecord::Schema.define(:version => 20160112092513) do
 
   create_table "abouts", :force => true do |t|
     t.string   "title"
@@ -26,8 +26,8 @@ ActiveRecord::Schema.define(:version => 20151011124105) do
     t.string   "vimeo"
     t.text     "description"
     t.string   "soundcloud"
-    t.datetime "created_at",                :null => false
-    t.datetime "updated_at",                :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -46,7 +46,11 @@ ActiveRecord::Schema.define(:version => 20151011124105) do
     t.boolean  "is_announcement"
     t.boolean  "latest"
     t.string   "slug"
-    t.string   "short_id_url"
+    t.string   "facebook_image_file_name"
+    t.string   "facebook_image_content_type"
+    t.integer  "facebook_image_file_size"
+    t.datetime "facebook_image_updated_at"
+    t.string   "short_uid_url"
   end
 
   add_index "announcements", ["slug"], :name => "index_announcements_on_slug"
@@ -55,8 +59,8 @@ ActiveRecord::Schema.define(:version => 20151011124105) do
     t.string   "name"
     t.text     "description"
     t.string   "soundcloud"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
@@ -65,7 +69,7 @@ ActiveRecord::Schema.define(:version => 20151011124105) do
     t.string   "square_image_content_type"
     t.integer  "square_image_file_size"
     t.datetime "square_image_updated_at"
-    t.boolean  "latest",                    :default => false
+    t.boolean  "latest",                      :default => false
     t.string   "large_image_file_name"
     t.string   "large_image_content_type"
     t.integer  "large_image_file_size"
@@ -75,10 +79,16 @@ ActiveRecord::Schema.define(:version => 20151011124105) do
     t.boolean  "is_work"
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
-    t.string   "short_id_url"
-    t.boolean  "homepage",                  :default => false
+    t.boolean  "homepage",                    :default => false
     t.string   "homepage_title"
     t.string   "slug"
+    t.string   "facebook_image_file_name"
+    t.string   "facebook_image_content_type"
+    t.integer  "facebook_image_file_size"
+    t.datetime "facebook_image_updated_at"
+    t.string   "short_uid_url"
+    t.string   "fb_url"
+    t.string   "twitter_name"
   end
 
   create_table "clients", :force => true do |t|
@@ -112,17 +122,77 @@ ActiveRecord::Schema.define(:version => 20151011124105) do
     t.datetime "image_updated_at"
   end
 
+  create_table "socials", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "announcements_image_file_name"
+    t.string   "announcements_image_content_type"
+    t.integer  "announcements_image_file_size"
+    t.datetime "announcements_image_updated_at"
+    t.string   "works_image_file_name"
+    t.string   "works_image_content_type"
+    t.integer  "works_image_file_size"
+    t.datetime "works_image_updated_at"
+    t.string   "artists_image_file_name"
+    t.string   "artists_image_content_type"
+    t.integer  "artists_image_file_size"
+    t.datetime "artists_image_updated_at"
+    t.string   "playlists_image_file_name"
+    t.string   "playlists_image_content_type"
+    t.integer  "playlists_image_file_size"
+    t.datetime "playlists_image_updated_at"
+    t.string   "abouts_image_file_name"
+    t.string   "abouts_image_content_type"
+    t.integer  "abouts_image_file_size"
+    t.datetime "abouts_image_updated_at"
+    t.string   "contacts_image_file_name"
+    t.string   "contacts_image_content_type"
+    t.integer  "contacts_image_file_size"
+    t.datetime "contacts_image_updated_at"
+  end
+
+  create_table "socialsconts", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
+    t.string   "announcements_image_file_name"
+    t.string   "announcements_image_content_type"
+    t.integer  "announcements_image_file_size"
+    t.datetime "announcements_image_updated_at"
+    t.string   "works_image_file_name"
+    t.string   "works_image_content_type"
+    t.integer  "works_image_file_size"
+    t.datetime "works_image_updated_at"
+    t.string   "artists_image_file_name"
+    t.string   "artists_image_content_type"
+    t.integer  "artists_image_file_size"
+    t.datetime "artists_image_updated_at"
+    t.string   "playlists_image_file_name"
+    t.string   "playlists_image_content_type"
+    t.integer  "playlists_image_file_size"
+    t.datetime "playlists_image_updated_at"
+    t.string   "abouts_image_file_name"
+    t.string   "abouts_image_content_type"
+    t.integer  "abouts_image_file_size"
+    t.datetime "abouts_image_updated_at"
+    t.string   "contacts_image_file_name"
+    t.string   "contacts_image_content_type"
+    t.integer  "contacts_image_file_size"
+    t.datetime "contacts_image_updated_at"
+  end
+
   create_table "sounds", :force => true do |t|
     t.string   "title"
     t.text     "description"
     t.string   "soundcloud"
-    t.datetime "created_at",                                   :null => false
-    t.datetime "updated_at",                                   :null => false
+    t.datetime "created_at",                                     :null => false
+    t.datetime "updated_at",                                     :null => false
     t.string   "image_file_name"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
-    t.boolean  "latest",                    :default => false
+    t.boolean  "latest",                      :default => false
     t.string   "homepage_title"
     t.string   "square_image_file_name"
     t.string   "square_image_content_type"
@@ -138,9 +208,13 @@ ActiveRecord::Schema.define(:version => 20151011124105) do
     t.integer  "large_image_file_size"
     t.datetime "large_image_updated_at"
     t.string   "short_url"
-    t.string   "short_id_url"
-    t.boolean  "homepage",                  :default => false
+    t.boolean  "homepage",                    :default => false
     t.string   "slug"
+    t.string   "facebook_image_file_name"
+    t.string   "facebook_image_content_type"
+    t.integer  "facebook_image_file_size"
+    t.datetime "facebook_image_updated_at"
+    t.string   "short_uid_url"
   end
 
   add_index "sounds", ["slug"], :name => "index_sounds_on_slug"
@@ -187,7 +261,6 @@ ActiveRecord::Schema.define(:version => 20151011124105) do
     t.boolean  "is_work"
     t.boolean  "is_sound"
     t.boolean  "is_announcement"
-    t.string   "short_id_url"
     t.boolean  "homepage",                    :default => false
     t.string   "homepage_title"
     t.string   "slug"
@@ -195,6 +268,7 @@ ActiveRecord::Schema.define(:version => 20151011124105) do
     t.string   "facebook_image_content_type"
     t.integer  "facebook_image_file_size"
     t.datetime "facebook_image_updated_at"
+    t.string   "short_uid_url"
   end
 
   add_index "works", ["slug"], :name => "index_works_on_slug"
