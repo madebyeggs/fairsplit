@@ -22,6 +22,10 @@
 //= require jquery.prettySocial
 //= require frogaloop
 //= require gmap3
+//= require masonry/jquery.event-drag
+//= require masonry/jquery.imagesloaded.min
+//= require masonry/jquery.infinitescroll.min
+//= require masonry/modernizr-transitions
 
 
 $(document).on('page:load', function() {
