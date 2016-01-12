@@ -16,7 +16,7 @@ class WorksController < ApplicationController
     def show
       bring_in_models
       @work = Work.find(params[:id])
-      if request.path != work_path(@work)
+      if request.path != placement_path(@work)
         redirect_to @work, status: :moved_permanently
       end
       set_meta_tags :og => {
@@ -42,7 +42,7 @@ class WorksController < ApplicationController
       @works = Work.common_order
       set_meta_tags :og => {
         :title    => 'Fairsplit Music | Latest Work',
-        :url      => 'http://fairsplitmusic.com/works',
+        :url      => 'http://fairsplitmusic.com/placements',
         :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
       }
       set_meta_tags twitter: {

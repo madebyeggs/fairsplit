@@ -1,4 +1,4 @@
-<div class="col-md-4">
+<div class="col-md-3">
 	<div class="leftSide">
 		<% if user_signed_in? %>
 			<div class="userInfo">
@@ -11,10 +11,10 @@
 		<div class="logo"><%= link_to(image_tag('newLogo.jpg'), announcements_path) %></div>
 		<div class="navigationWrapper">
 			<ul id="menu" class="navigation option-set clearfix">
-				<li class="navButton"><%= link_to 'Our Work', works_path, :class => "navigationButton" %></li>
 				<li class="navButton"><%= link_to 'Artists', artists_path, :class => "navigationButton" %></li>
-				<li class="navButton"><%= link_to 'Listen', sounds_path, :class => "navigationButton" %></li>
-				<li class="navButton"><%= link_to 'About', abouts_path, :class => "navigationButton" %></li>
+				<li class="navButton"><%= link_to 'Releases', releases_path, :class => "navigationButton" %></li>
+				<li class="navButton"><%= link_to 'Placements', placements_path, :class => "navigationButton" %></li>
+				<!-- <li class="navButton"><%#= link_to 'About', abouts_path, :class => "navigationButton" %></li> -->
 				<li class="navButton"><%= link_to 'Contact', contacts_path, :class => "navigationButton" %></li>
 			</ul>
 		</div>

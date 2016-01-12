@@ -15,12 +15,12 @@ class SoundsController < ApplicationController
 
     def show
       @sound = Sound.find(params[:id])
-      if request.path != sound_path(@sound)
+      if request.path != release_path(@sound)
         redirect_to @sound, status: :moved_permanently
       end
       set_meta_tags :og => {
         :title    => "Fairsplit Music Playlist:" + " " + "#{@sound.title}",
-        :url      => "http://fairsplitmusic.com/artists/" + "#{@sound.slug}",
+        :url      => "http://fairsplitmusic.com/releases/" + "#{@sound.slug}",
         :image    => ""
       }
     end
@@ -29,7 +29,7 @@ class SoundsController < ApplicationController
       @sounds = Sound.common_order
       set_meta_tags :og => {
         :title    => 'Fairsplit Playlists',
-        :url      => 'http://fairsplitmusic.com/sounds',
+        :url      => 'http://fairsplitmusic.com/releases',
         :image    => 'https://s3.amazonaws.com/fairsplit-images/SPLIT_MUSIC_1200_630_all_top_level.jpg'
       }
     end
