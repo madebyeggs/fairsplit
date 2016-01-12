@@ -1,12 +1,16 @@
 <div class="element">
 	<div class="images">
 		<div class="imageContainer">
-			<%= image_tag work.image, alt: "#{work.title} - #{work.client}" %>
+			<% if work_counter == 0 %>
+				<%= image_tag work.large_image, alt: "#{work.title} - #{work.client}" %>
+			<% else %>
+				<%= image_tag work.image, alt: "#{work.title} - #{work.client}" %>
+			<% end %>
 		</div>
 
 		<div class="muteEffects">
 			<section class="hidden-infos">
-				<a class="launchAnnouncement"><%= link_to '', work_path(work) %></a>
+				<a class="launchAnnouncement"><%= link_to '', placement_path(work) %></a>
           		<div class="overlay3"></div>
 				<div class="icons4 play"></div>	        					
 			</section>
