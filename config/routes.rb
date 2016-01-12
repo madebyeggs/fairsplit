@@ -5,10 +5,11 @@ V1::Application.routes.draw do
   
   resources :cms
   resources :works
+  resources :placements, :controller=>"works"
   resources :news, :controller=>"announcements"
   resources :announcements
   resources :artists
-  resources :playlists, :controller=>"sounds"
+  resources :releases, :controller=>"sounds"
   resources :sounds
   resources :clients
   resources :socials
