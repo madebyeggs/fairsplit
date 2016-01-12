@@ -55,15 +55,14 @@ a {
 .leftSide, .rightSide {background-color:#000000;}
 .leftSide {width:100%;padding-top:120px;}
 .rightSide {border-left:1px solid #3e3e3e;}
-.logo {width:70%;margin:0 auto;}
-.logo img {max-width:100%;}
+.logo {width:262px;margin:0 auto;}
+.logo img {max-width:100%;margin:0 auto;}
 ul.navigation {list-style-type: none;}
-.navigationWrapper {margin:50px 15%!important;}
+.navigationWrapper {width:250px;margin:80px auto!important;}
 .navigation a, .client {text-transform:uppercase;font-size:1.1em!important;color:#ffffff;font-family:'Raleway'}
 li.navButton {margin:8px 0px 8px 0px!important;}
-.social {margin:100px 15% 0px 15%;}
+.social {width:250px;margin:100px auto 0px auto;}
 .centerSocial {margin:0 auto;}
-.icon {margin-top:15px!important;}
 .client {position:absolute;margin:240px 0px 0px 80%;font-family:'Raleway'}
 
 .artistText {color:#ffffff;display:inline;width:100%;height:100%;}
@@ -177,7 +176,6 @@ i {font-size:18px;}
 	margin-left:-46px!important;
 }
 .topperMargin {margin-top:80px!important;float:left;clear:both;width:100%;}
-.topperMargin2 {margin-top:30px!important;float:left;clear:both;width:100%;}
 .grid-whole {width:80%;margin:0 auto;}
 .grid-eighth {width:16.66%;float:left;}
 .grid-eighth img{width:100%;}
@@ -208,14 +206,15 @@ i {font-size:18px;}
 	.canScroll {height:550px;overflow-y: auto;}
 	.canScroll2, .canScroll3, .canScroll4, .canScroll5 {height:680px;overflow-y: auto;}
 	.logo {width:150px;margin-top:-20px;}
-	.logo img {margin:0 auto;}
 	.subtitle-wrap, .subtitle-wrap2 {display:none;}
+	.title-wrap, .overlay3 {display:inline!important;}
 	.title-wrap h3 {font-size:10px!important;width:100%;margin:0px 10px 0px 0px;}
+	.muteEffects2 {display:inline;}
+	.muteEffects {display:none;}
 	.titleWrap h3 {font-size:15px;margin:-15px 0px 0px -30px!important;padding:5px;width:100%!important;text-shadow: black 1px 1px 2px;}
 	.rightSide {border-left:none;}
 	#loading2 {width:80%;height:31%;}
 	.grid-eighth {width:20%;float:left;}
-	.main {margin-bottom:0;}
 }
 
 @media screen and (max-width: 563px) {
