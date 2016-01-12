@@ -16,7 +16,7 @@ class WorksController < ApplicationController
     def show
       bring_in_models
       @work = Work.find(params[:id])
-      if request.path != work_path(@work)
+      if request.path != placement_path(@work)
         redirect_to @work, status: :moved_permanently
       end
       set_meta_tags og: {

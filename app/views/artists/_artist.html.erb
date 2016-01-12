@@ -15,7 +15,7 @@
 	            	<h3 class="descriptionSize1 upcase">NEW SIGNING: <%= artist.name %></h3>
 	          	</div>
 				<div class="subtitle-wrap">
-            		<p><%= truncate(artist.description, :length => 80, :class => "descriptionSize1") %></p>
+            		<p><%= truncate(artist.description, :length => 120, :class => "descriptionSize1") %></p>
 				</div>
 				<div class="subtitle-wrap borderTop italics">
     				<p><%= artist.created_at.strftime("%B %Y") %></p>

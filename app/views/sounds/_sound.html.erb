@@ -6,7 +6,7 @@
 
 		<div class="muteEffects">
 			<section class="hidden-infos">
-				<a class="launchAnnouncement"><%= link_to '', playlist_path(sound) %></a>
+				<a class="launchAnnouncement"><%= link_to '', release_path(sound) %></a>
           		<div class="overlay3"></div>
 				<div class="icons4 play"></div>	        					
 			</section>
@@ -15,7 +15,7 @@
             		<h3 class="descriptionSize1 upcase">NEW PLAYLIST: <%= sound.title %></h3>
           		</div>
 				<div class="subtitle-wrap">
-           			<p><%= truncate(sound.description, :length => 80, :class => "descriptionSize1") %></p>
+           			<p><%= truncate(sound.description, :length => 120, :class => "descriptionSize1") %></p>
 				</div>
 				<div class="subtitle-wrap borderTop italics">
    					<p><%= sound.created_at.strftime("%B %Y") %></p>
