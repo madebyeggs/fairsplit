@@ -30,7 +30,7 @@ class Artist < ActiveRecord::Base
       has_attached_file :square_image, SQUARE_PAPERCLIP_STORAGE_OPTS
     else
       has_attached_file :square_image,
-      styles: {main: '300x300>'},
+      styles: {main: '400x400>'},
       :convert_options => { :all => '-quality 92' }, 
       :storage => :s3,
       :s3_credentials => {

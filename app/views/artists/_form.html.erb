@@ -1,5 +1,5 @@
 <div class="col-md-12">
-	<div class="logo2"><%= link_to(image_tag('splitPic.png'), cms_path) %></div>
+	<div class="logo2"><%= link_to(image_tag('logo.png'), cms_path) %></div>
 </div>
 
 <div class="col-md-12">
@@ -11,8 +11,8 @@
 		<div class="formWrapper">	
 			<%= form_for @artist, html: { multipart: true } do |f| %>
 				<div class="col-md-5">
-					<%= f.label :click_if_this_is_the_latest_artist, class: "formLabel" %>
-					<%= f.check_box :latest %> <br /><br/>
+					<%#= f.label :click_if_this_is_the_latest_artist, class: "formLabel" %>
+					<%#= f.check_box :latest %> <!-- <br /><br/> -->
 					<%= f.label :click_to_add_this_to_the_homepage, class: "formLabel" %>
 					<%= f.check_box :homepage %> <br /><br/>
 					<%= f.label :name, class: "formLabel" %>
@@ -23,33 +23,33 @@
 	    			<%= f.text_field :fb_url, class: 'formField' %>
 					<%= f.label :twitter_name, class: "formLabel" %>
 	    			<%= f.text_field :twitter_name, class: 'formField' %>
+					<%= f.label :soundcloud_identifier_eg_59219255, class: "formLabel" %>
+		    		<%= f.text_field :soundcloud, class: 'formField' %>
 				</div>
 				<div class="col-md-1">&nbsp;</div>
 				<div class="col-md-6">
-					<%= f.label :soundcloud_identifier_eg_59219255, class: "formLabel" %>
-	    			<%= f.text_field :soundcloud, class: 'formField' %>
-					<%= f.label :artist_small_image_crop_to_710X210_before_uploading, class: "formLabel" %><br />
-					<%= f.file_field :image %>
-					<% if @artist.image.exists? %>
-						<p class="existingImageName">{ Current Image: "<%= @artist.image_file_name %>" }</p><br/>
-					<% else %>
-						<br/>
-					<% end %>
-					<%= f.label :artist_large_image_crop_to_710X400_before_uploading, class: "formLabel" %><br />
-					<%= f.file_field :large_image %>
-					<% if @artist.large_image.exists? %>
-					  <p class="existingImageName">{ Current Image: "<%= @artist.large_image_file_name %>" }</p><br/>
-					<% else %>
-						<br/>
-					<% end %>
-					<%= f.label :artist_square_image_crop_to_300X300_before_uploading, class: "formLabel" %><br />
+					<%= f.label :artist_main_square_image_crop_to_400X400_before_uploading, class: "formLabel" %><br />
 					<%= f.file_field :square_image %>
 					<% if @artist.square_image.exists? %>
 					  <p class="existingImageName">{ Current Image: "<%= @artist.square_image_file_name %>" }</p><br/>
 					<% else %>
 						<br/>
 					<% end %>
-					<%= f.label :Facebook_image_1200X630, class: "formLabel" %><br />
+					<%= f.label :artist_homepage_small_image_crop_to_710X210_before_uploading, class: "formLabel" %><br />
+					<%= f.file_field :image %>
+					<% if @artist.image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @artist.image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
+					<%= f.label :artist_homepage_large_image_crop_to_710X400_before_uploading, class: "formLabel" %><br />
+					<%= f.file_field :large_image %>
+					<% if @artist.large_image.exists? %>
+					  <p class="existingImageName">{ Current Image: "<%= @artist.large_image_file_name %>" }</p><br/>
+					<% else %>
+						<br/>
+					<% end %>
+					<%= f.label :artist_Facebook_image_1200X630, class: "formLabel" %><br />
 					<%= f.file_field :facebook_image %>
 					<% if @artist.facebook_image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @artist.facebook_image_file_name %>" }</p><br/>
