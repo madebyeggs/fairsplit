@@ -22,11 +22,13 @@
 //= require jquery.prettySocial
 //= require frogaloop
 //= require gmap3
-//= require masonry/jquery.masonry
 //= require masonry/jquery.event-drag
 //= require masonry/jquery.imagesloaded.min
 //= require masonry/jquery.infinitescroll.min
 //= require masonry/modernizr-transitions
+//= require jquery.fittext
+//= require jquery.lettering
+//= require jquery.textillate
 
 
 $(document).on('page:load', function() {
@@ -70,12 +72,7 @@ function applicash(){
 	
 	$(".tips").tooltip();
 	
-	
 	imageHover();
-	
-	$('#masonry-container').masonry({
-		itemSelector: '.box',
-	});
 	
 }
 
@@ -113,7 +110,7 @@ $(function() {
 // })
 
 function imageHover(){
-	jQuery('.title-wrap, .subtitle-wrap, .paragraph-wrap').not('.flexslider .title-wrap, .flexslider .subtitle-wrap, .paragraph-wrap').each(function() {
+	jQuery('.title-wrap, .subtitle-wrap, .subtitle-wrap2, .paragraph-wrap').not('.flexslider .title-wrap, .flexslider .subtitle-wrap, .paragraph-wrap').each(function() {
     	jQuery(this).data('wrapping', jQuery(this).width());
     	jQuery(this).css('width', 0);
  	});
@@ -129,6 +126,13 @@ function imageHover(){
         		width: jQuery(this).data('wrapping')
       		}, 150);
     	});
+		jQuery(this).find('.subtitle-wrap2').stop().each(function() {
+      		jQuery(this).delay(250).animate({
+        		width: jQuery(this).data('wrapping')
+      		}, 0, function(){
+				jQuery(this).find('.subtitle').textillate({ in: { effect: 'fadeInLeft',  delayScale: 0.1, delay: 30 } });
+			});
+    	});
 		jQuery(this).find('.paragraoh-wrap').stop().each(function() {
       		jQuery(this).delay(250).animate({
         		width: jQuery(this).data('wrapping')
@@ -143,6 +147,11 @@ function imageHover(){
       		}, 0);
   		});
     	jQuery(this).find('.subtitle-wrap').stop().each(function() {
+      		jQuery(this).animate({
+        		width: 0
+      		}, 0);
+    	});
+		jQuery(this).find('.subtitle-wrap2').stop().each(function() {
       		jQuery(this).animate({
         		width: 0
       		}, 0);
