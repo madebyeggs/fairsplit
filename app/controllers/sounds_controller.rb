@@ -16,7 +16,7 @@ class SoundsController < ApplicationController
     def show
       bring_in_models
       @sound = Sound.find(params[:id])
-      if request.path != playlist_path(@sound)
+      if request.path != release_path(@sound)
         redirect_to @sound, status: :moved_permanently
       end
       set_meta_tags og: {

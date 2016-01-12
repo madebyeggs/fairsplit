@@ -11,22 +11,29 @@
 		<div class="formWrapper">	
 			<%= form_for(@sound) do |f| %>
 				<div class="col-md-5">
-					<%= f.label :click_if_this_is_the_latest_playlist, class: "formLabel" %>
-					<%= f.check_box :latest %> <br /><br/>
+					<%#= f.label :click_if_this_is_the_latest_playlist, class: "formLabel" %>
+					<%#= f.check_box :latest %> <!-- <br /><br/> -->
 					<%= f.label :click_to_add_this_to_the_homepage, class: "formLabel" %>
 					<%= f.check_box :homepage %> <br /><br/>
 					<%= f.label :title, class: "formLabel" %>
 	    			<%= f.text_field :title, class: 'formField' %>
 					<%= f.label :soundcloud_identifier_eg_86412013, class: "formLabel" %>
 	    			<%= f.text_field :soundcloud, class: 'formField' %>
-					<%= f.label :image_710X210, class: "formLabel" %><br />
+					<%= f.label :main_grid_square_image_400X400, class: "formLabel" %><br />
+					<%= f.file_field :grid_square_image %>
+					<% if @sound.grid_square_image.exists? %>
+						<p class="existingImageName">{ Current Image: "<%= @sound.grid_square_image_file_name %>" }</p>
+					<% else %>
+						<br/>
+					<% end %>
+					<%= f.label :homepage_small_image_710X210, class: "formLabel" %><br />
 					<%= f.file_field :image %>
 					<% if @sound.image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @sound.image_file_name %>" }</p>
 					<% else %>
 						<br/>
 					<% end %>
-					<%= f.label :large_image_710X400, class: "formLabel" %><br />
+					<%= f.label :homepage_large_image_710X400, class: "formLabel" %><br />
 					<%= f.file_field :large_image %>
 					<% if @sound.large_image.exists? %>
 						<p class="existingImageName">{ Current Image: "<%= @sound.large_image_file_name %>" }</p>

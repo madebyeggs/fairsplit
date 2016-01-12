@@ -5,7 +5,7 @@
 		<% elsif request.referer == "http://www.fairsplitmusic.com/news" %>
 			<%= link_to '', news_index_path, :class => "artistCloseIcon" %>
 		<% else %>
-			<%= link_to '', playlists_path, :class => "artistCloseIcon" %>
+			<%= link_to '', releases_path, :class => "artistCloseIcon" %>
 		<% end %>
 		<h1 class="projectName titleSize1"><%= @sound.title %></h1>
 		<div class="links">
