@@ -1,7 +1,7 @@
 <div class="canScroll4 fadeMe">
 	<div id="masonry-container" class="transitions-enabled infinite-scroll clearfix">
 		<% @artists.each do |a| %>
-			<div class="box col4">
+			<div class="box col4 wrapping">
 				<div class="element">
 					<div class="images">
 						<div class="">
@@ -17,8 +17,8 @@
 								<div class="title-wrap">
 					            	<h3 class="descriptionSize1 upcase"><%= a.name %></h3>
 					          	</div>
-								<div class="subtitle-wrap">
-				            		<p><%= truncate(a.description, :length => 80, :class => "descriptionSize1") %></p>
+								<div class="subtitle-wrap2">
+				            		<p class="subtitle"><%= truncate(a.description, :length => 200, :class => "descriptionSize1") %></p>
 								</div>
 				        	</div>
 						</div>
