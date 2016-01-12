@@ -12,7 +12,7 @@ V1::Application.routes.draw do
   resources :releases, :controller=>"sounds"
   resources :sounds
   resources :clients
-  resources :socials
+  resources :socialconts
   
   get "/get_announcement_links" => "announcements#create_links", :as => :get_announcement_links
   get "/get_work_links" => "works#create_links", :as => :get_work_links

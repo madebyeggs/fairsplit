@@ -14,7 +14,9 @@ class ApplicationController < ActionController::Base
     @user = current_user
     @clients = Client.common_order
     @testing = "sofia@floatpr.com"
-    @currentUrl = request.env['REQUEST_URI']
+    @currentUrl = request.env['REQUEST_URI'].to_s
+    @socialscont = Socialscont.all
+    @socialsconts = Socialscont.first
   end
   
 end

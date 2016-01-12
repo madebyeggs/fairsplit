@@ -3,7 +3,7 @@
 		<div class="divHeader">Social network images (for site index pages)</div>
 		<div class="tableWrapper">
 			<div class="tableContent">
-				<% if @socials.count > 0 %>
+				<% if @socialconts.count > 0 %>
 					<table width="100%">
 						<tr class="tableHeader">
 							<th>CATEGORY</th>
@@ -11,7 +11,7 @@
 							<th>IMAGE NAME</th>
 						</tr>
 						<tr><hr class="ruler"/></tr>
-						<% @socials.each do |s| %>
+						<% @socialconts.each do |s| %>
 							<tr class="tableRow">
 								<td width="15%">NEWS</td>
 								<td width="30%">
@@ -91,7 +91,7 @@
 								</td>
 							</tr>
 							<tr class="tableRow topperMargin2">
-								<td width="15%" class="topperButtons"><%= link_to "Edit social images", edit_social_path(s), :title => "Edit social images",:class => "btn btn2 tips" %></td>
+								<td width="15%" class="topperButtons"><%= link_to "Edit social images", edit_socialcont_path(s), :title => "Edit social images",:class => "btn btn2 tips" %></td>
 								<% if @user.email != @testing %>
 									<td width="30%" class="topperButtons"><%= button_to "Delete social images", s, :method => :delete, :class => "btn btn3 delete_post", :remote => true %></td>
 								<% end %>
@@ -112,5 +112,5 @@
 	</div>
 	<h6>
 	<input type="hidden" value="works" class="modal-model-type">
-	<% if @socials.count < 1 %><h6><%= link_to 'Add social record', new_social_path, :class => "darkButton2" %><% end %></h6>
+	<% if @socialconts.count < 1 %><h6><%= link_to 'Add social record', new_socialcont_path, :class => "darkButton2" %><% end %></h6>
 </div>
