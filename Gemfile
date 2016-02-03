@@ -25,6 +25,10 @@ gem 'turbolinks'
 gem 'nprogress-rails'
 gem 'will_paginate', '~> 3.0.7'
 gem 'masonry-rails'
+gem 'activeadmin', '0.5.1'
+gem 'draper'
+gem 'pundit'
+gem 'acts_as_list'
 
 # Gems used only for assets and not required
 # in production environments by default.
