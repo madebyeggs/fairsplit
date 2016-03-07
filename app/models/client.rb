@@ -1,5 +1,4 @@
-class Client < ActiveRecord::Base
-  attr_accessible :name, :image, :url
+class Client < ActiveRecord::Base 
   
   if Rails.env.development?
     has_attached_file :image, SQUARE_PAPERCLIP_STORAGE_OPTS

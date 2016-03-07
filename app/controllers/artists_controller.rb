@@ -1,5 +1,5 @@
 class ArtistsController < ApplicationController
-  before_filter :authenticate_user!, :except => ["index", "show"]
+  before_action :authenticate_user!, :except => ["index", "show"]
   
     def new
       bring_in_models
@@ -7,7 +7,7 @@ class ArtistsController < ApplicationController
     end
 
     def create
-      @artist = Artist.create(params[:artist])
+      @artist = Artist.create(artist_params)
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
@@ -15,7 +15,7 @@ class ArtistsController < ApplicationController
 
     def show
       bring_in_models
-      @artist = Artist.find(params[:id])
+      @artist = Artist.find_by_slug(params[:id])
       if request.path != artist_path(@artist)
         redirect_to @artist, status: :moved_permanently and return
       end
@@ -57,12 +57,12 @@ class ArtistsController < ApplicationController
     def edit
       bring_in_models
       bring_in_models
-      @artist = Artist.find(params[:id])
+      @artist = Artist.find_by_slug(params[:id])
     end
 
     def update   
-      @artist = Artist.find(params[:id])
-      if @artist.update_attributes(params[:artist])
+      @artist = Artist.find_by_slug(params[:id])
+      if @artist.update_attributes(artist_params)
         respond_to do |format|
          format.html { redirect_to cms_path }
         end
@@ -78,5 +78,10 @@ class ArtistsController < ApplicationController
         format.html { redirect_to cms_path }
       end
     end 
+    
+    def artist_params
+      params.require(:artist).permit(:name, :description, :soundcloud, :image, :square_image, :latest, :large_image, :homepage_title, :vimeo, :uid, 
+      :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, :homepage, :facebook_image, :fb_url, :twitter_name)
+    end
 
 end

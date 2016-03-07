@@ -1,5 +1,5 @@
 class ClientsController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   
     def new
       bring_in_models
@@ -7,7 +7,7 @@ class ClientsController < ApplicationController
     end
 
     def create
-      @client = Client.create(params[:client])
+      @client = Client.create(client_params)
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
@@ -20,7 +20,7 @@ class ClientsController < ApplicationController
 
     def update   
       @client = Client.find(params[:id])
-      if @client.update_attributes(params[:client])
+      if @client.update_attributes(client_params)
         respond_to do |format|
          format.html { redirect_to cms_path }
         end
@@ -36,5 +36,9 @@ class ClientsController < ApplicationController
         format.html { redirect_to cms_path }
       end
     end  
+    
+    def client_params
+      params.require(:client).permit(:name, :image, :url)
+    end
 
 end

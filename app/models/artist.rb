@@ -1,16 +1,10 @@
 class Artist < ActiveRecord::Base
-  attr_accessible :name, :description, :soundcloud, :image, :square_image, :latest, :large_image, :homepage_title, :vimeo, :uid, 
-  :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, :homepage, :facebook_image, :fb_url, :twitter_name
-  
-  acts_as_list
   
   extend FriendlyId
   friendly_id :name, use: [:slugged, :history]
   
   has_many :works
   before_save :create_unique_id
-  
-  require 'bitly'
   
     if Rails.env.development?
       has_attached_file :image, MAIN_PAPERCLIP_STORAGE_OPTS
@@ -99,7 +93,7 @@ class Artist < ActiveRecord::Base
     end
     
     def self.common_order
-      order("latest DESC, name ASC")
+      order("id ASC")
     end
     
     def self.homepage

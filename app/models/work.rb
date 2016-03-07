@@ -1,16 +1,10 @@
 class Work < ActiveRecord::Base
-  attr_accessible :title, :client, :description, :vimeo, :image, :large_image, :type_of_work, :artist_name, :track_name, 
-  :latest, :artist_id, :homepage_title, :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, 
-  :homepage, :facebook_image, :grid_square_image
   
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
   
   before_save :create_unique_id
   belongs_to :artist
-  
-  require 'bitly'
-  
   # This method associates the attribute ":avatar" with a file attachment
     
     if Rails.env.development?

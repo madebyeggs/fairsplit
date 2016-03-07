@@ -1,13 +1,9 @@
 class Announcement < ActiveRecord::Base
-  attr_accessible :homepage_title, :image, :vimeo, :description, :soundcloud, :large_image, :latest, :square_image, 
-  :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_uid_url, :facebook_image
   
   extend FriendlyId
   friendly_id :homepage_title, use: [:slugged, :history]
   
   before_save :create_unique_id
-  
-  require 'bitly'
   
   # This method associates the attribute ":avatar" with a file attachment
   

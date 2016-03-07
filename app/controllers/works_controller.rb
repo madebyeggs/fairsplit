@@ -1,5 +1,5 @@
 class WorksController < ApplicationController
-  before_filter :authenticate_user!, :except => ["index", "show"]
+  before_action :authenticate_user!, :except => ["index", "show"]
   
     def new
       bring_in_models
@@ -7,7 +7,7 @@ class WorksController < ApplicationController
     end
 
     def create
-      @work = Work.create(params[:work])
+      @work = Work.create(work_params)
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
@@ -15,7 +15,7 @@ class WorksController < ApplicationController
 
     def show
       bring_in_models
-      @work = Work.find(params[:id])
+      @work = Work.find_by_slug(params[:id])
       if request.path != placement_path(@work)
         redirect_to @work, status: :moved_permanently and return
       end
@@ -45,7 +45,7 @@ class WorksController < ApplicationController
           format.html
           format.csv { send_data @works.to_csv }
           format.xls #{ send_data @works.to_csv(col_sep: "\t") }
-        end
+      end
       set_meta_tags :og => {
         :url => "#{@currentUrl}",
         :title    => 'Split Music | Work',
@@ -63,12 +63,12 @@ class WorksController < ApplicationController
 
     def edit
       bring_in_models
-      @work = Work.find(params[:id])
+      @work = Work.find_by_slug(params[:id])
     end
 
     def update   
-      @work = Work.find(params[:id])
-      if @work.update_attributes(params[:work])
+      @work = Work.find_by_slug(params[:id])
+      if @work.update_attributes(work_params)
         respond_to do |format|
          format.html { redirect_to cms_path }
         end
@@ -83,6 +83,12 @@ class WorksController < ApplicationController
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
+    end
+    
+    def work_params
+      params.require(:work).permit(:title, :client, :description, :vimeo, :image, :large_image, :type_of_work, :artist_name, :track_name, 
+      :latest, :artist_id, :homepage_title, :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_id_url, :short_uid_url, 
+      :homepage, :facebook_image, :grid_square_image)
     end
 
 end

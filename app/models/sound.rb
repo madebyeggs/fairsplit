@@ -1,14 +1,9 @@
 class Sound < ActiveRecord::Base
-  attr_accessible :title, :description, :soundcloud, :image, :latest, :homepage_title, :square_image, :vimeo, :uid, 
-  :is_artist, :is_work, :is_sound, :is_announcement, :large_image, :short_id_url, :short_uid_url, :homepage, :facebook_image, :grid_square_image
   
   extend FriendlyId
   friendly_id :title, use: [:slugged, :history]
   
   before_save :create_unique_id
-  
-  require 'bitly'
-  
   # This method associates the attribute ":avatar" with a file attachment
   
     if Rails.env.development?

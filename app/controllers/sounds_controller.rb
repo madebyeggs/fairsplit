@@ -1,5 +1,5 @@
 class SoundsController < ApplicationController
-  before_filter :authenticate_user!, :except => ["index", "show"]
+  before_action :authenticate_user!, :except => ["index", "show"]
   
     def new
       bring_in_models
@@ -7,7 +7,7 @@ class SoundsController < ApplicationController
     end
 
     def create
-      @sound = Sound.create(params[:sound])
+      @sound = Sound.create(sound_params)
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
@@ -15,7 +15,7 @@ class SoundsController < ApplicationController
 
     def show
       bring_in_models
-      @sound = Sound.find(params[:id])
+      @sound = Sound.find_by_slug(params[:id])
       if request.path != release_path(@sound)
         redirect_to @sound, status: :moved_permanently and return
       end
@@ -56,12 +56,12 @@ class SoundsController < ApplicationController
 
     def edit
       bring_in_models
-      @sound = Sound.find(params[:id])
+      @sound = Sound.find_by_slug(params[:id])
     end
 
     def update   
-      @sound = Sound.find(params[:id])
-      if @sound.update_attributes(params[:sound])
+      @sound = Sound.find_by_slug(params[:id])
+      if @sound.update_attributes(sound_params)
         respond_to do |format|
          format.html { redirect_to cms_path }
         end
@@ -76,6 +76,11 @@ class SoundsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
+    end
+    
+    def sound_params
+      params.require(:sound).permit(:title, :description, :soundcloud, :image, :latest, :homepage_title, :square_image, :vimeo, :uid, 
+      :is_artist, :is_work, :is_sound, :is_announcement, :large_image, :short_id_url, :short_uid_url, :homepage, :facebook_image, :grid_square_image)
     end
 
 end

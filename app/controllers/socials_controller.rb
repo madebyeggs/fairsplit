@@ -1,5 +1,5 @@
 class SocialsController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   
     def new
       bring_in_models
@@ -7,7 +7,7 @@ class SocialsController < ApplicationController
     end
 
     def create
-      @social = Social.create(params[:social])
+      @social = Social.create(social_params)
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
@@ -20,7 +20,7 @@ class SocialsController < ApplicationController
 
     def update   
       @social = Social.find(params[:id])
-      if @social.update_attributes(params[:social])
+      if @social.update_attributes(social_params)
         respond_to do |format|
          format.html { redirect_to cms_path }
         end
@@ -35,6 +35,10 @@ class SocialsController < ApplicationController
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
+    end
+    
+    def social_params
+      params.require(:social).permit(:announcements_image, :works_image, :artists_image, :playlists_image, :abouts_image, :contacts_image)
     end
     
 end

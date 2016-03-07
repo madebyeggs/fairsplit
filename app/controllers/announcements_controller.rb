@@ -1,5 +1,5 @@
 class AnnouncementsController < ApplicationController
-  before_filter :authenticate_user!, :except => ["index", "show"]
+  before_action :authenticate_user!, :except => ["index", "show"]
   
     def new
       bring_in_models
@@ -7,7 +7,7 @@ class AnnouncementsController < ApplicationController
     end
 
     def create
-      @announcement = Announcement.create(params[:announcement])
+      @announcement = Announcement.create(announcement_params)
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
@@ -15,7 +15,7 @@ class AnnouncementsController < ApplicationController
 
     def show
       bring_in_models
-      @announcement = Announcement.find(params[:id])
+      @announcement = Announcement.find_by_slug(params[:id])
       if request.path != news_path(@announcement)
         redirect_to @announcement, status: :moved_permanently and return
       end
@@ -58,12 +58,12 @@ class AnnouncementsController < ApplicationController
 
     def edit
       bring_in_models
-      @announcement = Announcement.find(params[:id])
+      @announcement = Announcement.find_by_slug(params[:id])
     end
 
     def update   
-      @announcement = Announcement.find(params[:id])
-      if @announcement.update_attributes(params[:announcement])
+      @announcement = Announcement.find_by_slug(params[:id])
+      if @announcement.update_attributes(announcement_params)
         respond_to do |format|
          format.html { redirect_to cms_path }
         end
@@ -80,4 +80,8 @@ class AnnouncementsController < ApplicationController
       end
     end
 
+    def announcement_params
+      params.require(:announcement).permit(:homepage_title, :image, :vimeo, :description, :soundcloud, :large_image, :latest, :square_image, 
+      :uid, :is_artist, :is_work, :is_sound, :is_announcement, :short_uid_url, :facebook_image)
+    end
 end

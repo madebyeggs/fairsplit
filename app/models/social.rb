@@ -1,6 +1,4 @@
 class Social < ActiveRecord::Base
-  attr_accessible :name, :announcements_image, :works_image, :artists_image, :playlists_image, 
-  :abouts_image, :contacts_image, :url
   
   if Rails.env.development?
     has_attached_file :announcements_image, FACEBOOK_PAPERCLIP_STORAGE_OPTS

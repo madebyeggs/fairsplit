@@ -1,5 +1,5 @@
 class AboutsController < ApplicationController
-  before_filter :authenticate_user!, :except => ["index"]
+  before_action :authenticate_user!, :except => ["index"]
   
     def new
       bring_in_models
@@ -7,7 +7,7 @@ class AboutsController < ApplicationController
     end
 
     def create
-      @about = About.create(params[:about])
+      @about = About.create(about_params)
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
@@ -44,7 +44,7 @@ class AboutsController < ApplicationController
 
     def update   
       @about = About.find(params[:id])
-      if @about.update_attributes(params[:about])
+      if @about.update_attributes(about_params)
         respond_to do |format|
          format.html { redirect_to cms_path }
         end
@@ -63,6 +63,10 @@ class AboutsController < ApplicationController
     
     def show
       @about = About.find(params[:id])
+    end
+    
+    def about_params
+      params.require(:about).permit(:description, :footer, :title, :email)
     end
 
 end

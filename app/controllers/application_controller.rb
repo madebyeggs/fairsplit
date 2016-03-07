@@ -1,9 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
-  require 'bitly'
-  require 'will_paginate/array'
-  
   def bring_in_models
     @announcements = Announcement.common_order
     @works = Work.common_order

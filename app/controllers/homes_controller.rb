@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
-  before_filter :authenticate_user!
+  before_action :authenticate_user!
   
     def new
       bring_in_models
@@ -7,7 +7,7 @@ class HomesController < ApplicationController
     end
 
     def create
-      @home = Home.create(params[:home])
+      @home = Home.create(home_params)
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
@@ -45,7 +45,7 @@ class HomesController < ApplicationController
 
     def update   
       @home = Home.find(params[:id])
-      if @home.update_attributes(params[:home])
+      if @home.update_attributes(home_params)
         respond_to do |format|
          format.html { redirect_to cms_path }
         end
@@ -60,6 +60,10 @@ class HomesController < ApplicationController
       respond_to do |format|
         format.html { redirect_to cms_path }
       end
+    end
+    
+    def home_params
+      params.require(:home).permit(:image)
     end
 
 end
