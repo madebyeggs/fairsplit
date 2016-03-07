@@ -41,11 +41,6 @@ class WorksController < ApplicationController
     def index
       bring_in_models
       @works = Work.common_order
-      respond_to do |format|
-          format.html
-          format.csv { send_data @works.to_csv }
-          format.xls #{ send_data @works.to_csv(col_sep: "\t") }
-      end
       set_meta_tags :og => {
         :url => "#{@currentUrl}",
         :title    => 'Split Music | Work',
