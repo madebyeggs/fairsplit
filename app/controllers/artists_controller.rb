@@ -72,7 +72,7 @@ class ArtistsController < ApplicationController
     end
 
     def destroy
-      @artist = Artist.find(params[:id])
+      @artist = Artist.find_by_slug(params[:id])
       @artist.destroy
       respond_to do |format|
         format.html { redirect_to cms_path }

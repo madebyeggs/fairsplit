@@ -73,7 +73,7 @@ class WorksController < ApplicationController
     end
 
     def destroy
-      @work = Work.find(params[:id])
+      @work = Work.find_by_slug(params[:id])
       @work.destroy
       respond_to do |format|
         format.html { redirect_to cms_path }

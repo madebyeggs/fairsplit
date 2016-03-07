@@ -71,7 +71,7 @@ class SoundsController < ApplicationController
     end
 
     def destroy
-      @sound = Sound.find(params[:id])
+      @sound = Sound.findfind_by_slug(params[:id])
       @sound.destroy
       respond_to do |format|
         format.html { redirect_to cms_path }

@@ -73,7 +73,7 @@ class AnnouncementsController < ApplicationController
     end
 
     def destroy
-      @announcement = Announcement.find(params[:id])
+      @announcement = Announcement.find_by_slug(params[:id])
       @announcement.destroy
       respond_to do |format|
         format.html { redirect_to cms_path }
