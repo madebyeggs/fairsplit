@@ -1,9 +1,5 @@
-# Load the rails application
+# Load the Rails application.
 require File.expand_path('../application', __FILE__)
 
-# Load the app's custom environment variables here, so that they are loaded before environments/*.rb
-app_environment_variables = File.join(Rails.root, 'config', 'local_env.rb')
-load(app_environment_variables) if File.exists?(app_environment_variables)
-
-# Initialize the rails application
-V1::Application.initialize!
+# Initialize the Rails application.
+Rails.application.initialize!
