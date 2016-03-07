@@ -1,56 +1,27 @@
-Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+V1::Application.routes.draw do
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
-
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
-
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
-
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
-
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
-
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
+  devise_for :users, path: "auth", path_names: { sign_in: 'login', sign_out: 'logout', sign_up: 'create_new_splitter' }
+  root :to => 'announcements#index'
+  
+  resources :cms
+  resources :works
+  resources :placements, :controller=>"works"
+  resources :news, :controller=>"announcements"
+  resources :announcements
+  resources :artists
+  resources :releases, :controller=>"sounds"
+  resources :sounds
+  resources :clients
+  resources :socials
+  
+  get "/get_announcement_links" => "announcements#create_links", :as => :get_announcement_links
+  get "/get_work_links" => "works#create_links", :as => :get_work_links
+  get "/get_artist_links" => "artists#create_links", :as => :get_artist_links
+  get "/get_sound_links" => "sounds#create_links", :as => :get_sound_links
+  
+  resources :abouts, :path => "about"
+  resources :contacts, :path => "contact"
+  
+  get '*path' => redirect('/')
+  
 end
