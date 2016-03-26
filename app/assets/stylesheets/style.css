@@ -184,6 +184,7 @@ i {font-size:18px;}
 .marginBottom {margin-bottom:22px!important;}
 .soundContainer {display:inline;}
 .floatLeft {float:left;}
+.padder {margin:20px 0px 20px 20px;}
 /*.fadeMe {display:none;}*/
 
 @media screen and (max-width: 1575px) {
